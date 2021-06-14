@@ -1,0 +1,23 @@
+{
+  "name": "fundamental-conf",
+  "version": "0.0.1",
+  "description": "Fundamental Library Conference Website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/droshev/fundamental-conf.git"
+  },
+  "keywords": [
+    "fundamental library",
+    "conference"
+  ],
+  "author": "droshev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/droshev/fundamental-conf/issues"
+  },
+  "homepage": "https://github.com/droshev/fundamental-conf#readme"
+}

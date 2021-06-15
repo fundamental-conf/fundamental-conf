@@ -53,7 +53,6 @@ body {
     width: 590px;
     display: flex;
     white-space: nowrap;
-    /* letter-spacing: -1px; */
 }
 
 .agenda, .speaker, .volunteer {

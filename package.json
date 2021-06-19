@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "deploy": "ng deploy"
+    "deploy": "gh-pages -d dist/fundamental-conf",
+    "predeploy": "ng build --prod && cp CNAME dist/fundamental-conf/CNAME"
   },
   "dependencies": {
     "@angular/animations": "~11.2.14",

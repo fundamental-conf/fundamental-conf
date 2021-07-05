@@ -10,6 +10,7 @@ export class MobileComponent implements OnInit {
 
   sideMenu: boolean = false;
   halfSize: boolean = false;
+  options = { threshold: 0.7 };
 
   constructor() {
     smoothScroll.polyfill();
@@ -17,18 +18,11 @@ export class MobileComponent implements OnInit {
 
   ngOnInit(): void {
     this.adjustMenu();
+    this.initializeNavbar();
   }
 
   toggleMenu(): void {
-    const container = document.querySelector('.container') as HTMLElement;
     this.sideMenu = !this.sideMenu;
-    if (this.sideMenu) {
-      container.style.height = "100%";
-      container.style.overflowY = "hidden";
-    } else {
-      container.style.height = "300vh";
-      container.style.overflowY = "scroll";
-    }
   }
 
   // shrink the menu bar when scroll down 
@@ -43,5 +37,34 @@ export class MobileComponent implements OnInit {
         }
       }
     });
+  }
+
+  initializeNavbar(): void {
+    let observer = new IntersectionObserver(this.navCheck, this.options);
+    let sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      observer.observe(section);
+    })
+  }
+
+  navCheck(entries: any) {
+    let navboxes = document.querySelectorAll('.nav-box');
+    entries.forEach((entry:any) => {
+        const className = entry.target.id;
+        const activeBox = document.querySelector(`[data-page=${className}]`);
+        if (entry.isIntersecting) {
+          navboxes.forEach(navbox => {
+            navbox.classList.remove('active');
+          });
+          activeBox?.classList.add('active');
+        }
+    });
+  }
+
+  scroll($element: any): void {
+    const target = document.getElementById(`${$element.id}`) as HTMLElement;
+    const yOffSet = this.halfSize ? -110 : -135;
+    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffSet;
+    window.scrollTo({top: y, behavior: 'smooth'});
   }
 }

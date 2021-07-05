@@ -90,6 +90,7 @@ $menu-transition-time: 1s;
     font-family: 'Overpass Mono', sans-serif;
     font-size: 16px;
     font-weight: 400;
+    margin-bottom: 1px;
     .nav-box {
         display: flex;
         justify-content: center;
@@ -97,6 +98,10 @@ $menu-transition-time: 1s;
         height: 26px;
         border: 1px solid $navbar-text-color;
         padding: 0px 14px 0px 14px;
+        &.active {
+            color: $primary-text-color;
+            background-color: $navbar-text-color;
+        }
     }
     .top {
         width: 26px;
@@ -107,6 +112,82 @@ $menu-transition-time: 1s;
             border-radius: 50%;
             background-color: $navbar-text-color;
         }
+        &.active {
+            .dot {
+                background-color: $primary-text-color;
+            }
+        }
+    }
+}
+
+#date {
+    .separator {
+        border: 1px solid #A6A6A8;
+        margin-left: 14px;
+        margin-right: 14px;
+        &:not(:first-child) {
+            margin-top: 17px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 9px;
+        }
+    }
+    .label {
+        margin-left: 21px;
+        font-family: 'Overpass Mono', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .date-row {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5px;
+    }
+    .time-display {
+        margin-left: 21px;
+        font-family: 'Inter', sans-serif;
+        font-size: 44px;
+        font-weight: 500;
+    }
+    .superscript {
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin-left: 4px;
+    }
+    .intro {
+        font-size: 22px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin: 5px 21px 0 21px;
+        line-height: 27px;
+    }
+}
+
+#info {
+    .separator {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gradient-ball {
+        height: 27px;
+        width: 27px;
+        animation: rotating 2s linear infinite;
+        z-index: -1;
+    }
+    @keyframes rotating {
+        from{
+            -webkit-transform: rotate(0deg);
+        }
+        to{
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    .cards {
+        height: 80vh;
+        background-color: tomato;
     }
 }
 
@@ -127,6 +208,58 @@ $menu-transition-time: 1s;
         top: $halfsize-menu;
         height: calc(100vh - #{$halfsize-menu});
     }
+    .route {
+        height: 50%;
+        display: flex;
+        flex-direction: column; 
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        .route-block {
+            margin-left: 21px;
+            margin-bottom: 19px;
+        }
+        .label {
+            font-size: 44px;
+            color: $primary-text-color;
+            &:last-child {
+                opacity: 0.15;
+            }
+        }
+        a {
+            color: #A6A6A8;
+            font-size: 22px;
+            text-decoration: none;
+            margin-top: 4px;
+        }
+    }
+    .separator {
+        margin: 0 19px 0 19px;
+        border: 1px solid #A6A6A8;
+    }
+    .find-us {
+        display: flex;
+        flex-direction: column;
+        color: $primary-text-color;
+        margin-left: 21px;
+        margin-top: 10px;
+        span {
+            font-family: 'Overpass Mono', sans-serif;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        a {
+            font-family: 'Inter', sans-serif;
+            font-size: 44px;
+            font-weight: 500;
+            text-decoration: none;
+            color: $primary-text-color;
+            margin-bottom: 16px;
+            &:last-child {
+                padding-left: 45px;
+                text-indent: -45px;
+            }
+        }
+    }
 }
 
 .block {
@@ -136,7 +269,42 @@ $menu-transition-time: 1s;
     }
 }
 
-// experiment 
-.container {
-    height: 300vh;
+.footer {
+    height: 160px;
+    background-color: $navbar-text-color;
+    color: $primary-text-color;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contact {
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .social-media {
+        width: 100%;
+        margin: 20px 50px 0px 50px;
+        display: flex;
+        justify-content: space-around;
+        .social-media-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: $primary-text-color;
+        }
+    }
+    .copyright {
+        font-size: 10px;
+        margin-top: auto;
+        margin-bottom: 19px;
+    }
+}
+
+// experiment
+#animation {
+    height: 100vh;
+}
+#speaker {
+    height: 100vh;
 }

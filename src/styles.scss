@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Overpass+Mono&display=swap');
 
-body {
-    padding: 0;
+* {
     margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 1rem;
+	font: inherit;
+    line-height: 1;
+	vertical-align: baseline;
+    box-sizing: border-box;
 }

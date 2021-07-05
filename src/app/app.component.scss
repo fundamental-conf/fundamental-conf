@@ -1,0 +1,11 @@
+@media screen and (min-width: 641px) {
+    app-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    app-desktop {
+        display: none;
+    }
+}

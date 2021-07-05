@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="header">
+        <div class="menu" [ngClass]="{'half-size': halfSize}">
+            <img class="logo" [ngClass]="{'half-size': halfSize}" src="../../assets/FC_LOGO.png" alt="logo">
+            <span class="title" [ngClass]="{'fly-in': halfSize, 'fade-out': !halfSize}">Fundamental<br>Conference</span>
+            <button class="menu-button" (click)="toggleMenu()">
+                <div *ngIf="!sideMenu" class="open-button">
+                    <div class="line-top"></div>
+                    <div class="line-bottom"></div>
+                </div>
+
+                <div *ngIf="sideMenu" class="close-button">
+                    <div class="line-forward"></div>
+                    <div class="line-backward"></div>
+                </div>
+            </button>
+        </div>
+        <div class="navbar">
+            <div class="nav-box top"><div class="dot"></div></div>
+            <div class="nav-box">DATE/TIME</div>
+            <div class="nav-box">INFO</div>
+            <div class="nav-box">SPEAKERS</div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="block" [ngClass]="{'half-size': halfSize}"></div>
+        <div class="animation">asdf</div>
+        <div class="date">asdf</div>
+        <div class="info">adsf</div>
+        <div class="speaker"></div>
+    </div>
+    <div class="footer"></div>
+</div>
+
+<div class="side-menu" [ngClass]="{'show-side-menu': sideMenu, 'high-top': halfSize }"></div>

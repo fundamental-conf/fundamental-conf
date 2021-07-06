@@ -342,6 +342,7 @@ $menu-transition-time: 1s;
     background-color: black;
     position: fixed;
     top: 75px;
+    z-index: 100;
     transform: translateX(100vw);
     transition: all 0.5s cubic-bezier(0.6, 0.11, 1, 0.59);
     display: flex;

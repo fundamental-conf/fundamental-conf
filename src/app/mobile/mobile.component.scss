@@ -11,6 +11,7 @@ $menu-transition-time: 1s;
     width: 100%;
     position: fixed;
     background-color: white;
+    z-index: 10;
 }
 
 .menu {
@@ -95,7 +96,7 @@ $menu-transition-time: 1s;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 26px;
+        height: 44px;
         border: 1px solid $navbar-text-color;
         padding: 0px 14px 0px 14px;
         &.active {
@@ -104,7 +105,7 @@ $menu-transition-time: 1s;
         }
     }
     .top {
-        width: 26px;
+        width: 44px;
         padding: 0;
         .dot {
             height: 9px;
@@ -227,7 +228,111 @@ $menu-transition-time: 1s;
     }
     .card-image {
         height: 250px;
-        width: 250px;
+        width: 240px;
+    }
+    .dash-separator {
+        width: 20px;
+        border: 1px solid $primary-text-color
+    }
+    .image-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: $primary-text-color;
+        margin-top: 10px;
+    }
+}
+
+#speaker {
+    font-family: 'Inter', sans-serif;
+    z-index: -1;
+    .separator {
+        width: 100%;
+        padding: 6px 0 6px 0;
+        border-top: 1px solid #A6A6A8;
+        border-bottom: 1px solid #A6A6A8;
+    }
+    .label {
+        margin-left: 21px;
+        font-family: 'Overpass Mono', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .wheel {
+        height: 420px;
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+    }
+    .slot {
+        height: 100%;
+        width: 316px;
+        flex-shrink: 0;
+        &:not(:last-child) {
+            margin-right: 7px;
+        }
+        position: relative;
+        scroll-snap-align: start;
+    }
+    .photo {
+        height: 345px;
+        img {
+            width: 100%;
+            height: 345px;
+        }
+    }
+    .intro-card {
+        height: 89px;
+        width: 222px;
+        padding: 8px 0 0 12px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        margin-top: -29px;
+        margin-left: 22px;
+        position: absolute;
+        font-family: 'Inter', sans-serif;
+        .id-label {
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+        .count-label {
+            font-size: 10px;
+            font-weight: 400;
+            margin-left: 4px;
+            opacity: 0.6;
+        }
+        .name {
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 7px;
+        }
+        .speaker-title {
+            font-size: 16px;
+            margin-top: 2px;
+            opacity: 0.6;
+        }
+    }
+    .invite {
+        margin: 38px auto 38px auto;
+        width: 225px;
+        height: 36px;
+        padding: 15px;
+        border: 1px solid $navbar-text-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            text-decoration: none;
+            color: $navbar-text-color;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $navbar-text-color;
+        }
     }
 }
 
@@ -250,6 +355,7 @@ $menu-transition-time: 1s;
     }
     .route {
         height: 50%;
+        margin-top: 15px;
         display: flex;
         flex-direction: column; 
         font-family: 'Inter', sans-serif;
@@ -343,8 +449,5 @@ $menu-transition-time: 1s;
 
 // experiment
 #animation {
-    height: 100vh;
-}
-#speaker {
     height: 100vh;
 }

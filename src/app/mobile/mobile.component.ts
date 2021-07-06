@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as smoothScroll from 'smoothscroll-polyfill';
+import * as data from '../speakers.json';
 
 @Component({
   selector: 'app-mobile',
@@ -11,6 +12,9 @@ export class MobileComponent implements OnInit {
   sideMenu: boolean = false;
   halfSize: boolean = false;
   options = { threshold: 0.7 };
+  speakerData: any = (data as any).default;
+  speakers: any[] = [];
+  totalNumSpeaker: number = 0;
 
   constructor() {
     smoothScroll.polyfill();
@@ -19,6 +23,8 @@ export class MobileComponent implements OnInit {
   ngOnInit(): void {
     this.adjustMenu();
     this.initializeNavbar();
+    this.speakers = this.speakerData.speakers;
+    this.totalNumSpeaker = this.speakers.length;
   }
 
   toggleMenu(): void {
@@ -66,5 +72,9 @@ export class MobileComponent implements OnInit {
     const yOffSet = this.halfSize ? -110 : -135;
     const y = target.getBoundingClientRect().top + window.pageYOffset + yOffSet;
     window.scrollTo({top: y, behavior: 'smooth'});
+  }
+
+  getImgSrc(name: string): string {
+    return "../../assets/speakers/" + name + ".jpeg";
   }
 }

@@ -58,10 +58,14 @@
                 <div class="card-header card-header1">Worldwide Online Event</div>
                 <div class="card-content card-content1">
                     <img class="card-image" src="../../assets/FC_Worldwide.png" alt="worldwide online">
+                    <div class="dash-separator"></div>
+                    <span class="image-label">Broswer-based</span>
                 </div>
                 <div class="card-header card-header2">Open Audience</div>
                 <div class="card-content card-content2">
                     <img class="card-image" src="../../assets/FC_Audience.png" alt="open audience">
+                    <div class="dash-separator"></div>
+                    <span class="image-label">Available Internally & Externally</span>
                 </div>
                 <div class="card-header card-header3">Pre-recorded & Live Sessions</div>
                 <div class="card-content card-content3">
@@ -73,7 +77,27 @@
             </div>
         </section>
         <section id="speaker" #speaker>
-        
+            <div class="separator">
+                <span class="label">SPEAKERS</span>
+            </div>
+            <div class="wheel">
+                <div class="slot" *ngFor="let speaker of speakers">
+                    <div class="photo">
+                        <img [src]='getImgSrc(speaker.name)' alt="speaker portrait">
+                    </div>
+                    <div class="intro-card">
+                        <span class="id-label">{{ speaker.id }}</span>
+                        <span class="count-label">/ {{ totalNumSpeaker }}</span><br>
+                        <span class="name">{{ speaker.name }}</span><br>
+                        <span class="speaker-title">{{ speaker.title }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="invite">
+                <div class="dot"></div>
+                <a href="https://forms.gle/EzEz2FHiawRPAi8d8" target="_blank">Apply to be a speaker</a>
+                <div class="dot"></div>
+            </div>
         </section>
     </div>
     <div class="footer" #footer>

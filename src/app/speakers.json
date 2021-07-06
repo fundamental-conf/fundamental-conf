@@ -1,0 +1,24 @@
+{
+    "speakers": [
+        {
+            "id": "01",
+            "name": "Name1",
+            "title": "Front-end Dev"
+        },
+        {
+            "id": "02",
+            "name": "Name2",
+            "title": "Designer"
+        },
+        {
+            "id": "03",
+            "name": "Name3",
+            "title": "Front-end Dev"
+        },
+        {
+            "id": "04",
+            "name": "Name4",
+            "title": "Designer"
+        }
+    ]
+}

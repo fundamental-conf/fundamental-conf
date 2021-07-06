@@ -50,8 +50,8 @@ export class MobileComponent implements OnInit {
   navCheck(entries: any) {
     let navboxes = document.querySelectorAll('.nav-box');
     entries.forEach((entry:any) => {
-        const className = entry.target.id;
-        const activeBox = document.querySelector(`[data-page=${className}]`);
+        const id = entry.target.id;
+        const activeBox = document.querySelector(`[data-page=${id}]`);
         if (entry.isIntersecting) {
           navboxes.forEach(navbox => {
             navbox.classList.remove('active');

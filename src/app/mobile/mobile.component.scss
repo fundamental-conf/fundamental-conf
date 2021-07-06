@@ -448,7 +448,11 @@ $menu-transition-time: 1s;
     }
 }
 
-// experiment
 #animation {
-    height: 100vh;
+    position: relative;
+    height: 50vh;
+    margin-bottom: 60px;
+    img {
+        position: absolute;
+    }
 }

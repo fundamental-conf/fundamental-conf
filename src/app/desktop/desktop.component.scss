@@ -1,0 +1,286 @@
+$header-height: 77px;
+$primary-dark-color: #161616;
+$primary-light-color: #F9F9F9;
+
+.header {
+    width: 100%;
+    height: $header-height;
+    background-color: #161616;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    img {
+        margin-left: 52px;
+    }
+    .title {
+        color: $primary-light-color;
+        font-size: 22px;
+        font-weight: 600;
+        margin-left: 13px;
+    }
+    .links {
+        width: 300px;
+        height: 100%;
+        margin-left: auto;
+        margin-right: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a {
+            color: $primary-light-color;
+            text-decoration: none;
+            float: right;
+        }
+        .top-label {
+            font-size: 16px;
+        }
+        .bottom-label {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+    }
+}
+
+.footer {
+    height: 270px;
+    background-color: $primary-dark-color;
+    padding: 74px 77px 74px 77px;
+    display: flex;
+    justify-content: space-between;
+    .find-us {
+        display: flex;
+        flex-direction: column;
+        .label {
+            color: #A6A6A8;
+            font-family: 'Overpass Mono', sans-serif;
+            font-size: 14px;
+            margin-bottom: 13px;
+        }
+        a {
+            text-decoration: none;
+            color: $primary-light-color;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+    }
+    .copyright {
+        margin-top: 125px;
+        color: $primary-light-color;
+        font-size: 16px;
+    }
+}
+
+.content {
+    .block {
+        height: $header-height;
+    }
+}
+
+.date {
+    display: flex;
+    height: calc(100vh - #{$header-height});
+    .animation {
+        height: 100%;
+        width: 60%;
+    }
+    .schedule {
+        height: 100%;
+        width: 40%;
+        padding: 113px 94px 105px 0;
+        .box {
+            border: 1px solid #A6A6A8;
+            margin-bottom: 36px;
+        }
+        .label {
+            height: 52px;
+            padding-left: 27px;
+            font-family: 'Overpass Mono', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            border-bottom: 1px solid #A6A6A8;
+            display: flex;
+            align-items: center;
+        }
+        .date-row {
+            display: flex;
+            align-items: flex-start;
+            padding-left: 27px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+        .time-display {
+            font-family: 'Inter', sans-serif;
+            font-size: 44px;
+            font-weight: 500;
+        }
+        .superscript {
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+        .intro {
+            font-size: 22px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            margin: 24px 20px 24px 20px;
+        }
+    }
+}
+
+.info {
+    .cards {
+        display: flex;
+    }
+    .card {
+        height: 33.3vw;
+        width: 33.3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card1 {
+        background-color: #DB6861;
+    }
+    .card2 {
+        background-color: #CF476D;
+    }
+    .card3 {
+        background-color: #654276;
+    }
+    .card-header {
+        color: $primary-light-color;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 25px;
+    }
+    .card-image {
+        height: 25vw;
+        width: 25vw;
+    }
+    .dash-separator {
+        width: 20px;
+        border: 1px solid $primary-light-color
+    }
+    .image-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: $primary-light-color;
+        margin-top: 10px;
+    }
+    .separator {
+        height: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 30px;
+            width: 30px;
+            animation: rotating 2s linear infinite;
+            z-index: -1;
+        }
+    }
+}
+
+.speakers {
+    .separator {
+        width: 100%;
+        padding: 8px 0 8px 0;
+        border-top: 1px solid #A6A6A8;
+        border-bottom: 1px solid #A6A6A8;
+    }
+    .label {
+        color: $primary-dark-color;
+        margin-left: 22px;
+        font-family: 'Overpass Mono', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .main {
+        height: 50vw;
+        display: flex;
+        border-bottom: 1px solid #A6A6A8;
+    }
+    .wheel {
+        width: 76vw;
+        display: flex;
+        overflow: hidden;
+    }
+    .card {
+        flex-shrink: 0;
+        height: 100%;
+        width: 45vw;
+        background-color: #F3F3F3;
+        border-left: 1px solid #A6A6A8;
+        border-right: 1px solid #A6A6A8;
+        padding: 15px;
+        z-index: 1;
+        &:not(:first-child) {
+            margin-left: -42vw;
+        }
+        .photo {
+            width: 29vw;
+            height: 34vw;
+            background-color: #C4C4C4;
+        }
+        .intro {
+            width: 42vw;
+            height: 12vw;
+            margin-top: 27px;
+            background-color: #FCFCFC;
+        }
+        .intro-card {
+            height: 6vw;
+            width: 15vw;
+            padding: 8px 0 0 12px;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            margin-top: -22vw;
+            margin-left: 25vw;
+            z-index: 0;
+            font-family: 'Inter', sans-serif;
+            .id-label {
+                font-size: 12px;
+                font-weight: 400;
+                opacity: 0.6;
+            }
+            .count-label {
+                font-size: 10px;
+                font-weight: 400;
+                margin-left: 4px;
+                opacity: 0.6;
+            }
+            .name {
+                font-size: 22px;
+                font-weight: 500;
+                margin-top: 7px;
+            }
+            .speaker-title {
+                font-size: 16px;
+                margin-top: 2px;
+                opacity: 0.6;
+            }
+        }
+    }
+    .invite {
+        width: 24vw;
+        z-index: 1;
+    }
+}
+
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

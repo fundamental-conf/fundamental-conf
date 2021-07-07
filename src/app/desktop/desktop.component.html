@@ -1,1 +1,112 @@
-<p class="desktop">desktop works!</p>
+<div class="container">
+    <div class="header">
+        <img src="../../assets/FC_LOGO.png" alt="Logo">
+        <span class="title">Fundamental<br>Conference</span>
+        <div class="links">
+            <a href="https://forms.gle/EzEz2FHiawRPAi8d8" target="_blank">
+                <span class="top-label">Speakers</span><br>
+                <span class="bottom-label">Apply to be a speaker</span>
+            </a>
+            <a href="https://forms.gle/QDUBq8eLE8a6gjre7" target="_blank">
+                <span class="top-label">Volunteers</span><br>
+                <span class="bottom-label">Apply to be a volunteer</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="block"></div>
+        <section class="date">
+            <div class="animation">
+
+            </div>
+            <div class="schedule">
+                <div class="box">
+                    <div class="label">DATE</div>
+                    <div class="date-row">
+                        <span class="time-display">August 11</span>
+                        <span class="superscript">2021</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label">TIME</div>
+                    <div class="date-row">
+                        <span class="time-display">2 PM - 6 PM</span>
+                        <span class="superscript">CEST</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label">ABOUT</div>
+                    <p class="intro">
+                        A global virtual conference aiming to start a conversation concerning the future of front-end and 
+                        design in the context of open-source, enterprise, cloud, development experience, inclusion, 
+                        and user experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="info">
+            <div class="cards">
+                <div class="card card1">
+                    <div class="card-header">Worldwide Online Event</div>
+                    <img class="card-image" src="../../assets/FC_Worldwide.png" alt="worldwide online">
+                    <div class="dash-separator"></div>
+                    <span class="image-label">Broswer-based</span>
+                </div>
+                <div class="card card2">
+                    <div class="card-header">Open Audience</div>
+                    <img class="card-image" src="../../assets/FC_Audience.png" alt="open audience">
+                    <div class="dash-separator"></div>
+                    <span class="image-label">Available Internally & Externally</span>
+                </div>
+                <div class="card card3">
+                    <div class="card-header">Pre-recorded & Live Sessions</div>
+                    <img class="card-image" src="../../assets/FC_Sessions.png" alt="sessions">
+                </div>
+            </div>
+            <div class="separator">
+                <img class="gradient-ball" src="../../assets/GradientEllipse.png" alt="gradient-ball">
+            </div>
+        </section>
+        
+        <section class="speakers">
+            <div class="separator">
+                <span class="label">SPEAKERS</span>
+            </div>
+            <div class="main">
+                <div class="wheel">
+                    <div class="card" *ngFor="let speaker of speakers">
+                        <div class="photo">
+
+                        </div>
+                        <div class="intro">
+
+                        </div>
+                        <div class="intro-card">
+                            <span class="id-label">{{ speaker.id }}</span>
+                            <span class="count-label">/ {{ totalNumSpeaker }}</span><br>
+                            <span class="name">{{ speaker.name }}</span><br>
+                            <span class="speaker-title">{{ speaker.title }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="invite"></div>
+            </div>
+            <div class="block"></div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <div class="find-us">
+            <span class="label">FIND US</span>
+            <a href="https://www.linkedin.com/company/sap-graph/" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/fundamental_lib?lang=en" target="_blank">Twitter</a>
+            <a href="https://www.youtube.com/channel/UCkq8zSSBngKze-rUypz0t2w" target="_blank">Youtube</a>
+            <a href="https://community.sap.com/topics/fundamental-library" target="_blank">SAP Community</a>
+            <a href="https://sap.github.io/fundamental/" target="_blank">Fundamental Library</a>
+        </div>
+        <div class="copyright">
+            © Copyright SAP 2021
+        </div>
+    </div>
+</div>

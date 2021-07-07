@@ -117,8 +117,8 @@
     </div>
 </div>
 
-<div class="side-menu" [ngClass]="{'show-side-menu': sideMenu, 'high-top': halfSize }">
-    <div class="route">
+<div class="side-menu" [ngClass]="{ 'show-side-menu': sideMenu, 'high-top': halfSize }">
+    <div class="route" [ngClass]="{ 'slide-in': sideMenu }">
         <div class="route-block">
             <span class="label">Speakers</span><br>
             <a href="https://forms.gle/EzEz2FHiawRPAi8d8" target="_blank">Apply to be a speaker</a>
@@ -132,7 +132,7 @@
         </div>
     </div>
     <div class="separator"></div>
-    <div class="find-us">
+    <div class="find-us" [ngClass]="{ 'slide-in': sideMenu }">
         <span>FIND US</span>
         <a href="https://www.linkedin.com/company/sap-graph/" target="_blank">LinkedIn</a>
         <a href="https://twitter.com/fundamental_lib?lang=en" target="_blank">Twitter</a>

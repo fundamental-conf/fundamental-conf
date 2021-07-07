@@ -178,14 +178,6 @@ $menu-transition-time: 1s;
         animation: rotating 2s linear infinite;
         z-index: -1;
     }
-    @keyframes rotating {
-        from{
-            -webkit-transform: rotate(0deg);
-        }
-        to{
-            -webkit-transform: rotate(360deg);
-        }
-    }
     .cards {
         display: flex;
         flex-direction: column;
@@ -361,6 +353,8 @@ $menu-transition-time: 1s;
         flex-direction: column; 
         font-family: 'Inter', sans-serif;
         font-weight: 500;
+        opacity: 0;
+        transform: translateX(50px);
         .route-block {
             margin-left: 21px;
             margin-bottom: 19px;
@@ -378,6 +372,10 @@ $menu-transition-time: 1s;
             text-decoration: none;
             margin-top: 4px;
         }
+        &.slide-in {
+            animation: slideIn 0.2s linear forwards;
+            animation-delay: $menu-transition-time;
+        }
     }
     .separator {
         margin: 0 19px 0 19px;
@@ -389,6 +387,8 @@ $menu-transition-time: 1s;
         color: $primary-text-color;
         margin-left: 21px;
         margin-top: 10px;
+        opacity: 0;
+        transform: translateX(50px);
         span {
             font-family: 'Overpass Mono', sans-serif;
             font-size: 14px;
@@ -405,6 +405,10 @@ $menu-transition-time: 1s;
                 padding-left: 45px;
                 text-indent: -45px;
             }
+        }
+        &.slide-in {
+            animation: slideIn 0.2s linear forwards;
+            animation-delay: $menu-transition-time;
         }
     }
 }
@@ -454,5 +458,20 @@ $menu-transition-time: 1s;
     margin-bottom: 60px;
     img {
         position: absolute;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
     }
 }

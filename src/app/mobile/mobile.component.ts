@@ -51,19 +51,36 @@ export class MobileComponent implements OnInit {
     sections.forEach(section => {
       observer.observe(section);
     })
+    // manually add Info section because it's using fixed position
+    const infoSection = document.getElementById('info') as HTMLElement;
+    const infoNavbox = document.querySelectorAll('.nav-box')[2] as HTMLElement;
+    window.addEventListener('scroll', () => {
+      const coord = infoSection.getBoundingClientRect();
+      if (coord.top < 115 && coord.top > -990) {
+        this.resetNavbar();
+        infoNavbox.classList.add('active');
+      }
+    })
   }
 
-  navCheck(entries: any) {
-    let navboxes = document.querySelectorAll('.nav-box');
+  navCheck(entries: any): void {
     entries.forEach((entry:any) => {
-        const id = entry.target.id;
-        const activeBox = document.querySelector(`[data-page=${id}]`) as HTMLElement;
         if (entry.isIntersecting) {
+          const navboxes = document.querySelectorAll('.nav-box');
+          const id = entry.target.id;
+          const activeBox = document.querySelector(`[data-page=${id}]`) as HTMLElement;
           navboxes.forEach(navbox => {
             navbox.classList.remove('active');
           });
           activeBox.classList.add('active');
         }
+    });
+  }
+
+  resetNavbar(): void {
+    const navboxes = document.querySelectorAll('.nav-box');
+    navboxes.forEach(navbox => {
+      navbox.classList.remove('active');
     });
   }
 

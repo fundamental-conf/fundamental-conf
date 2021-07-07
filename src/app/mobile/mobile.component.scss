@@ -385,6 +385,7 @@ $menu-transition-time: 1s;
         display: flex;
         flex-direction: column;
         color: $primary-text-color;
+        height: 50%;
         margin-left: 21px;
         margin-top: 10px;
         opacity: 0;
@@ -396,7 +397,7 @@ $menu-transition-time: 1s;
         }
         a {
             font-family: 'Inter', sans-serif;
-            font-size: 44px;
+            font-size: 5vh;
             font-weight: 500;
             text-decoration: none;
             color: $primary-text-color;

@@ -1,2 +1,2 @@
-<app-mobile></app-mobile>
-<app-desktop></app-desktop>
+<app-mobile *ngIf="showMobile"></app-mobile>
+<app-desktop *ngIf="!showMobile"></app-desktop>

@@ -110,6 +110,10 @@ $primary-light-color: #F9F9F9;
     .animation {
         height: 100%;
         width: 60%;
+        position: relative;
+        img {
+            position: absolute;
+        }
     }
     .schedule {
         height: 100%;

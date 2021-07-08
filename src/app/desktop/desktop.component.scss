@@ -22,17 +22,16 @@ $primary-light-color: #F9F9F9;
         margin-left: 13px;
     }
     .links {
-        width: 300px;
+        width: 400px;
         height: 100%;
         margin-left: auto;
-        margin-right: 150px;
+        margin-right: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         a {
             color: $primary-light-color;
             text-decoration: none;
-            float: right;
         }
         .top-label {
             font-size: 16px;
@@ -40,6 +39,12 @@ $primary-light-color: #F9F9F9;
         .bottom-label {
             font-size: 12px;
             opacity: 0.6;
+        }
+        .temp-top-label {
+            opacity: 0.3;
+        }
+        .temp-bottom-label {
+            opacity: 0;
         }
     }
 }
@@ -240,6 +245,8 @@ $primary-light-color: #F9F9F9;
             height: 12vw;
             margin-top: 27px;
             padding: 16px 19px 16px 19px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
             background-color: #FCFCFC;
             overflow-y: scroll;
         }

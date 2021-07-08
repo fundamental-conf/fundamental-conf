@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as smoothScroll from 'smoothscroll-polyfill';
 import * as data from '../speakers.json';
 
@@ -15,6 +15,9 @@ export class MobileComponent implements OnInit {
   speakerData: any = (data as any).default;
   speakers: any[] = [];
   totalNumSpeaker: number = 0;
+
+  @Input() conferenceTime: string = '';
+  @Input() timezone: string = '';
 
   constructor() {
     smoothScroll.polyfill();

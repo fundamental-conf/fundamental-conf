@@ -1,2 +1,2 @@
-<app-mobile *ngIf="showMobile"></app-mobile>
-<app-desktop *ngIf="!showMobile"></app-desktop>
+<app-mobile *ngIf="showMobile" [conferenceTime]="conferenceTime" [timezone]="timezone"></app-mobile>
+<app-desktop *ngIf="!showMobile" [conferenceTime]="conferenceTime" [timezone]="timezone"></app-desktop>

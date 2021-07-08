@@ -153,6 +153,8 @@ $primary-light-color: #F9F9F9;
             font-size: 22px;
             font-family: 'Inter', sans-serif;
             font-weight: 500;
+            letter-spacing: -1px;
+            line-height: 27px;
             margin: 24px 20px 24px 20px;
         }
     }
@@ -241,7 +243,7 @@ $primary-light-color: #F9F9F9;
         border-bottom: 1px solid #A6A6A8;
     }
     .wheel {
-        width: 76vw;
+        width: 100%;
         display: flex;
         overflow: hidden;
     }
@@ -256,10 +258,10 @@ $primary-light-color: #F9F9F9;
         z-index: 1;
         transition: all 1s ease;
         &:not(:first-child) {
-            margin-left: -42vw;
+            margin-left: -39vw;
         }
         &:not(:last-child):hover ~ .card {
-            transform: translateX(42vw);
+            transform: translateX(39vw);
         }
         .photo {
             width: 29vw;
@@ -311,10 +313,6 @@ $primary-light-color: #F9F9F9;
                 opacity: 0.6;
             }
         }
-    }
-    .invite {
-        width: 24vw;
-        z-index: 1;
     }
 }
 

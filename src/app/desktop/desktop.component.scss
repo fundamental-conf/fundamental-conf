@@ -223,8 +223,12 @@ $primary-light-color: #F9F9F9;
         border-right: 1px solid #A6A6A8;
         padding: 15px;
         z-index: 1;
+        transition: all 1s ease;
         &:not(:first-child) {
             margin-left: -42vw;
+        }
+        &:not(:last-child):hover ~ .card {
+            transform: translateX(42vw);
         }
         .photo {
             width: 29vw;
@@ -235,7 +239,9 @@ $primary-light-color: #F9F9F9;
             width: 42vw;
             height: 12vw;
             margin-top: 27px;
+            padding: 16px 19px 16px 19px;
             background-color: #FCFCFC;
+            overflow-y: scroll;
         }
         .intro-card {
             height: 6vw;
@@ -244,9 +250,12 @@ $primary-light-color: #F9F9F9;
             border: 1px solid #000000;
             border-radius: 10px;
             margin-top: -22vw;
-            margin-left: 25vw;
+            margin-left: 27vw;
             z-index: 0;
             font-family: 'Inter', sans-serif;
+            .card-label {
+                display: flex;
+            }
             .id-label {
                 font-size: 12px;
                 font-weight: 400;

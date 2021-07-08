@@ -77,16 +77,18 @@
                 <div class="wheel">
                     <div class="card" *ngFor="let speaker of speakers">
                         <div class="photo">
-
+                            <!-- <img [src]='getImgSrc(speaker.name)' alt="speaker portrait"> -->
                         </div>
                         <div class="intro">
-
+                            {{ speaker.intro }}
                         </div>
                         <div class="intro-card">
-                            <span class="id-label">{{ speaker.id }}</span>
-                            <span class="count-label">/ {{ totalNumSpeaker }}</span><br>
-                            <span class="name">{{ speaker.name }}</span><br>
-                            <span class="speaker-title">{{ speaker.title }}</span>
+                            <div class="card-label">
+                                <div class="id-label">{{ speaker.id }}</div>
+                                <div class="count-label">/ {{ totalNumSpeaker }}</div>
+                            </div>
+                            <div class="name">{{ speaker.name }}</div>
+                            <div class="speaker-title">{{ speaker.title }}</div>
                         </div>
                     </div>
                 </div>

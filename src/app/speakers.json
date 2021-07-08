@@ -3,17 +3,20 @@
         {
             "id": "01",
             "name": "Name1",
-            "title": "Front-end Dev"
+            "title": "Front-end Dev",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia."
         },
         {
             "id": "02",
             "name": "Name2",
-            "title": "Designer"
+            "title": "Designer",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia."
         },
         {
             "id": "03",
             "name": "Name3",
-            "title": "Front-end Dev"
+            "title": "Front-end Dev",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia."
         },
         {
             "id": "04",
@@ -33,12 +36,14 @@
         {
             "id": "07",
             "name": "Name7",
-            "title": "Front-end Dev"
+            "title": "Front-end Dev",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia."
         },
         {
             "id": "08",
             "name": "Name8",
-            "title": "Designer"
+            "title": "Designer",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia."
         }
     ]
 }

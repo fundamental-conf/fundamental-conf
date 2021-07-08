@@ -18,5 +18,8 @@ export class DesktopComponent implements OnInit {
     this.speakers = this.speakerData.speakers;
     this.totalNumSpeaker = this.speakers.length;
   }
-
+  
+  getImgSrc(name: string): string {
+    return "../../assets/speakers/" + name + ".jpeg";
+  }
 }

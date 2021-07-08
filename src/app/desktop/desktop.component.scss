@@ -2,6 +2,23 @@ $header-height: 77px;
 $primary-dark-color: #161616;
 $primary-light-color: #F9F9F9;
 
+@mixin section-animation {
+    opacity: 0;
+    transform: translateY(10vh);
+    transition: all 1s ease;
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@mixin card-animation($delay) {
+    &.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: $delay;
+    }
+}
+
 .header {
     width: 100%;
     height: $header-height;
@@ -87,6 +104,7 @@ $primary-light-color: #F9F9F9;
 }
 
 .date {
+    @include section-animation();
     display: flex;
     height: calc(100vh - #{$header-height});
     .animation {
@@ -121,14 +139,15 @@ $primary-light-color: #F9F9F9;
         }
         .time-display {
             font-family: 'Inter', sans-serif;
-            font-size: 44px;
+            font-size: 4vw;
             font-weight: 500;
         }
         .superscript {
-            font-size: 16px;
+            font-size: 1.5vw;
             font-family: 'Inter', sans-serif;
             font-weight: 500;
-            margin-left: 4px;
+            margin-left: 16px;
+            margin-bottom: 2vw;
         }
         .intro {
             font-size: 22px;
@@ -149,15 +168,21 @@ $primary-light-color: #F9F9F9;
         display: flex;
         flex-direction: column;
         align-items: center;
+        transform: translateY(10vh);
+        transition: all 1s ease;
+        opacity: 0;
     }
     .card1 {
         background-color: #DB6861;
+        @include card-animation(0s);
     }
     .card2 {
         background-color: #CF476D;
+        @include card-animation(1s);
     }
     .card3 {
         background-color: #654276;
+        @include card-animation(2s);
     }
     .card-header {
         color: $primary-light-color;
@@ -196,6 +221,7 @@ $primary-light-color: #F9F9F9;
 }
 
 .speakers {
+    @include section-animation();
     .separator {
         width: 100%;
         padding: 8px 0 8px 0;

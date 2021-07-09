@@ -42,7 +42,7 @@ $primary-light-color: #F9F9F9;
         width: 400px;
         height: 100%;
         margin-left: auto;
-        margin-right: 50px;
+        margin-right: 100px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -93,6 +93,8 @@ $primary-light-color: #F9F9F9;
     .copyright {
         margin-top: 125px;
         color: $primary-light-color;
+        font-family: '72', sans-serif;
+        font-weight: 100;
         font-size: 16px;
     }
 }
@@ -193,7 +195,7 @@ $primary-light-color: #F9F9F9;
     .card-header {
         color: $primary-light-color;
         font-family: 'Inter', sans-serif;
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 500;
         margin-top: 25px;
     }

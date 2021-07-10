@@ -12,7 +12,7 @@ export class DesktopComponent implements OnInit {
   speakers: any[] = [];
   totalNumSpeaker: number = 0;
 
-  options = { threshold: 0.6 };
+  options = { threshold: 0.4 };
   
   @Input() conferenceTime: string = '';
   @Input() timezone: string = '';
@@ -41,17 +41,7 @@ export class DesktopComponent implements OnInit {
   navCheck(entries: any): void {
     entries.forEach((entry:any) => {
         if (entry.isIntersecting) {
-          const dateSection = document.querySelector('.date') as HTMLElement;
-          const speakerSection = document.querySelector('.speakers') as HTMLElement;
           const infoCards = document.querySelectorAll('.card');
-
-          // reset all sections
-          dateSection.classList.remove('active');
-          speakerSection.classList.remove('active');
-          infoCards.forEach((card) => {
-            (card as HTMLElement).classList.remove('active');
-          })
-
           const className = entry.target.className;
           if (className === 'date' || className === 'speakers') {
             const activeSection = document.querySelector(`.${className}`) as HTMLElement;

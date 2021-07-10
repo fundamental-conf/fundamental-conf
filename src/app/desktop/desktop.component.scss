@@ -2,20 +2,16 @@ $header-height: 77px;
 $primary-dark-color: #161616;
 $primary-light-color: #F9F9F9;
 
-@mixin section-animation {
-    opacity: 0;
-    transform: translateY(10vh);
-    transition: all 1s ease;
+@mixin page-animation($delay) {
     &.active {
-        opacity: 1;
-        transform: translateY(0);
+        animation: show-up 1s linear forwards;
+        animation-delay: $delay;
     }
 }
-@mixin card-animation($delay) {
-    &.active {
-        transform: translateY(0);
+@keyframes show-up {
+    to {
         opacity: 1;
-        transition-delay: $delay;
+        transform: translateY(0);
     }
 }
 
@@ -103,27 +99,68 @@ $primary-light-color: #F9F9F9;
     .block {
         height: $header-height;
     }
+    .block2 {
+        height: $header-height;
+        margin-bottom: 105px;
+    }
+    .footer-block {
+        height: 100px;
+    }
 }
 
 .date {
-    @include section-animation();
-    display: flex;
     height: calc(100vh - #{$header-height});
+    display: flex;
+    opacity: 0;
+    transform: translateY(10vh);
+    animation: show-up 1s linear forwards;
     .animation {
-        height: 100%;
         width: 60%;
         position: relative;
         img {
             position: absolute;
         }
+        .block1 {
+            height: 45w; width: 4vw; left: 11vw; top: 7.5vw;
+        }
+        .block2 {
+            height: 5vw; width: 5vw; left: 34vw; top: 4vw;
+        }
+        .block-c {
+            height: 37vw; width: 23vw; top: 8vw; right: 6vw; z-index: 5;
+        }
+        .block-card {
+            height: 25vw; width: 15vw; top: 20vw; left: 24vw; z-index: 10;
+        }
+        .block-f {
+            height: 30vw; width: 30vw; top: 3vw; left: 3vw;
+        }
+        .block-name {
+            height: 6vw; width: 25vw; top: 40vw; left: 5vw;
+        }
     }
     .schedule {
-        height: 100%;
         width: 40%;
-        padding: 113px 94px 105px 0;
-        .box {
-            border: 1px solid #A6A6A8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .date-time-box {
+            width: 31vw;
             margin-bottom: 36px;
+        }
+        .box {
+            width: 100%;
+            height: 18vh;
+            border: 1px solid #A6A6A8;
+            &:first-child {
+                margin-bottom: 36px;
+            }
+        }
+        .about-box {
+            width: 31vw;
+            // height: 30vh;
+            border: 1px solid #A6A6A8;
         }
         .label {
             height: 52px;
@@ -136,22 +173,21 @@ $primary-light-color: #F9F9F9;
             align-items: center;
         }
         .date-row {
-            display: flex;
-            align-items: flex-start;
-            padding-left: 27px;
-            height: 100px;
+            height: calc(100% - 52px);
             display: flex;
             align-items: center;
+            margin-left: 27px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+        .date-display {
+            font-size: 3.5vw;
         }
         .time-display {
-            font-family: 'Inter', sans-serif;
-            font-size: 4vw;
-            font-weight: 500;
+            font-size: 3.5vw;
         }
         .superscript {
             font-size: 1.5vw;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
             margin-left: 16px;
             margin-bottom: 2vw;
         }
@@ -162,6 +198,61 @@ $primary-light-color: #F9F9F9;
             letter-spacing: -1px;
             line-height: 27px;
             margin: 24px 20px 24px 20px;
+        }
+    }
+    @media screen and (max-width: 1250px) {
+        flex-direction: column;
+        align-items: center;
+        .animation {
+            width: 90%;
+            height: 60%;
+            min-height: 500px;
+            .block1 {
+                height: 45w; width: 4vw; left: 20vw; top: 7.5vw;
+            }
+            .block2 {
+                height: 5vw; width: 5vw; left: 50vw; top: 4vw;
+            }
+            .block-c {
+                height: 37vw; width: 23vw; top: 3vw; right: 20vw; z-index: 5;
+            }
+            .block-card {
+                height: 25vw; width: 15vw; top: 20vw; left: 38vw; z-index: 10;
+            }
+            .block-f {
+                height: 30vw; width: 30vw; top: 3vw; left: 15vw;
+            }
+            .block-name {
+                height: 6vw; width: 25vw; top: 35vw; left: 5vw;
+            }
+        }
+        .schedule {
+            width: 90%;
+            height: 40%;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            .date-time-box {
+                height: 30vh;
+                margin-bottom: 0px;
+            }
+            .box {
+                height: 14vh;
+                &:first-child {
+                    margin-bottom: 2vh;
+                }
+            }
+            .about-box {
+                height: 30vh;
+            }
+            .date-row {
+                height: calc(14vh - 52px);
+            }
+            .intro {
+                font-size: 1.5vw;
+                line-height: 20px;
+                margin: 24px 10px 24px 10px;
+            }
         }
     }
 }
@@ -177,20 +268,20 @@ $primary-light-color: #F9F9F9;
         flex-direction: column;
         align-items: center;
         transform: translateY(10vh);
-        transition: all 1s ease;
         opacity: 0;
+        
     }
     .card1 {
         background-color: #DB6861;
-        @include card-animation(0s);
+        @include page-animation(0s);
     }
     .card2 {
         background-color: #CF476D;
-        @include card-animation(1s);
+        @include page-animation(1s);
     }
     .card3 {
         background-color: #654276;
-        @include card-animation(2s);
+        @include page-animation(2s);
     }
     .card-header {
         color: $primary-light-color;
@@ -229,7 +320,10 @@ $primary-light-color: #F9F9F9;
 }
 
 .speakers {
-    @include section-animation();
+    max-height: calc(100vh - #{$header-height});
+    opacity: 0;
+    transform: translateY(10vh);
+    @include page-animation(0s);    
     .separator {
         width: 100%;
         padding: 8px 0 8px 0;
@@ -245,6 +339,7 @@ $primary-light-color: #F9F9F9;
     }
     .main {
         height: 50vw;
+        width: 100%;
         display: flex;
         border-bottom: 1px solid #A6A6A8;
     }
@@ -273,6 +368,10 @@ $primary-light-color: #F9F9F9;
             width: 29vw;
             height: 34vw;
             background-color: #C4C4C4;
+            img {
+                width: 29vw;
+                height: 34vw;
+            }
         }
         .intro {
             width: 42vw;
@@ -290,6 +389,7 @@ $primary-light-color: #F9F9F9;
             padding: 8px 0 0 12px;
             border: 1px solid #000000;
             border-radius: 10px;
+            position: absolute;
             margin-top: -22vw;
             margin-left: 27vw;
             z-index: 0;

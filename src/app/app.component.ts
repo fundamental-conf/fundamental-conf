@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  mobileThreshold: number = 800;
   showMobile: boolean = false;
 
   conferenceTime: string = '';
@@ -15,12 +16,12 @@ export class AppComponent implements OnInit {
   endTimeUTC: number = 18;
 
   ngOnInit(): void {
-    if (window.innerWidth <= 640) {
+    if (window.innerWidth <= this.mobileThreshold) {
       this.showMobile = true;
     }
     
     window.addEventListener('resize', () => {
-      if (window.innerWidth <= 640) {
+      if (window.innerWidth <= this.mobileThreshold) {
         this.showMobile = true;
       } else {
         this.showMobile = false;

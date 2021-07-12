@@ -98,10 +98,13 @@ $menu-transition-time: 1s;
         align-items: center;
         height: 44px;
         border: 1px solid $navbar-text-color;
-        padding: 0px 14px 0px 14px;
+        padding: 0 14px 0 14px;
         &.active {
             color: $primary-text-color;
             background-color: $navbar-text-color;
+        }
+        @media screen and (max-width: 1250px) {
+            padding: 0 10vw 0 10vw;
         }
     }
     .top {

@@ -12,7 +12,7 @@ export class DesktopComponent implements OnInit {
   speakers: any[] = [];
   totalNumSpeaker: number = 0;
 
-  options = { threshold: 0.4 };
+  options = { threshold: 0.2 };
   
   @Input() conferenceTime: string = '';
   @Input() timezone: string = '';

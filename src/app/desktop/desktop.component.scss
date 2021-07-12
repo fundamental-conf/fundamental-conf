@@ -200,34 +200,32 @@ $primary-light-color: #F9F9F9;
         }
     }
     @media screen and (max-width: 1250px) {
-        margin: 100px;
+        margin-bottom: 100px;
         flex-direction: column;
         align-items: center;
         .animation {
             width: 90%;
             height: 60%;
             min-height: 500px;
-            margin-left: 10vw;
             .block1 {
-                height: 5vw; width: 5vw; left: 10vw; top: 7.5vw;
+                height: 5vw; width: 5vw; left: 20%; top: 8%;
             }
             .block2 {
-                height: 5vw; width: 5vw; left: 40vw; top: 4vw;
+                height: 6vw; width: 6vw; left: 50%; top: 5%;
             }
             .block-c {
-                height: 37vw; width: 23vw; top: 5vw;  z-index: 5;
+                height: 40vw; width: 25vw; top: 5vw; left: 50%; z-index: 5;
                 min-height: 445px; min-width: 240px;
-                left: 50%;
             }
             .block-card {
                 height: 25vw; width: 15vw; top: 40%; left: 40%; z-index: 10;
             }
             .block-f {
-                height: 30vw; width: 30vw; top: 3vw; left: 5%;
+                height: 35vw; width: 35vw; top: 0%; left: 10%;
                 min-height: 345px; min-width: 330px;
             }
             .block-name {
-                height: 6vw; width: 25vw; top: 80%; left: 5vw;
+                height: 6vw; width: 25vw; top: 90%; left: 5vw;
                 min-height: 90px; min-width: 355px;
             }
         }
@@ -240,7 +238,7 @@ $primary-light-color: #F9F9F9;
             align-items: center;
             .date-time-box {
                 height: 30vh;
-                margin-bottom: 0px;
+                margin-bottom: 0;
             }
             .box {
                 height: 14vh;
@@ -390,7 +388,7 @@ $primary-light-color: #F9F9F9;
         }
         .intro-card {
             height: 89px;
-            width: 222px;
+            width: 15vw;
             padding: 8px 0 0 12px;
             border: 1px solid #000000;
             border-radius: 10px;

@@ -159,7 +159,6 @@ $primary-light-color: #F9F9F9;
         }
         .about-box {
             width: 31vw;
-            // height: 30vh;
             border: 1px solid #A6A6A8;
         }
         .label {
@@ -201,34 +200,41 @@ $primary-light-color: #F9F9F9;
         }
     }
     @media screen and (max-width: 1250px) {
+        margin: 100px;
         flex-direction: column;
         align-items: center;
         .animation {
             width: 90%;
             height: 60%;
             min-height: 500px;
+            margin-left: 10vw;
             .block1 {
-                height: 45w; width: 4vw; left: 20vw; top: 7.5vw;
+                height: 5vw; width: 5vw; left: 10vw; top: 7.5vw;
             }
             .block2 {
-                height: 5vw; width: 5vw; left: 50vw; top: 4vw;
+                height: 5vw; width: 5vw; left: 40vw; top: 4vw;
             }
             .block-c {
-                height: 37vw; width: 23vw; top: 3vw; right: 20vw; z-index: 5;
+                height: 37vw; width: 23vw; top: 5vw;  z-index: 5;
+                min-height: 445px; min-width: 240px;
+                left: 50%;
             }
             .block-card {
-                height: 25vw; width: 15vw; top: 20vw; left: 38vw; z-index: 10;
+                height: 25vw; width: 15vw; top: 40%; left: 40%; z-index: 10;
             }
             .block-f {
-                height: 30vw; width: 30vw; top: 3vw; left: 15vw;
+                height: 30vw; width: 30vw; top: 3vw; left: 5%;
+                min-height: 345px; min-width: 330px;
             }
             .block-name {
-                height: 6vw; width: 25vw; top: 35vw; left: 5vw;
+                height: 6vw; width: 25vw; top: 80%; left: 5vw;
+                min-height: 90px; min-width: 355px;
             }
         }
         .schedule {
             width: 90%;
             height: 40%;
+            margin-top: 100px;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
@@ -286,7 +292,7 @@ $primary-light-color: #F9F9F9;
     .card-header {
         color: $primary-light-color;
         font-family: 'Inter', sans-serif;
-        font-size: 22px;
+        font-size: 2vw;
         font-weight: 500;
         margin-top: 25px;
     }
@@ -320,7 +326,6 @@ $primary-light-color: #F9F9F9;
 }
 
 .speakers {
-    max-height: calc(100vh - #{$header-height});
     opacity: 0;
     transform: translateY(10vh);
     @include page-animation(0s);    
@@ -339,6 +344,7 @@ $primary-light-color: #F9F9F9;
     }
     .main {
         height: 50vw;
+        max-height: calc(100vh - #{$header-height} - 36px);
         width: 100%;
         display: flex;
         border-bottom: 1px solid #A6A6A8;
@@ -350,7 +356,7 @@ $primary-light-color: #F9F9F9;
     }
     .card {
         flex-shrink: 0;
-        height: 100%;
+        max-height: calc(100vh - #{$header-height} - 36px);
         width: 45vw;
         background-color: #F3F3F3;
         border-left: 1px solid #A6A6A8;
@@ -365,33 +371,32 @@ $primary-light-color: #F9F9F9;
             transform: translateX(39vw);
         }
         .photo {
-            width: 29vw;
-            height: 34vw;
-            background-color: #C4C4C4;
+            width: 69%;
+            height: 71%;
             img {
-                width: 29vw;
-                height: 34vw;
+                width: 100%;
+                height: 100%;
             }
         }
         .intro {
-            width: 42vw;
-            height: 12vw;
-            margin-top: 27px;
+            width: 100%;
+            height: 24%;
             padding: 16px 19px 16px 19px;
+            margin-top: 4%;
             font-family: 'Inter', sans-serif;
             font-size: 16px;
             background-color: #FCFCFC;
             overflow-y: scroll;
         }
         .intro-card {
-            height: 6vw;
-            width: 15vw;
+            height: 89px;
+            width: 222px;
             padding: 8px 0 0 12px;
             border: 1px solid #000000;
             border-radius: 10px;
             position: absolute;
             margin-top: -22vw;
-            margin-left: 27vw;
+            margin-left: 25vw;
             z-index: 0;
             font-family: 'Inter', sans-serif;
             .card-label {

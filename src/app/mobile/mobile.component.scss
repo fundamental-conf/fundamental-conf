@@ -11,7 +11,7 @@ $menu-transition-time: 1s;
     width: 100%;
     position: fixed;
     background-color: white;
-    z-index: 10;
+    z-index: 100;
 }
 
 .menu {
@@ -184,6 +184,8 @@ $menu-transition-time: 1s;
     }
     .card-header {
         height: 65px;
+        display: flex;
+        justify-content: center;
         color: $primary-text-color;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
@@ -422,6 +424,7 @@ $menu-transition-time: 1s;
 
 .block {
     height: calc(#{$navbar} + #{$fullsize-menu});
+    transition: all $menu-transition-time ease;
     &.half-size {
         height: calc(#{$navbar} + #{$halfsize-menu});
     }
@@ -465,6 +468,44 @@ $menu-transition-time: 1s;
     margin-bottom: 60px;
     img {
         position: absolute;
+    }
+    .block1 {
+        height: 7vw; width: 7vw; left: 15vw; top: 7.5vw;
+    }
+    .block2 {
+        height: 7vw; width: 7vw; left: 55vw; top: 4vw;
+    }
+    .block-c {
+        height: 90%; width: 35%; top: 8vw; right: 12%; z-index: 5;
+    }
+    .block-card {
+        height: 50%; width: 20%; top: 50%; left: 40%; z-index: 10;
+    }
+    .block-f {
+        height: 80%; width: 50%; top: 1vw; left: 3vw;
+    }
+    .block-name {
+        width: 40%; bottom: 0;
+    }
+    @media screen and (max-width: 640px) {
+        .block1 {
+            height: 37px; width: 33px; left: 59px; top: 35px;
+        }
+        .block2 {
+            height: 42px; width: 38px; left: 60%; top: 20px;
+        }
+        .block-c {
+            height: 295px; width: 185px; top: 20%; right: 0;
+        }
+        .block-card {
+            height: 192px; width: 119px; top: 144px; left: 135px;
+        }
+        .block-f {
+            height: 240px; width: 233px; top: 14px;
+        }
+        .block-name {
+            height: 50px; width: 193px; top: 80%; left: 0;
+        }
     }
 }
 

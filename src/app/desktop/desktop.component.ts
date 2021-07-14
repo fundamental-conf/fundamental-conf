@@ -26,7 +26,7 @@ export class DesktopComponent implements OnInit {
   }
   
   getImgSrc(name: string): string {
-    return "../../assets/speakers/" + name + ".jpeg";
+    return "../../assets/speakers/" + name + ".jpg";
   }
 
   initializeAnimation(): void {

@@ -123,6 +123,6 @@ export class MobileComponent implements OnInit {
   }
 
   getImgSrc(name: string): string {
-    return "../../assets/speakers/" + name + ".jpeg";
+    return "../../assets/speakers/mobile/" + name + ".jpg";
   }
 }

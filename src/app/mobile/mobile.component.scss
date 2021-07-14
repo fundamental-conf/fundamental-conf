@@ -251,7 +251,7 @@ $menu-transition-time: 1s;
     }
     .label {
         margin-left: 21px;
-        font-family: 'Overpass Mono', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 14px;
         font-weight: 400;
     }
@@ -287,7 +287,7 @@ $menu-transition-time: 1s;
         background-color: $primary-text-color;
         border-radius: 10px;
         margin-top: -29px;
-        margin-left: 22px;
+        margin-left: 16px;
         position: absolute;
         font-family: 'Inter', sans-serif;
         .label {
@@ -317,24 +317,19 @@ $menu-transition-time: 1s;
             opacity: 0.6;
         }
     }
-    .invite {
-        margin: 38px auto 38px auto;
-        width: 225px;
-        height: 36px;
-        padding: 15px;
-        border: 1px solid $navbar-text-color;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        a {
-            text-decoration: none;
-            color: $navbar-text-color;
-        }
-        .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: $navbar-text-color;
+    .agenda {
+        height: 100px;
+        text-align: center;
+        button {
+            width: 202px;
+            height: 46px;
+            border-radius: 23px;
+            margin-top: 20px;
+            margin-bottom: 39px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: $primary-text-color;
+            background-color: #DC6962;
         }
     }
 }
@@ -368,14 +363,11 @@ $menu-transition-time: 1s;
         transform: translateX(50px);
         .route-block {
             margin-left: 21px;
-            margin-bottom: 19px;
+            margin-bottom: 45px;
         }
         .label {
             font-size: 44px;
             color: $primary-text-color;
-            &:last-child {
-                opacity: 0.15;
-            }
         }
         a {
             color: #A6A6A8;
@@ -458,9 +450,9 @@ $menu-transition-time: 1s;
         padding: 0 84px 0 84px;
         display: flex;
         justify-content: space-around;
-        .social-media-icon {
-            width: 32px;
-            height: 32px;
+        img {
+            height: 63px;
+            width: 63px;
         }
     }
     .copyright {
@@ -474,6 +466,7 @@ $menu-transition-time: 1s;
     position: relative;
     height: 50vh;
     margin-bottom: 60px;
+    overflow: hidden;
     img {
         position: absolute;
     }
@@ -484,10 +477,7 @@ $menu-transition-time: 1s;
         height: 7vw; width: 7vw; left: 55vw; top: 4vw;
     }
     .block-c {
-        height: 90%; width: 35%; top: 8vw; right: 12%; z-index: 5;
-    }
-    .block-card {
-        height: 50%; width: 20%; top: 50%; left: 40%; z-index: 10;
+        height: 90%; width: 60%; top: 8vw; left: 45%; z-index: 5;
     }
     .block-f {
         height: 80%; width: 50%; top: 1vw; left: 3vw;
@@ -503,10 +493,7 @@ $menu-transition-time: 1s;
             height: 42px; width: 38px; left: 60%; top: 20px;
         }
         .block-c {
-            height: 295px; width: 185px; top: 20%; right: 0;
-        }
-        .block-card {
-            height: 192px; width: 119px; top: 144px; left: 135px;
+            height: 240px; width: 240px; top: 32%; left: 45%;
         }
         .block-f {
             height: 240px; width: 233px; top: 14px;

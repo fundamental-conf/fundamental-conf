@@ -35,7 +35,7 @@ $primary-light-color: #F9F9F9;
         margin-left: 13px;
     }
     .links {
-        width: 400px;
+        width: 280px;
         height: 100%;
         margin-left: auto;
         margin-right: 100px;
@@ -53,10 +53,7 @@ $primary-light-color: #F9F9F9;
             font-size: 12px;
             opacity: 0.6;
         }
-        .temp-top-label {
-            opacity: 0.3;
-        }
-        .temp-bottom-label {
+        .hidden-bottom-label {
             opacity: 0;
         }
     }
@@ -127,10 +124,7 @@ $primary-light-color: #F9F9F9;
             height: 5vw; width: 5vw; left: 34vw; top: 4vw;
         }
         .block-c {
-            height: 37vw; width: 23vw; top: 8vw; right: 6vw; z-index: 5;
-        }
-        .block-card {
-            height: 25vw; width: 15vw; top: 20vw; left: 24vw; z-index: 10;
+            height: 35vw; width: 35vw; top: 10vw; left: 30vw; z-index: 5;
         }
         .block-f {
             height: 30vw; width: 30vw; top: 3vw; left: 3vw;
@@ -214,11 +208,8 @@ $primary-light-color: #F9F9F9;
                 height: 6vw; width: 6vw; left: 50%; top: 5%;
             }
             .block-c {
-                height: 40vw; width: 25vw; top: 5vw; left: 50%; z-index: 5;
+                height: 40vw; width: 40vw; top: 5vw; left: 50%; z-index: 5;
                 min-height: 445px; min-width: 240px;
-            }
-            .block-card {
-                height: 25vw; width: 15vw; top: 40%; left: 40%; z-index: 10;
             }
             .block-f {
                 height: 35vw; width: 35vw; top: 0%; left: 10%;
@@ -290,8 +281,8 @@ $primary-light-color: #F9F9F9;
     .card-header {
         color: $primary-light-color;
         font-family: 'Inter', sans-serif;
-        font-size: 2vw;
-        font-weight: 500;
+        font-size: 1.5vw;
+        font-weight: bold;
         margin-top: 25px;
     }
     .card-image {
@@ -369,7 +360,7 @@ $primary-light-color: #F9F9F9;
             transform: translateX(39vw);
         }
         .photo {
-            width: 70%;
+            width: 50vh;
             height: 100%;
             img {
                 width: 100%;

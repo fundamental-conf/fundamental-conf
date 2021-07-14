@@ -4,7 +4,7 @@ $primary-light-color: #F9F9F9;
 
 @mixin page-animation($delay) {
     &.active {
-        animation: show-up 1s linear forwards;
+        animation: show-up 0.5s ease-in forwards;
         animation-delay: $delay;
     }
 }
@@ -113,7 +113,7 @@ $primary-light-color: #F9F9F9;
     display: flex;
     opacity: 0;
     transform: translateY(10vh);
-    animation: show-up 1s linear forwards;
+    @include page-animation(0s);
     .animation {
         width: 60%;
         position: relative;

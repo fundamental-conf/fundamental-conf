@@ -281,16 +281,22 @@ $menu-transition-time: 1s;
     }
     .intro-card {
         height: 89px;
-        width: 222px;
+        width: 286px;
         padding: 8px 0 0 12px;
         border: 1px solid #000000;
+        background-color: $primary-text-color;
         border-radius: 10px;
         margin-top: -29px;
         margin-left: 22px;
         position: absolute;
         font-family: 'Inter', sans-serif;
+        .label {
+            display: flex;
+            align-items: flex-end;
+            margin-left: 0;
+        }
         .id-label {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 400;
             opacity: 0.6;
         }
@@ -448,14 +454,13 @@ $menu-transition-time: 1s;
     }
     .social-media {
         width: 100%;
-        margin: 20px 50px 0px 50px;
+        margin-top: 5px;
+        padding: 0 84px 0 84px;
         display: flex;
         justify-content: space-around;
         .social-media-icon {
             width: 32px;
             height: 32px;
-            border-radius: 50%;
-            background-color: $primary-text-color;
         }
     }
     .copyright {

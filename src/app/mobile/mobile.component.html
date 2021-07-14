@@ -89,10 +89,12 @@
                         <img [src]='getImgSrc(speaker.name)' alt="speaker portrait">
                     </div>
                     <div class="intro-card">
-                        <span class="id-label">{{ speaker.id }}</span>
-                        <span class="count-label">/ {{ totalNumSpeaker }}</span><br>
-                        <span class="name">{{ speaker.name }}</span><br>
-                        <span class="speaker-title">{{ speaker.title }}</span>
+                        <div class="label">
+                            <div class="id-label">{{ speaker.id }}</div>
+                            <div class="count-label">/ {{ totalNumSpeaker }}</div>
+                        </div>
+                        <div class="name">{{ speaker.name }}</div>
+                        <div class="speaker-title">{{ speaker.title }}</div>
                     </div>
                 </div>
             </div>
@@ -106,10 +108,15 @@
     <div class="footer" #footer>
         <span class="contact">Contact Us</span>
         <div class="social-media">
-            <div class="social-media-icon"></div>
-            <div class="social-media-icon"></div>
-            <div class="social-media-icon"></div>
-            <div class="social-media-icon"></div>
+            <a href="https://twitter.com/fundamental_lib?lang=en" target="_blank">
+                <img src="../../assets/smicons_twitter.png" alt="Twitter logo">
+            </a>
+            <a href="https://www.linkedin.com/company/sap-graph/" target="_blank">
+                <img src="../../assets/smicons_linkedin.png" alt="LinkedIn logo">
+            </a>
+            <a href="https://www.youtube.com/channel/UCkq8zSSBngKze-rUypz0t2w" target="_blank">
+                <img src="../../assets/smicons_youtube.png" alt="YouTube logo">
+            </a>
         </div>
         <span class="copyright">© Copyright SAP 2021</span>
     </div>

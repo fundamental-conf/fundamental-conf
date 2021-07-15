@@ -1,10 +1,10 @@
+@use '../theme/theme.scss' as *;
+
 $fullsize-logo: 55px;
 $halfsize-logo: 32px;
 $fullsize-menu: 75px;
 $halfsize-menu: 50px;
 $navbar: 60px;
-$primary-text-color: #F9F9F9;
-$navbar-text-color: #161616;
 $menu-transition-time: 1s;
 
 .header {
@@ -35,14 +35,14 @@ $menu-transition-time: 1s;
     background-color: black;
     .line-top, .line-bottom {
         width: 18px;
-        border: 1px solid $primary-text-color;
+        border: 1px solid $primary-light-color;
     }
     .line-top {
         margin-bottom: 8px;
     }
     .line-forward, .line-backward {
         width: 18px;
-        border: 1px solid $primary-text-color;
+        border: 1px solid $primary-light-color;
     }
     .line-forward {
         transform: rotate(45deg);
@@ -66,10 +66,8 @@ $menu-transition-time: 1s;
 .title {
     position: absolute;
     left: 40px;
-    color: $primary-text-color;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
+    color: $primary-light-color;
+    @include inter-font(15px, 600);
     margin-left: 13px;
     opacity: 0;
     &.fly-in {
@@ -88,20 +86,18 @@ $menu-transition-time: 1s;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-family: 'Overpass Mono', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+    @include overpass-mono-font(16px);
     margin-bottom: 1px;
     .nav-box {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 44px;
-        border: 1px solid $navbar-text-color;
+        border: 1px solid $primary-dark-color;
         padding: 0 10vw 0 10vw;
         &.active {
-            color: $primary-text-color;
-            background-color: $navbar-text-color;
+            color: $primary-light-color;
+            background-color: $primary-dark-color;
         }
         @media screen and (max-width: 640px) {
             padding: 0 14px 0 14px;
@@ -114,11 +110,11 @@ $menu-transition-time: 1s;
             height: 9px;
             width: 9px;
             border-radius: 50%;
-            background-color: $navbar-text-color;
+            background-color: $primary-dark-color;
         }
         &.active {
             .dot {
-                background-color: $primary-text-color;
+                background-color: $primary-light-color;
             }
         }
     }
@@ -126,7 +122,7 @@ $menu-transition-time: 1s;
 
 #date {
     .separator {
-        border: 1px solid #A6A6A8;
+        border: 1px solid $border-color;
         margin-left: 14px;
         margin-right: 14px;
         &:not(:first-child) {
@@ -138,9 +134,7 @@ $menu-transition-time: 1s;
     }
     .label {
         margin-left: 21px;
-        font-family: 'Overpass Mono', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
+        @include overpass-mono-font(14px);
     }
     .date-row {
         display: flex;
@@ -148,21 +142,15 @@ $menu-transition-time: 1s;
         margin-top: 5px;
     }
     .time-display {
+        @include inter-font(44px, 500);
         margin-left: 21px;
-        font-family: 'Inter', sans-serif;
-        font-size: 44px;
-        font-weight: 500;
     }
     .superscript {
-        font-size: 16px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
+        @include inter-font(16px, 500);
         margin-left: 4px;
     }
     .intro {
-        font-size: 22px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
+        @include inter-font(22px, 500);
         margin: 5px 21px 0 21px;
         line-height: 27px;
     }
@@ -189,10 +177,8 @@ $menu-transition-time: 1s;
         height: 65px;
         display: flex;
         justify-content: center;
-        color: $primary-text-color;
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 500;
+        color: $primary-light-color;
+        @include inter-font(16px, 500);
         padding-left: 21px;
         padding-top: 25px;
         z-index: -1;
@@ -229,31 +215,26 @@ $menu-transition-time: 1s;
     }
     .dash-separator {
         width: 20px;
-        border: 1px solid $primary-text-color
+        border: 1px solid $primary-light-color
     }
     .image-label {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        color: $primary-text-color;
+        @include inter-font(16px);
+        color: $primary-light-color;
         margin-top: 10px;
     }
 }
 
 #speaker {
-    font-family: 'Inter', sans-serif;
     z-index: -1;
     .separator {
         width: 100%;
         padding: 6px 0 6px 0;
-        border-top: 1px solid #A6A6A8;
-        border-bottom: 1px solid #A6A6A8;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
     }
     .label {
+        @include overpass-mono-font(14px);
         margin-left: 21px;
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
     }
     .wheel {
         height: 420px;
@@ -284,35 +265,31 @@ $menu-transition-time: 1s;
         width: 286px;
         padding: 8px 0 0 12px;
         border: 1px solid #000000;
-        background-color: $primary-text-color;
+        background-color: $primary-light-color;
         border-radius: 10px;
         margin-top: -29px;
         margin-left: 16px;
         position: absolute;
-        font-family: 'Inter', sans-serif;
         .label {
             display: flex;
             align-items: flex-end;
             margin-left: 0;
         }
         .id-label {
-            font-size: 14px;
-            font-weight: 400;
+            @include inter-font(14px);
             opacity: 0.6;
         }
         .count-label {
-            font-size: 10px;
-            font-weight: 400;
+            @include inter-font(10px);
             margin-left: 4px;
             opacity: 0.6;
         }
         .name {
-            font-size: 22px;
-            font-weight: 500;
+            @include inter-font(22px, 500);
             margin-top: 7px;
         }
         .speaker-title {
-            font-size: 16px;
+            @include inter-font(16px);
             margin-top: 2px;
             opacity: 0.6;
         }
@@ -326,9 +303,8 @@ $menu-transition-time: 1s;
             border-radius: 23px;
             margin-top: 20px;
             margin-bottom: 39px;
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            color: $primary-text-color;
+            @include inter-font(18px);
+            color: $primary-light-color;
             background-color: #DC6962;
         }
     }
@@ -356,9 +332,7 @@ $menu-transition-time: 1s;
         height: 50%;
         margin-top: 15px;
         display: flex;
-        flex-direction: column; 
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
+        flex-direction: column;     
         opacity: 0;
         transform: translateX(50px);
         .route-block {
@@ -366,12 +340,12 @@ $menu-transition-time: 1s;
             margin-bottom: 45px;
         }
         .label {
-            font-size: 44px;
-            color: $primary-text-color;
+            @include inter-font(44px, 500);
+            color: $primary-light-color;
         }
         a {
-            color: #A6A6A8;
-            font-size: 22px;
+            color: $border-color;
+            @include inter-font(22px, 500);
             text-decoration: none;
             margin-top: 4px;
         }
@@ -382,7 +356,7 @@ $menu-transition-time: 1s;
     }
     .separator {
         margin: 0 19px 0 19px;
-        border: 1px solid #A6A6A8;
+        border: 1px solid $border-color;
         transform: translateX(50px);
         opacity: 0;
         &.slide-in {
@@ -393,23 +367,20 @@ $menu-transition-time: 1s;
     .find-us {
         display: flex;
         flex-direction: column;
-        color: $primary-text-color;
+        color: $primary-light-color;
         height: 50%;
         margin-left: 21px;
         margin-top: 10px;
         opacity: 0;
         transform: translateX(50px);
         span {
-            font-family: 'Overpass Mono', sans-serif;
-            font-size: 14px;
+            @include overpass-mono-font(14px);
             margin-bottom: 20px;
         }
         a {
-            font-family: 'Inter', sans-serif;
-            font-size: 5vh;
-            font-weight: 500;
+            @include inter-font(5vh, 500);
             text-decoration: none;
-            color: $primary-text-color;
+            color: $primary-light-color;
             margin-bottom: 16px;
             &:last-child {
                 padding-left: 45px;
@@ -433,15 +404,13 @@ $menu-transition-time: 1s;
 
 .footer {
     height: 160px;
-    background-color: $navbar-text-color;
-    color: $primary-text-color;
-    font-family: 'Inter', sans-serif;
+    background-color: $primary-dark-color;
+    color: $primary-light-color;
     display: flex;
     flex-direction: column;
     align-items: center;
     .contact {
-        font-weight: 500;
-        font-size: 16px;
+        @include inter-font(16px, 500);
         margin-top: 25px;
     }
     .social-media {

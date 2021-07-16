@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="agenda">
-                <button>View Agenda</button>
+                <button routerLink="/agenda">View Agenda</button>
             </div>
         </section>
     </div>
@@ -123,7 +123,7 @@
 <div class="side-menu" [ngClass]="{ 'show-side-menu': sideMenu, 'high-top': halfSize }">
     <div class="route" [ngClass]="{ 'slide-in': sideMenu }">
         <div class="route-block">
-            <span class="label">Agenda</span>
+            <span class="label" routerLink="/agenda">Agenda</span>
         </div>
         <div class="route-block">
             <span class="label">Volunteers</span><br>

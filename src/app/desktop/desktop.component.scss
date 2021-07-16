@@ -333,7 +333,7 @@ $header-height: 77px;
     .card {
         flex-shrink: 0;
         max-height: calc(100vh - #{$header-height} - 36px);
-        width: 45vw;
+        width: 40vw;
         background-color: #F3F3F3;
         border-left: 1px solid $border-color;
         border-right: 1px solid $border-color;
@@ -341,10 +341,10 @@ $header-height: 77px;
         z-index: 1;
         transition: all 1s ease;
         &:not(:first-child) {
-            margin-left: -39vw;
+            margin-left: -32.5vw;
         }
         &:not(:last-child):hover ~ .card {
-            transform: translateX(39vw);
+            transform: translateX(32.5vw);
         }
         .photo {
             width: 50vh;
@@ -356,7 +356,7 @@ $header-height: 77px;
         }
         .intro-card {
             height: fit-content;
-            width: 25vw;
+            width: 22vw;
             padding: 8px 0 10px 12px;
             border: 1px solid #000000;
             background-color: $primary-light-color;

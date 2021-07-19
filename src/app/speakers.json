@@ -1,0 +1,38 @@
+{
+    "speakers": [
+        {
+            "id": "01",
+            "name": "Cherihan Hassun",
+            "title": "International Ops and Communication Holder",
+            "intro": ""
+        },
+        {
+            "id": "02",
+            "name": "David Dunne",
+            "title": "University Professor",
+            "intro": ""
+        },
+        {
+            "id": "03",
+            "name": "Rajeev Jamaiyar",
+            "title": "Associate Architect",
+            "intro": ""
+        },
+        {
+            "id": "04",
+            "name": "Marius Obert",
+            "title": "Developer Advocate"
+        },
+        {
+            "id": "05",
+            "name": "Jens Steckhan",
+            "title": "Developer/Architect/Product Owner"
+        },
+        {
+            "id": "06",
+            "name": "Ramona Biscoveanu",
+            "title": "Developer",
+            "intro": ""
+        }
+    ]
+}

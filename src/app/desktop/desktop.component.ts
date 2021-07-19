@@ -32,6 +32,7 @@ export class DesktopComponent implements OnInit {
       this.totalNumSpeaker = this.speakers.length;
       this.initializeAnimation();
     }, (this.animationTime + 250));
+    
   }
   
   getImgSrc(name: string): string {

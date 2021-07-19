@@ -8,6 +8,9 @@ import * as data from '../speakers.json';
 })
 export class DesktopComponent implements OnInit {
 
+  playAnimation: boolean = true;
+  animationTime: number = 3900;
+
   speakerData: any = (data as any).default;
   speakers: any[] = [];
   totalNumSpeaker: number = 0;
@@ -20,9 +23,15 @@ export class DesktopComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.speakers = this.speakerData.speakers;
-    this.totalNumSpeaker = this.speakers.length;
-    this.initializeAnimation();
+    setTimeout(() => {
+      this.playAnimation = false;
+    }, this.animationTime);
+
+    setTimeout(() => {
+      this.speakers = this.speakerData.speakers;
+      this.totalNumSpeaker = this.speakers.length;
+      this.initializeAnimation();
+    }, (this.animationTime + 250));
   }
   
   getImgSrc(name: string): string {

@@ -1,4 +1,5 @@
-<div class="container">
+<app-mobile-animation *ngIf="playAnimation"></app-mobile-animation>
+<div *ngIf="!playAnimation" class="container">
     <div class="header">
         <img src="../../assets/FC_LOGO.png" alt="Logo">
         <span class="title">Fundamental<br>Conference</span>

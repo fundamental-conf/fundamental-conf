@@ -9,6 +9,9 @@ import * as data from '../speakers.json';
 })
 export class MobileComponent implements OnInit {
 
+  playAnimation: boolean = true;
+  animationTime: number = 3000;
+  
   sideMenu: boolean = false;
   halfSize: boolean = false;
   options = { threshold: 0.7 };
@@ -25,10 +28,16 @@ export class MobileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.adjustMenu();
-    this.speakers = this.speakerData.speakers;
-    this.totalNumSpeaker = this.speakers.length;
-    this.initializeNavbar();
+    setTimeout(() => {
+      this.playAnimation = false;
+    }, this.animationTime);
+    
+    setTimeout(() => {
+      this.adjustMenu();
+      this.speakers = this.speakerData.speakers;
+      this.totalNumSpeaker = this.speakers.length;
+      this.initializeNavbar();
+    }, this.animationTime);
   }
 
   toggleMenu(): void {

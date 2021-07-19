@@ -1,4 +1,5 @@
-<div class="container">
+<app-mobile-animation></app-mobile-animation>
+<div class="container" *ngIf="!playAnimation">
     <div class="header">
         <div class="menu" [ngClass]="{'half-size': halfSize}">
             <img class="logo" [ngClass]="{'half-size': halfSize}" src="../../assets/FC_LOGO.png" alt="logo">
@@ -120,7 +121,7 @@
     </div>
 </div>
 
-<div class="side-menu" [ngClass]="{ 'show-side-menu': sideMenu, 'high-top': halfSize }">
+<div *ngIf="!playAnimation" class="side-menu" [ngClass]="{ 'show-side-menu': sideMenu, 'high-top': halfSize }">
     <div class="route" [ngClass]="{ 'slide-in': sideMenu }">
         <div class="route-block">
             <span class="label" routerLink="/agenda">Agenda</span>

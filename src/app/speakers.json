@@ -9,7 +9,7 @@
         {
             "id": "02",
             "name": "David Dunne",
-            "title": "Professor",
+            "title": "University Professor",
             "intro": ""
         },
         {
@@ -30,26 +30,9 @@
         },
         {
             "id": "06",
-            "name": "Srdjan",
-            "title": "Developer"
-        },
-        {
-            "id": "07",
-            "name": "Dmitriy Shekhovtsov",
-            "title": "Front-end Dev",
-            "intro": ""
-        },
-        {
-            "id": "08",
-            "name": "Tobias Owejan",
-            "title": "Designer",
-            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia."
-        },
-        {
-            "id": "09",
             "name": "Ramona Biscoveaunu",
-            "title": "Designer",
-            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate congue sapien ac mattis. Aenean facilisis est eget augue auctor, at ultricies lectus sodales. Duis facilisis urna justo, ac posuere diam finibus eget. Quisque dolor lacus, semper nec euismod tempor, sagittis sit amet orci. Maecenas dignissim a eros non vulputate. Sed iaculis non eros eget lacinia."
+            "title": "Developer",
+            "intro": ""
         }
     ]
 }

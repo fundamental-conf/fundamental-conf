@@ -8,6 +8,7 @@ import { MobileComponent } from './mobile/mobile.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { HomeComponent } from './home/home.component';
+import { MobileAnimationComponent } from './mobile-animation/mobile-animation.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HomeComponent } from './home/home.component';
     MobileComponent,
     DesktopComponent,
     AgendaComponent,
-    HomeComponent
+    HomeComponent,
+    MobileAnimationComponent
   ],
   imports: [
     BrowserModule,

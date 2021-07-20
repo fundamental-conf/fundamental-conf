@@ -39,6 +39,12 @@
             "name": "Kalin Milanov",
             "title": "Design Expert",
             "intro": ""
+        },
+        {
+            "id": "08",
+            "name": "Dmitriy Shekhovtsov",
+            "title": "CEO/CTO, Valor Software",
+            "intro": ""
         }
     ]
 }

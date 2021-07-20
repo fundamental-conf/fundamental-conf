@@ -274,6 +274,7 @@ $header-height: 77px;
     .card-header {
         color: $primary-light-color;
         @include inter-font(1.5vw, 900);
+        letter-spacing: -1px;
         margin-top: 25px;
     }
     .card-image {

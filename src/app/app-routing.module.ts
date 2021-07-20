@@ -6,9 +6,7 @@ import { HomeComponent } from '../app/home/home.component';
 
 const routes: Routes = [
   { path: 'agenda', component: AgendaComponent },
-  { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', component: HomeComponent }
 ];
 
 @NgModule({

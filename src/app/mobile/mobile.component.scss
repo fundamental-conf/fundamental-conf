@@ -179,7 +179,6 @@ $menu-transition-time: 1s;
         justify-content: center;
         color: $primary-light-color;
         @include inter-font(16px, 500);
-        padding-left: 21px;
         padding-top: 25px;
         z-index: -1;
         position: sticky;
@@ -462,7 +461,7 @@ $menu-transition-time: 1s;
             height: 42px; width: 38px; left: 60%; top: 20px;
         }
         .block-c {
-            height: 240px; width: 240px; top: 32%; left: 45%;
+            height: 240px; width: 240px; top: 25%; left: 45%;
         }
         .block-f {
             height: 240px; width: 233px; top: 14px;

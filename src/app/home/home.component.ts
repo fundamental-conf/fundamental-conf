@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   conferenceTime: string = '';
   timezone: string = '';
   startTimeUTC: number = 14;
-  endTimeUTC: number = 18;
+  endTimeUTC: number = 20;
 
   constructor() { }
 

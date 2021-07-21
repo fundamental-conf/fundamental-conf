@@ -164,14 +164,33 @@ $header-height: 77px;
             display: flex;
             align-items: center;
         }
+        .time-box-label {
+            height: 52px;
+            padding: 0 20px 0 27px;
+            border-bottom: 1px solid $border-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .time-label {
+            @include overpass-mono-font(14px, 400);
+        }
+        .timezone-label {
+            @include inter-font(14px, 500);
+            color: $primary-dark-color;
+            opacity: 0.6;
+        }
         .date-row {
             height: calc(100% - 52px);
             display: flex;
             align-items: center;
             margin-left: 27px;
         }
-        .date-display, .time-display {
+        .date-display {
             @include inter-font(3.5vw, 500);
+        }
+        .time-display {
+            @include inter-font(3vw, 500);
         }
         .superscript {
             @include inter-font(1.5vw);
@@ -226,7 +245,7 @@ $header-height: 77px;
             }
             .box {
                 height: 14vh;
-                min-width: 270px;
+                min-width: 300px;
                 &:first-child {
                     margin-bottom: 36px;
                 }
@@ -234,7 +253,7 @@ $header-height: 77px;
             .about-box {
                 height: 30vh;
                 min-height: 340px;
-                min-width: 270px;
+                min-width: 300px;
             }
             .intro {
                 letter-spacing: 0;

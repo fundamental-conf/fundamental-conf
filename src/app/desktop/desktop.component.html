@@ -30,15 +30,17 @@
                     <div class="box">
                         <div class="label">DATE</div>
                         <div class="date-row">
-                            <span class="date-display">August 11</span>
+                            <span class="date-display">{{ conferenceDate }}</span>
                             <span class="superscript">2021</span>
                         </div>
                     </div>
                     <div class="box">
-                        <div class="label">TIME</div>
+                        <div class="time-box-label">
+                            <div class="time-label">TIME</div>
+                            <div class="timezone-label">{{ timezone }}</div>
+                        </div>
                         <div class="date-row">
                             <span class="time-display">{{ conferenceTime }}</span>
-                            <span class="superscript">{{ timezone }}</span>
                         </div>
                     </div>
                 </div>

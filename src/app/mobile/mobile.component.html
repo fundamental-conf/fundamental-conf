@@ -35,14 +35,16 @@
             <div class="separator"></div>
                 <span class="label">DATE</span><br>
                 <div class="date-row">
-                    <span class="time-display">August 11</span>
+                    <span class="date-display">{{ conferenceDate }}</span>
                     <span class="superscript">2021</span>
                 </div>
             <div class="separator"></div>
-                <span class="label">TIME</span><br>
+                <div class="time-row-label">
+                    <div class="time-label">TIME</div>
+                    <div class="timezone-label">{{ timezone }}</div>
+                </div>
                 <div class="date-row">
-                    <span class="time-display">{{ conferenceTime }}</span>
-                    <span class="superscript">{{ timezone }}</span>
+                    <span class="time-display" [ngClass]="{'fraction': timeFraction}">{{ conferenceTime }}</span>
                 </div>
             <div class="separator"></div>
                 <span class="label">ABOUT</span>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TimeLocaleService } from '../time-locale.service';
 import * as data from '../speakers.json';
 
 @Component({
@@ -16,11 +17,12 @@ export class DesktopComponent implements OnInit {
   totalNumSpeaker: number = 0;
 
   options = { threshold: 0.2 };
-  
-  @Input() conferenceTime: string = '';
-  @Input() timezone: string = '';
 
-  constructor() { }
+  conferenceDate: string = '';
+  conferenceTime: string = '';
+  timezone: string = '';
+
+  constructor(private timeLocalService: TimeLocaleService) { }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -33,6 +35,9 @@ export class DesktopComponent implements OnInit {
       this.initializeAnimation();
     }, (this.animationTime + 250));
     
+    this.conferenceDate = this.timeLocalService.getDateLabel();
+    this.conferenceTime = this.timeLocalService.getTimeLabel();
+    this.timezone = this.timeLocalService.getTimezoneLabel();
   }
   
   getImgSrc(name: string): string {

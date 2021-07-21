@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TimeLocaleService } from '../time-locale.service';
 import * as smoothScroll from 'smoothscroll-polyfill';
 import * as data from '../speakers.json';
 
@@ -20,10 +21,12 @@ export class MobileComponent implements OnInit {
   speakers: any[] = [];
   totalNumSpeaker: number = 0;
 
-  @Input() conferenceTime: string = '';
-  @Input() timezone: string = '';
+  conferenceDate: string = '';
+  conferenceTime: string = '';
+  timezone: string = '';
+  timeFraction: boolean = false;
 
-  constructor() {
+  constructor(private timeLocaleService: TimeLocaleService) {
     smoothScroll.polyfill();
   }
 
@@ -38,6 +41,11 @@ export class MobileComponent implements OnInit {
       this.totalNumSpeaker = this.speakers.length;
       this.initializeNavbar();
     }, this.animationTime);
+
+    this.conferenceDate = this.timeLocaleService.getDateLabel();
+    this.conferenceTime = this.timeLocaleService.getTimeLabel();
+    this.timezone = this.timeLocaleService.getTimezoneLabel();
+    this.timeFraction = this.timeLocaleService.isFraction();
   }
 
   toggleMenu(): void {

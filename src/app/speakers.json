@@ -45,6 +45,12 @@
             "name": "Dmitriy Shekhovtsov",
             "title": "CEO/CTO, Valor Software",
             "intro": ""
+        },
+        {
+            "id": "09",
+            "name": "Tobias Ouwejan",
+            "title": "Principle Architect",
+            "intro": ""
         }
     ]
 }

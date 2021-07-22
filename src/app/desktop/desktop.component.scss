@@ -361,10 +361,10 @@ $header-height: 77px;
         z-index: 1;
         transition: all 1s ease;
         &:not(:first-child) {
-            margin-left: -31.5vw;
+            margin-left: -32.5vw;
         }
         &:not(:last-child):hover ~ .card {
-            transform: translateX(31.5vw);
+            transform: translateX(32.5vw);
         }
         .photo {
             width: 50vh;

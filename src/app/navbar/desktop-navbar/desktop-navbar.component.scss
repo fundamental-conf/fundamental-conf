@@ -1,0 +1,20 @@
+@use '../../theme/theme.scss' as *;
+
+.header {
+    width: 100%;
+    height: $desktop-header-height;
+    background-color: #161616;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    img {
+        margin-left: 52px;
+    }
+    .title {
+        color: $primary-light-color;
+        @include inter-font(22px, 600);
+        margin-left: 13px;
+    }
+}

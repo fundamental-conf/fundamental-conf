@@ -1,6 +1,7 @@
 $primary-dark-color: #161616;
 $primary-light-color: #F9F9F9;
 $border-color: #A6A6A8;
+$desktop-header-height: 77px;
 
 @mixin inter-font($font-size, $font-weight: 400) {
     font-family: 'Inter', sans-serif;

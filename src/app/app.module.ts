@@ -4,11 +4,17 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MobileComponent } from './mobile/mobile.component';
-import { DesktopComponent } from './desktop/desktop.component';
-import { AgendaComponent } from './agenda/agenda.component';
-import { HomeComponent } from './home/home.component';
+import { MobileComponent } from './home-component/mobile/mobile.component';
+import { DesktopComponent } from './home-component/desktop/desktop.component';
+import { AgendaComponent } from './agenda-component/agenda/agenda.component';
+import { HomeComponent } from './home-component/home/home.component';
 import { MobileAnimationComponent } from './mobile-animation/mobile-animation.component';
+import { DesktopNavbarComponent } from './navbar/desktop-navbar/desktop-navbar.component';
+import { MobileNavbarComponent } from './navbar/mobile-navbar/mobile-navbar.component';
+import { DesktopAgendaComponent } from './agenda-component/desktop-agenda/desktop-agenda.component';
+import { MobileAgendaComponent } from './agenda-component/mobile-agenda/mobile-agenda.component';
+import { DesktopFooterComponent } from './footer-component/desktop-footer/desktop-footer.component';
+import { MobileFooterComponent } from './footer-component/mobile-footer/mobile-footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { MobileAnimationComponent } from './mobile-animation/mobile-animation.co
     DesktopComponent,
     AgendaComponent,
     HomeComponent,
-    MobileAnimationComponent
+    MobileAnimationComponent,
+    DesktopNavbarComponent,
+    MobileNavbarComponent,
+    DesktopAgendaComponent,
+    MobileAgendaComponent,
+    DesktopFooterComponent,
+    MobileFooterComponent
   ],
   imports: [
     BrowserModule,

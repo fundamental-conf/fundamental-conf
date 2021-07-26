@@ -52,10 +52,6 @@ export class MobileComponent implements OnInit {
     this.sideMenu = value;
   }
 
-  // toggleMenu(): void {
-  //   this.sideMenu = !this.sideMenu;
-  // }
-
   // shrink the menu bar when scroll down 
   // expand the menu bar when scroll back to top
   adjustMenu(): void {

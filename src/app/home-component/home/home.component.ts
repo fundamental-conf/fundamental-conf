@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private responsiveService: ResponsiveService) { }
 
   ngOnInit(): void {
+    this.showMobile = this.responsiveService.showMobile();
     this.responsiveService.showMobile$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(val => this.showMobile = val);

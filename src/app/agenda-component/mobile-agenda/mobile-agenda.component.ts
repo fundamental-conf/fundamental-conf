@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobileAgendaComponent implements OnInit {
 
+  sideMenu: boolean = false;
+  halfSize: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.adjustMenu();
   }
 
+  adjustMenu(): void {
+    window.addEventListener('scroll', () => {
+      if (!this.sideMenu) {
+        if (window.scrollY === 0) {
+          this.halfSize = false;
+        } else {
+          this.halfSize = true;
+        }
+      }
+    });
+  }
+
+  handleSideMenuToggle(value: boolean): void {
+    this.sideMenu = value;
+  }
 }

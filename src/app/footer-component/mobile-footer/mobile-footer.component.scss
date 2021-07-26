@@ -1,0 +1,30 @@
+@use '../../theme/theme.scss' as *;
+
+.footer {
+    height: 160px;
+    background-color: $primary-dark-color;
+    color: $primary-light-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contact {
+        @include inter-font(16px, 500);
+        margin-top: 25px;
+    }
+    .social-media {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0 84px 0 84px;
+        display: flex;
+        justify-content: space-around;
+        img {
+            height: 63px;
+            width: 63px;
+        }
+    }
+    .copyright {
+        font-size: 10px;
+        margin-top: auto;
+        margin-bottom: 19px;
+    }
+}

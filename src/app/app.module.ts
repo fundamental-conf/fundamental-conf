@@ -15,6 +15,7 @@ import { DesktopAgendaComponent } from './agenda-component/desktop-agenda/deskto
 import { MobileAgendaComponent } from './agenda-component/mobile-agenda/mobile-agenda.component';
 import { DesktopFooterComponent } from './footer-component/desktop-footer/desktop-footer.component';
 import { MobileFooterComponent } from './footer-component/mobile-footer/mobile-footer.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MobileFooterComponent } from './footer-component/mobile-footer/mobile-f
     DesktopAgendaComponent,
     MobileAgendaComponent,
     DesktopFooterComponent,
-    MobileFooterComponent
+    MobileFooterComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,

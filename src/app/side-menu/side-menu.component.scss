@@ -1,0 +1,97 @@
+@use '../theme/theme.scss' as *;
+
+$fullsize-menu: 75px;
+$halfsize-menu: 50px;
+$navbar: 60px;
+$menu-transition-time: 1s;
+
+.side-menu {
+    width: 100vw;
+    height: calc(100vh - #{$fullsize-menu});
+    background-color: black;
+    position: fixed;
+    top: 75px;
+    z-index: 100;
+    transform: translateX(100vw);
+    transition: all 0.5s cubic-bezier(0.6, 0.11, 1, 0.59);
+    display: flex;
+    flex-direction: column;
+    &.show-side-menu {
+        transform: translateX(0);
+    }
+    &.high-top {
+        top: $halfsize-menu;
+        height: calc(100vh - #{$halfsize-menu});
+    }
+    .route {
+        height: 50%;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;     
+        opacity: 0;
+        transform: translateX(50px);
+        .route-block {
+            margin-left: 21px;
+            margin-bottom: 45px;
+        }
+        .label {
+            @include inter-font(44px, 500);
+            color: $primary-light-color;
+        }
+        a {
+            color: $border-color;
+            @include inter-font(22px, 500);
+            text-decoration: none;
+            margin-top: 4px;
+        }
+        &.slide-in {
+            animation: slideIn 0.2s linear forwards;
+            animation-delay: $menu-transition-time;
+        }
+    }
+    .separator {
+        margin: 0 19px 0 19px;
+        border: 1px solid $border-color;
+        transform: translateX(50px);
+        opacity: 0;
+        &.slide-in {
+            animation: slideIn 0.2s linear forwards;
+            animation-delay: $menu-transition-time;
+        }
+    }
+    .find-us {
+        display: flex;
+        flex-direction: column;
+        color: $primary-light-color;
+        height: 50%;
+        margin-left: 21px;
+        margin-top: 10px;
+        opacity: 0;
+        transform: translateX(50px);
+        span {
+            @include overpass-mono-font(14px);
+            margin-bottom: 20px;
+        }
+        a {
+            @include inter-font(5vh, 500);
+            text-decoration: none;
+            color: $primary-light-color;
+            margin-bottom: 16px;
+            &:last-child {
+                padding-left: 45px;
+                text-indent: -45px;
+            }
+        }
+        &.slide-in {
+            animation: slideIn 0.2s linear forwards;
+            animation-delay: $menu-transition-time;
+        }
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,10 @@
+@use '../../theme/theme.scss' as *;
+
+::ng-deep .side-menu-label {
+    color: $primary-light-color;
+    @include inter-font(44px, 500);
+}
+
+.test {
+    height: 200vh;
+}

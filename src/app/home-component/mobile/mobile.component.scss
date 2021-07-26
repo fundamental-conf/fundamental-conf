@@ -1,85 +1,9 @@
 @use '../../theme/theme.scss' as *;
 
-$fullsize-logo: 55px;
-$halfsize-logo: 32px;
 $fullsize-menu: 75px;
 $halfsize-menu: 50px;
 $navbar: 60px;
 $menu-transition-time: 1s;
-
-.header {
-    width: 100%;
-    position: fixed;
-    background-color: white;
-    z-index: 100;
-}
-
-.menu {
-    height: $fullsize-menu;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    transition: all $menu-transition-time ease;
-    &.half-size {
-        height: $halfsize-menu;
-    }
-}
-
-.menu-button {
-    border: none;
-    outline: none;
-    height: 32px;
-    width: 32px;
-    position: absolute;
-    right: 20px;
-    background-color: black;
-    .line-top, .line-bottom {
-        width: 18px;
-        border: 1px solid $primary-light-color;
-    }
-    .line-top {
-        margin-bottom: 8px;
-    }
-    .line-forward, .line-backward {
-        width: 18px;
-        border: 1px solid $primary-light-color;
-    }
-    .line-forward {
-        transform: rotate(45deg);
-        margin-bottom: -2px;
-    }
-    .line-backward {
-        transform: rotate(-45deg);
-    }
-}
-
-.logo {
-    height: $fullsize-logo;
-    margin-left: calc(50% - #{$fullsize-logo} * 0.5);
-    transition: all $menu-transition-time ease;
-    &.half-size {
-        height: $halfsize-logo;
-        margin-left: 10px;
-    }
-}
-
-.title {
-    position: absolute;
-    left: 40px;
-    color: $primary-light-color;
-    @include inter-font(15px, 600);
-    margin-left: 13px;
-    opacity: 0;
-    &.fly-in {
-        opacity: 1;
-        transition: all 0.2s $menu-transition-time ease;
-    }
-    &.fade-out {
-        transform: translateX(100px);
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
-}
 
 .navbar {
     height: $navbar;
@@ -331,88 +255,9 @@ $menu-transition-time: 1s;
     }
 }
 
-.side-menu {
-    width: 100vw;
-    height: calc(100vh - #{$fullsize-menu});
-    background-color: black;
-    position: fixed;
-    top: 75px;
-    z-index: 100;
-    transform: translateX(100vw);
-    transition: all 0.5s cubic-bezier(0.6, 0.11, 1, 0.59);
-    display: flex;
-    flex-direction: column;
-    &.show-side-menu {
-        transform: translateX(0);
-    }
-    &.high-top {
-        top: $halfsize-menu;
-        height: calc(100vh - #{$halfsize-menu});
-    }
-    .route {
-        height: 50%;
-        margin-top: 15px;
-        display: flex;
-        flex-direction: column;     
-        opacity: 0;
-        transform: translateX(50px);
-        .route-block {
-            margin-left: 21px;
-            margin-bottom: 45px;
-        }
-        .label {
-            @include inter-font(44px, 500);
-            color: $primary-light-color;
-        }
-        a {
-            color: $border-color;
-            @include inter-font(22px, 500);
-            text-decoration: none;
-            margin-top: 4px;
-        }
-        &.slide-in {
-            animation: slideIn 0.2s linear forwards;
-            animation-delay: $menu-transition-time;
-        }
-    }
-    .separator {
-        margin: 0 19px 0 19px;
-        border: 1px solid $border-color;
-        transform: translateX(50px);
-        opacity: 0;
-        &.slide-in {
-            animation: slideIn 0.2s linear forwards;
-            animation-delay: $menu-transition-time;
-        }
-    }
-    .find-us {
-        display: flex;
-        flex-direction: column;
-        color: $primary-light-color;
-        height: 50%;
-        margin-left: 21px;
-        margin-top: 10px;
-        opacity: 0;
-        transform: translateX(50px);
-        span {
-            @include overpass-mono-font(14px);
-            margin-bottom: 20px;
-        }
-        a {
-            @include inter-font(5vh, 500);
-            text-decoration: none;
-            color: $primary-light-color;
-            margin-bottom: 16px;
-            &:last-child {
-                padding-left: 45px;
-                text-indent: -45px;
-            }
-        }
-        &.slide-in {
-            animation: slideIn 0.2s linear forwards;
-            animation-delay: $menu-transition-time;
-        }
-    }
+::ng-deep .side-menu-label {
+    color: $primary-light-color;
+    @include inter-font(44px, 500);
 }
 
 .block {
@@ -420,35 +265,6 @@ $menu-transition-time: 1s;
     transition: all $menu-transition-time ease;
     &.half-size {
         height: calc(#{$navbar} + #{$halfsize-menu});
-    }
-}
-
-.footer {
-    height: 160px;
-    background-color: $primary-dark-color;
-    color: $primary-light-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .contact {
-        @include inter-font(16px, 500);
-        margin-top: 25px;
-    }
-    .social-media {
-        width: 100%;
-        margin-top: 5px;
-        padding: 0 84px 0 84px;
-        display: flex;
-        justify-content: space-around;
-        img {
-            height: 63px;
-            width: 63px;
-        }
-    }
-    .copyright {
-        font-size: 10px;
-        margin-top: auto;
-        margin-bottom: 19px;
     }
 }
 
@@ -494,12 +310,6 @@ $menu-transition-time: 1s;
     }
 }
 
-@keyframes slideIn {
-    to {
-        transform: translateX(0vw);
-        opacity: 1;
-    }
-}
 @keyframes rotating {
     from{
         transform: rotate(0deg);

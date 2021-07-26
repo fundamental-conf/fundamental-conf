@@ -1,1 +1,9 @@
-<p>mobile-agenda works!</p>
+<app-mobile-navbar (sideMenuToggled)="handleSideMenuToggle($event)"></app-mobile-navbar>
+<div class="test"></div>
+<app-mobile-footer></app-mobile-footer>
+
+<app-side-menu 
+    [sideMenu]="sideMenu"
+    [halfSize]="halfSize">
+    <span class="side-menu-label" routerLink="/">Home</span>
+</app-side-menu>

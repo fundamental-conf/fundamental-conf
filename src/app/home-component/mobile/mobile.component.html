@@ -1,27 +1,13 @@
 <app-mobile-animation></app-mobile-animation>
 <div class="container" *ngIf="!playAnimation">
-    <div class="header">
-        <div class="menu" [ngClass]="{'half-size': halfSize}">
-            <img class="logo" [ngClass]="{'half-size': halfSize}" src="../../assets/FC_LOGO.png" alt="logo">
-            <span class="title" [ngClass]="{'fly-in': halfSize, 'fade-out': !halfSize}">Fundamental<br>Conference</span>
-            <button class="menu-button" (click)="toggleMenu()">
-                <div *ngIf="!sideMenu" class="open-button">
-                    <div class="line-top"></div>
-                    <div class="line-bottom"></div>
-                </div>
-                <div *ngIf="sideMenu" class="close-button">
-                    <div class="line-forward"></div>
-                    <div class="line-backward"></div>
-                </div>
-            </button>
-        </div>
+    <app-mobile-navbar (sideMenuToggled)="handleSideMenuToggle($event)">
         <div class="navbar">
             <div class="nav-box top" data-page="animation" (click)="scroll(animation)"><div class="dot"></div></div>
             <div class="nav-box" data-page="date" (click)="scroll(date)">DATE/TIME</div>
             <div class="nav-box" data-page="info" (click)="scroll(info)">INFO</div>
             <div class="nav-box" data-page="speaker" (click)="scroll(speaker)">SPEAKER</div>
         </div>
-    </div>
+    </app-mobile-navbar>
     <div class="content">
         <div class="block" [ngClass]="{'half-size': halfSize}"></div>
         <section id="animation" #animation>
@@ -105,40 +91,12 @@
             </div>
         </section>
     </div>
-    <div class="footer" #footer>
-        <span class="contact">Contact Us</span>
-        <div class="social-media">
-            <a href="https://twitter.com/fundamental_lib?lang=en" target="_blank">
-                <img src="../../assets/smicons_twitter.png" alt="Twitter logo">
-            </a>
-            <a href="https://www.linkedin.com/company/sap-graph/" target="_blank">
-                <img src="../../assets/smicons_linkedin.png" alt="LinkedIn logo">
-            </a>
-            <a href="https://www.youtube.com/channel/UCkq8zSSBngKze-rUypz0t2w" target="_blank">
-                <img src="../../assets/smicons_youtube.png" alt="YouTube logo">
-            </a>
-        </div>
-        <span class="copyright">© Copyright SAP 2021</span>
-    </div>
+    <app-mobile-footer></app-mobile-footer>
 </div>
 
-<div *ngIf="!playAnimation" class="side-menu" [ngClass]="{ 'show-side-menu': sideMenu, 'high-top': halfSize }">
-    <div class="route" [ngClass]="{ 'slide-in': sideMenu }">
-        <div class="route-block">
-            <span class="label" routerLink="/agenda">Agenda</span>
-        </div>
-        <div class="route-block">
-            <span class="label">Volunteers</span><br>
-            <a href="https://forms.gle/QDUBq8eLE8a6gjre7" target="_blank">Apply to be a volunteer</a>
-        </div>
-    </div>
-    <div class="separator" [ngClass]="{ 'slide-in': sideMenu }"></div>
-    <div class="find-us" [ngClass]="{ 'slide-in': sideMenu }">
-        <span>FIND US</span>
-        <a href="https://www.linkedin.com/company/sap-graph/" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com/fundamental_lib?lang=en" target="_blank">Twitter</a>
-        <a href="https://www.youtube.com/channel/UCkq8zSSBngKze-rUypz0t2w" target="_blank">YouTube</a>
-        <a href="https://community.sap.com/topics/fundamental-library" target="_blank">SAP Community</a>
-        <a href="https://sap.github.io/fundamental/" target="_blank">Fundamental Library</a>
-    </div>
-</div>
+<app-side-menu
+    *ngIf="!playAnimation"
+    [sideMenu]="sideMenu"
+    [halfSize]="halfSize">
+    <span class="side-menu-label" routerLink="/agenda">Agenda</span>
+</app-side-menu>

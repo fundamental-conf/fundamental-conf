@@ -1,0 +1,20 @@
+<div class="side-menu" [ngClass]="{ 'show-side-menu': sideMenu, 'high-top': halfSize }">
+    <div class="route" [ngClass]="{ 'slide-in': sideMenu }">
+        <div class="route-block">
+            <ng-content select="span"></ng-content>
+        </div>
+        <div class="route-block">
+            <span class="label">Volunteers</span><br>
+            <a href="https://forms.gle/QDUBq8eLE8a6gjre7" target="_blank">Apply to be a volunteer</a>
+        </div>
+    </div>
+    <div class="separator" [ngClass]="{ 'slide-in': sideMenu }"></div>
+    <div class="find-us" [ngClass]="{ 'slide-in': sideMenu }">
+        <span>FIND US</span>
+        <a href="https://www.linkedin.com/company/sap-graph/" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/fundamental_lib?lang=en" target="_blank">Twitter</a>
+        <a href="https://www.youtube.com/channel/UCkq8zSSBngKze-rUypz0t2w" target="_blank">YouTube</a>
+        <a href="https://community.sap.com/topics/fundamental-library" target="_blank">SAP Community</a>
+        <a href="https://sap.github.io/fundamental/" target="_blank">Fundamental Library</a>
+    </div>
+</div>

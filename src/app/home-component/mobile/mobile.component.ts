@@ -48,9 +48,13 @@ export class MobileComponent implements OnInit {
     this.timeFraction = this.timeLocaleService.isFraction();
   }
 
-  toggleMenu(): void {
-    this.sideMenu = !this.sideMenu;
+  handleSideMenuToggle(value: boolean): void {
+    this.sideMenu = value;
   }
+
+  // toggleMenu(): void {
+  //   this.sideMenu = !this.sideMenu;
+  // }
 
   // shrink the menu bar when scroll down 
   // expand the menu bar when scroll back to top

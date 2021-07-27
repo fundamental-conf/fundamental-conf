@@ -1,0 +1,80 @@
+@use '../../theme/theme.scss' as *;
+
+$agenda-header-title-height: 140px;
+$agenda-date-info-height: 40px;
+
+.agenda-container {
+    margin-top: $desktop-header-height;
+}
+
+.agenda-date-info {
+    height: $agenda-date-info-height;
+    background-color: $primary-light-color;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    display: flex;
+    position: sticky;
+    top: $desktop-header-height;
+    z-index: 10;
+    .agenda-date-info-blank {
+        width: 40%;
+    }
+    .agenda-date-info-block {
+        color: $primary-dark-color;
+        @include inter-font(24px, 500);
+        padding: 0 34px 0 34px;
+        letter-spacing: -1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px solid #000000;
+        &:last-child {
+            border-right: 2px solid #000000;
+        }
+    }
+}
+
+.agenda-content {
+    background-color: $primary-light-color;
+    height: 200vh;
+}
+
+.time-zone {
+    height: 56px;
+    color: #A6A6A8;
+    @include inter-font(18px);
+    border-bottom: 0.75px solid rgba(0, 0, 0, 0.5);
+    padding-left: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.session {
+    .session-preview {
+        padding-left: 160px;
+        border-bottom: 0.75px solid rgba(0, 0, 0, 0.5);
+        display: flex;
+
+        .session-time {
+            @include inter-font(18px, 600);
+            margin-top: 16px;
+            min-width: 50px;
+        }
+        .session-speaker {
+            @include inter-font(18px, 400);
+            white-space: nowrap;
+            margin-top: 16px;
+            margin-left: 90px;
+            min-width: 180px;
+            opacity: 0.6;
+        }
+        .session-title {
+            @include inter-font(52px);
+            margin: 10px 0 12px 150px;
+            letter-spacing: -1.5px;
+            display: flex;
+            align-items: center;
+            min-width: 700px;
+        }
+    }
+}

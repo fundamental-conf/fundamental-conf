@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import * as data from '../app/sessions.json';
+import { TimeStamp } from '../app/timestamp';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +11,36 @@ export class TimeLocaleService {
   startTimeUTC: number = 14;
   endTimeUTC: number = 20;
   fraction: boolean = false;
+  UTCStart = new Date(Date.UTC(2021, 7, 11, 14, 0, 0));
+
+  sessionData: any = (data as any).default;
+  sessions: any[] = [];
 
   constructor() { 
     this.offset = new Date().getTimezoneOffset();
+    this.sessions = this.sessionData.sessions;
+  }
+
+  getSessionUTCStartTime(): Date[] {
+    // UTC start time of each session
+    let res: Date[] = [];
+    this.sessions.forEach(session => {
+      const startTime = new Date(Date.UTC(2021, 7, 11, session.UTCHour, session.UTCMinute, 0));
+      res.push(startTime);
+    });
+    return res;
+  }
+
+  getSessionLocalStartTime(): TimeStamp[] {
+    // Local start time of each session
+    let res: TimeStamp[] = [];
+    const UTCTimes = this.getSessionUTCStartTime();
+    UTCTimes.forEach((UTCTime) => {
+      const localHour = UTCTime.getHours();
+      const localMinute = UTCTime.getMinutes();
+      res.push({hour: localHour, minute: localMinute});
+    });
+    return res;
   }
 
   getDateLabel(): string {

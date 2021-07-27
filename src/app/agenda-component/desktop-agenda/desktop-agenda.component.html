@@ -1,2 +1,28 @@
 <app-desktop-navbar></app-desktop-navbar>
+<div class="agenda-container">
+    <div class="agenda-date-info">
+        <div class="agenda-date-info-blank"></div>
+        <div class="agenda-date-info-block">Wednesday</div>
+        <div class="agenda-date-info-block">2021</div>
+        <div class="agenda-date-info-block">August</div>
+        <div class="agenda-date-info-block">08.11.</div>
+    </div>
+    <div class="agenda-content">
+        <div class="time-zone">
+            {{ timezoneLabel }}
+        </div>
+        <div class="agenda-content-topics">
+            <div class="session" *ngFor="let session of sessions; let i = index;">
+                <div class="session-preview">
+                    <div class="session-time">{{ getTimeLabel(i) }}</div>
+                    <div class="session-speaker">{{ session.name }}</div>
+                    <div class="session-title">{{ session.topic }}</div>
+                </div>
+                <div class="session-detail">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <app-desktop-footer></app-desktop-footer>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TimeLocaleService } from '../../time-locale.service';
 import * as data from '../../speakers.json';
 

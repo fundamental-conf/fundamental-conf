@@ -13,13 +13,20 @@
         </div>
         <div class="agenda-content-topics">
             <div class="session" *ngFor="let session of sessions; let i = index;">
-                <div class="session-preview">
-                    <div class="session-time">{{ getTimeLabel(i) }}</div>
+                <div class="session-info" [ngClass]="{'minor-session': session.minorSession}">
+                    <div class="session-time" [ngClass]="{'minor-session': session.minorSession}">{{ getTimeLabel(i) }}</div>
                     <div class="session-speaker">{{ session.name }}</div>
-                    <div class="session-title">{{ session.topic }}</div>
-                </div>
-                <div class="session-detail">
-
+                    <div class="session-detail">
+                        <div class="session-title" [ngClass]="{'minor-session': session.minorSession}" (click)="toggleSession(i)">{{ session.topic }}</div>
+                        <div class="control-button" (click)="toggleSession(i)">
+                            <img src="../../../assets/arrow.png" alt="control button arrow icon">
+                        </div>
+                        <div class="session-preview">{{ session.description }}</div>
+                        <div class="speaker-info">
+                            <div class="avatar"><img [src]="getImgSrc(session.name)" alt="speaker avatar"></div>
+                            <div class="bio">{{ session.bio }}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

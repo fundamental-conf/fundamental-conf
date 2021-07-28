@@ -3,12 +3,15 @@
         {
             "name": "Karinne Legare",
             "topic": "Opening Remarks",
+            "description": "Conference Kickoff",
             "UTCHour": 14,
             "UTCMinute": 0
         },
         {
             "name": "Mladen Droshev",
             "topic": "Fundamental Library",
+            "bio": "Deno is the Product Owner/Architect at the Fundamental Library team",
+            "description": "An overview of what Fundamental Library is: an open-source library that is committed to providing consistent and flexible user experiences and front-end components across web applications. A brief introduction on how it started and what we continue to deliver.",
             "UTCHour": 14,
             "UTCMinute": 15
         },
@@ -43,7 +46,8 @@
             "name": "",
             "topic": "Intermission | Meet our Speakers | Q&A",
             "UTCHour": 16,
-            "UTCMinute": 0
+            "UTCMinute": 0,
+            "minorSession": true
         },
         {
             "name": "Marius Obert",
@@ -94,7 +98,7 @@
             "name": "Tobias Ouwejan",
             "title": "Principle Architect",
             "bio": "Tobias Ouwejan is the founder of Spartacus, the JS storefront for SAP Commerce Cloud. He recently changed jobs, and is now working as a principle frontend architect for Spryker, a leading software vendor for the enterprise ecommerce market. Tobias started building for the web in '97 and he's excited about the web ever since. He lies to inspire you with his vision for the frontend tech stack in 2021.",
-            "topic": "",
+            "topic": "TBD",
             "description": "",
             "UTCHour": 19,
             "UTCMinute": 0
@@ -103,7 +107,8 @@
             "name": "",
             "topic": "Closing Remark | Networking",
             "UTCHour": 19,
-            "UTCMinute": 30
+            "UTCMinute": 30,
+            "minorSession": true
         }
     ]
 }

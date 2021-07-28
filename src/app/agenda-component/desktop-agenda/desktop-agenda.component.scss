@@ -5,6 +5,7 @@ $agenda-date-info-height: 40px;
 
 .agenda-container {
     margin-top: $desktop-header-height;
+    margin-bottom: 114px;
 }
 
 .agenda-date-info {
@@ -21,7 +22,7 @@ $agenda-date-info-height: 40px;
     }
     .agenda-date-info-block {
         color: $primary-dark-color;
-        @include inter-font(24px, 500);
+        @include inter-font(22px, 500);
         padding: 0 34px 0 34px;
         letter-spacing: -1px;
         display: flex;
@@ -36,7 +37,6 @@ $agenda-date-info-height: 40px;
 
 .agenda-content {
     background-color: $primary-light-color;
-    height: 200vh;
 }
 
 .time-zone {
@@ -50,15 +50,29 @@ $agenda-date-info-height: 40px;
 }
 
 .session {
-    .session-preview {
+    position: relative;
+    cursor: default;
+    &.session-highlighted {
+        border-top: 3px solid $primary-dark-color;
+        border-bottom: 3px solid $primary-dark-color;
+    }
+    .session-info {
         padding-left: 160px;
+        min-height: 50px;
         border-bottom: 0.75px solid rgba(0, 0, 0, 0.5);
         display: flex;
-
+        &.minor-session {
+            align-items: center;
+        }
         .session-time {
             @include inter-font(18px, 600);
             margin-top: 16px;
             min-width: 50px;
+            &.minor-session {
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+            }
         }
         .session-speaker {
             @include inter-font(18px, 400);
@@ -67,14 +81,84 @@ $agenda-date-info-height: 40px;
             margin-left: 90px;
             min-width: 180px;
             opacity: 0.6;
-        }
+        }    
+    }
+    
+    .session-detail {
         .session-title {
-            @include inter-font(52px);
-            margin: 10px 0 12px 150px;
-            letter-spacing: -1.5px;
+            @include inter-font(42px);
+            margin: 10px 100px 12px 150px;
+            letter-spacing: -1px;
+            cursor: pointer;
             display: flex;
             align-items: center;
-            min-width: 700px;
+            &.minor-session {
+                @include inter-font(18px, 400);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+        .session-preview {
+            @include inter-font(16px);
+            color: $primary-dark-color;
+            max-height: 0;
+            max-width: 764px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-left: 150px;
+            margin-right: 130px;
+            line-height: 20px;
+            opacity: 0.6;
+            transition: all 0.3s ease-in-out;
+            &.preview-revealed, &.fully-expanded {
+                max-height: 500px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-bottom: 5px;
+            }
+        }
+        .speaker-info {
+            display: flex;
+            margin-left: 150px;
+            margin-right: 130px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            &.info-expanded {
+                max-height: 1000px;
+                padding-bottom: 5px;
+                padding-top: 18px;
+                margin-bottom: 22px;
+                border-top: 0.5px solid rgba(0, 0, 0, 0.25);
+            }
+            .avatar {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+                margin-right: 20px;
+            }
+            .bio {
+                color: $primary-dark-color;
+                @include inter-font(16px);
+                opacity: 0.6;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .control-button {
+        position: absolute;
+        top: 25px;
+        right: 50px;
+        opacity: 0;
+        cursor: pointer;
+        transition: all 0.3s 0.2s ease-in-out;
+        &.button-revealed {
+            opacity: 1;
+        }
+        &.close-button {
+            transform: rotate(180deg);
         }
     }
 }

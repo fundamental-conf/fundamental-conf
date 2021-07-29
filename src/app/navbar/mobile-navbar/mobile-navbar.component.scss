@@ -4,7 +4,6 @@ $fullsize-logo: 55px;
 $halfsize-logo: 32px;
 $fullsize-menu: 75px;
 $halfsize-menu: 50px;
-$menu-transition-time: 1s;
 
 .header {
     width: 100%;
@@ -18,7 +17,7 @@ $menu-transition-time: 1s;
     background-color: black;
     display: flex;
     align-items: center;
-    transition: all $menu-transition-time ease;
+    transition: all $side-menu-transition-time ease;
     &.half-size {
         height: $halfsize-menu;
     }
@@ -55,7 +54,7 @@ $menu-transition-time: 1s;
 .logo {
     height: $fullsize-logo;
     margin-left: calc(50% - #{$fullsize-logo} * 0.5);
-    transition: all $menu-transition-time ease;
+    transition: all $side-menu-transition-time ease;
     &.half-size {
         height: $halfsize-logo;
         margin-left: 10px;
@@ -71,7 +70,7 @@ $menu-transition-time: 1s;
     opacity: 0;
     &.fly-in {
         opacity: 1;
-        transition: all 0.2s $menu-transition-time ease;
+        transition: all 0.2s $side-menu-transition-time ease;
     }
     &.fade-out {
         transform: translateX(100px);

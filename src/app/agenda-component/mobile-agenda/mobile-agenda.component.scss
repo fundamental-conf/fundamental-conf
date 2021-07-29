@@ -2,7 +2,6 @@
 
 $fullsize-menu: 75px;
 $halfsize-menu: 50px;
-$menu-transition-time: 1s;
 
 .date-banner {
     height: 50px;
@@ -12,7 +11,7 @@ $menu-transition-time: 1s;
     border-top: 2px solid #000000;
     border-bottom: 2px solid #000000;
     background-color: $primary-light-color;
-    transition: all $menu-transition-time ease;
+    transition: all $side-menu-transition-time ease;
     z-index: 10;
     &.half-size {
         top: $halfsize-menu;
@@ -139,7 +138,7 @@ $menu-transition-time: 1s;
 
 .block {
     height: $fullsize-menu;
-    transition: all $menu-transition-time ease;
+    transition: all $side-menu-transition-time ease;
     &.half-size {
         height: $halfsize-menu;
     }

@@ -3,7 +3,6 @@
 $fullsize-menu: 75px;
 $halfsize-menu: 50px;
 $navbar: 60px;
-$menu-transition-time: 1s;
 
 .navbar {
     height: $navbar;
@@ -262,7 +261,7 @@ $menu-transition-time: 1s;
 
 .block {
     height: calc(#{$navbar} + #{$fullsize-menu});
-    transition: all $menu-transition-time ease;
+    transition: all $side-menu-transition-time ease;
     &.half-size {
         height: calc(#{$navbar} + #{$halfsize-menu});
     }

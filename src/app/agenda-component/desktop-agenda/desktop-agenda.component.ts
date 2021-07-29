@@ -26,6 +26,7 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    window.scrollTo(0, 0);
     this.initializeSession();
   }
 

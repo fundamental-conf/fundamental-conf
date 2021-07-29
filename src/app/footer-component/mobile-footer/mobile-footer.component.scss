@@ -23,8 +23,10 @@
         }
     }
     .copyright {
-        font-size: 10px;
+        color: $primary-light-color;
+        @include inter-font(10px);
         margin-top: auto;
         margin-bottom: 19px;
+        opacity: 0.6;
     }
 }

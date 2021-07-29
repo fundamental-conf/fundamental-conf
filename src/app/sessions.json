@@ -14,7 +14,7 @@
             "bio": "Deno is the Product Owner/Architect at the Fundamental Library team",
             "description": "An overview of what Fundamental Library is: an open-source library that is committed to providing consistent and flexible user experiences and front-end components across web applications. A brief introduction on how it started and what we continue to deliver.",
             "UTCHour": 14,
-            "UTCMinute": 15
+            "UTCMinute": 10
         },
         {
             "name": "Tobias Ouwejan",
@@ -38,7 +38,7 @@
             "name": "Dmitriy Shekhovtsov",
             "title": "CEO/CTO, Valor Software",
             "bio": "Dima(@valorkin) is the Google Developer Expert in Web Technologies and Angular, author of ngx-bootstrap (first FOSS Angular v2+ module) and the founder of Valor Software. Dima made his way from the TurboPascal and Basic days to Javascript via cpp, asm, and c#. JavaScript is now his goto language for both frontend and backend applications. Dima has a heart for performance and design.",
-            "topic": "Peace of a Mind with Typescript: Angular Edition",
+            "topic": "Peace of Mind with Typescript: Angular Edition",
             "description": "Typescript, which jumped on the Angular Hype train early on has now developed and matured. It is to the point when proper usage may grant you a confidence in your source code for years to come. From the first day of integration with Angular, TypeScript brings a lot of goodies which makes this pair a future proof and reliable combination.",
             "UTCHour": 15,
             "UTCMinute": 30
@@ -103,13 +103,6 @@
             "description": "Building your own Web Components on top of Fundamental Library (Angular)",
             "UTCHour": 19,
             "UTCMinute": 0
-        },        
-        {
-            "name": "",
-            "topic": "Closing Remark | Networking",
-            "UTCHour": 19,
-            "UTCMinute": 30,
-            "minorSession": true
         }
     ]
 }

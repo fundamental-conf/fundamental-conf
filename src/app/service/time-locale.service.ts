@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as data from '../app/sessions.json';
-import { TimeStamp } from '../app/timestamp';
+import * as data from '../sessions.json';
+import { TimeStamp } from '../timestamp';
 
 @Injectable({
   providedIn: 'root'

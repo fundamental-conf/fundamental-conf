@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ResponsiveService } from '../../responsive.service';
+import { ResponsiveService } from '../../service/responsive.service';
 
 @Component({
   selector: 'app-agenda',

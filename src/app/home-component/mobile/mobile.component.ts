@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TimeLocaleService } from '../../time-locale.service';
+import { TimeLocaleService } from '../../service/time-locale.service';
 import * as smoothScroll from 'smoothscroll-polyfill';
 import * as data from '../../speakers.json';
 

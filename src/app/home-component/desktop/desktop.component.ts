@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TimeLocaleService } from '../../time-locale.service';
+import { TimeLocaleService } from '../../service/time-locale.service';
 import * as data from '../../speakers.json';
 
 @Component({

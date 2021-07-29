@@ -3,7 +3,8 @@
         {
             "name": "Karinne Legare",
             "topic": "Opening Remarks",
-            "description": "Conference Kickoff",
+            "bio": "Karinne is a team member of the Fundamental Library",
+            "description": "Fundamental Conference aims to start a conversation concerning the future of modern enterprise design, front-end development, and user experience, and how this can be done in a open-source, community-driven, inclusive, performant, scalable and reusable way.",
             "UTCHour": 14,
             "UTCMinute": 0
         },

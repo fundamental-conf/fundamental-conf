@@ -10,6 +10,8 @@ import * as data from '../../sessions.json';
 export class DesktopAgendaComponent implements OnInit, AfterViewInit {
 
   timezoneLabel: string = '';
+  dayLabel: string = '';
+  altDateLabel: string = '';
 
   sessionData: any = (data as any).default;
   sessions: any[] = [];
@@ -18,6 +20,8 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.timezoneLabel = this.timeLocaleService.getTimezoneLabel();
+    this.dayLabel = this.timeLocaleService.getDayLabel(true);
+    this.altDateLabel = this.timeLocaleService.getAltDateLabel();
     this.sessions = this.sessionData.sessions;
   }
 
@@ -77,7 +81,7 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
   }
 
   getImgSrc(name: string): string {
-    return "../../assets/speakers/agenda_avatar/" + name + ".jpg";
+    return "../../assets/speakers/agenda_avatar/" + name + ".png";
   }
 
   private findNodeIndex(node: Node, list: NodeList): number {

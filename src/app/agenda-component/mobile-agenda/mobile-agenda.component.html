@@ -1,7 +1,25 @@
 <app-mobile-navbar (sideMenuToggled)="handleSideMenuToggle($event)"></app-mobile-navbar>
-<div class="test"></div>
-<app-mobile-footer></app-mobile-footer>
 
+<div class="block" [ngClass]="{'half-size': halfSize}"></div>
+<div class="date-banner" [ngClass]="{'half-size': halfSize}">
+    <div class="day-label">{{ dayLabel }}</div>
+    <div class="month-date-label">
+        <div class="month-label">AUGUST</div>
+        <div class="date-label">{{ altDateLabel }}</div>
+    </div>
+</div>
+<div class="timezone-banner">{{ timezoneLabel }}</div>
+<div class="agenda-container">
+
+    <div class="session" *ngFor="let session of sessions; let i = index;">
+        <div class="time-label">{{ getTimeLabel(i) }}</div>
+        <div class="speaker-name">{{ session.name }}</div>
+        <div class="session-title" [ngClass]="{'minor-session': session.minorSession}">{{ session.topic }}</div>
+    </div>
+
+</div>
+
+<app-mobile-footer></app-mobile-footer>
 <app-side-menu 
     [sideMenu]="sideMenu"
     [halfSize]="halfSize">

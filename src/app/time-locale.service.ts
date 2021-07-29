@@ -43,6 +43,16 @@ export class TimeLocaleService {
     return res;
   }
 
+  getDayLabel(longFormat: boolean): string {
+    const hourOffset = this.offset / 60;
+    const localStart = this.startTimeUTC - hourOffset;
+    if (localStart <= 0 || localStart >= 24) {
+      return longFormat? 'Thursday' : 'THUR';
+    } else {
+      return longFormat? 'Wednesday' : 'WED';
+    }
+  }
+
   getDateLabel(): string {
     let date = '';
     const hourOffset = this.offset / 60;
@@ -53,6 +63,16 @@ export class TimeLocaleService {
       date = '11';
     }
     return 'August ' + date;
+  }
+
+  getAltDateLabel(): string {
+    const hourOffset = this.offset / 60;
+    const localStart = this.startTimeUTC - hourOffset;
+    if (localStart <= 0 || localStart >= 24) {
+      return '08.12.';
+    } else {
+      return '08.11.';
+    }
   }
 
   getTimeLabel(): string {

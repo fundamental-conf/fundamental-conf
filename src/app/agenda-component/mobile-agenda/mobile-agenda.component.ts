@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { TimeLocaleService } from '../../time-locale.service';
 import * as data from '../../sessions.json';
+import * as smoothScroll from 'smoothscroll-polyfill';
 
 @Component({
   selector: 'app-mobile-agenda',
   templateUrl: './mobile-agenda.component.html',
   styleUrls: ['./mobile-agenda.component.scss']
 })
-export class MobileAgendaComponent implements OnInit {
+export class MobileAgendaComponent implements OnInit, AfterViewInit {
 
   sideMenu: boolean = false;
   halfSize: boolean = false;
@@ -19,7 +20,9 @@ export class MobileAgendaComponent implements OnInit {
   sessionData: any = (data as any).default;
   sessions: any[] = [];
 
-  constructor(private timeLocaleService: TimeLocaleService) { }
+  constructor(private timeLocaleService: TimeLocaleService) { 
+    smoothScroll.polyfill();
+  }
 
   ngOnInit(): void {
     this.sessions = this.sessionData.sessions;
@@ -27,6 +30,53 @@ export class MobileAgendaComponent implements OnInit {
     this.altDateLabel = this.timeLocaleService.getAltDateLabel();
     this.timezoneLabel = this.timeLocaleService.getTimezoneLabel();
     this.adjustMenu();
+  }
+
+  ngAfterViewInit(): void {
+    this.initializeSessions();
+  }
+
+  initializeSessions(): void {
+    const sessions = document.querySelectorAll('.session');
+    const controlButtons = document.querySelectorAll('.control-button');
+
+    sessions.forEach(session => {
+      const sessionDescription = session.querySelector('.session-description') as HTMLElement;
+      const sessionTitle = session.querySelector('.session-title');
+      const controlButton = session.querySelector('.control-button') as HTMLElement;
+      sessionTitle?.addEventListener('click', () => {
+        if (!!sessionDescription && !sessionDescription.classList.contains('fully-expanded')) {
+          sessionDescription.classList.toggle('description-expanded');
+          if (controlButton) controlButton.classList.toggle('show-button');
+          this.highlightSession(session);
+        }
+      });
+    });
+
+    controlButtons.forEach(button => {
+      button = button as HTMLElement;
+      button.addEventListener('click', () => {
+        const speakerBio = button.parentNode?.querySelector('.speaker-bio');
+        const sessionDescription = button.parentNode?.querySelector('.session-description');
+        if (sessionDescription?.classList.contains('description-expanded')) {
+          speakerBio?.classList.toggle('show-bio');
+          sessionDescription?.classList.toggle('fully-expanded');
+          button.classList.toggle('show-bio');
+        }
+      });
+    });
+  }
+
+  private highlightSession(sessionToHighlight: any): void {
+    if (sessionToHighlight.classList.contains('highlighted')) {
+      sessionToHighlight.classList.remove('highlighted');
+    } else {
+      const sessions = document.querySelectorAll('.session');
+      sessions.forEach(session => {
+        session.classList.remove('highlighted');
+      });
+      sessionToHighlight.classList.add('highlighted');
+    }
   }
 
   adjustMenu(): void {
@@ -56,6 +106,6 @@ export class MobileAgendaComponent implements OnInit {
   }
 
   getImgSrc(name: string): string {
-    return "../../assets/speakers/agenda_avatar/" + name + ".jpg";
+    return "../../assets/speakers/agenda_avatar/" + name + ".png";
   }
 }

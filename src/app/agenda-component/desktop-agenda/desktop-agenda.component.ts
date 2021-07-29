@@ -65,6 +65,9 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
   }
 
   toggleSession(i: number): void {
+    if (this.sessions[i].minorSession) {
+      return;
+    }
     const controlButtons = document.querySelectorAll('.control-button');
     const speakerInfos = document.querySelectorAll('.speaker-info');
     const sessionPreviews = document.querySelectorAll('.session-preview');

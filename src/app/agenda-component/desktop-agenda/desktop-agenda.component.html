@@ -23,7 +23,7 @@
                         </div>
                         <div class="session-preview">{{ session.description }}</div>
                         <div class="speaker-info">
-                            <div class="avatar"><img [src]="getImgSrc(session.name)" alt="speaker avatar"></div>
+                            <div class="avatar"><img *ngIf="session.name" [src]="getImgSrc(session.name)" alt="speaker avatar"></div>
                             <div class="bio">{{ session.bio }}</div>
                         </div>
                     </div>

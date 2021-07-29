@@ -10,13 +10,19 @@
 </div>
 <div class="timezone-banner">{{ timezoneLabel }}</div>
 <div class="agenda-container">
-
     <div class="session" *ngFor="let session of sessions; let i = index;">
         <div class="time-label">{{ getTimeLabel(i) }}</div>
         <div class="speaker-name">{{ session.name }}</div>
         <div class="session-title" [ngClass]="{'minor-session': session.minorSession}">{{ session.topic }}</div>
+        <div class="session-description" *ngIf="!session.minorSession">{{ session.description }}</div>
+        <div class="speaker-bio">
+            <img *ngIf="session.name" [src]="getImgSrc(session.name)" alt="speaker headshot" height="40" width="40">
+            <div class="bio">{{ session.bio }}</div>
+        </div>
+        <div class="control-button" *ngIf="!session.minorSession">
+            <img src="../../../assets/arrow.png" alt="session control arrow icon">
+        </div>
     </div>
-
 </div>
 
 <app-mobile-footer></app-mobile-footer>

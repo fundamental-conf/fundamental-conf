@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { TimeLocaleService } from '../../service/time-locale.service';
+import { AddToCalendarService } from '../../service/add-to-calendar.service';
 import * as data from '../../sessions.json';
 
 @Component({
@@ -16,7 +17,10 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
   sessionData: any = (data as any).default;
   sessions: any[] = [];
 
-  constructor(private timeLocaleService: TimeLocaleService) { }
+  constructor(
+      private timeLocaleService: TimeLocaleService,
+      private addToCalendarService: AddToCalendarService
+    ) { }
 
   ngOnInit(): void {
     this.timezoneLabel = this.timeLocaleService.getTimezoneLabel();

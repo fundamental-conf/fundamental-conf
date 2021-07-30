@@ -1,108 +1,134 @@
 {
     "sessions": [
         {
+            "id": 1,
             "name": "Karinne Legare",
             "topic": "Opening Remarks",
             "bio": "Karinne is a team member of the Fundamental Library",
             "description": "Fundamental Conference aims to start a conversation concerning the future of modern enterprise design, front-end development, and user experience, and how this can be done in a open-source, community-driven, inclusive, performant, scalable and reusable way.",
             "UTCHour": 14,
-            "UTCMinute": 0
+            "UTCMinute": 0,
+            "duration": 10
         },
         {
+            "id": 2,
             "name": "Mladen Droshev",
             "topic": "Fundamental Library",
             "bio": "Deno is the Product Owner/Architect at the Fundamental Library team",
             "description": "An overview of what Fundamental Library is: an open-source library that is committed to providing consistent and flexible user experiences and front-end components across web applications. A brief introduction on how it started and what we continue to deliver.",
             "UTCHour": 14,
-            "UTCMinute": 10
+            "UTCMinute": 10,
+            "duration": 20
         },
         {
+            "id": 3,
             "name": "Tobias Ouwejan",
             "title": "Principle Architect",
             "bio": "Tobias Ouwejan is the founder of Spartacus, the JS storefront for SAP Commerce Cloud. He recently changed jobs, and is now working as a principle frontend architect for Spryker, a leading software vendor for the enterprise ecommerce market. Tobias started building for the web in '97 and he's excited about the web ever since. He lies to inspire you with his vision for the frontend tech stack in 2021.",
             "topic": "TBD",
             "description": "",
             "UTCHour": 14,
-            "UTCMinute": 30
+            "UTCMinute": 30,
+            "duration": 30
         },
         {
+            "id": 4,
             "name": "Ramona Biscoveanu",
             "title": "Developer",
             "bio": "Developer at SAP, passionate about all things web, especially anything Vue related. I love data visualizations and anything that involves creativity and coding.",
             "topic": "Let's Have Fun with Web Animations!",
             "description": "In this talk, I will explain how working with web animations makes my work and coding fun. I will showcase different types of animations, and I will give some advice from my experience on how to get started and when to start looking for a library.",
             "UTCHour": 15,
-            "UTCMinute": 0
+            "UTCMinute": 0,
+            "duration": 30
         },
         {
+            "id": 5,
             "name": "Dmitriy Shekhovtsov",
             "title": "CEO/CTO, Valor Software",
             "bio": "Dima(@valorkin) is the Google Developer Expert in Web Technologies and Angular, author of ngx-bootstrap (first FOSS Angular v2+ module) and the founder of Valor Software. Dima made his way from the TurboPascal and Basic days to Javascript via cpp, asm, and c#. JavaScript is now his goto language for both frontend and backend applications. Dima has a heart for performance and design.",
             "topic": "Peace of Mind with Typescript: Angular Edition",
             "description": "Typescript, which jumped on the Angular Hype train early on has now developed and matured. It is to the point when proper usage may grant you a confidence in your source code for years to come. From the first day of integration with Angular, TypeScript brings a lot of goodies which makes this pair a future proof and reliable combination.",
             "UTCHour": 15,
-            "UTCMinute": 30
+            "UTCMinute": 30,
+            "duration": 30
         },
         {
+            "id": 6,
             "name": "",
             "topic": "Intermission | Meet our Speakers | Q&A",
             "UTCHour": 16,
             "UTCMinute": 0,
+            "duration": 30,
             "minorSession": true
         },
         {
+            "id": 7,
             "name": "Marius Obert",
             "title": "Developer Advocate",
             "bio": "I studied Computer Science in Karlsruhe (Germany) and started my software-development-career as a UI developer in sunny California at SAP Labs. During this time, I learned to love web technologies like UI5, JavaScript in general, and the entire Node.js ecosystem. After many ugly fights against CSS, I relocated to Munich, where I now work as a Developer Advocate for SAP BTP and SAP UI technologies. In this new role, I try to inspire my peer developers around the globe to build scalable cloud-native enterprise apps. Besides my day job at SAP, I try to keep current with cryptocurrencies and distributed ledger technologies in general.",
             "topic": "Web Apps on SAP BTP 101",
             "description": "You know how to develop web apps with React, Angular, and Vue, but you haven't used SAP BTP before? Then this session is for you! Even though many think that you can only deploy SAPUI5 apps to SAP BTP, this is not true. You can deploy any web app to SAP's go-to cloud platform - and even embed them in proven SAP environments such as the SAP Fiori Launchpad. Join this session to learn all about SAP BTP for frontend developers.",
             "UTCHour": 16,
-            "UTCMinute": 30
+            "UTCMinute": 30,
+            "duration": 30
         },
         {
+            "id": 8,
             "name": "David Dunne",
             "title": "Teaching Professor",
             "bio": "David is a professor at the Peter B. Gustavson School of Business, University of Victoria. His research and teaching focus on innovation, design and how design thinkers deal with organizational barriers. He has published widely in academic and practitioner journals on design and marketing; his book, Design Thinking at Work: How Innovative Organizations Are Embracing Design (University of Toronto Press, 2018) explores the successes and challenges of applying design thinking in organizations. He is currently working on a second book on design and managerial mindsets. He has been a visiting professor at several design schools, including TUDelft in the Netherlands and IIT Institute of Design in Chicago. As Director of the MBA Program at Gustavson, he initiated and led the introduction of the MBA in Sustainable Innovation in 2020. He has received several awards for teaching and innovation, including the National 3M Teaching Fellowship. He has served as Board Chair, Board member and volunteer in Nepal and Africa for Academics Without Borders. He is currently working towards a Master of Fine Arts degree and writing a book about the Irish border.",
             "topic": "You Are a Designer. How to Be a Better One",
             "description": "Everyone is a designer. The only difference is whether they are consciously or unconsciously engaged in designing. This talk describes the design approach and mindset, how it differs from methods like UX and Agile, and how you can be a more conscious, and better, designer.",
             "UTCHour": 17,
-            "UTCMinute": 0
+            "UTCMinute": 0,
+            "duration": 30
         },
         {
+            "id": 9,
             "name": "Cherihan Hassun",
             "title": "International Ops and Communication Holder",
             "bio": "Cherihan is the International Ops & Communication Holder at Dark Matter Labs. With a business and social impact background from UBC her work lives within the design process from research & ideation to overseeing execution. An award-winning strategist & public-speaker with years of experience in distilling key insights from chaos and crafting impactful brands & design solutions for SPO's. Passionate about systems thinking Cherihan is relentlessly curious, a facilitation guru and organizational enthusiast.",
             "topic": "Design Research + Branding Strategy",
             "description": "Exploring the depth and non-linear design research practices and how that builds the foundation of an impactful brand strategy.",
             "UTCHour": 17,
-            "UTCMinute": 30
+            "UTCMinute": 30,
+            "duration": 30
         },
         {
+            "id": 10,
             "name": "Kalin Milanov",
             "title": "Design Expert",
             "bio": "Kalin is a designer with over 15 years of experience designing UI frameworks and products. Since he joined SAP over 7 years ago, he was in the forefront of the visual design for the Fiori design system. Recently, he moved to a lead role for defining the product design of SAP’s Business Technology Platform.",
             "topic": "Design Systems and Consistent User Experience",
             "description": "UI consistency is often achieved at the expense of user experience. This session will dig deeper into the elements that bring consistency and how to use them so that we also crate good user experience.",
             "UTCHour": 18,
-            "UTCMinute": 0
+            "UTCMinute": 0,
+            "duration": 30
         },
         {
+            "id": 11,
             "name": "Jens Steckhan",
             "title": "Developer/Architect/Product Owner",
             "bio": "Jens joined SAP in what feels like the early 13th century. He worked in various roles, projects and technologies, is the creator of SAPedia and moved on from there to his latest project SAP Minutes.",
             "topic": "Take a Minute with Fundamental",
             "description": "SAP Minutes relies on Fundamental for making minute taking delightful.",
             "UTCHour": 18,
-            "UTCMinute": 30
+            "UTCMinute": 30,
+            "duration": 30,
+            "internal": true
         },
         {
+            "id": 12,
             "name": "Rajeev Jamaiyar",
             "title": "Associate Architect",
             "bio": "Rajeev has over 13 years of experience in software design and development. He joined SAP three years ago as an Associate Architect, with the main responsibility of building front-ends for solutions falling under Data Management space. In his latest assignment, he is leading the development of a reusable micro front-end which is going to be consumed by more than one solutions.",
             "topic": "Web Components Using Fundamental Library",
             "description": "Building your own Web Components on top of Fundamental Library (Angular)",
             "UTCHour": 19,
-            "UTCMinute": 0
+            "UTCMinute": 0,
+            "duration": 30,
+            "internal": true
         }
     ]
 }

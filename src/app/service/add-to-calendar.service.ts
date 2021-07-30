@@ -13,16 +13,21 @@ export class AddToCalendarService {
   localStartTimes: Date[] = [];
   localEndTimes: Date[] = [];
 
-  calendarLinks: CalendarLink[] = [];
+  private calendarLinks: CalendarLink[] = [];
+  private sapSignUpLink: string = 'https://fiorilaunchpad.sap.com/sites#my-events&/event=10660616';
 
   constructor(private timeLocaleService: TimeLocaleService) { 
     this.sessions = this.sessionData.sessions;
     this.initializeLocalTime();
     this.initializeLinks();
+  }
 
-    console.log(this.calendarLinks);
-    // console.log(this.localStartTimes);
-    // console.log(this.localEndTimes);
+  getCalendarLinks(): CalendarLink[] {
+    return this.calendarLinks;
+  }
+
+  getSAPSignUpLink(): string {
+    return this.sapSignUpLink;
   }
 
   initializeLinks(): void {
@@ -37,7 +42,7 @@ export class AddToCalendarService {
   }
 
   googleLink(session: any, i: number): string {
-    if (session.minorSession) return '';
+    if (session.minorSession || session.internal) return '';
     const startTime = this.formatTime(this.localStartTimes[i]);
     const endTime = this.formatTime(this.localEndTimes[i]);
     return [
@@ -47,15 +52,16 @@ export class AddToCalendarService {
       '&dates=' + startTime,
       '/' + endTime,
       '&location='+ this.getLocation(session),
+      '&details=' + this.removeForbiddenCharachters(session.description) + '\n\n ' + this.getLocation(session),
       '&sprop=&sprop=name:'
     ].join('');
   }
 
   office365Link(session: any, i: number): string {
-    if (session.minorSession) return '';
-    const startTime = this.formatTime(this.localStartTimes[i]);
-    const endTime = this.formatTime(this.localEndTimes[i]);
-    return [
+    if (session.minorSession || session.internal) return '';
+    const startTime = this.formatTimeForOffice365(this.localStartTimes[i]);
+    const endTime = this.formatTimeForOffice365(this.localEndTimes[i]);
+    return encodeURI([
         'https://outlook.office365.com/owa/',
         '?path=/calendar/action/compose',
         '&rru=addevent',
@@ -64,41 +70,44 @@ export class AddToCalendarService {
         '&enddt=' + endTime,
         '&location=' + this.getLocation(session),
         '&body=' + this.removeForbiddenCharachters(session.description) + '\n\n ' + this.getLocation(session)
-    ].join('');
+    ].join(''));
   }
 
   icsLink(session: any, i: number): string {
-    if (session.minorSession) return '';
+    if (session.minorSession || session.internal) return '';
     const startTime = this.formatTime(this.localStartTimes[i]);
     const endTime = this.formatTime(this.localEndTimes[i]);
-    const cal = [
+    var cal = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'METHOD:REQUEST',
       'BEGIN:VEVENT',
-      'UID:' + session.id,
       'DTSTART:' + startTime,
       'DTEND:' + endTime,
       'SUMMARY:' + this.removeForbiddenCharachters(session.topic),
       'LOCATION:' + this.getLocation(session),
       'DESCRIPTION:' + this.removeForbiddenCharachters(session.description) + '\\n\\n ' + this.getLocation(session),
+      'UID:' + session.id,
       'END:VEVENT',
       'END:VCALENDAR'].join('\n');
-
-    return 'data:text/calendar;charset=utf8,' + cal;
+    return encodeURI('data:text/calendar;charset=utf8,' + cal);
   }
 
   formatTime(date: Date): string {
     return date? date.toISOString().replace(/-|:|\.\d\d\d/g,"") : '';
   }
 
+  formatTimeForOffice365(date: Date): string {
+    // requries format of 2014-02-02T18:00:00
+    return date.toISOString();
+  }
+
   getLocation(session: any): string {
-    // external => broadcast  // internal => zoom // minorSession => '' // hangout => gather.town 
     if (session.internal) {
-      return 'https://sap-se.zoom.us/j/97038567711?pwd=WUZUQjJRZEpXU2cyS25SUzd0Q1lmUT09';
+      return '';
     } else if (session.minorSession) {
       return '';
     } else if (session.hangOut) {
+      // TODO: add gather.town link
       return '';
     }
     return 'https://broadcast.co.sap.com/go/fdconf';

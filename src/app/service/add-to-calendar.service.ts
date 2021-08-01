@@ -20,6 +20,8 @@ export class AddToCalendarService {
     this.sessions = this.sessionData.sessions;
     this.initializeLocalTime();
     this.initializeLinks();
+
+    console.log(this.calendarLinks);
   }
 
   getCalendarLinks(): CalendarLink[] {

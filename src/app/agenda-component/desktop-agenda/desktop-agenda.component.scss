@@ -98,18 +98,77 @@ $agenda-date-info-height: 40px;
                 margin-bottom: 0;
             }
         }
-        .session-preview {
-            @include inter-font(16px);
-            color: $primary-dark-color;
+        .session-preview {            
             max-height: 0;
             max-width: 764px;
             overflow: hidden;
-            text-overflow: ellipsis;
             margin-left: 150px;
             margin-right: 130px;
             line-height: 20px;
-            opacity: 0.6;
             transition: all 0.3s ease-in-out;
+            .text-preview {
+                @include inter-font(16px);
+                color: $primary-dark-color;
+                opacity: 0.6;
+            }
+            .add-to-calendar {
+                .calendar-section-label {
+                    margin-top: 34px;
+                    margin-bottom: 11px;
+                    @include inter-font(12px, 600);
+                    color: #A6A6A8;
+                } 
+                .calendar-section {
+                    display: flex;
+                }
+                .calendar-button {
+                    width: fit-content;
+                    height: 32px;
+                    padding-left: 10px;
+                    background-color: $primary-light-color;
+                    border: 1px solid $primary-dark-color;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    &:not(:last-child) {
+                        margin-right: 16px;
+                    }
+                    .calendar-button-text {
+                        @include inter-font(14px);
+                        color: $primary-dark-color;
+                        margin-left: 5px;
+                        margin-right: 10px;
+                    }
+                    &:active {
+                        transform: translateY(3px);
+                        background-image: linear-gradient(to right, #654276, #DB6861);
+                    }
+                }
+            }
+            .internal-session-signup {
+                .signup-section-label {
+                    margin-top: 34px;
+                    margin-bottom: 11px;
+                    @include inter-font(12px, 600);
+                    color: #A6A6A8;
+                }
+                .internal-signup-button {
+                    text-decoration: none;
+                    border: 1px solid $primary-dark-color;
+                    border-radius: 5px;
+                    height: 32px;
+                    &:active {
+                        background-image: linear-gradient(to right, #654276, #DB6861);
+                    }
+                }
+                .internal-signup-button-text {
+                    margin: 15px 10px 15px 10px;
+                    @include inter-font(14px);
+                    color: $primary-dark-color;  
+                }
+            }
             &.preview-revealed, &.fully-expanded {
                 max-height: 500px;
                 margin-top: 20px;

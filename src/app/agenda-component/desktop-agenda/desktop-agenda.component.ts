@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { TimeLocaleService } from '../../service/time-locale.service';
 import { AddToCalendarService } from '../../service/add-to-calendar.service';
+import { CalendarLink } from '../../calendarLink';
 import * as data from '../../sessions.json';
 
 @Component({
@@ -16,10 +18,12 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
 
   sessionData: any = (data as any).default;
   sessions: any[] = [];
+  sessionCalendarLinks: CalendarLink[] = [];
 
   constructor(
       private timeLocaleService: TimeLocaleService,
-      private addToCalendarService: AddToCalendarService
+      private addToCalendarService: AddToCalendarService,
+      private domSanitizer: DomSanitizer
     ) { }
 
   ngOnInit(): void {
@@ -27,11 +31,25 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
     this.dayLabel = this.timeLocaleService.getDayLabel(true);
     this.altDateLabel = this.timeLocaleService.getAltDateLabel();
     this.sessions = this.sessionData.sessions;
+    this.sessionCalendarLinks = this.addToCalendarService.getCalendarLinks();
   }
 
   ngAfterViewInit(): void {
     window.scrollTo(0, 0);
     this.initializeSession();
+  }
+
+  getCalendarLink(i: number, calendarType: string): string | SafeUrl {
+    if (calendarType === 'google') {
+      return this.sessionCalendarLinks[i].google;
+    } else if (calendarType === 'ics') {
+      return this.domSanitizer.bypassSecurityTrustUrl(this.sessionCalendarLinks[i].ics);
+    }
+    return '';
+  }
+
+  getInternalSessionLink(): string {
+    return this.addToCalendarService.getSAPSignUpLink();
   }
 
   getTimeLabel(i: number): string {

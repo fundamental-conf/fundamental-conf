@@ -108,6 +108,18 @@
         },
         {
             "id": 11,
+            "name": "",
+            "title": "",
+            "bio": "https://www.gather.town/",
+            "topic": "Networking | Meet and Greet with Fundamental Conference",
+            "description": "Hang out with us at Gather.town!",
+            "UTCHour": 18,
+            "UTCMinute": 30,
+            "duration": 120,
+            "hangout": true
+        },
+        {
+            "id": 12,
             "name": "Jens Steckhan",
             "title": "Developer/Architect/Product Owner",
             "bio": "Jens joined SAP in what feels like the early 13th century. He worked in various roles, projects and technologies, is the creator of SAPedia and moved on from there to his latest project SAP Minutes.",
@@ -119,7 +131,7 @@
             "internal": true
         },
         {
-            "id": 12,
+            "id": 13,
             "name": "Rajeev Jamaiyar",
             "title": "Associate Architect",
             "bio": "Rajeev has over 13 years of experience in software design and development. He joined SAP three years ago as an Associate Architect, with the main responsibility of building front-ends for solutions falling under Data Management space. In his latest assignment, he is leading the development of a reusable micro front-end which is going to be consumed by more than one solutions.",

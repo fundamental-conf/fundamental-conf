@@ -106,9 +106,9 @@ export class AddToCalendarService {
       return '';
     } else if (session.minorSession) {
       return '';
-    } else if (session.hangOut) {
+    } else if (session.hangout) {
       // TODO: add gather.town link
-      return '';
+      return 'https://www.gather.town/';
     }
     return 'https://broadcast.co.sap.com/go/fdconf';
   }

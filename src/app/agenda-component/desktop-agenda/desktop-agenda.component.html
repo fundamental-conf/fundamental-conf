@@ -17,7 +17,7 @@
                     <div class="session-time" [ngClass]="{'minor-session': session.minorSession}">{{ getTimeLabel(i) }}</div>
                     <div class="session-speaker">{{ session.name }}</div>
                     <div class="session-detail">
-                        <div class="session-title" [ngClass]="{'minor-session': session.minorSession}" (click)="toggleSession(i)">{{ session.topic }}</div>
+                        <div class="session-title" [ngClass]="{'minor-session': session.minorSession, 'hangout-session': session.hangout}" (click)="toggleSession(i)">{{ session.topic }}</div>
                         <div class="control-button" (click)="toggleSession(i)">
                             <img src="../../../assets/arrow.png" alt="control button arrow icon">
                         </div>

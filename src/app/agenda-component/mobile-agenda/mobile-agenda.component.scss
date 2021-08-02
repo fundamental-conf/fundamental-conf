@@ -83,7 +83,7 @@ $halfsize-menu: 50px;
     .session-title {
         @include inter-font(28px);
         margin-top: 5px;
-        &.minor-session {
+        &.minor-session, &.hangout-session {
             @include inter-font(14px);
             margin-top: 0;
             margin-bottom: 40px;

@@ -14,7 +14,7 @@
         <div class="time-label">{{ getTimeLabel(i) }}</div>
         <div class="speaker-name">{{ session.name }}</div>
         <div class="session-title" [ngClass]="{'minor-session': session.minorSession, 'hangout-session': session.hangout}">{{ session.topic }}</div>
-        <div class="session-description" *ngIf="!session.minorSession">
+        <div class="session-description" [ngClass]="{'hangout-session': session.hangout}" *ngIf="!session.minorSession">
             <div class="text-description">{{ session.description }}</div>
             <div class="calendar-section" *ngIf="!session.internal">
                 <div class="calendar-section-label">Add to Calendar</div>

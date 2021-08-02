@@ -83,10 +83,14 @@ $halfsize-menu: 50px;
     .session-title {
         @include inter-font(28px);
         margin-top: 5px;
-        &.minor-session, &.hangout-session {
+        &.minor-session {
             @include inter-font(14px);
             margin-top: 0;
             margin-bottom: 40px;
+        }
+        &.hangout-session {
+            @include inter-font(14px);
+            margin-top: 0;
         }
     }
     .session-description .text-description, .bio {
@@ -99,7 +103,9 @@ $halfsize-menu: 50px;
         max-height: 0;
         overflow: hidden;
         transition: all 0.3s ease-in-out;
-
+        &.hangout-session {
+            margin-top: 40px;
+        }
         .calendar-section-label {
             @include inter-font(12px, 600);
             color: #A6A6A8;

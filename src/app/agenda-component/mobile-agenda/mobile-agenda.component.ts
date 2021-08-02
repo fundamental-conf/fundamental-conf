@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { TimeLocaleService } from '../../service/time-locale.service';
 import { AddToCalendarService } from '../../service/add-to-calendar.service';
+import { CalendarLink } from '../../calendarLink';
 import * as data from '../../sessions.json';
 
 @Component({
@@ -19,14 +21,17 @@ export class MobileAgendaComponent implements OnInit, AfterViewInit {
 
   sessionData: any = (data as any).default;
   sessions: any[] = [];
+  sessionCalendarLinks: CalendarLink[] = [];
 
   constructor(
       private timeLocaleService: TimeLocaleService,
-      private addToCalendarService: AddToCalendarService
+      private addToCalendarService: AddToCalendarService,
+      private domSanitizer: DomSanitizer
     ) { }
 
   ngOnInit(): void {
     this.sessions = this.sessionData.sessions;
+    this.sessionCalendarLinks = this.addToCalendarService.getCalendarLinks();
     this.dayLabel = this.timeLocaleService.getDayLabel(false);
     this.altDateLabel = this.timeLocaleService.getAltDateLabel();
     this.timezoneLabel = this.timeLocaleService.getTimezoneLabel();
@@ -78,6 +83,21 @@ export class MobileAgendaComponent implements OnInit, AfterViewInit {
       });
       sessionToHighlight.classList.add('highlighted');
     }
+  }
+
+  getCalendarLink(i: number, calendarType: string): string | SafeUrl {
+    if (calendarType === 'google') {
+      return this.sessionCalendarLinks[i].google;
+    } else if (calendarType === 'office365') {
+      return this.sessionCalendarLinks[i].office365;
+    } else if (calendarType === 'ics') {
+      return this.domSanitizer.bypassSecurityTrustUrl(this.sessionCalendarLinks[i].ics);
+    }
+    return '';
+  }
+
+  getInternalSessionLink(): string {
+    return this.addToCalendarService.getSAPSignUpLink();
   }
 
   adjustMenu(): void {

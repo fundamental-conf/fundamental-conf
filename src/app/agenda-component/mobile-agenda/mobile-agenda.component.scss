@@ -89,7 +89,7 @@ $halfsize-menu: 50px;
             margin-bottom: 40px;
         }
     }
-    .session-description, .bio {
+    .session-description .text-description, .bio {
         @include inter-font(14px);
         line-height: 18px;
         color: $primary-dark-color;
@@ -99,6 +99,57 @@ $halfsize-menu: 50px;
         max-height: 0;
         overflow: hidden;
         transition: all 0.3s ease-in-out;
+
+        .calendar-section-label {
+            @include inter-font(12px, 600);
+            color: #A6A6A8;
+            margin-top: 17px;
+            margin-bottom: 11px;
+        }
+        .calendar-buttons {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .calendar-button {
+            width: 39px;
+            height: 32px;
+            border: 1px solid $primary-dark-color;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:not(:last-child) {
+                margin-right: 6px;
+            }
+            &:active {
+                background-image: linear-gradient(to right, #654276, #DB6861);
+            }
+        }
+        .internal-session-signup {
+            margin-bottom: 15px;
+            .signup-section-label {
+                margin-top: 17px;
+                margin-bottom: 11px;
+                @include inter-font(12px, 600);
+                color: #A6A6A8;
+            }
+            .internal-signup-button {
+                text-decoration: none;
+                border: 1px solid $primary-dark-color;
+                border-radius: 5px;
+                height: 32px;
+                &:active {
+                    background-image: linear-gradient(to right, #654276, #DB6861);
+                }
+            }
+            .internal-signup-button-text {
+                margin: 15px 10px 15px 10px;
+                @include inter-font(14px);
+                color: $primary-dark-color;  
+            }
+        }
         &.description-expanded, &.fully-expanded {
             max-height: 1000px;
             margin-top: 13px;

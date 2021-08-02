@@ -102,7 +102,7 @@ $halfsize-menu: 50px;
     .session-description {
         max-height: 0;
         overflow: hidden;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.7s ease-in-out;
         &.hangout-session {
             margin-top: 40px;
         }
@@ -165,7 +165,7 @@ $halfsize-menu: 50px;
     .speaker-bio {
         max-height: 0;
         overflow: hidden;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
         &.show-bio {
             max-height: 1000px;
             padding-top: 10px;
@@ -191,8 +191,6 @@ $halfsize-menu: 50px;
     }
 }
 
-
-
 .block {
     height: $fullsize-menu;
     transition: all $side-menu-transition-time ease;
@@ -205,10 +203,3 @@ $halfsize-menu: 50px;
     color: $primary-light-color;
     @include inter-font(44px, 500);
 }
-
-
-// unwanted
-// .agenda-banner {
-//     height: 92px;
-//     background-image: linear-gradient(to right, #654276, #DB6861);
-// }

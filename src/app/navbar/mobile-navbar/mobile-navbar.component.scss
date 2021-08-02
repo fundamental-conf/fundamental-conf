@@ -1,0 +1,80 @@
+@use '../../theme/theme.scss' as *;
+
+$fullsize-logo: 55px;
+$halfsize-logo: 32px;
+$fullsize-menu: 75px;
+$halfsize-menu: 50px;
+
+.header {
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+}
+
+.menu {
+    height: $fullsize-menu;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    transition: all $side-menu-transition-time ease;
+    &.half-size {
+        height: $halfsize-menu;
+    }
+}
+
+.menu-button {
+    border: none;
+    outline: none;
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: 20px;
+    background-color: black;
+    .line-top, .line-bottom {
+        width: 18px;
+        border: 1px solid $primary-light-color;
+    }
+    .line-top {
+        margin-bottom: 8px;
+    }
+    .line-forward, .line-backward {
+        width: 18px;
+        border: 1px solid $primary-light-color;
+    }
+    .line-forward {
+        transform: rotate(45deg);
+        margin-bottom: -2px;
+    }
+    .line-backward {
+        transform: rotate(-45deg);
+    }
+}
+
+.logo {
+    height: $fullsize-logo;
+    margin-left: calc(50% - #{$fullsize-logo} * 0.5);
+    transition: all $side-menu-transition-time ease;
+    &.half-size {
+        height: $halfsize-logo;
+        margin-left: 10px;
+    }
+}
+
+.title {
+    position: absolute;
+    left: 40px;
+    color: $primary-light-color;
+    @include inter-font(15px, 600);
+    margin-left: 13px;
+    opacity: 0;
+    &.fly-in {
+        opacity: 1;
+        transition: all 0.2s $side-menu-transition-time ease;
+    }
+    &.fade-out {
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+}

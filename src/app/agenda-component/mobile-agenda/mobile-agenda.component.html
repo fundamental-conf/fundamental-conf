@@ -1,0 +1,55 @@
+<app-mobile-navbar (sideMenuToggled)="handleSideMenuToggle($event)"></app-mobile-navbar>
+
+<div class="block" [ngClass]="{'half-size': halfSize}"></div>
+<div class="date-banner" [ngClass]="{'half-size': halfSize}">
+    <div class="day-label">{{ dayLabel }}</div>
+    <div class="month-date-label">
+        <div class="month-label">AUGUST</div>
+        <div class="date-label">{{ altDateLabel }}</div>
+    </div>
+</div>
+<div class="timezone-banner">{{ timezoneLabel }}</div>
+<div class="agenda-container">
+    <div class="session" *ngFor="let session of sessions; let i = index;">
+        <div class="time-label">{{ getTimeLabel(i) }}</div>
+        <div class="speaker-name">{{ session.name }}</div>
+        <div class="session-title" [ngClass]="{'minor-session': session.minorSession, 'hangout-session': session.hangout}">{{ session.topic }}</div>
+        <div class="session-description" [ngClass]="{'hangout-session': session.hangout}" *ngIf="!session.minorSession">
+            <div class="text-description">{{ session.description }}</div>
+            <div class="calendar-section" *ngIf="!session.internal">
+                <div class="calendar-section-label">Add to Calendar</div>
+                <div class="calendar-buttons">
+                    <a class="calendar-button" [href]="getCalendarLink(i, 'google')" target="_blank">
+                        <img src="../../../assets/google_calendar_icon.png" alt="Google Calendar" width="19px" height="18px">
+                    </a>
+                    <a class="calendar-button" [href]="getCalendarLink(i, 'ics')">
+                        <img src="../../../assets/ical_calendar_icon.png" alt="iCal Calendar" width="22px" height="22px">
+                    </a>
+                    <a class="calendar-button" [href]="getCalendarLink(i, 'office365')" target="_blank">
+                        <img src="../../../assets/outlook_calendar_icon.png" alt="office365 Calendar" width="23px" height="23px">
+                    </a>
+                </div>
+            </div>
+            <div class="internal-session-signup" *ngIf="session.internal">
+                <div class="signup-section-label">Internal Session</div>
+                <a class="internal-signup-button" [href]="getInternalSessionLink()" target="_blank">
+                    <span class="internal-signup-button-text">SAP Sign Up</span>
+                </a>
+            </div>
+        </div>
+        <div class="speaker-bio">
+            <img *ngIf="session.name" [src]="getImgSrc(session.name)" alt="speaker headshot" height="40" width="40">
+            <div class="bio">{{ session.bio }}</div>
+        </div>
+        <div class="control-button" *ngIf="!session.minorSession">
+            <img src="../../../assets/arrow.png" alt="session control arrow icon">
+        </div>
+    </div>
+</div>
+
+<app-mobile-footer></app-mobile-footer>
+<app-side-menu 
+    [sideMenu]="sideMenu"
+    [halfSize]="halfSize">
+    <span class="side-menu-label" routerLink="/">Home</span>
+</app-side-menu>

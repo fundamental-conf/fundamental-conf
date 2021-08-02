@@ -1,0 +1,214 @@
+@use '../../theme/theme.scss' as *;
+
+$fullsize-menu: 75px;
+$halfsize-menu: 50px;
+
+.date-banner {
+    height: 50px;
+    display: flex;
+    position: sticky;
+    top: $fullsize-menu;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    background-color: $primary-light-color;
+    transition: all $side-menu-transition-time ease;
+    z-index: 10;
+    &.half-size {
+        top: $halfsize-menu;
+    }
+    .day-label {
+        width: 36%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $primary-dark-color;
+        @include inter-font(34px, 500);
+        border-right: 2px solid #000000;
+    }
+    .month-date-label {
+        width: 64%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .month-label {
+            color: $primary-dark-color;
+            @include inter-font(16px, 500);
+            margin-top: 10px;
+            margin-left: 18px;
+        }
+        .date-label {
+            color: $primary-dark-color;
+            @include inter-font(34px, 500);
+            margin-right: 13px;
+        }
+    }
+}
+
+.timezone-banner {
+    height: 40px;
+    background-color: $primary-light-color;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+    color: $primary-dark-color;
+    @include inter-font(14px);
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    padding-left: 18px;
+}
+
+.agenda-container {
+    background-color: $primary-light-color;
+}
+
+.session {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 25vw;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+    &.highlighted {
+        border-top: 3px solid #000000;
+        border-bottom: 3px solid #000000;
+    }
+    .time-label {
+        position: absolute;
+        top: 10px;
+        left: 19px;
+        @include inter-font(14px, 600);
+    }
+    .speaker-name {
+        @include inter-font(14px);
+        opacity: 0.6;
+    }
+    .session-title {
+        @include inter-font(28px);
+        margin-top: 5px;
+        &.minor-session {
+            @include inter-font(14px);
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        &.hangout-session {
+            @include inter-font(14px);
+            margin-top: 0;
+        }
+    }
+    .session-description .text-description, .bio {
+        @include inter-font(14px);
+        line-height: 18px;
+        color: $primary-dark-color;
+        opacity: 0.6;
+    }
+    .session-description {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        &.hangout-session {
+            margin-top: 40px;
+        }
+        .calendar-section-label {
+            @include inter-font(12px, 600);
+            color: #A6A6A8;
+            margin-top: 17px;
+            margin-bottom: 11px;
+        }
+        .calendar-buttons {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .calendar-button {
+            width: 39px;
+            height: 32px;
+            border: 1px solid $primary-dark-color;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:not(:last-child) {
+                margin-right: 6px;
+            }
+            &:active {
+                background-image: linear-gradient(to right, #654276, #DB6861);
+            }
+        }
+        .internal-session-signup {
+            margin-bottom: 15px;
+            .signup-section-label {
+                margin-top: 17px;
+                margin-bottom: 11px;
+                @include inter-font(12px, 600);
+                color: #A6A6A8;
+            }
+            .internal-signup-button {
+                text-decoration: none;
+                border: 1px solid $primary-dark-color;
+                border-radius: 5px;
+                height: 32px;
+                &:active {
+                    background-image: linear-gradient(to right, #654276, #DB6861);
+                }
+            }
+            .internal-signup-button-text {
+                margin: 15px 10px 15px 10px;
+                @include inter-font(14px);
+                color: $primary-dark-color;  
+            }
+        }
+        &.description-expanded, &.fully-expanded {
+            max-height: 1000px;
+            margin-top: 13px;
+            margin-bottom: 6px;
+        }
+    }
+    .speaker-bio {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        &.show-bio {
+            max-height: 1000px;
+            padding-top: 10px;
+            border-top: 0.5px solid rgba(0, 0, 0, 0.25);
+            .bio {
+                margin-top: 5px;
+            }
+        }
+    }
+    .control-button {
+        position: absolute;
+        left: 30px;
+        bottom: 20px;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        &.show-button {
+            opacity: 1;
+        }
+        &.show-bio {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+    }
+}
+
+
+
+.block {
+    height: $fullsize-menu;
+    transition: all $side-menu-transition-time ease;
+    &.half-size {
+        height: $halfsize-menu;
+    }
+}
+
+::ng-deep .side-menu-label {
+    color: $primary-light-color;
+    @include inter-font(44px, 500);
+}
+
+
+// unwanted
+// .agenda-banner {
+//     height: 92px;
+//     background-image: linear-gradient(to right, #654276, #DB6861);
+// }

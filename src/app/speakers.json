@@ -3,20 +3,17 @@
         {
             "id": "01",
             "name": "Cherihan Hassun",
-            "title": "International Ops and Communication Holder",
-            "intro": ""
+            "title": "International Ops and Communication Holder"
         },
         {
             "id": "02",
             "name": "David Dunne",
-            "title": "University Professor",
-            "intro": ""
+            "title": "Teaching Professor"
         },
         {
             "id": "03",
             "name": "Rajeev Jamaiyar",
-            "title": "Associate Architect",
-            "intro": ""
+            "title": "Associate Architect"
         },
         {
             "id": "04",
@@ -31,26 +28,22 @@
         {
             "id": "06",
             "name": "Ramona Biscoveanu",
-            "title": "Developer",
-            "intro": ""
+            "title": "Developer"
         },
         {
             "id": "07",
             "name": "Kalin Milanov",
-            "title": "Design Expert",
-            "intro": ""
+            "title": "Design Expert"
         },
         {
             "id": "08",
             "name": "Dmitriy Shekhovtsov",
-            "title": "CEO/CTO, Valor Software",
-            "intro": ""
+            "title": "CEO/CTO, Valor Software"
         },
         {
             "id": "09",
             "name": "Tobias Ouwejan",
-            "title": "Principle Architect",
-            "intro": ""
+            "title": "Principle Architect"
         }
     ]
 }

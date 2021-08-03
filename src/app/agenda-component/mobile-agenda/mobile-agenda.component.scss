@@ -130,14 +130,14 @@ $halfsize-menu: 50px;
                 margin-right: 6px;
             }
             &:active {
-                background-image: linear-gradient(to right, #654276, #DB6861);
+                background-color: #DB6861;
             }
         }
         .internal-session-signup {
             margin-bottom: 15px;
             .signup-section-label {
                 margin-top: 17px;
-                margin-bottom: 11px;
+                margin-bottom: 15px;
                 @include inter-font(12px, 600);
                 color: #A6A6A8;
             }
@@ -145,13 +145,12 @@ $halfsize-menu: 50px;
                 text-decoration: none;
                 border: 1px solid $primary-dark-color;
                 border-radius: 5px;
-                height: 32px;
+                padding: 5px;
                 &:active {
-                    background-image: linear-gradient(to right, #654276, #DB6861);
+                    background-color: #DB6861;
                 }
             }
             .internal-signup-button-text {
-                margin: 15px 10px 15px 10px;
                 @include inter-font(14px);
                 color: $primary-dark-color;  
             }
@@ -166,12 +165,32 @@ $halfsize-menu: 50px;
         max-height: 0;
         overflow: hidden;
         transition: all 0.5s ease-in-out;
+        position: relative;
+        .social-media {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            & a + a {
+                margin-left: 10px;
+            }
+        }
+        .company {
+            @include inter-font(14px, 400);
+            color: $primary-dark-color;
+            opacity: 0.4;
+            margin-top: 10px;
+        }
+        .title {
+            @include inter-font(14px, 600);
+            color: $primary-dark-color;
+            margin-top: 5px;
+        }
         &.show-bio {
             max-height: 1000px;
             padding-top: 10px;
             border-top: 0.5px solid rgba(0, 0, 0, 0.25);
             .bio {
-                margin-top: 5px;
+                margin-top: 10px;
             }
         }
     }

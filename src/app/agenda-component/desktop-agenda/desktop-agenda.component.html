@@ -48,8 +48,26 @@
                             </div>
                         </div>
                         <div class="speaker-info">
-                            <div class="avatar"><img *ngIf="session.name" [src]="getImgSrc(session.name)" alt="speaker avatar"></div>
-                            <div class="bio">{{ session.bio }}</div>
+                            <div class="avatar">
+                                <img *ngIf="session.name" [src]="getImgSrc(session.name)" alt="speaker avatar">
+                            </div>
+                            <div class="bio">
+                                <div class="profile">
+                                    <div class="background">
+                                        <div class="title">{{ session.title }}</div>
+                                        <div class="company" *ngIf="session.company">{{ session.company }}</div>
+                                    </div>
+                                    <div class="social-media" *ngIf="session.twitter || session.linkedin">
+                                        <a *ngIf="session.twitter" [href]="session.twitter" target="_blank">
+                                            <img src="../../../assets/twitter_icon_black.png" alt="speaker twitter" height="23px" width="23px">
+                                        </a>
+                                        <a *ngIf="session.linkedin" [href]="session.linkedin" target="_blank">
+                                            <img src="../../../assets/linkedin_icon_black.png" alt="speaker linkedin" height="23px" width="23px">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-bio">{{ session.bio }}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

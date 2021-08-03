@@ -40,6 +40,7 @@ export class MobileAgendaComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.initializeSessions();
+    this.openFirstSession();
   }
 
   initializeSessions(): void {
@@ -71,6 +72,14 @@ export class MobileAgendaComponent implements OnInit, AfterViewInit {
         }
       });
     });
+  }
+
+  openFirstSession(): void {
+    const firstSession = document.querySelectorAll('.session')[0] as HTMLElement;
+    const controlButton = firstSession.querySelector('.control-button') as HTMLElement;
+    firstSession.querySelector('.session-description')?.classList.add('description-expanded');
+    controlButton.classList.add('show-button');
+    this.highlightSession(firstSession);
   }
 
   private highlightSession(sessionToHighlight: any): void {

@@ -52,6 +52,7 @@ $agenda-date-info-height: 40px;
 .session {
     position: relative;
     cursor: default;
+    transition: border 0.1s 0.5s linear;
     &.session-highlighted {
         border-top: 3px solid $primary-dark-color;
         border-bottom: 3px solid $primary-dark-color;
@@ -86,7 +87,7 @@ $agenda-date-info-height: 40px;
     
     .session-detail {
         .session-title {
-            @include inter-font(42px);
+            @include inter-font(36px);
             margin: 10px 100px 12px 150px;
             letter-spacing: -1px;
             cursor: pointer;
@@ -109,10 +110,10 @@ $agenda-date-info-height: 40px;
             overflow: hidden;
             margin-left: 150px;
             margin-right: 130px;
-            line-height: 20px;
             transition: all 1s 0.3s ease-in-out;
             .text-preview {
                 @include inter-font(16px);
+                line-height: 20px;
                 color: $primary-dark-color;
                 opacity: 0.6;
             }
@@ -148,11 +149,12 @@ $agenda-date-info-height: 40px;
                     }
                     &:active {
                         transform: translateY(3px);
-                        background-image: linear-gradient(to right, #654276, #DB6861);
+                        background-color: #DB6861;
                     }
                 }
             }
             .internal-session-signup {
+                margin-bottom: 10px;
                 .signup-section-label {
                     margin-top: 34px;
                     margin-bottom: 11px;
@@ -160,12 +162,13 @@ $agenda-date-info-height: 40px;
                     color: #A6A6A8;
                 }
                 .internal-signup-button {
+                    padding-top: 5px;
+                    padding-bottom: 5px;
                     text-decoration: none;
                     border: 1px solid $primary-dark-color;
                     border-radius: 5px;
-                    height: 32px;
                     &:active {
-                        background-image: linear-gradient(to right, #654276, #DB6861);
+                        background-color: #DB6861;
                     }
                 }
                 .internal-signup-button-text {
@@ -203,10 +206,39 @@ $agenda-date-info-height: 40px;
                 margin-right: 20px;
             }
             .bio {
-                color: $primary-dark-color;
-                @include inter-font(16px);
-                opacity: 0.6;
-                line-height: 20px;
+                .profile {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 18px;
+                }
+                .social-media {
+                    & a + a {
+                        margin-left: 10px;
+                    }
+                    white-space: nowrap;
+                }
+                .background {
+                    display: flex;
+                    .title {
+                        @include inter-font(18px, 600);
+                        letter-spacing: -1px;
+                    }
+                    .company {
+                        @include inter-font(18px, 400);
+                        opacity: 0.4;
+                        margin-left: 16px;
+                        padding-left: 16px;
+                        letter-spacing: -1px;
+                        border-left: 2px solid grey;
+                    }
+                }
+                .text-bio {
+                    color: $primary-dark-color;
+                    @include inter-font(16px);
+                    opacity: 0.6;
+                    line-height: 20px;
+                }
             }
         }
     }

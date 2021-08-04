@@ -69,7 +69,7 @@
         {
             "id": 6,
             "name": "",
-            "topic": "Intermission | Meet our Speakers | Q&A",
+            "topic": "Intermission",
             "UTCHour": 16,
             "UTCMinute": 0,
             "duration": 30,
@@ -135,7 +135,7 @@
             "id": 11,
             "name": "",
             "title": "",
-            "bio": "https://www.gather.town/",
+            "bio": "https://gather.town/app/wrTZrKgQQUfw7LAB/Fundamental%20Conference",
             "topic": "Networking | Meet and Greet with Fundamental Conference",
             "description": "Hang out with us at Gather.town!",
             "UTCHour": 18,

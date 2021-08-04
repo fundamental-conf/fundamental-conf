@@ -3,6 +3,30 @@
 $agenda-header-title-height: 140px;
 $agenda-date-info-height: 40px;
 
+::ng-deep .links {
+    width: 280px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        color: $primary-light-color;
+        text-decoration: none;
+    }
+    .top-label {
+        @include inter-font(16px);
+    }
+    .bottom-label {
+        @include inter-font(12px);
+        opacity: 0.6;
+    }
+    .hidden-bottom-label {
+        opacity: 0;
+    }
+}
+
 .agenda-container {
     margin-top: $desktop-header-height;
     margin-bottom: 114px;

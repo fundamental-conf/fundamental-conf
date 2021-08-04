@@ -27,21 +27,31 @@
         },
         {
             "id": "06",
+            "name": "Mladen Droshev",
+            "title": "Fundamental Library Lead"
+        },
+        {
+            "id": "07",
+            "name": "Peter Muessig",
+            "title": "UI5 Chief Architect"
+        },
+        {
+            "id": "08",
             "name": "Ramona Biscoveanu",
             "title": "Developer"
         },
         {
-            "id": "07",
+            "id": "09",
             "name": "Kalin Milanov",
             "title": "Design Expert"
         },
         {
-            "id": "08",
+            "id": "10",
             "name": "Dmitriy Shekhovtsov",
             "title": "CEO/CTO, Valor Software"
         },
         {
-            "id": "09",
+            "id": "11",
             "name": "Tobias Ouwejan",
             "title": "Principle Architect"
         }

@@ -107,8 +107,7 @@ export class AddToCalendarService {
     } else if (session.minorSession) {
       return '';
     } else if (session.hangout) {
-      // TODO: add gather.town link
-      return 'https://www.gather.town/';
+      return 'https://gather.town/app/wrTZrKgQQUfw7LAB/Fundamental%20Conference';
     }
     return 'https://broadcast.co.sap.com/go/fdconf';
   }

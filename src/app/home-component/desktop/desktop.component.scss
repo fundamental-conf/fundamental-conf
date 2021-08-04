@@ -311,10 +311,10 @@
         z-index: 1;
         transition: all 1s ease;
         &:not(:first-child) {
-            margin-left: -32.5vw;
+            margin-left: -34vw;
         }
         &:not(:last-child):hover ~ .card {
-            transform: translateX(32.5vw);
+            transform: translateX(34vw);
         }
         .photo {
             width: 50vh;

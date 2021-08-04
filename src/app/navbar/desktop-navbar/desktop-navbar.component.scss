@@ -9,6 +9,11 @@
     position: fixed;
     top: 0;
     z-index: 10;
+    .logo-title {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
     img {
         margin-left: 52px;
     }

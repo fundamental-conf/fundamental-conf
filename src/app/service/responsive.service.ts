@@ -7,16 +7,19 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ResponsiveService {
 
-  private mobileThreshold: number = 800;
+  private mobileThreshold: number = 1050;
   showMobile$: Observable<any>;
   
   constructor() { 
     this.showMobile$ = new Observable((subscriber) => {
       window.addEventListener('load', () => {
-        subscriber.next(this.showMobile())
+        subscriber.next(this.showMobile());
       });
       window.addEventListener('resize', () => {
-        subscriber.next(this.showMobile())
+        subscriber.next(this.showMobile());
+      });
+      window.addEventListener('orientationchange', () => {
+        subscriber.next(this.showMobile());
       });
     }).pipe(
       debounceTime(500)

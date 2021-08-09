@@ -2,9 +2,11 @@
 
 $fullsize-menu: 75px;
 $halfsize-menu: 50px;
+$date-banner-height: 50px;
+$timezone-banner-height: 40px;
 
 .date-banner {
-    height: 50px;
+    height: $date-banner-height;
     display: flex;
     position: sticky;
     top: $fullsize-menu;
@@ -45,7 +47,7 @@ $halfsize-menu: 50px;
 }
 
 .timezone-banner {
-    height: 40px;
+    height: $timezone-banner-height;
     background-color: $primary-light-color;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
     color: $primary-dark-color;
@@ -58,6 +60,7 @@ $halfsize-menu: 50px;
 
 .agenda-container {
     background-color: $primary-light-color;
+    min-height: calc(100vh - #{$halfsize-menu} - 170px - #{$timezone-banner-height} - #{$date-banner-height});
 }
 
 .session {

@@ -22,4 +22,17 @@
         @include inter-font(22px, 600);
         margin-left: 13px;
     }
+    .call-to-action {
+        a {
+            text-decoration: none;
+            @include inter-font(18px, 600);
+            color: $primary-light-color;
+        }
+        background-color: #DB6861;
+        height: 100%;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;   
+    }
 }

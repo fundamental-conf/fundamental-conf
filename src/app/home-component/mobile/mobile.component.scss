@@ -249,7 +249,7 @@ $navbar: 60px;
             margin-bottom: 39px;
             @include inter-font(18px);
             color: $primary-light-color;
-            background-color: #DC6962;
+            background-color: $primary-dark-color;
         }
     }
 }
@@ -307,6 +307,21 @@ $navbar: 60px;
             height: 50px; width: 193px; top: 80%; left: 0;
         }
     }
+}
+
+.call-to-action {
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    color: $primary-light-color;
+    background-color: #DB6861;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include inter-font(20px, 600);
+    z-index: 100;
 }
 
 @keyframes rotating {

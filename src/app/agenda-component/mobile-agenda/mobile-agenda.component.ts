@@ -109,6 +109,10 @@ export class MobileAgendaComponent implements OnInit, AfterViewInit {
     return this.addToCalendarService.getSAPSignUpLink();
   }
 
+  getSlidesLink(name: string): string {
+    return `../../../assets/slides/${name}.pdf`;
+  }
+  
   adjustMenu(): void {
     window.addEventListener('scroll', () => {
       if (!this.sideMenu) {

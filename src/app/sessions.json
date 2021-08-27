@@ -22,7 +22,9 @@
             "description": "An overview of what Fundamental Library is: an open-source library that is committed to providing consistent and flexible user experiences and front-end components across web applications. A brief introduction on how it started and what we continue to deliver.",
             "UTCHour": 14,
             "UTCMinute": 10,
-            "duration": 20
+            "duration": 20,
+            "slides": true,
+            "recording": ""
         },
         {
             "id": 3,
@@ -36,7 +38,9 @@
             "description": "Since I’ve started working on the web in the 90s I’ve seen various iterations in web development. I'd like to share my take on some of the trends I’m watching and present what’s relevant and why.",
             "UTCHour": 14,
             "UTCMinute": 30,
-            "duration": 30
+            "duration": 30,
+            "slides": true,
+            "recording": "https://www.youtube.com/watch?v=tH2NLFPGJac"
         },
         {
             "id": 4,
@@ -50,7 +54,9 @@
             "description": "In this talk, I will explain how working with web animations makes my work and coding fun. I will showcase different types of animations, and I will give some advice from my experience on how to get started and when to start looking for a library.",
             "UTCHour": 15,
             "UTCMinute": 0,
-            "duration": 30
+            "duration": 30,
+            "slides": false,
+            "recording": "https://www.youtube.com/watch?v=QTmVGY-3flY"
         },
         {
             "id": 5,
@@ -64,7 +70,9 @@
             "description": "Typescript, which jumped on the Angular Hype train early on has now developed and matured. It is to the point when proper usage may grant you a confidence in your source code for years to come. From the first day of integration with Angular, TypeScript brings a lot of goodies which makes this pair a future proof and reliable combination.",
             "UTCHour": 15,
             "UTCMinute": 30,
-            "duration": 30
+            "duration": 30,
+            "slides": true,
+            "recording": "https://www.youtube.com/watch?v=EIDedyjgWyc"
         },
         {
             "id": 6,
@@ -87,7 +95,9 @@
             "description": "You know how to develop web apps with React, Angular, and Vue, but you haven't used SAP BTP before? Then this session is for you! Even though many think that you can only deploy SAPUI5 apps to SAP BTP, this is not true. You can deploy any web app to SAP's go-to cloud platform - and even embed them in proven SAP environments such as the SAP Fiori Launchpad. Join this session to learn all about SAP BTP for frontend developers.",
             "UTCHour": 16,
             "UTCMinute": 30,
-            "duration": 30
+            "duration": 30,
+            "slides": true,
+            "recording": "https://www.youtube.com/watch?v=lj14NDg0Mm8"
         },
         {
             "id": 8,
@@ -101,7 +111,9 @@
             "description": "Everyone is a designer. The only difference is whether they are consciously or unconsciously engaged in designing. This talk describes the design approach and mindset, how it differs from methods like UX and Agile, and how you can be a more conscious, and better, designer.",
             "UTCHour": 17,
             "UTCMinute": 0,
-            "duration": 30
+            "duration": 30,
+            "slides": true,
+            "recording": "https://www.youtube.com/watch?v=heiwtzdIRjo"
         },
         {
             "id": 9,
@@ -115,7 +127,9 @@
             "description": "Exploring the depth and non-linear design research practices and how that builds the foundation of an impactful brand strategy.",
             "UTCHour": 17,
             "UTCMinute": 30,
-            "duration": 30
+            "duration": 30,
+            "slides": true,
+            "recording": "https://www.youtube.com/watch?v=fz8ZF9ZeTwk&t=10s"
         },
         {
             "id": 10,
@@ -129,7 +143,9 @@
             "description": "UI consistency is often achieved at the expense of user experience. This session will dig deeper into the elements that bring consistency and how to use them so that we also create good user experience.",
             "UTCHour": 18,
             "UTCMinute": 0,
-            "duration": 30
+            "duration": 30,
+            "slides": true,
+            "recording": "https://www.youtube.com/watch?v=FheiLAqCYHs"
         },
         {
             "id": 11,

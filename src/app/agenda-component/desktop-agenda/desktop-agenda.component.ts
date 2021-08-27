@@ -85,6 +85,11 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
         }
       });
     });
+    
+    // expand the first session
+    (sessionPreviews[1] as HTMLElement).classList.add('preview-revealed');
+    (sessions[1] as HTMLElement).classList.add('session-highlighted');
+    (controlButtons[1] as HTMLElement).classList.add('button-revealed');
   }
 
   toggleSession(i: number): void {
@@ -108,6 +113,10 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
 
   getImgSrc(name: string): string {
     return "../../assets/speakers/agenda_avatar/" + name + ".png";
+  }
+
+  getSlidesLink(name: string): string {
+    return `../../../assets/slides/${name}.pdf`;
   }
 
   private findNodeIndex(node: Node, list: NodeList): number {

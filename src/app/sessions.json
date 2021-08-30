@@ -10,7 +10,8 @@
             "description": "Fundamental Conference aims to start a conversation concerning the future of modern enterprise design, front-end development, and user experience, and how this can be done in a open-source, community-driven, inclusive, performant, scalable and reusable way.",
             "UTCHour": 14,
             "UTCMinute": 0,
-            "duration": 10
+            "duration": 10,
+            "recording": "https://youtube.com/playlist?list=PLChUxte5emJbAguQoV3az5dwfw5Zh5Sfv"
         },
         {
             "id": 2,
@@ -24,7 +25,7 @@
             "UTCMinute": 10,
             "duration": 20,
             "slides": true,
-            "recording": ""
+            "recording": "https://www.youtube.com/watch?v=vXwCdFmiIEI"
         },
         {
             "id": 3,

@@ -87,9 +87,9 @@ export class DesktopAgendaComponent implements OnInit, AfterViewInit {
     });
     
     // expand the first session
-    (sessionPreviews[1] as HTMLElement).classList.add('preview-revealed');
-    (sessions[1] as HTMLElement).classList.add('session-highlighted');
-    (controlButtons[1] as HTMLElement).classList.add('button-revealed');
+    (sessionPreviews[0] as HTMLElement).classList.add('preview-revealed');
+    (sessions[0] as HTMLElement).classList.add('session-highlighted');
+    (controlButtons[0] as HTMLElement).classList.add('button-revealed');
   }
 
   toggleSession(i: number): void {

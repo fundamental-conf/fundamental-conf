@@ -109,59 +109,34 @@ $timezone-banner-height: 40px;
         &.hangout-session {
             margin-top: 40px;
         }
-        .calendar-section-label {
-            @include inter-font(12px, 600);
-            color: #A6A6A8;
-            margin-top: 17px;
-            margin-bottom: 11px;
-        }
-        .calendar-buttons {
-            display: flex;
-            margin-bottom: 10px;
-        }
-        .calendar-button {
-            width: 39px;
-            height: 32px;
-            border: 1px solid $primary-dark-color;
-            border-radius: 5px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            &:not(:last-child) {
-                margin-right: 6px;
-            }
-            &:active {
-                background-color: #DB6861;
-            }
-        }
-        .internal-session-signup {
-            margin-bottom: 15px;
-            .signup-section-label {
-                margin-top: 17px;
-                margin-bottom: 15px;
-                @include inter-font(12px, 600);
-                color: #A6A6A8;
-            }
-            .internal-signup-button {
-                text-decoration: none;
-                border: 1px solid $primary-dark-color;
-                border-radius: 5px;
-                padding: 5px;
-                &:active {
-                    background-color: #DB6861;
-                }
-            }
-            .internal-signup-button-text {
-                @include inter-font(14px);
-                color: $primary-dark-color;  
-            }
-        }
         &.description-expanded, &.fully-expanded {
             max-height: 1000px;
             margin-top: 13px;
-            margin-bottom: 6px;
+            margin-bottom: 13px;
+        }
+        .session-materials {
+            margin-top: 17px;
+            .material-buttons {
+                display: flex;
+            }
+            a {
+                width: 32px;
+                height: 32px;
+                padding: 6px;
+                border: 1.5px solid $primary-dark-color;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+        .material-label {
+            @include inter-font(12px, 600);
+            color: #A6A6A8;
+            margin-bottom: 11px;
         }
     }
     .speaker-bio {

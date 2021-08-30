@@ -29,27 +29,14 @@
                         </div>
                         <div class="session-preview">
                             <div class="text-preview">{{ session.description }}</div>
-                            <div class="add-to-calendar" *ngIf="!session.internal">
-                                <div class="calendar-section-label">Add to Calendar</div>
-                                <div class="calendar-section">
-                                    <a class="calendar-button" [href]="getCalendarLink(i, 'google')" target="_blank">
-                                        <img src="../../../assets/google_calendar_icon.png" alt="Google Calendar" width="19px" height="18px">
-                                        <span class="calendar-button-text">Google</span>
-                                    </a>
-                                    <a class="calendar-button" [href]="getCalendarLink(i, 'ics')">
-                                        <img src="../../../assets/ical_calendar_icon.png" alt="iCal Calendar" width="22px" height="22px">
-                                        <span class="calendar-button-text">iCal</span>
-                                    </a>
-                                    <a class="calendar-button" [href]="getCalendarLink(i, 'ics')">
-                                        <img src="../../../assets/outlook_calendar_icon.png" alt="Outlook Calendar" width="23px" height="23px">
-                                        <span class="calendar-button-text">Outlook</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="internal-session-signup" *ngIf="session.internal">
-                                <div class="signup-section-label">Internal Session</div>
-                                <a class="internal-signup-button" [href]="getInternalSessionLink()" target="_blank">
-                                    <span class="internal-signup-button-text">SAP Sign Up</span>
+                            <div class="session-materials" *ngIf="session.recording || session.slides">
+                                <a class="material-icon recording-icon" *ngIf="session.recording" [href]="session.recording" target="_blank">
+                                    <img src="../../../assets/recording.png" alt="recording button icon">
+                                    RECORDING
+                                </a>
+                                <a class="material-icon slides-icon" *ngIf="session.slides" [href]="getSlidesLink(session.name)" target="_blank">
+                                    <img src="../../../assets/slides.png" alt="slides button icon">
+                                    SLIDES
                                 </a>
                             </div>
                         </div>

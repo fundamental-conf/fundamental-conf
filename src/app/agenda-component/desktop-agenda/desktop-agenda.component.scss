@@ -140,71 +140,41 @@ $agenda-date-info-height: 40px;
                 color: $primary-dark-color;
                 opacity: 0.6;
             }
-            .add-to-calendar {
-                .calendar-section-label {
-                    margin-top: 34px;
-                    margin-bottom: 11px;
-                    @include inter-font(12px, 600);
-                    color: #A6A6A8;
-                } 
-                .calendar-section {
-                    display: flex;
-                }
-                .calendar-button {
-                    width: fit-content;
-                    height: 32px;
-                    padding-left: 10px;
-                    background-color: $primary-light-color;
-                    border: 1px solid $primary-dark-color;
-                    border-radius: 5px;
-                    text-decoration: none;
-                    display: flex;
-                    align-items: center;
-                    cursor: pointer;
-                    &:not(:last-child) {
-                        margin-right: 16px;
-                    }
-                    .calendar-button-text {
-                        @include inter-font(14px);
-                        color: $primary-dark-color;
-                        margin-left: 5px;
-                        margin-right: 10px;
-                    }
-                    &:active {
-                        transform: translateY(3px);
-                        background-color: #DB6861;
-                    }
-                }
-            }
-            .internal-session-signup {
-                margin-bottom: 10px;
-                .signup-section-label {
-                    margin-top: 34px;
-                    margin-bottom: 11px;
-                    @include inter-font(12px, 600);
-                    color: #A6A6A8;
-                }
-                .internal-signup-button {
-                    padding-top: 5px;
-                    padding-bottom: 5px;
-                    text-decoration: none;
-                    border: 1px solid $primary-dark-color;
-                    border-radius: 5px;
-                    &:active {
-                        background-color: #DB6861;
-                    }
-                }
-                .internal-signup-button-text {
-                    margin: 15px 10px 15px 10px;
-                    @include inter-font(14px);
-                    color: $primary-dark-color;  
-                }
-            }
             &.preview-revealed, &.fully-expanded {
                 max-height: 500px;
                 margin-top: 20px;
                 margin-bottom: 20px;
                 padding-bottom: 5px;
+            }
+            .session-materials {
+                margin-top: 25px;
+                display: flex;
+                .material-icon {
+                    height: 32px;
+                    padding: 0 8px 0 8px;
+                    border: 2px solid #161616;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    @include inter-font(14px);
+                    text-decoration: none;
+                    color: $primary-dark-color;
+                    letter-spacing: 0.07em;
+                    &:first-child {
+                        margin-right: 14px;
+                    }
+                    &:active {
+                        background-color: #DB6861;
+                    }
+                }
+                .recording-icon {
+                    width: 134px;
+                }
+                .slides-icon {
+                    width: 100px;
+                }
             }
         }
         .speaker-info {

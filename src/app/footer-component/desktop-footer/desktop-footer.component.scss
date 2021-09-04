@@ -22,10 +22,19 @@
         }
     }
     .copyright {
-        margin-top: 125px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
         color: $primary-light-color;
         font-family: '72', sans-serif;
         font-weight: 100;
         font-size: 16px;
+        align-items: flex-end;
+        a {
+            text-decoration: none;
+            color: $primary-light-color;
+            @include inter-font(20px, 500);
+            margin-bottom: 4px;
+        }
     }
 }

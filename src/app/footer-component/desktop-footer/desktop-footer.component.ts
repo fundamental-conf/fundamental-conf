@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-desktop-footer',
   templateUrl: './desktop-footer.component.html',
   styleUrls: ['./desktop-footer.component.scss']
 })
-export class DesktopFooterComponent implements OnInit {
+export class DesktopFooterComponent {
 
-  constructor() { }
+  currentYear: number;
 
-  ngOnInit(): void {
+  constructor() { 
+    this.currentYear = new Date().getFullYear();
   }
 
 }

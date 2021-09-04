@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mobile-footer',
   templateUrl: './mobile-footer.component.html',
   styleUrls: ['./mobile-footer.component.scss']
 })
-export class MobileFooterComponent implements OnInit {
+export class MobileFooterComponent {
 
-  constructor() { }
+  currentYear: number;
 
-  ngOnInit(): void {
+  constructor() { 
+    this.currentYear = new Date().getFullYear();
   }
 
 }

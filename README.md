@@ -1,4 +1,4 @@
-# OpenUI5 Website
+# Fundamental Conference Website
 
 This is the repository for the [fundamental-conf.com](https://fundamental-conf.com) website of the [Fundamental Library](https://sap.github.io/fundamental) framework.
 

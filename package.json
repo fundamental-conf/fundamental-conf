@@ -13,10 +13,10 @@
     "predeploy": "ng build --prod && cp CNAME dist/fundamental-conf/CNAME"
   },
   "dependencies": {
-    "@angular/animations": "~12.2.4",
+    "@angular/animations": "~12.2.7",
     "@angular/common": "~12.0.3",
     "@angular/compiler": "~12.0.3",
-    "@angular/core": "~12.2.4",
+    "@angular/core": "~12.2.7",
     "@angular/forms": "~12.0.3",
     "@angular/platform-browser": "~12.0.3",
     "@angular/platform-browser-dynamic": "~12.0.3",

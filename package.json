@@ -33,7 +33,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "@types/smoothscroll-polyfill": "^0.3.1",
-    "angular-cli-ghpages": "^1.0.0-rc.2",
+    "angular-cli-ghpages": "^1.0.0",
     "codelyzer": "^6.0.0",
     "fundamental-styles": "0.19.0-rc.9",
     "jasmine-core": "~3.7.0",

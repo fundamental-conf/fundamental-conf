@@ -1,7 +1,7 @@
 module.exports = {
-  root: true,
+  root: false, //set this to true to enable prettyfier and eslint
   env: {
-    node: true,
+    node: false,
   },
   extends: [
     "plugin:vue/vue3-essential",

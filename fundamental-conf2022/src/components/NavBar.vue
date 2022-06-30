@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-color: #1a1126;
+  background-color: black;
   width: 100%;
   position: fixed; //are we keeping the nav bar at all time?
   transition: 0.5s ease all;

@@ -2,7 +2,7 @@
   <header :class="{ 'scrolled-nav': scrollPosition }">
     <nav>
       <div class="branding">
-        <icon-fig name="logo" width="33" height="64"></icon-fig>
+        <icon-fig name="logo"></icon-fig>
       </div>
       <ul class="navigation">
         <li>
@@ -30,9 +30,9 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-color: black;
+  background-color: $brand-color-black;
   width: 100%;
-  position: fixed; //are we keeping the nav bar at all time?
+  //   position: fixed; //are we keeping the nav bar at all time?
   transition: 0.5s ease all;
   color: #fff;
   height: 91px;

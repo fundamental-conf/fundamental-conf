@@ -81,7 +81,7 @@ top: 153px;
 font-family: 'Ubuntu';
 font-style: normal;
 font-weight: 700;
-font-size: 240px;
+font-size: 220px;
 line-height: 97.9%;
 /* or 235px */
 display: flex;

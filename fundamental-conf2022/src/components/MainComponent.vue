@@ -1,4 +1,5 @@
 <template>
+
   <section class="fd_background fd_container">
     <!--bubble on the left-->
     <svg
@@ -191,8 +192,14 @@ position: absolute;
 </template>
 
 <script>
+
+
 export default {
-  components: {},
+  name: "MainComponent",
+  components: {
+
+  },
+ 
 };
 </script>
 

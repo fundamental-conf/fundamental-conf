@@ -29,6 +29,9 @@
     position: relative;
     align-items: flex-start;
     overflow: hidden;
+
+   
+    
    }
     
    .fd_background_silver {
@@ -36,6 +39,42 @@
     align-items: center;
     justify-content: center;
    }
+
+
+
+   @media (prefers-reduced-motion: reduce) {
+    *:not(svg, path) {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+   @media only screen and (orientation: landscape), (orientation: portrait) {
+    html {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  
+
+  
+
+html, body{
+    
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    .fd_container {
+    
+        scroll-snap-align: start;
+       }
+}
+
 
     @import url(https://fonts.google.com/specimen/Ubuntu); 
   

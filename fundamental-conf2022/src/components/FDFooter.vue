@@ -22,6 +22,7 @@ export default {};
 <style lang="scss" scoped>
 .fd_footer {
   height: 9em;
+  position: relative;
   background-color: $brand-color-black;
   padding: 4em;
   color: white;

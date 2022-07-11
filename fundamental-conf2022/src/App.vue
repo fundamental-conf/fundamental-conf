@@ -2,14 +2,17 @@
   <NavBar />
   <MainComponent />
   <FDAbout />
+  <FDCallForContent />
   <FDFooter />
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
 import MainComponent from "./components/MainComponent.vue";
-import FDFooter from "./components/FDFooter.vue";
 import FDAbout from "./components/FDAbout.vue";
+import FDCallForContent from "./components/FDCallForContent.vue";
+import FDFooter from "./components/FDFooter.vue";
+
 
 export default {
   name: "App",
@@ -17,6 +20,7 @@ export default {
     NavBar,
     MainComponent,
     FDAbout,
+    FDCallForContent,
     FDFooter,
   },
 };

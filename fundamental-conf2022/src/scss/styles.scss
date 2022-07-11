@@ -63,17 +63,25 @@
   
 
   
+  #text{
 
-html, body{
+    animation: rotate 10s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+        
+      }
+      @keyframes rotate {
+        from {
+          transform:rotateZ(0deg);
+        }
+        to {
+           transform:rotateZ(360deg);
+        }
+      } 
     
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-    .fd_container {
-    
-        scroll-snap-align: start;
-       }
-}
+  
+
+
 
 
     @import url(https://fonts.google.com/specimen/Ubuntu); 

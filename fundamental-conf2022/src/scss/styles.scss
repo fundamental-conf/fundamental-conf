@@ -21,6 +21,26 @@
     color:inherit; 
     cursor:pointer;
    }
+
+   @keyframes textclip {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+  }
+   //mixing for different sizes
+   @mixin for-size($size) {
+    @if $size == max_width_599 {
+      @media (max-width: 599px) { @content; }
+    } @else if $size == min_width_600 {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == min_width_900  {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == min_width_1200 {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == min_width_1800  {
+      @media (min-width: 1800px) { @content; }
+    }
+  }
     
    .fd_container {
     width: 100%;
@@ -61,11 +81,11 @@
     }
   }
   
-
+/*the rotation of the coming coon circles */
   
   #text{
 
-    animation: rotate 10s infinite linear;
+    animation: rotate 20s infinite linear;
     transform-origin: center;
     transform-box: fill-box;
         

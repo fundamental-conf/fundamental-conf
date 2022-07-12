@@ -109,8 +109,14 @@ position: absolute;
 </defs>
 </svg>
 
-
-    <div class="fd_title_box">
+    <transition
+      appear
+      @before-enter="beforeEnter"
+      @enter="enter"
+      :css="false"
+    >
+    <div  v-if="showTitle" class="fd_title_box">
+      
       <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 </svg>
@@ -147,8 +153,11 @@ position: absolute;
       <h1 class="fd_title">Fundamental <br/> Conference</h1>
       <h5 class="fd_subtitle">future of front-end and design</h5>
       </div>
+      
     </div>
-
+    </transition>
+ 
+<!-- </transition> -->
     <!--mouse coming soon-->
    <svg viewBox="0 0 245 246" fill="none" xmlns="http://www.w3.org/2000/svg" style="
     bottom: 23px;
@@ -207,15 +216,32 @@ position: absolute;
 </template>
 
 <script>
-
+import {ref} from 'vue'
+import gsap from 'gsap'
 
 export default {
-  name: "MainComponent",
-  components: {
+  setup() {
+    const showTitle = ref(true)
+    const beforeEnter = (el) => {
+      console.log('before enter - set intial state')
+      el.style.transform = 'translateY(-60px)'
+      el.style.opacity = 0
+    }
+    const enter = (el, done) => {
+      console.log('starting to enter - make transition')
+      gsap.to(el, {
+        duration: 2,
+        y: 0,
+        opacity: 1,
+        ease: 'slow',
+        onComplete: done
+      })
+    }
+    return { beforeEnter, enter, showTitle }
+  }
+}
+  
 
-  },
- 
-};
 </script>
 
 <style lang="scss" scoped>
@@ -231,7 +257,7 @@ export default {
     display: flex;
     position: absolute;
     top: 25%;
-    left: 25%;
+    left: 20%;
 
     font-family: "Ubuntu";
     font-style: normal;

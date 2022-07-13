@@ -49,10 +49,9 @@ height: 50vh; top: 40vh;  left: 0;
 .29</h1></div>
 </div>
     <p class ="fd_paragraph">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Ut nunc justo libero erat nibh sit lectus eu bibendum.
- Vehicula magna non sem sagittis porta malesuada. 
- Eu ipsum tortor porta tincidunt. Nibh amet ac viverra tellus euismod id.
+On September 29th, Fundamental Conference is coming back for the second time 
+with an all-new one-day worldwide virtual event where designers and developers come 
+together to share ideas and innovative practices that drive the future of front-end at SAP.
       </p>
 </div>
 
@@ -84,7 +83,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 2%;
+  padding: 5%;
 
   .fd_about_tittle {
   
@@ -106,6 +105,7 @@ export default {
     border-bottom: 1px solid #2865BE;
     order:2;
     flex: 1;
+    
   }
   .fd_about_element
   { 
@@ -126,8 +126,7 @@ flex:1;
   align-items: center;
   text-align: right;
   letter-spacing: 0.02em;
-  background: linear-gradient(320deg,   #7B5CB2, #2865BE, #69ADF8,
-#82DEFF);
+  background: linear-gradient(33.68deg, #7B5CB2 11.17%, #82DEFF 100%);
  -webkit-text-stroke: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -144,14 +143,14 @@ flex:1;
     .fd_paragraph {
 
    width: 70vh;
-    left: 5vh;
-    top: -37vh;
+    left: 10vh;
+    top: -45vh;
     position: relative;
     font-family: "Source Sans 3";
     font-style: normal;
     font-weight: 400;
     font-size: 3.4vh;
-    line-height: 5vh;
+    line-height: 6vh;
     text-align: justify;
     letter-spacing: 0.01em;
     color: #052E69;

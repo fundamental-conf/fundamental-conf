@@ -257,7 +257,7 @@ export default {
     display: flex;
     position: absolute;
     top: 25%;
-    left: 20%;
+    left: 10%;
 
     font-family: "Ubuntu";
     font-style: normal;
@@ -266,8 +266,8 @@ export default {
   flex: 2;
   .fd_title {
       font-weight: 900;
-      font-size: 81px;
-      line-height: 93px;
+      font-size: 14vh;
+    line-height: 14vh;
       /* identical to box height */
       letter-spacing: 0.05em;
       color: #ffffff;
@@ -275,17 +275,17 @@ export default {
       &::after {
         content: "22";
         color: $brand-color-blue;
-        font-size: 34px;
-        font-weight: 850;
-        line-height: 49px;
+           font-size: 7vh;
+    font-weight: 850;
+    line-height: 8vh;
         vertical-align: text-top;
       }
     }
     .fd_subtitle {
     
       font-weight: 400;
-      font-size: 29px;
-      line-height: 34px;
+         font-size: 5vh;
+    line-height: 6vh;
       letter-spacing: 0.088em;
       color: $brand-color-blue;
       right: 70px;

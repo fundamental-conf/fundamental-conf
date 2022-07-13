@@ -6,8 +6,8 @@
   <div class="fd_button">
 
     <svg viewBox="0 0 295 291" fill="none" xmlns="http://www.w3.org/2000/svg" 
-    style ="padding-top: 3rem;     width: 45vw;
-    height: 45vh;">
+    style ="padding-top: 3rem;     width: 40vw;
+    height: 40vh;">
    <a xlink:href="https://docs.google.com/forms/d/e/1FAIpQLSefCY1yFAYFDuFzW6wB0xENR8mgc0oCbC2FWPcr0_qStDTSlg/viewform">
 <g id= "arrow" href="https://docs.google.com/forms/d/e/1FAIpQLSefCY1yFAYFDuFzW6wB0xENR8mgc0oCbC2FWPcr0_qStDTSlg/viewform">
 <path class="st3" fill-rule="evenodd" clip-rule="evenodd" d="M117.333 146C117.333 143.883 119.05 142.167 121.167 142.167H174.833C176.951 142.167 178.667 143.883 178.667 146C178.667 148.117 176.951 149.833 174.833 149.833H121.167C119.05 149.833 117.333 148.117 117.333 146Z" fill="#61A1FE"/>
@@ -49,10 +49,9 @@
 </g>
 </svg>
 </div>
-  <div class="fd_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Ut nunc justo libero erat nibh sit lectus eu bibendum.
- Vehicula magna non sem sagittis porta malesuada. 
- Eu ipsum tortor porta tincidunt. Nibh amet ac viverra tellus euismod id.</div>
+  <div class="fd_paragraph">Join us as a speaker to share your innovative ideas and progress with the Fundamental community and beyond. This is a great opportunity to transcend your public speaking skills and inspire likeminded designers, developers, and other creative thinkers-alike by sharing what you love doing most. 
+    Doesn't this sound like a stellar opportunity to you?
+     We can't wait to see your topic proposal soon!</div>
 </div>
 
  </section>
@@ -67,6 +66,7 @@ export default {};
 .container {  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 1.5fr 1fr;
+  padding: 5%;
   gap: 0px 0px;
   grid-gap:3%;
   padding: 3rem;
@@ -93,21 +93,32 @@ align-items: center;
 text-align: right;
 letter-spacing: 0.02em;
 padding-bottom: 4%;
-color: #61A1FE; }
+background: linear-gradient(18.57deg, #82DEFF 0%, #7B5CB2 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-emphasis-color: transparent;
+ animation: textclip 2s linear infinite alternate;
+ @keyframes textclip {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+  }
+    }
+      
 
 .fd_line { grid-area: fd_line;   padding-top: 6%;
     border-bottom: 1px solid #2865BE; width: 29vw; }
 
 .fd_button { grid-area: fd_button; }
 
-.fd_paragraph { grid-area: fd_paragraph;
-
-
+.fd_paragraph { 
+  grid-area: fd_paragraph;
 
 font-family: 'Source Sans 3';
 font-style: normal;
 font-weight: 400;
-font-size: 3.5vh;
+font-size: 2.7vh;
 line-height: 4vh;
 display: flex;
 align-items: center;
@@ -120,13 +131,13 @@ color: #052E69; }
 
 		&:hover {
 			.st3 {
-				fill: blue;
+				fill: #7B5CB2;
 			}
 			
 		}
 		&:active {
 			.st3 {
-				fill: blue;
+				fill: #7B5CB2;
 			}
 		}
 	

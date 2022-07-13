@@ -1,16 +1,22 @@
 <template>
-  <footer class="fd_footer">
-    <div class="fd_copyright">
-      <a href=""> Fundamental Library </a>
+  <footer class="fd-footer">
+    <div class="fd-footer__nav">
+      <a href="#navbar">Back to top</a>
+      <div></div>
     </div>
-    <div class="fd_copyright--center">
-      <a href=""> Fundamental Library </a>
+    <div class="fd-footer__left">
+      <a href="https://www.linkedin.com/company/sap-graph/" target="_blank">LinkedIn</a>
+      <a href="https://twitter.com/fundamental_lib" target="_blank">Twitter</a>
+      <a href="https://www.youtube.com/c/FundamentalLibrary" target="_blank">Youtube</a>
+      <a href="https://community.sap.com/topics/fundamental-library" target="_blank">SAP Community</a>
+      <a href="https://sap.github.io/fundamental/" target="_blank">Fundamental Library</a>
     </div>
-    <div class="fd_copyright--right">
-      <p>
-        Copyright 2022 <br /><br />
-        Legal Disclaimer Statements
-      </p>
+    <div class="fd-footer__right">
+      <a href="https://www.sap.com/about/legal/privacy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="https://www.sap.com/corporate/en/legal/terms-of-use.html" rel="noopener noreferrer" target="_blank">Terms of Use</a>
+      <a href="https://www.sap.com/about/legal/impressum.html" rel="noopener noreferrer" target="_blank">Legal Disclosure</a>
+      <p>© Copyright 2022, SAP SE</p>
+      <p>Fundamental Library is released under the Apache License 2.0</p>
     </div>
   </footer>
 </template>
@@ -20,21 +26,102 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.fd_footer {
-  height: 9em;
-  position: relative;
-  background-color: $brand-color-black;
-  padding: 4em;
-  color: white;
-  .fd_copyright {
-    text-align: left;
+.fd-footer {
+  display: flex;
+  background: #1A1126;
+  justify-content: space-between;
+  padding: 5.625rem 5rem;
 
-    &--center {
-      text-align: center;
-    }
-    &--right {
-      text-align: right;
+
+  &__nav {
+    color: #fff;
+    display: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: fit-content;
+    align-self: center;
+   
+    div {
+      margin: 2rem;
+      border-bottom: 0.125rem solid $brand-color-blue;
     }
   }
+
+  &__left,
+  &__right {
+    gap: 0.25rem;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+
+    p {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &__right {
+    align-items: flex-end;
+  }
+
+      a {
+      color: #fff;
+      outline: none;
+      position: relative;
+      width: fit-content;
+      padding: 0.5rem 1rem;
+      text-decoration: none;     
+      border-radius: 0.25rem;
+      outline-offset: 1.25rem;
+      transition: all 0.3s ease-in-out;
+      border: 0.125rem solid transparent;
+
+      &::after {
+        left: 0;
+        bottom: 0;
+        opacity: 1;
+        content: '';
+        width: 100%;
+        height: 0.1em;
+        position: absolute;
+        transform: scale(0);
+        transform-origin: center;
+        background-color: #fff;
+        transition: opacity 300ms, transform 300ms;
+      }
+
+      &:hover {
+        &::after {
+          transform: scale(1);
+        }
+      }
+
+      &:focus {
+         border-color: #82DEFF;
+      }
+
+      &:focus:hover {
+        &::after {
+          transform: scale(0);
+        }
+      }
+    }
 }
+
+ @media (max-width: 768px) {
+    .fd-footer {
+      flex-direction: column;
+      padding: 3rem 1rem;
+
+      &__nav,
+      &__left,
+      &__right {
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .fd-footer__nav {
+      display: block;
+    }
+  }
 </style>

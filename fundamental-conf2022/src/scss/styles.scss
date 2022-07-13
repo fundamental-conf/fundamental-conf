@@ -1,10 +1,10 @@
-
     $brand-color-black: #1A1126;
     $brand-color-purple: #7B5CB2;
     $brand-color-blue: #69ADF8;
     $brand-color-light-blue:#82DEFF;
     $brand-color-silver: #E2EEFF;
     $brand-color-dark-blue:#2865BE;
+    $brand-color-darkest-blue:#052E69;
     // --sapBackgroundContrastColor: ;
     // --sapTextColor: #f5f6f7;
     // --sapLinkColor: ;
@@ -21,6 +21,10 @@
     color:inherit; 
     cursor:pointer;
    }
+
+  html {
+    scroll-behavior: smooth;
+  }
 
   
    //mixing for different sizes

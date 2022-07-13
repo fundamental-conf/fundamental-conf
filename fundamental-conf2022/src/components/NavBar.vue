@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ 'scrolled-nav': scrollPosition }">
+  <header :class="{ 'scrolled-nav': scrollPosition }" id="navbar">
     <nav>
       <div class="branding">
         <icon-fig name="logo"></icon-fig>

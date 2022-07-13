@@ -29,44 +29,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+
 header {
   background-color: $brand-color-black;
   width: 100%;
   //   position: fixed; //are we keeping the nav bar at all time?
   transition: 0.5s ease all;
   color: #fff;
-  height: 91px;
+  height: 12vh;
   flex: none;
   order: 0;
-}
-nav {
+
+  nav {
   transition: 0.5s ease all;
-  padding-right: 123px;
+  
   display: flex;
   margin: 0 auto;
   align-items: center;
-}
-li {
-  list-style-type: none;
-  padding-left: 89px;
+
+  .branding {
+    padding-left: 10%;
+    padding-top: 1%;
 }
 .navigation {
   display: flex;
   align-items: center;
   flex: 1;
   justify-content: flex-end;
-  padding-top: 20px;
-  font-size: 28px;
+      padding-top: 2%;
+    font-size: 2.5vw;
   font-weight: 400;
   font-family: Ubuntu;
   font-style: normal;
   align-items: center;
   text-align: center;
   letter-spacing: 0.05em;
+  li {
+  // list-style-type: none;
+  padding-right:5%;
 }
 
-.branding {
-  padding-left: 116px;
-  padding-top: 14px;
 }
+
+
+}
+
+}
+
+
+
 </style>

@@ -12,7 +12,7 @@
     // --sapTextSecondaryColor: #c4c4c4;
     // --successColor: #30914c;
 
-    @mixin reset-mixin {
+  body, html, li, ul, ol {
     padding: 0;
     margin: 0;
     font-size:inherit; font-weight:inherit;
@@ -22,11 +22,7 @@
     cursor:pointer;
    }
 
-   @keyframes textclip {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-  }
+  
    //mixing for different sizes
    @mixin for-size($size) {
     @if $size == max_width_599 {

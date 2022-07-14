@@ -10,10 +10,10 @@
 
 <div class="container">
   <NavBar class="normal" />
-<MainComponent class="panel" />
-<FDAbout class="panel"/> 
-<FDCallForContent class="panel"/>
-
+  <MainComponent class="panel" />
+  <FDAbout class="panel"/> 
+  <FDCallForContent class="panel"/>
+  <SocialsContainer />
   <FDFooter class="normal" />
 </div>
 
@@ -26,6 +26,7 @@ import FDAbout from "./components/FDAbout.vue";
 import FDCallForContent from "./components/FDCallForContent.vue";
 import FDFooter from "./components/FDFooter.vue";
 import NavBar from "./components/NavBar.vue";
+import SocialsContainer from "./components/SocialsContainer.vue";
 
 export default {
   name: "App",
@@ -35,6 +36,7 @@ export default {
     FDAbout,
     FDCallForContent,
     FDFooter,
+    SocialsContainer,
   },
  
 };

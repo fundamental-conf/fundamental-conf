@@ -1,5 +1,12 @@
 <template>
 
+  <!-- <NavBar />
+<MainComponent />
+<FDAbout /> 
+<FDCallForContent />
+
+  <FDFooter /> -->
+
 
 <div class="container">
   <NavBar class="normal" />

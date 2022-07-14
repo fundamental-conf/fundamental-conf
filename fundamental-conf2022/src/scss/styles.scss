@@ -12,7 +12,7 @@
     // --sapTextSecondaryColor: #c4c4c4;
     // --successColor: #30914c;
 
-  body, html, li, ul, ol {
+  body, html, li, ul,ol {
     padding: 0;
     margin: 0;
     font-size:inherit; font-weight:inherit;
@@ -43,7 +43,8 @@
     height: 100vh;
     display: flex;
     position: relative;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 
    

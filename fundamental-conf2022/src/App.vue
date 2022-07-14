@@ -13,7 +13,7 @@
   <MainComponent class="panel" />
   <FDAbout class="panel"/> 
   <FDCallForContent class="panel"/>
-  <SocialsContainer />
+  <SocialsContainer class="panel"/>
   <FDFooter class="normal" />
 </div>
 

@@ -203,7 +203,7 @@ export default {};
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 700;
-  font-size: 14vw;
+  font-size: 13vw;
   line-height: 97.9%;
   /* or 235px */
   display: flex;

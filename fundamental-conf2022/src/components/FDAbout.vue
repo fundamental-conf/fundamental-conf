@@ -228,12 +228,12 @@ export default {
     left: 3%;
     top: -45vh;
     position: relative;
-    font-family: "Source Sans 3";
+ 
     font-style: normal;
     font-weight: 400;
     font-size: 2.7vh;
-    line-height: 3vh;
-    text-align: justify;
+    line-height: 4.5vh;
+  
     letter-spacing: 0.01em;
     color: #052e69;
     .fd_join {
@@ -247,48 +247,6 @@ export default {
     }
   }
  
-}
-@media (max-width: 600px) {
-
-  .fd_about {
-    padding-top: 0;
-        gap: 2vh;
-    display: flex;
-    flex-direction: column;
-  }
-  .fd_about .fd_about_header {
-    padding: 0%;
-    width: -webkit-fill-available;
-  }
-  svg {
-    display:none;
-  }
-  .fd_about .fd_about_header {
-    padding: 1%;
-  }
-   .fd_about .fd_about_header .fd_about_line {
-
-      padding-top: 18%;
-    }
-    
-   .fd_about .fd_about_header .fd_about_element .fd_date {
-      font-size: 23vh;
-    }
-      .fd_about  .fd_paragraph {
-         width: 76vw;
-    display: flex;
- 
-    flex-direction: column;
-    top: 0;
-    font-weight: 400;
-    font-size: 2.3vh;
-    line-height: 4.5vh;
-    text-align: justify;
-    letter-spacing: 0.01em;
-
-            
-          }
-
 }
 
 
@@ -318,16 +276,58 @@ export default {
     /* font-family: "Source Sans 3"; */
     /* font-style: normal; */
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 4.5vh;
-    text-align: justify;
+
     /* letter-spacing: 0.01em; */
 
             
           }
         }
       
-  
+  @media (max-width: 600px) {
+
+  .fd_about {
+    padding-top: 0;
+        gap: 2vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .fd_about .fd_about_header {
+    padding: 0%;
+    width: -webkit-fill-available;
+  }
+  svg {
+    display:none;
+  }
+  .fd_about .fd_about_header {
+    padding: 1%;
+  }
+   .fd_about .fd_about_header .fd_about_line {
+
+      padding-top: 18%;
+    }
+    
+   .fd_about .fd_about_header .fd_about_element .fd_date {
+      font-size: 23vh;
+    }
+      .fd_about  .fd_paragraph {
+         width: 90%;
+    display: flex;
+ 
+    flex-direction: column;
+    top: 0;
+    font-weight: 400;
+    font-size: 2.3vh;
+    line-height: 4.5vh;
+    // text-align: justify;
+    letter-spacing: 0.01em;
+
+            
+          }
+
+}
+
   
 
 </style>

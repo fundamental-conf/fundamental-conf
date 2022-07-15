@@ -21,7 +21,7 @@
         <a href="https://twitter.com/fundamental_lib" target="_blank" v-html="svgs.twitter"></a>
         <a href="https://www.linkedin.com/company/sap-graph/" target="_blank" v-html="svgs.linkedin"></a>
       </template>
-      <h3>Twitter LinkedIn</h3>
+      <h3>Twitter + LinkedIn</h3>
       <p>Follow us on your favourite social media platform to not miss another update on the latest Fundamental releases. </p>
     </Socials>
     

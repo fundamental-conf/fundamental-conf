@@ -68,11 +68,13 @@ export default {
       font-size: 2rem;
       margin: 2rem 0 1rem 0;
       color: $brand-color-dark-blue;
+      font-family:Ubuntu
     }
 
     p {
       font-size: 1.25rem;
       color: $brand-color-darkest-blue;
+      line-height: 4.5vh;
     }
 
     @media (max-width: 768px) {

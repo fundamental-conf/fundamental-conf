@@ -166,14 +166,14 @@
           </g>
         </svg>
       </div>
-      <div class="fd_paragraph">
+      <p class="fd_paragraph">
         Join us as a speaker to share your innovative ideas and progress with
         the Fundamental community and beyond. This is a great opportunity to
         transcend your public speaking skills and inspire likeminded designers,
         developers, and other creative thinkers-alike by sharing what you love
         doing most. Doesn't this sound like a stellar opportunity to you? We
         can't wait to see your topic proposal soon!
-      </div>
+      </p>
     </div>
   </section>
 </template>
@@ -250,13 +250,13 @@ width:100%;
 .fd_paragraph {
   grid-area: fd_paragraph;
 
-  font-family: "Source Sans 3";
+
   font-style: normal;
   font-weight: 400;
   font-size: 2.7vh;
   line-height: 4vh;
   align-items: center;
-  text-align: justify;
+ 
   letter-spacing: 0.01em;
 
   color: #052e69;

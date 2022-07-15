@@ -1,15 +1,10 @@
 <template>
 
-  <!-- <NavBar />
-<MainComponent />
-<FDAbout /> 
-<FDCallForContent />
 
-  <FDFooter /> -->
 
 
 <div class="container">
-  <NavBar class="normal" />
+  <!-- <NavBar class="normal" /> -->
   <MainComponent class="panel" />
   <FDAbout class="panel"/> 
   <FDCallForContent class="panel"/>

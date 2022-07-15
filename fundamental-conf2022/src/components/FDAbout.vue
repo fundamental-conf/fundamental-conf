@@ -144,7 +144,7 @@ export default {
   methods: {
     checkScreen() {
       this.windowWidth = window.innerWidth;
-      if (this.windowWidth <= 768) {
+      if (this.windowWidth <= 900) {
         this.mobile = true;
         return;
       }
@@ -168,6 +168,7 @@ export default {
     justify-content: center;
     align-items: flex-start;
     padding: 5%;
+    gap: 2%;
 
     .fd_about_tittle {
       font-weight: 400;
@@ -223,15 +224,15 @@ export default {
   }
 
   .fd_paragraph {
-    width: 70vh;
-    left: 10vh;
+    width: 43vw;
+    left: 3%;
     top: -45vh;
     position: relative;
     font-family: "Source Sans 3";
     font-style: normal;
     font-weight: 400;
-    font-size: 3.4vh;
-    line-height: 6vh;
+    font-size: 2.7vh;
+    line-height: 3vh;
     text-align: justify;
     letter-spacing: 0.01em;
     color: #052e69;
@@ -247,7 +248,52 @@ export default {
   }
  
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+
+  .fd_about {
+    padding-top: 0;
+        gap: 2vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .fd_about .fd_about_header {
+    padding: 0%;
+    width: -webkit-fill-available;
+  }
+  svg {
+    display:none;
+  }
+  .fd_about .fd_about_header {
+    padding: 1%;
+  }
+   .fd_about .fd_about_header .fd_about_line {
+
+      padding-top: 18%;
+    }
+    
+   .fd_about .fd_about_header .fd_about_element .fd_date {
+      font-size: 23vh;
+    }
+      .fd_about  .fd_paragraph {
+         width: 76vw;
+    display: flex;
+ 
+    flex-direction: column;
+    top: 0;
+    font-weight: 400;
+    font-size: 2.3vh;
+    line-height: 4.5vh;
+    text-align: justify;
+    letter-spacing: 0.01em;
+
+            
+          }
+
+}
+
+
+
+@media (max-width: 900px) {
   .fd_about {
     padding-top: 0;
   }
@@ -259,7 +305,7 @@ export default {
   }
    .fd_about .fd_about_header .fd_about_line {
 
-      padding-top: 16%;
+      padding-top: 8%;
     }
     
    .fd_about .fd_about_header .fd_about_element .fd_date {

@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build && cp CNAME dist/CNAME"
+
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -22,6 +25,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
     "fibers": "^5.0.1",
+    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.1",
     "prettier": "^2.4.1",
     "sass": "^1.53.0",

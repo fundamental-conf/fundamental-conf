@@ -172,12 +172,11 @@
 
     <transition appear @before-enter="beforeEnter" @enter="enter" :css="false">
       <div v-if="showTitle" class="fd_title_box">
-    
-        <svg id="fd_logo"
+        <svg
+          id="fd_logo"
           viewBox="0 0 280 280"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-
         >
           <path
             d="M144.072 39.4757L144.072 120.332C144.072 134.589 161.31 141.729 171.392 131.648L252.248 50.7918C262.33 40.7103 255.189 23.4724 240.932 23.4724L160.076 23.4724C151.237 23.4724 144.072 30.6373 144.072 39.4757Z"
@@ -258,7 +257,7 @@
       viewBox="0 0 245 246"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style="bottom: 23px; position: absolute; left: 45%; width: 20vh"
+      style="bottom: 23px; position: absolute; width: 20vh"
     >
       <g id="text">
         <path
@@ -440,35 +439,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media only screen and (min-width: 1200px) {
-  .fd_background {
-    min-height: 100vh;
-  }
-}
+
 .fd_background {
   background-color: $brand-color-black;
   min-height: 100vh;
   .fd_title_box {
     display: flex;
-    // position: absolute;
-    // top: 25%;
-    // left: 10%;
-
     font-family: "Ubuntu";
     font-style: normal;
     #fd_logo {
-
-       width: 40vh;
-      height: 40vh;
+      width: 35vh;
+      height: 35vh;
     }
     .fd_titles {
       display: block;
       flex: 2;
       .fd_title {
         font-weight: 900;
-         font-size: 11vh;
+        font-size: 11vh;
 
-       // font-size: clamp(1.25rem, 14vw, 14rem);
+        // font-size: clamp(1.25rem, 14vw, 14rem);
         line-height: 14vh;
         /* identical to box height */
         letter-spacing: 0.03em;
@@ -495,28 +485,51 @@ export default {
     }
   }
 }
-@media (max-width: 768px) {
 
+@media (max-width: 600px) {
+  .fd_background .left_buble,
+  .right_buble,
+  .right_dots,
+  .left_dots {
+    display: none;
+  }
+  .fd_background .fd_title_box #fd_logo {
+    width: 10vh;
+    height: 10vh;
+  }
+  .fd_background .fd_title_box .fd_titles .fd_title {
+    font-size: 5vh;
+    line-height: 5vh;
+
+    &::after {
+      font-size: 3vh;
+      line-height: 3vh;
+    }
+  }
+  .fd_background .fd_title_box .fd_titles .fd_subtitle {
+    font-size: 2vh;
+    line-height: 2vh;
+  }
+}
+
+@media (max-width: 1000px) {
+  
   .fd_background .fd_title_box #fd_logo {
     width: 20vh;
     height: 20vh;
   }
- .fd_background .fd_title_box .fd_titles .fd_title {
-  font-size: 8vh;
+  .fd_background .fd_title_box .fd_titles .fd_title {
+      font-size: 8vh;
     line-height: 10vh;
 
     &::after {
-          font-size: 5vh;
+         font-size: 5vh;
     line-height: 4vh;
-
     }
   }
   .fd_background .fd_title_box .fd_titles .fd_subtitle {
-    font-size: 3vh;
+  font-size: 3vh;
     line-height: 3vh;
-
   }
 }
-
-
 </style>

@@ -8,7 +8,8 @@
           viewBox="0 0 295 291"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style="padding-top: 3rem; width: 40vw; height: 40vh"
+          class = "fd_svg"
+         
         >
           <a
             xlink:href="https://docs.google.com/forms/d/e/1FAIpQLSefCY1yFAYFDuFzW6wB0xENR8mgc0oCbC2FWPcr0_qStDTSlg/viewform"
@@ -185,7 +186,7 @@ export default {};
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr ;
-
+width:100%;
   gap: 0px 0px;
   grid-gap: 4%;
   padding: 3rem;
@@ -199,11 +200,12 @@ export default {};
 // clamp(2rem,30vw,505px)
 .fd_title {
   grid-area: fd_title;
-
+   padding: 1%;
+    width: 100%;
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 700;
-  font-size: 13vw;
+  font-size: 24vh;
   line-height: 97.9%;
   /* or 235px */
   display: flex;
@@ -239,6 +241,10 @@ export default {};
 
 .fd_button {
   grid-area: fd_button;
+  .fd_svg {
+    width:40vw;
+    height:40vh;
+  }
 }
 
 .fd_paragraph {
@@ -269,22 +275,61 @@ export default {};
   }
   }
 
-  @media (max-width: 768px) {
+@media  (max-width: 600px){
 
-.container {
+  .container {
   padding: 0.5rem;
   grid-template-columns: 1fr 1fr ;
-  
+  width: 100%;
   grid-template-areas:
     "fd_title fd_line "
     "fd_title fd_button "
     "fd_paragraph fd_paragraph  ";
 }
 .container .fd_title {
-  padding-top: 9rem;
-  padding-bottom: 0;
+ padding: 1%;
+    width: 100%;
+    font-size: 15vh;
 }
-.container .fd_button {
+.container .fd_button .svg {
+  width:35vw;
+  height:35vh;
+
+}
+.container .fd_line {
+padding-top: 0%;
+    width: 24vw;
+}
+.container .fd_paragraph {
+padding-left: 4%;
+padding-right:4%;
+font-size: 2.3vh;
+line-height: 3vh;
+}
+}
+
+
+
+
+  @media (max-width: 900px) {
+
+.container {
+  padding: 0.5rem;
+  grid-template-columns: 1fr 1fr ;
+    width: 100%;
+  grid-template-areas:
+    "fd_title fd_line "
+    "fd_title fd_button "
+    "fd_paragraph fd_paragraph  ";
+}
+.container .fd_title {
+ padding: 1%;
+    width: 100%;
+    font-size: 20vh;
+}
+.container .fd_button .fd_svg{
+      width: 29vw;
+    height: 34vh;
 
 }
 .container .fd_line {

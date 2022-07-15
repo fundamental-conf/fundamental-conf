@@ -275,38 +275,6 @@ width:100%;
   }
   }
 
-@media  (max-width: 600px){
-
-  .container {
-  padding: 0.5rem;
-  grid-template-columns: 1fr 1fr ;
-  width: 100%;
-  grid-template-areas:
-    "fd_title fd_line "
-    "fd_title fd_button "
-    "fd_paragraph fd_paragraph  ";
-}
-.container .fd_title {
- padding: 1%;
-    width: 100%;
-    font-size: 15vh;
-}
-.container .fd_button .svg {
-  width:35vw;
-  height:35vh;
-
-}
-.container .fd_line {
-padding-top: 0%;
-    width: 24vw;
-}
-.container .fd_paragraph {
-padding-left: 4%;
-padding-right:4%;
-font-size: 2.3vh;
-line-height: 3vh;
-}
-}
 
 
 
@@ -338,6 +306,38 @@ line-height: 3vh;
 .container .fd_paragraph {
 padding-left: 4%;
 padding-right:4%;
+}
+}
+@media (max-width: 600px){
+
+  .container {
+  padding: 0.5rem;
+  grid-template-columns: 1fr 1fr ;
+  width: 100%;
+  grid-template-areas:
+    "fd_title fd_line "
+    "fd_title fd_button "
+    "fd_paragraph fd_paragraph  ";
+}
+.container .fd_title {
+ padding: 1%;
+    width: 100%;
+    font-size: 15vh;
+}
+.container .fd_button .svg {
+  width:35vw;
+  height:35vh;
+
+}
+.container .fd_line {
+padding-top: 0%;
+    width: 24vw;
+}
+.container .fd_paragraph {
+padding-left: 4%;
+padding-right:4%;
+font-size: 2.3vh;
+line-height: 3vh;
 }
 }
 

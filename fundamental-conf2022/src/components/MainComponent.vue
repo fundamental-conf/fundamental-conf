@@ -486,6 +486,29 @@ export default {
   }
 }
 
+
+
+@media (max-width: 1000px) {
+  
+  .fd_background .fd_title_box #fd_logo {
+    width: 20vh;
+    height: 20vh;
+  }
+  .fd_background .fd_title_box .fd_titles .fd_title {
+      font-size: 8vh;
+    line-height: 10vh;
+
+    &::after {
+         font-size: 5vh;
+    line-height: 4vh;
+    }
+  }
+  .fd_background .fd_title_box .fd_titles .fd_subtitle {
+  font-size: 3vh;
+    line-height: 3vh;
+  }
+}
+
 @media (max-width: 600px) {
   .fd_background .left_buble,
   .right_buble,
@@ -509,27 +532,6 @@ export default {
   .fd_background .fd_title_box .fd_titles .fd_subtitle {
     font-size: 2vh;
     line-height: 2vh;
-  }
-}
-
-@media (max-width: 1000px) {
-  
-  .fd_background .fd_title_box #fd_logo {
-    width: 20vh;
-    height: 20vh;
-  }
-  .fd_background .fd_title_box .fd_titles .fd_title {
-      font-size: 8vh;
-    line-height: 10vh;
-
-    &::after {
-         font-size: 5vh;
-    line-height: 4vh;
-    }
-  }
-  .fd_background .fd_title_box .fd_titles .fd_subtitle {
-  font-size: 3vh;
-    line-height: 3vh;
   }
 }
 </style>

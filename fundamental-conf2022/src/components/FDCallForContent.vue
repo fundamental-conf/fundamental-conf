@@ -319,7 +319,7 @@ padding-right:4%;
 line-height: 3.8vh;
 }
 }
-@media (max-width: 600px){
+@media (max-width: 650px){
 
   .container {
   padding: 0.5rem;
@@ -333,7 +333,7 @@ line-height: 3.8vh;
 .container .fd_title {
  padding: 1%;
     width: 100%;
-    font-size: 15vh;
+    font-size: 14vh;
 }
 .container .fd_button .svg {
   width:35vw;

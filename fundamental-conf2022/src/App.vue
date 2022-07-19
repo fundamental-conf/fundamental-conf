@@ -59,6 +59,14 @@ export default {
   }
   }
 
+@media (max-width: 650px) {
+  .container {
+    scroll-snap-type: none;
+  }
+.container .panel {
+   scroll-snap-align: start;
+   scroll-snap-type: none;
 
+}}
 
 </style>

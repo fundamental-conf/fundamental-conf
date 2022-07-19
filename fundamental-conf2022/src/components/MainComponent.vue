@@ -249,7 +249,7 @@
         <div class="fd_titles">
           <h1 class="fd_title">
             Fundamental <br />
-            Conference
+            Conference<span class="fd_22">22</span>
           </h1>
           <h5 class="fd_subtitle">future of front-end and design</h5>
         </div>
@@ -411,6 +411,7 @@
         <path
           d="M121 109C121 106.791 122.791 105 125 105V105C127.209 105 129 106.791 129 109V113C129 115.209 127.209 117 125 117V117C122.791 117 121 115.209 121 113V109Z"
           fill="white"
+          
         />
          <animate  attributeName="ry" values="0;5" dur="10s" repeatCount="indefinite"/>
       </g>
@@ -418,18 +419,27 @@
   </section>
 </template>
 
-<script>
-import { ref } from "vue";
-import gsap from "gsap";
 
-export default {
-  setup() {
+
+
+<script setup>
+import { ref } from "vue";
+import {gsap} from 'gsap';
+import { onMounted } from "vue";
+import {CustomEase} from 'gsap/CustomEase';
+gsap.registerPlugin(CustomEase);
+CustomEase.create("hop", "M0,0 C0.124,0.382 0.071,1.051 0.283,1.03 0.44,1.014 0.416,0.177 0.559,0.316 0.734,0.486 0.696,0.188 0.779,0.176 0.847,0.166 0.868,0.091 0.899,0.062 0.938,0.026 0.979,0.064 1,0.066 ");
+
+
+
     const showTitle = ref(true);
     const beforeEnter = (el) => {
       console.log("before enter - set intial state");
       el.style.transform = "translateY(-60px)";
       el.style.opacity = 0;
     };
+
+  
     const enter = (el, done) => {
       console.log("starting to enter - make transition");
       gsap.to(el, {
@@ -440,12 +450,44 @@ export default {
         onComplete: done,
       });
     };
-    return { beforeEnter, enter, showTitle };
-  },
 
+
+
+// 
+
+onMounted(() => {
+  
  
 
-};
+gsap.fromTo(
+    "#mouse-point",
+    {
+      opacity: 1,
+      // y: "100%",
+    },
+    {
+       duration: 3,
+       opacity: 1,
+      delay: 2,
+       y: -1,
+       repeat:-1,
+       ease: "hop",
+       scaleY:2,
+      onComplete: () => {
+        gsap.to("#mouse-point", {
+        y:4,
+          duration: 2,
+          ease: "bounce",
+          repeat:-1,
+          yoyo: true,
+        });
+      },
+      
+    }
+  );
+  });
+
+  
 </script>
 
 <style lang="scss" scoped>
@@ -475,18 +517,17 @@ export default {
         letter-spacing: 0.03em;
         color: #ffffff;
         display: inline;
-        &::after {
-          content: "22";
+        .fd_22 {
           color: $brand-color-blue;
           font-size: 6vh;
           font-weight: 850;
-          line-height: 8vh;
+          line-height: 4vh;
           vertical-align: text-top;
         }
       }
       .fd_subtitle {
         font-weight: 400;
-        font-size: 4vh;
+        font-size: 3.5vh;
         line-height: 6vh;
         letter-spacing: 0.088em;
         color: $brand-color-blue;
@@ -509,7 +550,7 @@ export default {
       font-size: 8vh;
     line-height: 10vh;
 
-    &::after {
+    .fd_22 { 
          font-size: 5vh;
     line-height: 4vh;
     }
@@ -535,7 +576,7 @@ export default {
     font-size: 5vh;
     line-height: 5vh;
 
-    &::after {
+    .fd_22 {
       font-size: 3vh;
       line-height: 3vh;
     }

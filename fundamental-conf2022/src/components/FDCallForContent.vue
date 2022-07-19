@@ -1,7 +1,12 @@
 <template>
   <section class="fd_background_silver fd_container">
     <div class="container">
-      <span class="fd_title">call  for con- tent</span>
+      <div class="fd_title">
+      <span >call </span>
+      <span >for</span>
+      <span >con-</span>
+      <span >tent</span>
+     </div>
       <div class="fd_line"></div>
       <div class="fd_button">
         <svg
@@ -202,6 +207,8 @@ width:100%;
 // clamp(2rem,30vw,505px)
 .fd_title {
   grid-area: fd_title;
+  display: flex;
+  flex-direction: column;
    padding: 1%;
     width: 95%;
   font-family: "Ubuntu";

@@ -407,10 +407,12 @@
         />
       </g>
       <g id="mouse-point">
+       
         <path
           d="M121 109C121 106.791 122.791 105 125 105V105C127.209 105 129 106.791 129 109V113C129 115.209 127.209 117 125 117V117C122.791 117 121 115.209 121 113V109Z"
           fill="white"
         />
+         <animate  attributeName="ry" values="0;5" dur="10s" repeatCount="indefinite"/>
       </g>
     </svg>
   </section>

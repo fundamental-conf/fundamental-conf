@@ -6,12 +6,12 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm install gh-pages -d dist",
     "predeploy": "npm run build && cp CNAME dist/CNAME"
-
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "dist": "^0.1.2",
     "gsap": "^3.10.4",
     "vue": "^3.2.13"
   },

@@ -1,7 +1,7 @@
 <template>
   <section class="fd_background_silver fd_container">
     <div class="container">
-      <div class="fd_title">call for con- tent</div>
+      <span class="fd_title">call  for con- tent</span>
       <div class="fd_line"></div>
       <div class="fd_button">
         <svg
@@ -183,6 +183,8 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr ;
@@ -201,7 +203,7 @@ width:100%;
 .fd_title {
   grid-area: fd_title;
    padding: 1%;
-    width: 100%;
+    width: 95%;
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 700;
@@ -277,7 +279,7 @@ width:100%;
 
 
 
-
+ 
 
   @media (max-width: 900px) {
 
@@ -293,7 +295,7 @@ width:100%;
 .container .fd_title {
  padding: 1%;
     width: 100%;
-    font-size: 20vh;
+    font-size: 17vh;
 }
 .container .fd_button .fd_svg{
       width: 29vw;
@@ -304,8 +306,10 @@ width:100%;
 
 }
 .container .fd_paragraph {
+  font-size: 2.5vh;
 padding-left: 4%;
 padding-right:4%;
+line-height: 3.8vh;
 }
 }
 @media (max-width: 600px){

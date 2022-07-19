@@ -196,7 +196,7 @@ export default {
         font-family: "Ubuntu";
         font-style: normal;
         font-weight: 700;
-        font-size: 40vh;
+        font-size: 37vh;
         line-height: 97.9%;
         /* or 235px */
         display: flex;
@@ -276,7 +276,7 @@ export default {
     /* font-family: "Source Sans 3"; */
     /* font-style: normal; */
     font-weight: 400;
-    font-size: 1rem;
+   font-size: 2.3vh;
     line-height: 4.5vh;
 
     /* letter-spacing: 0.01em; */
@@ -285,7 +285,7 @@ export default {
           }
         }
       
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
 
   .fd_about {
     padding-top: 0;

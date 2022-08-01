@@ -4,7 +4,7 @@
       <div class="branding">
         <icon-fig name="new_logo"></icon-fig>
       </div>
-      <ul v-show="!mobile" class="navigation">
+      <!-- <ul v-show="!mobile" class="navigation">
         <li>
           <router-link class="link" :to="{ path: '/about' }">About</router-link>
         </li>
@@ -12,7 +12,7 @@
           <router-link class="link" :to="{ name: 'Past Events' }">Past Events</router-link
           >
         </li>
-      </ul>
+      </ul> -->
       <router-view/>
       <div class="fd_menu_icon">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" @click="toggleMobileNav" v-show="mobile" :class="{'icon-active': mobileNav}">
@@ -24,7 +24,7 @@
       </div>
      
     </nav>
-     <transition name="fd_mobile_nav">
+     <!-- <transition name="fd_mobile_nav">
           <ul v-show="mobileNav" class="fd_dropdown_nav">
         <li>
           <router-link class="link" :to="{ name: 'About' }">About</router-link>
@@ -35,7 +35,7 @@
           >
         </li>
       </ul>
-      </transition>
+      </transition> -->
   </header>
   
 </template>

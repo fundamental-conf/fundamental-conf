@@ -70,7 +70,7 @@ export default {};
     }
   }
 
-      a {
+    a {
       color: #fff;
       outline: none;
       position: relative;

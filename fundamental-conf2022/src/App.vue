@@ -11,7 +11,7 @@
   <FDCallForContent class="panel"/>
   <SocialsContainer class="panel"/>
   <FDFooter class="normal" />
-<FDTeam/>
+<FDTeam class="normal"/>
     <!-- <FDTeam /> -->
 </div>
 

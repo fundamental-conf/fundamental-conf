@@ -160,6 +160,21 @@ export default {
         display: flex;
         flex-direction: column;
         .fd_picture {
+           position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: -2rem;
+            right: -2rem;
+            max-width: 6rem;
+            min-width: 6rem;
+            max-height: 6rem;
+            min-height: 6rem;
+            background: linear-gradient(45deg, #2865BE 0%, #82DEFF 100%);
+            mix-blend-mode: color-burn;
+            filter: blur(20px);
+          }
           img {
                max-width: 11rem;
     min-width: 11rem;
@@ -169,6 +184,7 @@ export default {
     -o-object-fit: cover;
     object-fit: cover;
     border-radius: 11rem;
+
           }
         }
         .fd_role {
@@ -282,3 +298,5 @@ export default {
   }
 }
 </style>
+
+

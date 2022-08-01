@@ -2,18 +2,18 @@
   <header :class="{ 'scrolled-nav': scrollPosition }" id="navbar">
     <nav>
       <div class="branding">
-        <icon-fig name="logo"></icon-fig>
+        <icon-fig name="new_logo"></icon-fig>
       </div>
       <ul v-show="!mobile" class="navigation">
         <li>
-          <router-link class="link" :to="{ name: 'About' }">About</router-link>
+          <router-link class="link" :to="{ path: '/about' }">About</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: 'Past Events' }"
-            >Past Events</router-link
+          <router-link class="link" :to="{ name: 'Past Events' }">Past Events</router-link
           >
         </li>
       </ul>
+      <router-view/>
       <div class="fd_menu_icon">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" @click="toggleMobileNav" v-show="mobile" :class="{'icon-active': mobileNav}">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.22217 16C2.22217 15.059 2.98494 14.2963 3.92587 14.2963H23.3333C24.2742 14.2963 25.037 15.059 25.037 16C25.037 16.9409 24.2742 17.7037 23.3333 17.7037H3.92587C2.98494 17.7037 2.22217 16.9409 2.22217 16Z" fill="white"/>
@@ -42,6 +42,8 @@
 
 <script>
 import IconFig from "./IconFig.vue";
+// import Home from "./view/Home.vue";
+// import About from "./view/About.vue";
 
 export default {
   components: {
@@ -89,7 +91,7 @@ header {
   //   position: fixed; //are we keeping the nav bar at all time?
   transition: 0.5s ease all;
   color: #fff;
-  height: 12vh;
+  height: 10vh;
   flex: none;
   order: 0;
 
@@ -113,7 +115,7 @@ header {
   flex: 1;
   justify-content: flex-end;
       padding-top: 2%;
-    font-size: 2.5vw;
+    font-size: 2.0vw;
   font-weight: 400;
   font-family: Ubuntu;
   font-style: normal;
@@ -137,6 +139,7 @@ header {
      position: absolute;
      right: 3%;
      cursor: pointer;
+     padding-top: 2%;
 // &:mobileNav ~ .fd_dropdown_nav {
 //   opacity: 1;
 //   clip-path: circle (100% at center);

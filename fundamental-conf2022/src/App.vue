@@ -1,15 +1,18 @@
 <template>
 
 
-
+<router-view/>
 
 <div class="container">
-  <!-- <NavBar class="normal" /> -->
+  <NavBar class="normal" />
+    
   <MainComponent class="panel" />
   <FDAbout class="panel"/> 
   <FDCallForContent class="panel"/>
   <SocialsContainer class="panel"/>
   <FDFooter class="normal" />
+<FDTeam/>
+    <!-- <FDTeam /> -->
 </div>
 
 </template>
@@ -22,6 +25,9 @@ import FDCallForContent from "./components/FDCallForContent.vue";
 import FDFooter from "./components/FDFooter.vue";
 import NavBar from "./components/NavBar.vue";
 import SocialsContainer from "./components/SocialsContainer.vue";
+import FDTeam from "./components/FDTeam.vue";
+
+
 
 export default {
   name: "App",
@@ -32,7 +38,9 @@ export default {
     FDCallForContent,
     FDFooter,
     SocialsContainer,
-  },
+    FDTeam,
+    FDTeam
+},
  
 };
 

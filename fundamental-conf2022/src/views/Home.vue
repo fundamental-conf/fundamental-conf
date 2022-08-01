@@ -5,7 +5,6 @@
   <FDCallForContent class="panel"/>
   <SocialsContainer class="panel"/>
   <FDTeam class="panel"/>
-  <FDFooter class="normal" />
 </div>
 
 </template>

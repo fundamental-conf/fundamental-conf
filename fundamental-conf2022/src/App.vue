@@ -1,45 +1,34 @@
 <template>
+<div>
+  <div id="nav" class="fd-nav">
+    <div class="fd-nav__left">
+      <router-link to="/">
+        <IconFig name="new_logo" />
+      </router-link>
+      
+    </div>
 
-
-<router-view/>
-
-<div class="container">
-  <NavBar class="normal" />
-    
-  <MainComponent class="panel" />
-  <FDAbout class="panel"/> 
-  <FDCallForContent class="panel"/>
-  <SocialsContainer class="panel"/>
-  <FDFooter class="normal" />
-<FDTeam/>
-    <!-- <FDTeam /> -->
+    <div class="fd-nav__right">
+      <router-link to="/team" class="fd-nav__link">Our Team</router-link>
+    </div>
+  </div>
+  <router-view />
 </div>
+  
 
 </template>
 
 <script>
 
-import MainComponent from "./components/MainComponent.vue";
-import FDAbout from "./components/FDAbout.vue";
-import FDCallForContent from "./components/FDCallForContent.vue";
-import FDFooter from "./components/FDFooter.vue";
-import NavBar from "./components/NavBar.vue";
-import SocialsContainer from "./components/SocialsContainer.vue";
-import FDTeam from "./components/FDTeam.vue";
-
+import Home from "./views/Home.vue";
+import IconFig from "./components/IconFig.vue";
 
 
 export default {
   name: "App",
   components: {
-    NavBar,
-    MainComponent,
-    FDAbout,
-    FDCallForContent,
-    FDFooter,
-    SocialsContainer,
-    FDTeam,
-    FDTeam
+    Home,
+    IconFig
 },
  
 };
@@ -49,6 +38,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fd-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background-color: $brand-color-black;
+
+  &__right {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__link {
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: $text-color;
+    font-size: 1.2rem;
+  }
+}
+
+
 .container {
   max-height: 100vh;
 	overflow-y: scroll;

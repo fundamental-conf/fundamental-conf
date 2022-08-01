@@ -4,7 +4,7 @@ import OurTeam from "@/views/FDTeam.vue";
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home,
   },

@@ -10,7 +10,10 @@
         <li class="fd_list" v-for="member in team" :key="member.name">
           <div class="fd_body__1">
             <figure class="fd_picture">
-              <img :src="require(`@/assets/images/team_members/${member.picture}`)" :alt="`Portrait of ${member.firstname}`" />
+              <img
+                :src="require(`@/assets/images/team_members/${member.picture}`)"
+                :alt="`Portrait of ${member.firstname}`"
+              />
             </figure>
             <p class="fd_role">{{ member.role }}</p>
           </div>
@@ -21,53 +24,62 @@
             <p class="fd_city">{{ member.city }}</p>
           </div>
           <div class="fd_body__3">
-          <p class="fd_bio">{{ member.bio }}</p>
-          <div class="fd_line"></div>
-          <ul class="fd-member-socials">
-            <li v-if="member.twitter">
-              <a
-                :href="member.twitter"
-                :aria-label="`Twitter Profile of ${member.name}`"
-                rel="nofollow"
-                target="_blank"
-                class="fd-member-socials__item"
-              >
-              </a>
-            </li>
-            <li v-if="member.github">
+            <p class="fd_bio">{{ member.bio }}</p>
+            <div class="fd_line"></div>
+            <ul class="fd-member-socials">
+              <li v-if="member.twitter">
+                <a
+                  :href="member.twitter"
+                  :aria-label="`Twitter Profile of ${member.name}`"
+                  rel="nofollow"
+                  target="_blank"
+                  class="fd-member-socials__item"
+                  v-html="svgs.twitter"
+                >
+                </a
+                >Twitter
+              </li>
+              <!-- <li v-if="member.github">
               <a
                 :href="member.github"
                 :aria-label="`Github Profile of ${member.name}`"
                 rel="nofollow"
                 target="_blank"
                 class="fd-member-socials__item"
+                 v-html="svgs.github"
               >
               </a>
-            </li>
-            <li v-if="member.linkedin">
-              <a
-                :href="member.linkedin"
-                :aria-label="`LinkedIn Profile of ${member.name}`"
-                rel="nofollow"
-                target="_blank"
-                class="fd-member-socials__item"
-              >
-              </a>
-            </li>
-          </ul>
-      </div>
-      </li>
+            </li> -->
+              <li v-if="member.linkedin">
+                <a
+                  :href="member.linkedin"
+                  :aria-label="`LinkedIn Profile of ${member.name}`"
+                  rel="nofollow"
+                  target="_blank"
+                  class="fd-member-socials__item"
+                  v-html="svgs.linkedin"
+                >
+                </a>
+                LinkedIn
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
 </template>
 
 <script>
+import svgs from "@/assets/svg/svgs.js";
+console.log(svgs);
+
 export default {
   el: "#team",
 
   data() {
     return {
+      svgs,
       team: [
         {
           firstname: "Eniela",
@@ -145,27 +157,27 @@ export default {
       padding-block: 6%;
 
       .fd_body__1 {
-            display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
         .fd_picture {
           img {
-            max-width: 9rem;
-            min-width: 9rem;
-            max-height: 9rem;
-            min-height: 9rem;
-            padding: 0.625rem;
-            object-fit: cover;
-            border-radius: 6rem;
-            border: 0.0625rem solid blue;
+               max-width: 11rem;
+    min-width: 11rem;
+    max-height: 11rem;
+    min-height: 11rem;
+    padding: 0.625rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 11rem;
           }
         }
         .fd_role {
           font-family: "Ubuntu";
           font-style: normal;
           font-weight: 500;
-          font-size: 2.5vh;
-          line-height: 4vh;
-
+          font-size: 1.75rem;
+    line-height: 3vh;
+           padding-top: 16%;
           /* Blue/500 Regular */
           color: #2865be;
         }
@@ -188,7 +200,7 @@ export default {
           color: #2865be;
         }
         .fd_city {
-          font-family: "Source Sans 3";
+          font-family: source-sans-3, sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 1.8vh;
@@ -199,12 +211,11 @@ export default {
         }
       }
       .fd_body__3 {
-        
-    display: flex;
-    flex-direction: column;
-    padding-top: 7%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 7%;
         .fd_bio {
-          font-family: "Source Sans 3";
+           font-family: source-sans-3, sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 2vh;
@@ -215,11 +226,55 @@ export default {
           color: #052e69;
         }
         .fd_line {
-          height: 6vh;
+          height: 5vh;
+          wdith:23rem;
           border-bottom: 1px solid #2865be;
         }
         .fd-member-socials {
-          &__item {
+          gap: 1rem;
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+
+          margin: 1rem 0;
+          list-style: none;
+         justify-content: left;
+          li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: $brand-color-dark-blue;
+            padding: 8px 16px 8px 0px;
+            gap: 6px;
+
+            a {
+              cursor: pointer;
+              width: 25px;
+              height: 25px;
+
+              align-items: center;
+              border-radius: 0.5rem;
+              justify-content: center;
+              transition: all 0.3s ease;
+              border: 0.125rem solid transparent;
+              text-decoration: none;
+              color: $brand-color-dark-blue;
+
+              &:hover {
+                color: #977dc1;
+              }
+
+              &:active {
+                color: #7b5cb2;
+              }
+
+              &:focus {
+                outline: none;
+                border-color: #82deff;
+
+                color: $brand-color-blue;
+              }
+            }
           }
         }
       }

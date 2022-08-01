@@ -10,7 +10,7 @@
         <li class="fd_list" v-for="member in team" :key="member.name">
           <div class="fd_body__1">
             <figure class="fd_picture">
-              <img :src="member.picture" :alt="`Portrait of ${member.firstname}`" />
+              <img :src="require(`@/assets/images/team_members/${member.picture}`)" :alt="`Portrait of ${member.firstname}`" />
             </figure>
             <p class="fd_role">{{ member.role }}</p>
           </div>
@@ -74,7 +74,7 @@ export default {
           lastname: "Vela",
           city: "Montreal, Canada",
           role: "UA Developer",
-          picture: "@/assets/images/team_members/eniela.jpg",
+          picture: "eniela.jpg",
           bio: "Eniela joined the Fundamental Library team as a UA developer in January. She is the developer behind the Fundamental Conference website.",
           linkedin: "https://www.linkedin.com/in/eniela-vela-67aba3135/",
           github: "https://github.com/ynnenu",
@@ -86,7 +86,7 @@ export default {
           lastname: "Attanasova",
           city: "Montreal, Canada",
           role: "UA Developer",
-          picture: "src/assets/images/team_members/eniela.jpg",
+          picture: "eniela.jpg",
           bio: "Eniela joined the Fundamental Library team as a UA developer in January. She is the developer behind the Fundamental Conference website.",
           linkedin: "https://www.linkedin.com/in/eniela-vela-67aba3135/",
           github: "https://github.com/ynnenu",

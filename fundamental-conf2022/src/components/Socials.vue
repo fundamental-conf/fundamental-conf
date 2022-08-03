@@ -29,8 +29,8 @@ export default {
 
     a {
       cursor: pointer;
-      width: 4rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
       display: flex;
       align-items: center;
       border-radius: 0.5rem;
@@ -65,20 +65,38 @@ export default {
     }
 
     h3 {
-      font-size: 2rem;
-      margin: 2rem 0 1rem 0;
+      font-size: 1.5rem;
+      margin: 1rem 0 0.5rem 0;
       color: $brand-color-dark-blue;
       font-family:Ubuntu
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.375rem;
       color: $brand-color-darkest-blue;
-      line-height: 4.5vh;
     }
 
-    @media (max-width: 768px) {
-      align-items: center;
-    }
+    @media only screen and (min-width: 600px) {
+      a {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        margin: 2rem 0 1rem 0;
+        color: $brand-color-dark-blue;
+        font-family:Ubuntu
+      }
+
+      p {
+          line-height: 1.5;
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+        }
+      }
   }
+
+
 </style>

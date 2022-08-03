@@ -1,34 +1,37 @@
 <template>
-<div>
-  <div id="nav" class="fd-nav">
-    <div class="fd-nav__left">
-      <router-link to="/">
-        <IconFig name="new_logo" />
-      </router-link>
-      
-    </div>
+  <header id="header">
+    <nav id="navbar" class="fd-nav">
+      <div class="fd-nav__left">
+        <router-link to="/" aria-label="Home">
+          <IconFig name="new_logo" />
+        </router-link>
+      </div>
 
-    <div class="fd-nav__right">
-      <router-link to="/team" class="fd-nav__link">Our Team</router-link>
-    </div>
-  </div>
-  <router-view />
-</div>
-  
+      <div class="fd-nav__right">
+        <router-link to="/team" class="fd-nav__link" aria-label="Our Team">Our Team</router-link>
+      </div>
+    </nav>
+    <MainComponent />
+  </header>
 
+  <main id="main" class="fd-main">
+    <router-view />
+  </main>
 </template>
 
 <script>
 
 import Home from "./views/Home.vue";
 import IconFig from "./components/IconFig.vue";
+import MainComponent from "./components/MainComponent.vue";
 
 
 export default {
   name: "App",
   components: {
     Home,
-    IconFig
+    IconFig,
+    MainComponent
 },
  
 };
@@ -38,11 +41,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fd-main {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("@/assets/images/HomePageBackground_whole.png");
+}
+
 .fd-nav {
   display: flex;
+  padding: 0 1rem;
+  height: 3.75rem;
+  align-items: center;
   justify-content: space-between;
-  padding: 1rem 3rem;
   background-color: $brand-color-black;
+
+  @media only screen and (min-width: 600px) {
+    padding: 0 3rem;
+  }
 
   &__right {
     display: flex;
@@ -59,9 +75,8 @@ export default {
 
 
 .container {
-  max-height: 100vh;
+  max-height: calc(100vh - 3.75rem);
 	overflow-y: scroll;
-  scroll-snap-type: y mandatory;
 
   }
  .normal { 
@@ -69,10 +84,9 @@ export default {
   scroll-snap-type: none;
  }
   .panel {
-  scroll-snap-align: start;
 
  &--normal {
-     scroll-padding: 40px;
+     /* scroll-padding: 40px; */
   }
   }
 

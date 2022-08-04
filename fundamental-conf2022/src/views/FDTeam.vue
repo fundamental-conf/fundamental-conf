@@ -186,6 +186,7 @@ export default {
     display: flex;
     flex-direction: column;
     padding-block: 1%;
+    padding: 50px 30px 0 30px;
    
       .fd_body__1 {
         display: flex;
@@ -193,11 +194,6 @@ export default {
         align-items: center;
         .fd_picture {
            position: relative;
-    //        display: block;
-    // margin-block-start: 1em;
-    // margin-block-end: 1em;
-    // margin-inline-start: 40px;
-    // margin-inline-end: 40px;
           &::after {
             content: "";
             position: absolute;
@@ -212,14 +208,14 @@ export default {
             filter: blur(50px);
           }
           img {
-               max-width: 7rem;
-    min-width: 7rem;
-    max-height: 7rem;
-    min-height: 7rem;
+               max-width: 10rem;
+    min-width: 10rem;
+    max-height: 10rem;
+    min-height: 10rem;
     padding: 0.625rem;
     -o-object-fit: cover;
     object-fit: cover;
-    border-radius: 7rem;
+    border-radius: 10rem;
           }
         }
         .fd_role {
@@ -271,11 +267,13 @@ export default {
           align-items: left;
           letter-spacing: 0.01em;
           color: #052e69;
+          padding-top: 10%;
         }
         .fd_line {
-          height: 5vh;
-          wdith:23rem;
+          height: 0;
+         
           border-bottom: 1px solid #2865be;
+          visibility: hidden;
         }
         .fd-member-socials {
           gap: 4rem;
@@ -427,10 +425,12 @@ export default {
       }
       .fd_body__3 {
         .fd_bio {
+          padding-top: 0;
         .fd_line {
           height: 5vh;
           width:23rem;
           border-bottom: 1px solid #2865be;
+          visibility: visible;
         }
         .fd-member-socials {
           gap: 3rem;
@@ -453,6 +453,12 @@ export default {
       }
     }
   }
+   .fd_wrapper .fd_body .fd_body__3 .fd_line {
+      height: 5vh;
+          width:23rem;
+          border-bottom: 1px solid #2865be;
+          visibility: visible;
+    }
 }
-    
+   
 </style>

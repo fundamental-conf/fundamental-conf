@@ -75,13 +75,12 @@
           </svg>
           <div class="fd-main-section__title">
             <h1>Fundamental <br> Conference<sup>22</sup></h1>
+            <p class="fd-main-section__subtitle">future of front-end and design</p>
           </div>
         </div>
-        <p class="fd-main-section__subtitle">future of front-end and design</p>
         
-
         <div class="fd-main-section__subheader">
-          <time datetime="2022-09-28">THUR, <b>SEPTEMBER</b> 28, 2022</time>
+          <time datetime="2022-09-29">THURSDAY, <b>SEPTEMBER</b> 29, 2022</time>
         </div>
       </div>
     </transition>
@@ -91,6 +90,7 @@
     <svg
       viewBox="0 0 245 246"
       fill="none"
+      id="coming-soon"
       xmlns="http://www.w3.org/2000/svg"
       style="bottom: 10vh; position: absolute; width: 20vh"
     >
@@ -341,25 +341,27 @@ gsap.fromTo(
   &__header {
     gap: 1rem;
     display: flex;
-    padding-top: 30vh;
+    padding-top: 15vh;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 
     svg {
-      width: 5.5rem;
-      min-width: 5.5rem;
-      max-width: 5.5rem;
+      width: 6rem;
+      min-width: 6rem;
+      max-width: 6rem;
     }
 
     h1 {
-      font-size: 2rem;
-      line-height: 1.4;
+      font-size: 2.8rem;
+      line-height: 1.2;
     }
   }
 
   &__title {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: flex-start;
 
     sup {
       font-size: 1rem;
@@ -373,11 +375,12 @@ gsap.fromTo(
     margin-top: 0.5rem;
     text-align: center;
     color: $text-color-accent;
+    letter-spacing: 0.15rem;
   }
 
   &__subheader {
     display: flex;
-    margin-top: 3rem;
+    margin-top: 4rem;
     font-size: 1rem;
     align-items: center;
     justify-content: center;
@@ -387,10 +390,12 @@ gsap.fromTo(
   @media screen and (min-width: 600px) {
     .fd-main-section {
       &__header {
-        padding-top: 20vh;
+        padding-top: 15vh;
+        flex-direction: row;
+        align-items: flex-start;
+
         h1 {
           font-size: 5rem;
-          line-height: 1.2;
         }
         
         svg {
@@ -405,6 +410,10 @@ gsap.fromTo(
       &__subtitle {
         font-size: 2rem;
       }
+
+      &__subtitle {
+        letter-spacing: 0.17rem;
+      }
     }
   }
 }
@@ -415,7 +424,7 @@ gsap.fromTo(
       padding-top: 10vh !important;
     }
 
-    svg {
+    svg#coming-soon {
       display: none;
     }
   }

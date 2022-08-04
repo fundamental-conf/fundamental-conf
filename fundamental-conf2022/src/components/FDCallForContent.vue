@@ -9,7 +9,6 @@
       </h2>
 
       <div class="fd-cfc__cfa">
-        <div class="fd-cfc__line" role="presentation"></div>
         <a aria-label="open submit your topic form" class="fd-cfc__button" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSefCY1yFAYFDuFzW6wB0xENR8mgc0oCbC2FWPcr0_qStDTSlg/viewform">
           <svg
             viewBox="0 0 295 291"
@@ -202,34 +201,30 @@ export default {};
   font-family: "Ubuntu", Arial, Helvetica, sans-serif;
 
   &__container {
-    display: flex;
     gap: 2rem;
+    display: flex;
+    align-items: center;
   }
 
   &__title {
     display: flex;
     flex-direction: column;
-    font-size: 4.5rem;
-    text-align: right;
+    background: linear-gradient(-33deg, #82deff, #69ADF8, #7b5cb2, #7b5cb2);
+    background-size: 300%;
     font-weight: bold;
-    -webkit-text-stroke: 0;
-    background: linear-gradient(33.68deg,#82deff 11.17%,#7b5cb2);
+    line-height: 1;
+    font-size: 6.25rem;
+    text-align: right;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-animation: textclip-69f4e308 2s linear infinite alternate;
-    animation: textclip-69f4e308 2s linear infinite alternate;
+    animation: animated_text 5s ease-in-out infinite;
+    -moz-animation: animated_text 5s ease-in-out infinite;
+    -webkit-animation: animated_text 5s ease-in-out infinite;
   }
 
   &__cfa {
     display: flex;
     flex-direction: column;
-  }
-
-  &__line {
-    width: 100%;
-    height: 0.0625rem;
-    margin-top: 3rem;
-    background: #2865be;
   }
 
   &__button {
@@ -239,8 +234,8 @@ export default {};
     cursor: pointer;
 
     .fd-cfc__svg {
-      width:40vw;
-      height:40vh;
+      width: 40vw;
+      height: auto;
     }
 
     &:hover {
@@ -254,8 +249,8 @@ export default {};
 
   &__paragraph {
     font-size: 1rem;
-    margin-top: 1rem;
-    line-height: 1.375rem;
+    margin-top: 3rem;
+    line-height: 1.4375rem;
     color: $text-color-dark;
     font-family: "Source Sans 3", "Arial", sans-serif;
     display: none;
@@ -263,6 +258,12 @@ export default {};
     &.mobile {
       display: block;
     }
+  }
+
+  @keyframes animated_text {
+    0% { background-position: 0px 50%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 0px 50%; }
   }
 }
 
@@ -290,8 +291,9 @@ export default {};
 
     &__paragraph {
       display: flex;
-      line-height: 1.5;
-      font-size: 1.2rem;
+      line-height: 1.65;
+      font-size: 1.25rem;
+      letter-spacing: 0.01em;
       margin-top: 5rem;
 
       &.mobile {
@@ -300,7 +302,7 @@ export default {};
     }
 
     &__title {
-      font-size: 8rem;
+      font-size: 12.5rem;
     }
   }
 }

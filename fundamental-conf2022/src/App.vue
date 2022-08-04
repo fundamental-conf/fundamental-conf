@@ -11,7 +11,6 @@
         <router-link to="/team" class="fd-nav__link" aria-label="Our Team">Our Team</router-link>
       </div>
     </nav>
-    <MainComponent />
   </header>
 
   <main id="main" class="fd-main">
@@ -23,15 +22,13 @@
 
 import Home from "./views/Home.vue";
 import IconFig from "./components/IconFig.vue";
-import MainComponent from "./components/MainComponent.vue";
 
 
 export default {
   name: "App",
   components: {
     Home,
-    IconFig,
-    MainComponent
+    IconFig
 },
  
 };

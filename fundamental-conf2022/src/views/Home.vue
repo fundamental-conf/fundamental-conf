@@ -1,4 +1,5 @@
 <template>
+  <MainComponent />
   <FDAbout /> 
   <FDCallForContent />
   <SocialsContainer />
@@ -6,6 +7,7 @@
 </template>
 <script>
 
+import MainComponent from "../components/MainComponent.vue";
 import FDAbout from "../components/FDAbout.vue";
 import FDCallForContent from "../components/FDCallForContent.vue";
 import FDFooter from "../components/FDFooter.vue";
@@ -15,6 +17,7 @@ import SocialsContainer from "../components/SocialsContainer.vue";
 export default {
   name: "Home",
   components: {
+    MainComponent,
     NavBar,
     FDAbout,
     FDCallForContent,

@@ -2,7 +2,7 @@
 <div>
   <div id="nav" class="fd-nav">
     <div class="fd-nav__left">
-      <router-link to="/">
+      <router-link to="/home">
         <IconFig name="new_logo" />
       </router-link>
     </div>
@@ -55,7 +55,7 @@ export default {
   }
 
   &__link {
-    color: $text-color;
+    // color: $text-color;
     outline: none;
     position: relative;
     width: fit-content;

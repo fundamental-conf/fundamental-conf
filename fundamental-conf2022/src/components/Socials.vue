@@ -29,8 +29,8 @@ export default {
 
     a {
       cursor: pointer;
-      width: 3rem;
-      height: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
       display: flex;
       align-items: center;
       border-radius: 0.5rem;
@@ -39,19 +39,19 @@ export default {
       border: 0.125rem solid transparent;
       
       svg {
-        color: $brand-color-blue;
+        color: #2865BE;
         transition: all .3s ease;
       }
 
       &:hover {
         svg {
-          color: #977DC1;
+          color: #3E86EF;
         }
       }
 
       &:active {
         svg {
-          color: #7B5CB2;
+          color: #3E86EF;
         }
       }
 
@@ -65,15 +65,17 @@ export default {
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-weight: 400;
+      font-size: 1.125rem;
       margin: 1rem 0 0.5rem 0;
       color: $brand-color-dark-blue;
-      font-family:Ubuntu
+       font-family: "Ubuntu", Arial, Helvetica, sans-serif;
     }
 
     p {
+      line-height: 1.4375rem;
       font-size: 1rem;
-      line-height: 1.375rem;
+      letter-spacing: 0.01em;
       color: $brand-color-darkest-blue;
     }
 
@@ -84,18 +86,18 @@ export default {
       }
 
       h3 {
-        font-size: 1.8rem;
-        margin: 2rem 0 1rem 0;
+        font-size: 2rem;
+        margin: 2.25rem 0 1rem 0;
         color: $brand-color-dark-blue;
         font-family:Ubuntu
       }
 
       p {
-          line-height: 1.5;
-          font-size: 1.2rem;
-          line-height: 1.5rem;
-        }
+        line-height: 1.65;
+        font-size: 1.25rem;
+        letter-spacing: 0.01em;
       }
+    }
   }
 
 

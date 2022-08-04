@@ -66,20 +66,35 @@ export default {
       gap: 2rem;
       margin-bottom: 3rem;
       align-items: flex-end;
-      color: $text-color-accent;
+      color: $brand-color-dark-blue;
 
       h2 {
         white-space: nowrap;
         line-height: 1;
-        font-size: 2.4rem;
+        font-size: 2rem;
+        font-family: "Ubuntu", Arial, Helvetica, sans-serif;
       }
 
       div {
         width: 100%;
         height: 0.0625rem;
+        background: linear-gradient(-45deg, #2865be, #7B5CB2, #82DEFF);
+        background-size: 400% 400%;
+	      animation: gradient 3s ease infinite;
         margin-top: 3rem;
-        background: #2865be;
         margin-bottom: 0.25rem;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
     }
   }

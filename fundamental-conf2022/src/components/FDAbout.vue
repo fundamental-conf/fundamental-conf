@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <time class="fd-about__date" datetime="2022-09-28">
+    <time class="fd-about__date" datetime="2022-09-29">
       <div role="presentation"></div>
       <div>09<br>.29</div>
     </time>
@@ -44,16 +44,17 @@ export default {
 
   &__content {
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.125rem;
       margin-top: 0.5rem;
-      color: $text-color-accent;
+      color: $brand-color-dark-blue;
     }
 
     p {
       font-size: 1rem;
       margin-top: 1rem;
-      line-height: 1.375rem;
+      line-height: 1.4375rem;
       color: $text-color-dark;
+      letter-spacing: 0.01em;
       font-family: "Source Sans 3", "Arial", sans-serif;
     }
   }
@@ -74,16 +75,24 @@ export default {
     }
 
     div {
-      font-size: 5rem;
-      text-align: right;
+      background: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69ADF8, #82deff);
+      background-size: 300%;
       font-weight: bold;
-      -webkit-text-stroke: 0;
-      background: linear-gradient(33.68deg,#7b5cb2 11.17%,#82deff);
+      line-height: 1;
+      font-size: 6.25rem;
+      text-align: right;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      -webkit-animation: textclip-69f4e308 2s linear infinite alternate;
-      animation: textclip-69f4e308 2s linear infinite alternate;
+      animation: animated_text 5s ease-in-out infinite;
+      -moz-animation: animated_text 5s ease-in-out infinite;
+      -webkit-animation: animated_text 5s ease-in-out infinite;
     }
+  }
+
+  @keyframes animated_text {
+    0% { background-position: 0px 50%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 0px 50%; }
   }
 }
 
@@ -93,6 +102,7 @@ export default {
     max-width: 1200px;
     padding: 5rem 10vw;
     margin: 0 auto;
+    align-items: center;
 
     &__content {
       h2 {
@@ -100,8 +110,9 @@ export default {
       }
 
       p {
-        line-height: 1.5;
-        font-size: 1.2rem;
+        line-height: 1.65;
+        font-size: 1.25rem;
+        letter-spacing: 0.01em;
         padding: 3rem 1rem 3rem 4rem;
       }
     }
@@ -109,21 +120,34 @@ export default {
     &__header {
       gap: 2rem;
       display: flex;
-      margin-top: 3rem;
       align-items: flex-end;
-      color: $text-color-accent;
+      color: $brand-color-dark-blue;
 
       h2 {
         white-space: nowrap;
         line-height: 1;
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
 
       div {
         width: 100%;
         height: 0.0625rem;
-        background: #2865be;
+        background: linear-gradient(-45deg, #2865be, #7B5CB2, #82DEFF);
+        background-size: 400% 400%;
+	      animation: gradient 3s ease infinite;
         margin-bottom: 0.25rem;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
     }
 
@@ -133,7 +157,7 @@ export default {
       }
 
       div {
-        font-size: 8rem;
+        font-size: 12.5rem;
       }
     }
   }

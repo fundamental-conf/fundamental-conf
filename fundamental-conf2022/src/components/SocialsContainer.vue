@@ -1,29 +1,35 @@
 <template>
-  <section class="fd-socials-container">
-    <Socials>
-      <template v-slot:logos>
-        <a href="https://www.youtube.com/c/FundamentalLibrary" aria-label="Click on Fundamental Library's youtube link" target="_blank" v-html="svgs.youtube"></a>
-      </template>
-      <h3>YouTube</h3>
-      <p>Revisit all the insightful talks of last year's conference on our channel</p>
-    </Socials>
+  <section class="fd-socials-container" id="social-links">
+    <div class="fd-socials-container__header">
+      <h2>follow us</h2>
+      <div role="presentation"></div>
+    </div>
+    <div class="fd-socials-container__blocks">
+      <Socials>
+        <template v-slot:logos>
+          <a href="https://www.youtube.com/c/FundamentalLibrary" aria-label="Link to Fundamental Library's youtube link" target="_blank" v-html="svgs.youtube"></a>
+        </template>
+        <h3>YouTube</h3>
+        <p>Revisit all the insightful talks of last year's conference on our channel</p>
+      </Socials>
 
-    <Socials>
-      <template v-slot:logos>
-        <a href="https://blogs.sap.com/tags/3a0dd723-dbeb-43fa-b8df-076c15568a86/" aria-label="Click on Fundamental Library's SAP blog post link" target="_blank" v-html="svgs.blog"></a>
-      </template>
-      <h3>SAP Blogs</h3>
-      <p>Catch our latest tips and learn new insights into our Fundamental Library tagged blog series. </p>
-    </Socials>
+      <Socials>
+        <template v-slot:logos>
+          <a href="https://blogs.sap.com/tags/3a0dd723-dbeb-43fa-b8df-076c15568a86/" aria-label="Link to Fundamental Library's SAP blog post link" target="_blank" v-html="svgs.blog"></a>
+        </template>
+        <h3>SAP Blogs</h3>
+        <p>Catch our latest tips and learn new insights into our Fundamental Library tagged blog series. </p>
+      </Socials>
 
-    <Socials>
-      <template v-slot:logos>
-        <a href="https://twitter.com/fundamental_lib" aria-label="Click on Fundamental Library's Twitter link"  target="_blank" v-html="svgs.twitter"></a>
-        <a href="https://www.linkedin.com/company/sap-graph/" aria-label="Click on Fundamental Library's LinkedIn link"  target="_blank" v-html="svgs.linkedin"></a>
-      </template>
-      <h3>Twitter + LinkedIn</h3>
-      <p>Follow us on your favourite social media platform to not miss another update on the latest Fundamental releases. </p>
-    </Socials>
+      <Socials>
+        <template v-slot:logos>
+          <a href="https://twitter.com/fundamental_lib" aria-label="Link to Fundamental Library's Twitter link"  target="_blank" v-html="svgs.twitter"></a>
+          <a href="https://www.linkedin.com/company/sap-graph/" aria-label="Link to Fundamental Library's LinkedIn link"  target="_blank" v-html="svgs.linkedin"></a>
+        </template>
+        <h3>Twitter + LinkedIn</h3>
+        <p>Follow us on your favourite social media platform to not miss another update on the latest Fundamental releases. </p>
+      </Socials>
+    </div>
     
   </section>
 </template>
@@ -47,20 +53,55 @@ export default {
 
 <style lang="scss" scoped>
   .fd-socials-container {
-    display: flex;
-    padding-top: 16.875rem;
-    padding-bottom: 16.875rem;
-    gap: clamp(6vw, 8vw, 10vw);
-    background: $brand-color-silver;
-    padding-left: clamp(6vw, 8vw, 10vw);
-    padding-right: clamp(6vw, 8vw, 10vw);
+    padding: 5rem 2rem 10rem;
+
+    &__blocks {
+      gap: 3rem;
+      display: flex;
+      flex-direction: column;
+    }
+   
+    &__header {
+      display: none;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      align-items: flex-end;
+      color: $text-color-accent;
+
+      h2 {
+        white-space: nowrap;
+        line-height: 1;
+        font-size: 2.4rem;
+      }
+
+      div {
+        width: 100%;
+        height: 0.0625rem;
+        margin-top: 3rem;
+        background: #2865be;
+        margin-bottom: 0.25rem;
+      }
+    }
   }
 
-  @media (max-width: 768px) { 
+  @media only screen and (min-width: 600px) {
     .fd-socials-container {
-      gap: 5vh;
-      padding: 10vw;
-      flex-direction: column;
+      padding: 10rem 10vw;
+      margin: 0 auto;
+      max-width: 1200px;
+      
+      &__blocks {
+        flex-direction: row;
+        
+        gap: 10%;
+        justify-content: space-between;
+      }
+
+      &__header {
+        display: flex;
+        margin-bottom: 6rem;
+      }
+      
     }
   }
 </style>

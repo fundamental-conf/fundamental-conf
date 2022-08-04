@@ -1,30 +1,29 @@
 <template>
-<div>
-  <div id="nav" class="fd-nav">
-    <div class="fd-nav__left">
-      <router-link to="/home">
-        <IconFig name="new_logo" />
-      </router-link>
-    </div>
+  <header id="header">
+    <nav id="navbar" class="fd-nav">
+      <div class="fd-nav__left">
+        <router-link to="/" aria-label="Home">
+          <IconFig name="new_logo" />
+        </router-link>
+      </div>
 
-    <div class="fd-nav__right">
-      <router-link to="/team" class="fd-nav__link">Our Team</router-link>
-    </div>
-  </div>
-  
-  <router-view />
+      <div class="fd-nav__right">
+        <router-link to="/team" class="fd-nav__link" aria-label="Our Team">Our Team</router-link>
+      </div>
+    </nav>
+    <MainComponent />
+  </header>
 
-  <FDFooter />
-</div>
-  
-
+  <main id="main" class="fd-main">
+    <router-view />
+  </main>
 </template>
 
 <script>
 
 import Home from "./views/Home.vue";
 import IconFig from "./components/IconFig.vue";
-import FDFooter from "./components/FDFooter.vue";
+import MainComponent from "./components/MainComponent.vue";
 
 
 export default {
@@ -32,7 +31,7 @@ export default {
   components: {
     Home,
     IconFig,
-    FDFooter
+    MainComponent
 },
  
 };
@@ -42,68 +41,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fd-main {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("@/assets/images/HomePageBackground_whole.png");
+}
+
 .fd-nav {
   display: flex;
+  padding: 0 1rem;
+  height: 3.75rem;
+  align-items: center;
   justify-content: space-between;
-  padding: 1rem 3rem;
   background-color: $brand-color-black;
+
+  @media only screen and (min-width: 600px) {
+    padding: 0 3rem;
+  }
 
   &__right {
     display: flex;
     gap: 1rem;
-    align-items: center;
   }
 
   &__link {
-    // color: $text-color;
-    outline: none;
-    position: relative;
-    width: fit-content;
-    padding: 0.5rem 1rem;
-    text-decoration: none;     
-    border-radius: 0.25rem;
-    outline-offset: 1.25rem;
-    transition: all 0.3s ease-in-out;
-    border: 0.125rem solid transparent;
     font-family: "Ubuntu", Arial, Helvetica, sans-serif;
-
-    &::after {
-      left: 0;
-      bottom: 0;
-      opacity: 1;
-      content: '';
-      width: 100%;
-      height: 0.1em;
-      position: absolute;
-      transform: scale(0);
-      transform-origin: center;
-      background-color: #fff;
-      transition: opacity 300ms, transform 300ms;
-    }
-
-    &:hover {
-      &::after {
-        transform: scale(1);
-      }
-    }
-
-    &:focus {
-        border-color: #82DEFF;
-    }
-
-    &:focus:hover {
-      &::after {
-        transform: scale(0);
-      }
-    }
+    text-decoration: none;
+    color: $text-color;
+    font-size: 1.2rem;
   }
 }
 
 
 .container {
-  max-height: 100vh;
+  max-height: calc(100vh - 3.75rem);
 	overflow-y: scroll;
-  scroll-snap-type: y mandatory;
 
   }
  .normal { 
@@ -111,10 +84,9 @@ export default {
   scroll-snap-type: none;
  }
   .panel {
-  scroll-snap-align: start;
 
  &--normal {
-     scroll-padding: 40px;
+     /* scroll-padding: 40px; */
   }
   }
 

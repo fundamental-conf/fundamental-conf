@@ -104,6 +104,18 @@ export default {
           github: "https://github.com/InnaAtanasova",
           twitter: "https://twitter.com/Inncho",
         },
+         {
+          firstname: "Margot",
+          lastname: "Wollny",
+          city: "Walldorf, Germany",
+          role: "Project Manager",
+          picture: "Circle_Margot.png",
+          bio: `Margot is a Project Manager at SAP and one of the initiators of UI5con, a community conference for UI5 developers. It’s the first she is part of the Fundamental Conference Organization Team, already 
+          looking forward to conference and a lively exchange between developers and designers all over the world.`,
+          linkedin: "https://linkedin.com/in/margot-wollny-864ba96",
+        
+        },
+
         {
           firstname: "Eniela",
           lastname: "Vela",
@@ -212,14 +224,14 @@ export default {
             filter: blur(50px);
           }
           img {
-            max-width: 10rem;
-            min-width: 10rem;
-            max-height: 10rem;
-            min-height: 10rem;
+            max-width: 14.3rem;
+            min-width: 14.3rem;
+            max-height: 14.3rem;
+            min-height: 14.3rem;
             padding: 0.625rem;
             -o-object-fit: cover;
             object-fit: cover;
-            border-radius: 10rem;
+            border-radius: 14.3rem;
           }
         }
         .fd_role {
@@ -393,12 +405,7 @@ export default {
               filter: blur(20px);
             }
             img {
-              max-width: 11rem;
-              min-width: 11rem;
-              max-height: 11rem;
-              min-height: 11rem;
-
-              border-radius: 11rem;
+             
             }
           }
           .fd_role {
@@ -407,9 +414,10 @@ export default {
             font-weight: 500;
             font-size: 1.75rem;
             line-height: 2.1rem;
-            padding-top: 16%;
+            padding-top: 5%;
             /* Blue/500 Regular */
             color: #2865be;
+            text-align: center;
           }
         }
         .fd_body__2 {
@@ -428,7 +436,7 @@ export default {
             font-family: source-sans-3, sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 1rem;
+            font-size: 1.5rem;
             line-height: 2.15rem;
             width: 16.5vw;
             text-transform: uppercase;

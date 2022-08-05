@@ -158,6 +158,8 @@ export default {
 
     &__icons {
       height: 7rem;
+      padding-top: 5%;
+      gap:7rem;
 
       flex-direction: row;
    

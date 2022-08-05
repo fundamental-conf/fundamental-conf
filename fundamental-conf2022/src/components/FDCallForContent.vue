@@ -195,10 +195,12 @@ export default {};
 
 <style lang="scss" scoped>
 .fd-cfc {
-  display: flex;
-  padding: 5rem 2rem;
-  flex-direction: column;
-  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+ display: flex;
+    padding: 5rem 1rem;
+    flex-direction: column;
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    overflow: hidden;
+
 
   &__container {
     gap: 2rem;

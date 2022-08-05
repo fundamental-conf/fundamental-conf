@@ -62,6 +62,12 @@ export default {
     gap: 1rem;
   }
 
+  &__left {
+    a:focus {
+      outline: none;
+    }
+  }
+
   &__link {
     color: $text-color;
     outline: none;

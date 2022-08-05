@@ -38,13 +38,6 @@
         <span v-html="svgs.accessibility" aria-hidden="true"></span>
         <h3>Accessibility</h3>
       </div>
-
-
-      <!-- <IconFig name="design" aria-label ="design icon in blue"></IconFig>
-      <IconFig name="plus" aria-label ="plus sign in blue">></IconFig>
-      <IconFig name="frontend" aria-label ="frontend icon in blue">></IconFig>
-      <IconFig name="plus" aria-label ="plus sign in blue">></IconFig>
-      <IconFig name="accessibility" aria-label ="accessibility icon in blue">></IconFig> -->
     </div>
   </section>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <footer class="fd-footer" id="footer" role="contentinfo">
-    <img aria-hidden="true" src="@/assets/images/SAP_Best_Run.png" class="fd-sap-logo-mobile" />
+    <img alt="SAP logo" aria-hidden="true" src="@/assets/images/SAP_Best_Run.png" class="fd-sap-logo-mobile" />
     <div class="fd-footer__left">
       <a href="https://www.linkedin.com/company/sap-graph/" rel="noopener noreferrer" target="_blank" hreflang="en">LinkedIn</a>
       <a href="https://twitter.com/fundamental_lib" rel="noopener noreferrer" target="_blank" hreflang="en">Twitter</a>
@@ -9,7 +9,7 @@
       <a href="https://sap.github.io/fundamental/" rel="noopener noreferrer" target="_blank" hreflang="en">Fundamental Library</a>
     </div>
     <div class="fd-footer__right">
-      <img src="@/assets/images/SAP_Best_Run.png" class="fd-sap-logo" />
+      <img alt="SAP logo" src="@/assets/images/SAP_Best_Run.png" class="fd-sap-logo" />
       <a href="https://www.sap.com/about/legal/privacy.html" rel="noopener noreferrer" target="_blank" hreflang="en">Privacy</a>
       <a href="https://www.sap.com/corporate/en/legal/terms-of-use.html" rel="noopener noreferrer" target="_blank" hreflang="en">Terms of Use</a>
       <a href="https://www.sap.com/about/legal/impressum.html" rel="noopener noreferrer" target="_blank" hreflang="en">Legal Disclosure</a>
@@ -83,14 +83,20 @@ export default {};
         position: absolute;
         transform: scale(0);
         transform-origin: center;
-        background-color: #fff;
+        background-color: #C5A4FA;
         transition: opacity 300ms, transform 300ms;
       }
 
       &:hover {
+        color: #C5A4FA;
+
         &::after {
           transform: scale(1);
         }
+      }
+
+      &:active {
+        color: #fff;
       }
 
       &:focus {

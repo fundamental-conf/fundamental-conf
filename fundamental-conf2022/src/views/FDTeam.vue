@@ -3,7 +3,7 @@
     <div class="fd_wrapper">
       <div class="fd_header">
         <h2 class="fd_tittle">meet the organizing team</h2>
-        <div class="fd_line" role="presentation"></div>
+        <div class="fd_line" aria-hidden="true"></div>
       </div>
 
       <ul class="fd_body">
@@ -35,7 +35,7 @@
                   target="_blank"
                   class="fd-member-socials__item"
                 >
-                  <span v-html="svgs.twitter" role="presentation"></span>
+                  <span v-html="svgs.twitter" aria-hidden="true"></span>
                   <span>Twitter</span>
                 </a>
               </li>
@@ -47,7 +47,7 @@
                   target="_blank"
                   class="fd-member-socials__item"
                 >
-                  <span v-html="svgs.github" role="presentation"></span>
+                  <span v-html="svgs.github" aria-hidden="true"></span>
                   <span>Github</span>
                 </a>
               </li>
@@ -59,7 +59,7 @@
                   target="_blank"
                   class="fd-member-socials__item"
                 >
-                  <span v-html="svgs.linkedin" role="presentation"></span>
+                  <span v-html="svgs.linkedin" aria-hidden="true"></span>
                   <span>LinkedIn</span>
                 </a>
               </li>
@@ -69,13 +69,18 @@
       </ul>
     </div>
   </section>
+  <FDFooter />
 </template>
 
 <script>
 import svgs from "@/assets/svg/svgs.js";
-console.log(svgs);
+import FDFooter from "../components/FDFooter.vue";
+
 export default {
   el: "#team",
+  components: {
+    FDFooter
+  },
   data() {
     return {
       svgs,
@@ -156,17 +161,18 @@ export default {
 
 <style lang="scss" scoped>
 .fd_wrapper {
-    background-size: cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("@/assets/images/TeamPageBackground.png");
   padding: 5%;
+  padding-top: 10%;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  
   .fd_header {
     display: flex;
-    
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -175,7 +181,7 @@ export default {
     
     .fd_tittle {
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.125rem;
       line-height: 1;
       font-family: "Ubuntu";
       font-style: normal;
@@ -183,6 +189,7 @@ export default {
       color: #2865be;
       order: 1;
     }
+    
     .fd_line {
       width: 100%;
       height: 0.0625rem;
@@ -191,12 +198,14 @@ export default {
       flex: 1;
     }
   }
+  
   .fd_body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 2%;
     flex-wrap: wrap;
+    
     .fd_list {
       gap: 10% 4%;
       display: flex;
@@ -208,8 +217,10 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
         .fd_picture {
           position: relative;
+          
           &::after {
             content: "";
             position: absolute;
@@ -223,39 +234,42 @@ export default {
             mix-blend-mode: color-burn;
             filter: blur(50px);
           }
+          
           img {
-            max-width: 14.3rem;
-            min-width: 14.3rem;
-            max-height: 14.3rem;
-            min-height: 14.3rem;
+            max-width: 10rem;
+            min-width: 10rem;
+            max-height: 10rem;
+            min-height: 10rem;
             padding: 0.625rem;
             -o-object-fit: cover;
             object-fit: cover;
-            border-radius: 14.3rem;
+            border-radius: 10rem;
           }
         }
+        
         .fd_role {
           font-family: "Ubuntu";
           font-style: normal;
           font-weight: 400;
-          font-size: 1.25rem;
+          font-size: 1.125rem;
           line-height: 2.1rem;
           padding-top: 4%;
           color: #2865be;
         }
       }
     }
+    
     .fd_body__2 {
       display: flex;
       flex-direction: column;
       padding-top: 10%;
+      
       .fd_name {
         font-family: "Ubuntu";
         font-style: normal;
         font-weight: 500;
-        font-size: 3rem;
-        line-height: 3.5rem;
-        /* Blue/500 Regular */
+        font-size: 2.25rem;
+        line-height: 2.5rem;
         color: #2865be;
         background: linear-gradient(-33deg, #82deff, #69ADF8, #2865be);
         background-size: 300%;
@@ -283,28 +297,31 @@ export default {
         padding-top: 6%;
       }
     }
+    
     .fd_body__3 {
       display: flex;
       flex-direction: column;
-      padding-top: 7%;
+      padding-top: 5%;
+      
       .fd_bio {
         font-family: source-sans-3, sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 1.25rem;
-        line-height: 2rem;
+        font-size: 1rem;
+        line-height: 1.375rem;
         display: flex;
         align-items: left;
         letter-spacing: 0.01em;
         color: #052e69;
         padding-top: 10%;
       }
+      
       .fd_line {
         height: 0;
-
         border-bottom: 1px solid #2865be;
         visibility: hidden;
       }
+      
       .fd-member-socials {
         width: 100%;
         gap: 1rem;
@@ -331,35 +348,60 @@ export default {
             transition: all 0.3s ease;
             border: 0.125rem solid transparent;
             text-decoration: none;
-            color: $brand-color-dark-blue;
+            color: #2865BE;
             display: flex;
             flex-direction: row;
             white-space: nowrap;
             gap: 0.5rem;
             padding: 4px;
+            
 
             span:first-child{
               display: flex;
               justify-content: center;
               align-items: center;
-              width: 30px;
-              height: 30px;
+              width: 25px;
+              height: 25px;
             }
 
             span:last-child {
-              font-size: 18px;
+              font-size: 0.875rem;
+              position: relative;
+              transition: all 0.3s ease-in-out;
+
+              &::after {
+                left: 0;
+                bottom: 0;
+                opacity: 1;
+                content: '';
+                width: 100%;
+                height: 0.1em;
+                position: absolute;
+                transform: scale(0);
+                transform-origin: center;
+                background-color: #2865BE;
+                transition: opacity 300ms, transform 300ms;
+              }
             }
             
             &:hover {
-              color: #977dc1;
+              color: #2865BE;
+
+              span:last-child {
+                &::after {
+                  transform: scale(1);
+                }
+              }
             }
+
             &:active {
-              color: #7b5cb2;
+              color: #052E69;
             }
+
             &:focus {
               outline: none;
-              border-color: #82deff;
-              color: $brand-color-blue;
+              border-color: #9747FF;
+              color: #2865BE;
             }
           }
         }
@@ -386,17 +428,22 @@ export default {
         font-size: 2rem;
       }
     }
+    
     .fd_body {
+      
       .fd_list {
         gap: 10% 4%;
         display: flex;
         flex-direction: row;
         padding-block: 6%;
+        
         .fd_body__1 {
           display: flex;
           flex-direction: column;
+          
           .fd_picture {
             position: relative;
+            
             &::after {
               content: "";
 
@@ -404,10 +451,8 @@ export default {
 
               filter: blur(20px);
             }
-            img {
-             
-            }
           }
+          
           .fd_role {
             font-family: "Ubuntu";
             font-style: normal;
@@ -415,16 +460,17 @@ export default {
             font-size: 1.75rem;
             line-height: 2.1rem;
             padding-top: 5%;
-            /* Blue/500 Regular */
             color: #2865be;
             text-align: center;
           }
         }
+        
         .fd_body__2 {
           display: flex;
           flex-direction: column;
           width: 20vw;
           padding-top: 5%;
+          
           .fd_name {
             font-weight: 500;
             font-size: 3rem;
@@ -432,6 +478,7 @@ export default {
             /* Blue/500 Regular */
             color: #2865be;
           }
+          
           .fd_city {
             font-family: source-sans-3, sans-serif;
             font-style: normal;
@@ -444,16 +491,23 @@ export default {
             padding-top: 0.5rem;
           }
         }
+        
         .fd_body__3 {
+          
           .fd_bio {
             padding-top: 0;
+            font-size: 1.25rem;
+            line-height: 2rem;
+
             .fd_line {
               height: 5vh;
               width: 23rem;
               border-bottom: 1px solid #2865be;
               visibility: visible;
             }
-            .fd-member-socials {
+          }
+
+          .fd-member-socials {
               gap: 3rem;
               padding: 0;
               display: flex;
@@ -461,12 +515,16 @@ export default {
               margin: 1rem 0;
               list-style: none;
               justify-content: left;
+
+              li a span:last-child {
+                font-size: 1.125rem;
+              }
             }
-          }
         }
       }
     }
   }
+  
   .fd_wrapper .fd_body .fd_body__3 .fd_line {
     height: 5vh;
     width: 23rem;

@@ -74,6 +74,7 @@ export default {
     transition: all 0.3s ease-in-out;
     border: 0.125rem solid transparent;
     font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+
     &::after {
       left: 0;
       bottom: 0;
@@ -84,17 +85,22 @@ export default {
       position: absolute;
       transform: scale(0);
       transform-origin: center;
-      background-color: #fff;
+      background-color: #C5A4FA;
       transition: opacity 300ms, transform 300ms;
     }
+    
     &:hover {
+      color: #C5A4FA;
       &::after {
         transform: scale(1);
       }
     }
+    
     &:focus {
+      color: #fff;
         border-color: #82DEFF;
     }
+    
     &:focus:hover {
       &::after {
         transform: scale(0);

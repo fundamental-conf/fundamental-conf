@@ -33,33 +33,34 @@ export default {
       height: 2.5rem;
       display: flex;
       align-items: center;
-      border-radius: 0.5rem;
+      border-radius: 0.3125rem;
       justify-content: center;
       transition: all .3s ease;
       border: 0.125rem solid transparent;
       
       svg {
-        color: #2865BE;
+        color: #3E86EF;
+;
         transition: all .3s ease;
       }
 
       &:hover {
         svg {
-          color: #3E86EF;
+          color: #2865BE;
         }
       }
 
       &:active {
         svg {
-          color: #3E86EF;
+          color: #052E69;
         }
       }
 
       &:focus {
         outline: none;
-        border-color: #82DEFF;
+        border-color: #9747FF;
         svg {
-          color: $brand-color-blue;
+          color: #3E86EF;
         }
       }
     }

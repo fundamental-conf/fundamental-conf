@@ -262,14 +262,12 @@ CustomEase.create("hop", "M0,0 C0.124,0.382 0.071,1.051 0.283,1.03 0.44,1.014 0.
 
     const showTitle = ref(true);
     const beforeEnter = (el) => {
-      console.log("before enter - set intial state");
       el.style.transform = "translateY(-60px)";
       el.style.opacity = 0;
     };
 
   
     const enter = (el, done) => {
-      console.log("starting to enter - make transition");
       gsap.to(el, {
         duration: 2,
         y: 0,

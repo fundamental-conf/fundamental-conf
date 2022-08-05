@@ -3,75 +3,39 @@
     <transition appear @before-enter="beforeEnter" @enter="enter" :css="false">
       <div v-if="showTitle" class="fd-main-section__container">
         <div class="fd-main-section__header">
-          <svg
-            aria-hidden="true"
-            id="fd_logo"
-            viewBox="0 0 280 280"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M144.072 39.4757L144.072 120.332C144.072 134.589 161.31 141.729 171.392 131.648L252.248 50.7918C262.33 40.7103 255.189 23.4724 240.932 23.4724L160.076 23.4724C151.237 23.4724 144.072 30.6373 144.072 39.4757Z"
-              fill="#69ADF8"
-            />
-            <path
-              d="M144.159 241.427L144.159 160.571C144.159 146.314 161.397 139.174 171.479 149.255L252.335 230.111C262.416 240.193 255.276 257.431 241.019 257.431L160.163 257.431C151.324 257.431 144.159 250.266 144.159 241.427Z"
-              fill="url(#paint0_radial_122_89)"
-            />
-            <path
-              d="M144.159 241.427L144.159 160.571C144.159 146.314 161.397 139.174 171.479 149.255L252.335 230.111C262.416 240.193 255.276 257.431 241.019 257.431L160.163 257.431C151.324 257.431 144.159 250.266 144.159 241.427Z"
-              fill="url(#paint1_radial_122_89)"
-              style="mix-blend-mode: multiply"
-            />
-            <path
-              d="M144.159 241.427L144.159 160.571C144.159 146.314 161.397 139.174 171.479 149.255L252.335 230.111C262.416 240.193 255.276 257.431 241.019 257.431L160.163 257.431C151.324 257.431 144.159 250.266 144.159 241.427Z"
-              fill="url(#paint2_radial_122_89)"
-              fill-opacity="0.75"
-              style="mix-blend-mode: soft-light"
-            />
-            <path
-              d="M135.5 119.492L135.5 38.6354C135.5 24.378 118.262 17.2378 108.18 27.3194L27.3243 108.175C17.2427 118.257 24.3829 135.495 38.6403 135.495L119.496 135.495C128.335 135.495 135.5 128.33 135.5 119.492Z"
-              fill="#69ADF8"
-            />
-            <path
-              d="M119.492 144.029L38.6357 144.029C24.3782 144.029 17.2381 161.267 27.3196 171.349L108.176 252.205C118.257 262.286 135.495 255.146 135.495 240.889L135.495 160.033C135.495 151.194 128.33 144.029 119.492 144.029Z"
-              fill="#69ADF8"
-            />
-            <defs>
-              <radialGradient
-                id="paint0_radial_122_89"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(144.159 252.915) rotate(-22.8086) scale(114.625 127.485)"
-              >
-                <stop stop-color="#4A00CC" />
-                <stop offset="1" stop-color="#4AA0FF" />
-              </radialGradient>
-              <radialGradient
-                id="paint1_radial_122_89"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(151.702 149.416) rotate(90.6042) scale(61.1435)"
-              >
-                <stop stop-color="#23C5FF" stop-opacity="0.87" />
-                <stop offset="1" stop-color="#69ADF8" stop-opacity="0" />
-              </radialGradient>
-              <radialGradient
-                id="paint2_radial_122_89"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(253.708 247.447) rotate(-135.855) scale(75.9962)"
-              >
-                <stop stop-color="#82DEFF" />
-                <stop offset="1" stop-color="#82DEFF" stop-opacity="0" />
-              </radialGradient>
-            </defs>
+          <svg preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d_465_1096)">
+        <path d="M87.5602 12.0696L87.5602 67.6902C87.5602 77.4978 99.4181 82.4096 106.353 75.4745L161.974 19.8538C168.909 12.9188 163.997 1.06091 154.19 1.06091L98.5689 1.06091C92.489 1.06091 87.5602 5.98965 87.5602 12.0696Z" fill="#69ADF8"/>
+        <path d="M87.6203 150.991L87.6203 95.3704C87.6203 85.5627 99.4781 80.651 106.413 87.586L162.034 143.207C168.969 150.142 164.057 162 154.25 162L98.6289 162C92.549 162 87.6203 157.071 87.6203 150.991Z" fill="url(#paint0_radial_465_1096)"/>
+        <path d="M87.6203 150.991L87.6203 95.3704C87.6203 85.5627 99.4781 80.651 106.413 87.586L162.034 143.207C168.969 150.142 164.057 162 154.25 162L98.6289 162C92.549 162 87.6203 157.071 87.6203 150.991Z" fill="url(#paint1_radial_465_1096)" style="mix-blend-mode:multiply"/>
+        <path d="M87.6203 150.991L87.6203 95.3704C87.6203 85.5627 99.4781 80.651 106.413 87.586L162.034 143.207C168.969 150.142 164.057 162 154.25 162L98.6289 162C92.549 162 87.6203 157.071 87.6203 150.991Z" fill="url(#paint2_radial_465_1096)" fill-opacity="0.75" style="mix-blend-mode:soft-light"/>
+        <path d="M81.6634 67.1118L81.6634 11.4912C81.6634 1.68354 69.8056 -3.22817 62.8705 3.70689L7.24984 59.3276C0.314786 66.2626 5.22648 78.1205 15.0341 78.1205L70.6548 78.1205C76.7347 78.1205 81.6634 73.1917 81.6634 67.1118Z" fill="#69ADF8"/>
+        <path d="M70.6515 83.9914L15.0309 83.9914C5.22323 83.9914 0.311514 95.8492 7.24657 102.784L62.8672 158.405C69.8023 165.34 81.6602 160.428 81.6602 150.621L81.6602 95C81.6602 88.9201 76.7314 83.9914 70.6515 83.9914Z" fill="#69ADF8"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_465_1096" x="0" y="0.460449" width="169.28" height="169.539" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_465_1096"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_465_1096" result="shape"/>
+        </filter>
+        <radialGradient id="paint0_radial_465_1096" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(87.6204 158.893) rotate(-22.8086) scale(78.8498 87.6964)">
+        <stop stop-color="#4A00CC"/>
+        <stop offset="1" stop-color="#4AA0FF"/>
+        </radialGradient>
+        <radialGradient id="paint1_radial_465_1096" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(92.8086 87.697) rotate(90.6042) scale(42.0604 42.0604)">
+        <stop stop-color="#23C5FF" stop-opacity="0.87"/>
+        <stop offset="1" stop-color="#69ADF8" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="paint2_radial_465_1096" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(162.978 155.132) rotate(-135.855) scale(52.2776)">
+        <stop stop-color="#82DEFF"/>
+        <stop offset="1" stop-color="#82DEFF" stop-opacity="0"/>
+        </radialGradient>
+        </defs>
           </svg>
           <div class="fd-main-section__title">
             <h1>Fundamental <br> Conference<sup>22</sup></h1>
@@ -397,9 +361,10 @@ gsap.fromTo(
         }
         
         svg {
-          width: 12rem;
-          min-width: 12rem;
-          max-width: 12rem;
+          margin-top: 1.25rem;
+          width: 10rem;
+          min-width: 10rem;
+          max-width: 10rem;
         }
       }
       
@@ -420,10 +385,6 @@ gsap.fromTo(
   .fd-main-section {
     &__header {
       padding-top: 10vh !important;
-    }
-
-    svg#coming-soon {
-      display: none;
     }
   }
   

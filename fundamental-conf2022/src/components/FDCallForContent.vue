@@ -215,7 +215,7 @@ export default {};
     background-size: 300%;
     font-weight: bold;
     line-height: 1;
-    font-size: 6.25rem;
+    font-size: 4rem;
     text-align: right;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

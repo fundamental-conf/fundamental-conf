@@ -63,10 +63,43 @@ export default {
   }
 
   &__link {
-    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
-    text-decoration: none;
     color: $text-color;
-    font-size: 1.2rem;
+    outline: none;
+    position: relative;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    text-decoration: none;     
+    border-radius: 0.25rem;
+    outline-offset: 1.25rem;
+    transition: all 0.3s ease-in-out;
+    border: 0.125rem solid transparent;
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    &::after {
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+      content: '';
+      width: 100%;
+      height: 0.1em;
+      position: absolute;
+      transform: scale(0);
+      transform-origin: center;
+      background-color: #fff;
+      transition: opacity 300ms, transform 300ms;
+    }
+    &:hover {
+      &::after {
+        transform: scale(1);
+      }
+    }
+    &:focus {
+        border-color: #82DEFF;
+    }
+    &:focus:hover {
+      &::after {
+        transform: scale(0);
+      }
+    }
   }
 }
 

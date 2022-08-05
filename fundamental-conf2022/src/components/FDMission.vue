@@ -49,7 +49,7 @@ export default {
 
   &__container {
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
     flex-direction: column;
   }
   &__title {
@@ -74,6 +74,7 @@ export default {
 
     display: flex;
     flex-direction: column;
+    padding-top: 15%;
 
     :nth-child(even) {
       height: 9rem;
@@ -89,7 +90,7 @@ export default {
     padding: 2%;
   }
   &__italic {
-    font-family: "Source Sans 3";
+    font-family: sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: 1rem;
@@ -115,7 +116,7 @@ export default {
   }
   &__paragraph {
     padding-top: 5vh;
-    font-family: "Source Sans 3";
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
@@ -145,7 +146,7 @@ export default {
 
     &__container {
       display: flex;
-      gap: 2rem;
+     gap: 5rem;
       flex-direction: row;
     }
     &__title {
@@ -159,23 +160,29 @@ export default {
       height: 7rem;
 
       flex-direction: row;
-      padding-top: 15%;
+   
       :nth-child(even) {
         height: 4rem;
       }
     }
     &__text {
       gap: 8px;
-      padding: 2%;
+     padding-top: 3%;
+
+
     }
     &__italic {
+      font-size:1.25rem;
+      line-height: 1.65;
     }
 
     &__line {
-      height: 2vh;
+      height: 3vh;
     }
     &__paragraph {
-      padding-top: 2vh;
+      padding-top: 3vh;
+      font-size:1.25rem;
+      line-height: 1.65;
     }
   }
 }

@@ -62,17 +62,20 @@ export default {
     }
    
     &__header {
-      display: none;
+      flex-direction: row;
+      display: flex;
       gap: 2rem;
       margin-bottom: 3rem;
       align-items: flex-end;
       color: $brand-color-dark-blue;
+      
 
       h2 {
         white-space: nowrap;
         line-height: 1;
         font-size: 2rem;
         font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+        font-weight: 500;
       }
 
       div {

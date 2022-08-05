@@ -2,7 +2,7 @@
   <section class="fd-socials-container" id="social-links">
     <div class="fd-socials-container__header">
       <h2>follow us</h2>
-      <div role="presentation"></div>
+      <div aria-hidden="true"></div>
     </div>
     <div class="fd-socials-container__blocks">
       <Socials>
@@ -37,7 +37,7 @@
 <script>
 import Socials from "./Socials.vue";
 import svgs from '@/assets/svg/svgs.js';
-console.log(svgs)
+
 export default {
   name: "SocialsContainer",
   components: {
@@ -81,7 +81,7 @@ export default {
       div {
         width: 100%;
         height: 0.0625rem;
-        background: linear-gradient(-45deg, #2865be, #7B5CB2, #82DEFF);
+        background: linear-gradient(63.69deg, #2865BE 16.54%, #82DEFF 83.46%);;
         background-size: 400% 400%;
 	      animation: gradient 3s ease infinite;
         margin-top: 3rem;

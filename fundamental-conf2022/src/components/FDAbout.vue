@@ -3,7 +3,7 @@
     <div class="fd-about__container">
       <div class="fd-about__header" aria-hidden="true">
         <h2>join the innovation</h2>
-        <div role="presentation"></div>
+        <div aria-hidden="true"></div>
       </div>
 
       <div class="fd-about__content">
@@ -15,23 +15,11 @@
     </div>
 
     <time class="fd-about__date" datetime="2022-09-29">
-      <div role="presentation"></div>
+      <div aria-hidden="true"></div>
       <div>09<br>.29</div>
     </time>
   </section>
 </template>
-
-<script>
-export default {
-  components: {},
-  data() {
-  },
-  created() {
-  },
-  methods: {
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 
@@ -132,7 +120,7 @@ export default {
       div {
         width: 100%;
         height: 0.0625rem;
-        background: linear-gradient(-45deg, #2865be, #7B5CB2, #82DEFF);
+        background: linear-gradient(63.69deg, #2865BE 16.54%, #82DEFF 83.46%);;
         background-size: 400% 400%;
 	      animation: gradient 3s ease infinite;
         margin-bottom: 0.25rem;

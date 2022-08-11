@@ -160,6 +160,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .fd_wrapper {
   background-size: cover;
   background-position: center;
@@ -170,6 +171,7 @@ export default {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  
   
   .fd_header {
     display: flex;
@@ -206,12 +208,16 @@ export default {
     gap: 2%;
     flex-wrap: wrap;
     
+    
     .fd_list {
       gap: 10% 4%;
       display: flex;
       flex-direction: column;
       padding-block: 1%;
       padding: 100px 30px 0 30px;
+
+ 
+  
 
       .fd_body__1 {
         display: flex;
@@ -258,7 +264,7 @@ export default {
         }
       }
     }
-    
+  
     .fd_body__2 {
       display: flex;
       flex-direction: column;
@@ -280,11 +286,7 @@ export default {
         -webkit-animation: animated_text 5s ease-in-out infinite;
       }
       
-      @keyframes animated_text {
-        0% { background-position: 0px 50%; }
-        50% { background-position: 50% 50%; }
-        100% { background-position: 0px 50%; }
-      }
+   
 
       .fd_city {
         font-family: source-sans-3, sans-serif;
@@ -436,13 +438,19 @@ export default {
         display: flex;
         flex-direction: row;
         padding-block: 6%;
-        
+         
+
         .fd_body__1 {
           display: flex;
           flex-direction: column;
           
           .fd_picture {
             position: relative;
+             animation: wave infinite;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+position: relative;
             
             &::after {
               content: "";
@@ -462,6 +470,11 @@ export default {
             padding-top: 5%;
             color: #2865be;
             text-align: center;
+             animation: wave infinite;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+position: relative;
           }
         }
         
@@ -477,6 +490,11 @@ export default {
             line-height: 3.5rem;
             /* Blue/500 Regular */
             color: #2865be;
+             animation: wave infinite;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+position: relative;
           }
           
           .fd_city {
@@ -489,6 +507,11 @@ export default {
             text-transform: uppercase;
             color: #2865be;
             padding-top: 0.5rem;
+             animation: wave infinite;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+position: relative;
           }
         }
         
@@ -498,12 +521,22 @@ export default {
             padding-top: 0;
             font-size: 1.25rem;
             line-height: 2rem;
+             animation: wave infinite;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+position: relative;
 
             .fd_line {
               height: 5vh;
               width: 23rem;
               border-bottom: 1px solid #2865be;
               visibility: visible;
+               animation: wave infinite;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+position: relative;
             }
           }
 
@@ -515,6 +548,11 @@ export default {
               margin: 1rem 0;
               list-style: none;
               justify-content: left;
+               animation: wave infinite;
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+position: relative;
 
               li a span:last-child {
                 font-size: 1.125rem;
@@ -522,6 +560,17 @@ export default {
             }
         }
       }
+        @keyframes slide {
+  0% {
+    left: 100%;
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+    opacity: 1;
+  }
+
+} 
     }
   }
   

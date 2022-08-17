@@ -7,6 +7,7 @@
       <a href="https://www.youtube.com/c/FundamentalLibrary" rel="noopener noreferrer" target="_blank" hreflang="en">Youtube</a>
       <a href="https://community.sap.com/topics/fundamental-library" rel="noopener noreferrer" target="_blank" hreflang="en">SAP Community</a>
       <a href="https://sap.github.io/fundamental/" rel="noopener noreferrer" target="_blank" hreflang="en">Fundamental Library</a>
+      <a href="https://medium.com/fundamental-library" rel="noopener noreferrer" target="_blank" hreflang="en">Medium</a>
     </div>
     <div class="fd-footer__right">
       <img alt="SAP logo" src="@/assets/images/SAP_Best_Run.png" class="fd-sap-logo" />

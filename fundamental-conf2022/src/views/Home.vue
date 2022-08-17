@@ -1,6 +1,7 @@
 <template>
   <MainComponent />
   <FDAbout /> 
+  <FDSpeakers />
   <FDCallForContent />
   <FDMission/>
   <SocialsContainer />  
@@ -16,6 +17,9 @@ import NavBar from "../components/NavBar.vue";
 import SocialsContainer from "../components/SocialsContainer.vue";
 import FDMission from "../components/FDMission.vue";
 
+import FDSpeakers from "../components/FDSpeakers.vue";
+
+
 
 export default {
   name: "Home",
@@ -23,11 +27,12 @@ export default {
     MainComponent,
     NavBar,
     FDAbout,
+    FDSpeakers,
     FDCallForContent,
     FDFooter,
     SocialsContainer,
- 
-    FDMission
+    FDMission,
+   
 },
 };
 </script>

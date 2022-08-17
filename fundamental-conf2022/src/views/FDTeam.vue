@@ -194,10 +194,14 @@ export default {
     
     .fd_line {
       width: 100%;
-      height: 0.0625rem;
-      background:  #2865be;
-      order: 2;
-      flex: 1;
+    height: 0.0625rem;
+    background: linear-gradient(63.69deg, #2865BE 16.54%, #82DEFF 83.46%);
+    background-size: 400% 400%;
+    -webkit-animation: gradient-17d1a7e2 3s ease infinite;
+    animation: gradient-17d1a7e2 3s ease infinite;
+    margin-bottom: 0.25rem;
+    order:2;
+    flex:1;
     }
   }
   

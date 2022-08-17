@@ -46,9 +46,10 @@
 import IconFig from "./IconFig.vue";
 import svgs from '@/assets/svg/svgs.js';
 
+
 export default {
   components: {
-    IconFig,
+    IconFig
   },
   name: "FDMission",
   data() {

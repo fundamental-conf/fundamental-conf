@@ -533,7 +533,7 @@ position: relative;
 
             .fd_line {
               height: 5vh;
-              width: 23rem;
+              width: 19rem;
               border-bottom: 1px solid #2865be;
               visibility: visible;
                animation: wave infinite;

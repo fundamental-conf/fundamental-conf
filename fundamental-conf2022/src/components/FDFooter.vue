@@ -1,5 +1,6 @@
 <template>
   <footer class="fd-footer" id="footer" role="contentinfo">
+  
     <img alt="SAP logo" aria-hidden="true" src="@/assets/images/SAP_Best_Run.png" class="fd-sap-logo-mobile" />
     <div class="fd-footer__left">
       <a href="https://www.linkedin.com/company/sap-graph/" rel="noopener noreferrer" target="_blank" hreflang="en">LinkedIn</a>
@@ -30,6 +31,7 @@ export default {};
   background: #1A1126;
   justify-content: space-between;
   padding: 5.625rem 5rem;
+
 
 
   &__nav {

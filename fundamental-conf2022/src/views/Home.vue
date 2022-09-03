@@ -2,8 +2,10 @@
   <MainComponent />
   <FDAbout /> 
   <FDSpeakers />
+
   <FDCallForContent />
   <FDMission/>
+
   <SocialsContainer />  
   <FDFooter />
 </template>
@@ -21,6 +23,7 @@ import FDSpeakers from "../components/FDSpeakers.vue";
 
 
 
+
 export default {
   name: "Home",
   components: {
@@ -32,7 +35,7 @@ export default {
     FDFooter,
     SocialsContainer,
     FDMission,
-   
+
 },
 };
 </script>

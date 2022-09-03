@@ -64,8 +64,10 @@
 <div class="fd-agenda-body__speaker-details">
   <h4 class=fd-agenda-body__name> Eniela Vela 
   </h4>
-  <h4 class=fd-agenda-body__role> Developer | Country
+  <h4 class="fd-agenda-body__role"> Developer | Country
   </h4>
+  <!-- <span class="fd-agenda-body__role">|</span>
+  <h4 class="fd-agenda-body__country"> Country</h4> -->
 </div>
 
 
@@ -219,6 +221,9 @@ flex-grow: 0;
 }
 .fd-agenda-body {
 
+  display: flex;
+  flex-direction: column;
+
   &__time-box {
    align-items: center;
     justify-content: center;
@@ -248,7 +253,7 @@ text-fill-color: transparent;
   }
 
   &__dotted-line {
-     border-left: 2px dashed #3E86EF;
+     border-left: 2px dotted #3E86EF;
     height:3rem;
   }
 
@@ -367,4 +372,47 @@ color: #2865BE;
 
  
 }
+
+@media (min-width: 750px) {
+
+  .fd-agenda {
+
+    &__container {
+
+      padding: 3rem;
+    }
+  }
+
+  .fd-agenda-body{
+    flex-direction: row;
+    padding-top: 5rem;
+      &__topic-box {
+        order:1;
+        width:50%;
+        padding-top: 5rem;
+      }
+      &__time-box {
+        order:2;
+    height: 40vh;
+    gap: 3%;
+  }
+  &__element-box {
+    padding-top: 5rem;
+    order:3;
+  }
+
+  &__dotted-line {
+        padding-bottom: 19rem;
+        border-left: 3px dotted #3E86EF;
+  }
+
+  &__time {
+    font-size: 5.25rem;
+  }
+
+  &__title-box {
+    flex-direction: row-reverse;
+  }
+}}
+
 </style>

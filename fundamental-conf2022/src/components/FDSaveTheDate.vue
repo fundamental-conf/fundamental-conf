@@ -64,7 +64,8 @@ export default {
               '&details=Join Fundamental Conference on September 29th 2022 to meet designers and developers who come together to share ideas and innovative practices that drive the future of front-end at SAP',
               '&sprop=&sprop=name:'
             ].join('')),
-            ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
+            ics: encodeURI('data:text/calendar;charset=utf8,' + cal),
+            
           }
         
       }

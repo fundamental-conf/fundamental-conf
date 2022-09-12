@@ -50,13 +50,13 @@
 
     <transition name="fd-nav__mobile" >
           <ul v-show="mobileNav"  class="fd-nav__dropdown" >
-        <li> <router-link to="/team" class="fd-nav__link" aria-label="Our Team"
+        <li> <router-link to="/team"  @click="close" class="fd-nav__link" aria-label="Our Team"
           >Our Team</router-link
         ></li>
-       <li>  <router-link to="/agenda" class="fd-nav__link" aria-label="Agenda"
+   <li>  <router-link to="/agenda" @click="close" class="fd-nav__link" aria-label="Agenda"
           >Agenda</router-link
         ></li>
-       <li> <a aria-label="open submit your topic form" class="fd-nav__link"
+       <li> <a  @click="close" aria-label="open submit your topic form" class="fd-nav__link"
         target="_blank" href="https://fundamentalconf-2021.netlify.app">
         Previous Event</a>
         </li>
@@ -82,6 +82,13 @@ export default {
   components: {
     Home,
     IconFig, svgs,
+  },
+//close button function 
+setup(props, { emit }) {
+    const close = () => {
+      emit("close");
+    };
+    return { close };
   },
 
   data(){
@@ -255,7 +262,27 @@ backdrop-filter: blur(8px);
   transition: 0.1s all ease-out;
 
 
-
+  .fd-nav__mobile-enter-active,
+  .fd-nav__mobile-leave-active {
+    transition: opacity 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+  }
+  .fd-nav__mobile-enter-from,
+  .fd-nav__mobile-leave-to {
+    opacity: 0;
+  }
+  .fd-nav__mobile-inner-enter-active {
+    transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
+  }
+  .fd-nav__mobile-inner-leave-active {
+    transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+  }
+  .fd-nav__mobile-inner-enter-from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  .fd-nav__mobile-inner-leave-to {
+    transform: scale(0.8);
+  }
 
   @media only screen and (min-width: 600px) {
 

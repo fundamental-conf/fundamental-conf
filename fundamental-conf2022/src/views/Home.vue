@@ -31,7 +31,7 @@ export default {
     NavBar,
     FDAbout,
     FDSpeakers,
-    FDCallForContent,
+    // FDCallForContent,
     FDFooter,
     SocialsContainer,
     FDMission,

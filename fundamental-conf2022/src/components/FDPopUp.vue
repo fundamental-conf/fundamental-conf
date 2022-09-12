@@ -451,9 +451,9 @@ export default {
 
     &__box {
       flex-direction: row;
-      width: 70%;
-      height: 35%;
-      padding: 3%;
+      width: 52rem;
+    height: 27%;
+      padding: 3rem 3rem 2rem 1rem;
     }
 
     &__body {
@@ -469,7 +469,7 @@ export default {
       }
     }
 &__speaker-box{
-  width: 17%;
+  width: 12rem;
 }
     &__paragraph {
 
@@ -479,6 +479,7 @@ export default {
     &__role {
 
    text-align: center;
+   margin: 0;
     }
     &__member-socials{
 
@@ -487,6 +488,8 @@ export default {
     }
 &__name {
   text-align: left;
+  width: 100%;
+    justify-content: left;
 }
 &__country {
   padding-top: 0%;

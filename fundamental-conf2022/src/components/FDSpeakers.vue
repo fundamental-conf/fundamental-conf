@@ -594,7 +594,8 @@ export default {
       align-items: center;
       padding: 2rem;
       gap: 3rem;
-      width: 10rem;
+      width: 12rem;
+    height: 20rem;
     }
 
     .fd-keyspeaker {
@@ -618,13 +619,16 @@ export default {
 
       &__body2 {
         order: 3;
+        justify-content: center;
+        padding-top: 0;
       }
       &__body3 {
         order: 3;
         flex-direction: column;
+        padding-top: 0;
       }
       &__line {
-        width: 19rem;
+     
       }
       &__member-socials {
         gap: 3rem;

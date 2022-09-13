@@ -7,7 +7,7 @@
       <fieldset class = "fd-agenda__toggle"> 
         <legend>Time zone</legend>
         <!---'UTC -4 but for test purpose keep it +4'-->
-        <div class="fd-agenda__toggle-element" v-if="'UTC '+getLocalTimeZone() !== 'UTC +4'" >
+        <div class="fd-agenda__toggle-element" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'" >
           <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)" checked>
             <label for="timezone1">Event time<time datetime="2022-09-29T00:00">(UTC -4)</time></label>
         </div>

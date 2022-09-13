@@ -567,12 +567,15 @@ export default {
 }
 @media (min-width: 892px) {
   .fd-speakers {
+    &__title
+    {
+      font-size: 2rem;
+    }
     &__body1 {
-      img {
-        border-radius: 10rem;
-        width: 10rem;
-        height: 10rem;
-      }
+ 
+    }
+    &__body2 {
+      gap: 2rem;
     }
     &__unsortedlist {
       column-count: 3;
@@ -582,10 +585,10 @@ export default {
     }
     &__picture {
       img {
-        max-width: 9.5rem;
-        min-width: 9.5rem;
-        max-height: 9.5rem;
-        min-height: 9.5rem;
+        max-width: 14.37rem;
+    min-width: 14.37rem;
+    max-height: 14.37rem;
+    min-height: 14.37rem;
       }
     }
     &__list {
@@ -594,18 +597,72 @@ export default {
       align-items: center;
       padding: 2rem;
       gap: 3rem;
-      width: 12rem;
-    height: 20rem;
+      width: 15.37rem;
+    height: 34.37rem;
     }
 
-    .fd-keyspeaker {
-      flex-direction: row;
+    &__name {
+      font-size: 1.75rem;
+    }
 
+    &__role {
+      font-size: 1.25rem;
+    }
+    &__country {
+      font-size: 1.25rem;
+    }
+
+
+    .fd-keyspeaker {
+&__name {
+  font-size: 3rem;
+}
+&__country {
+  font-size: 1.5rem;
+}
+
+
+      &__keynote {
+        font-size: 1.5rem;
+      }
+      &__role {
+        font-size:1.75rem;
+      }
+
+      &__bio {
+        font-size:1.25rem;
+      }
+      flex-direction: row;
+      &__picture{
+
+        &::after {
+        content: "";
+        position: absolute;
+        left: 146px;
+top: -27px;
+
+        max-width: 6rem;
+        min-width: 6rem;
+        max-height: 6rem;
+        min-height: 6rem;
+        background: linear-gradient(45deg, #2865be 0%, #82deff 100%);
+        mix-blend-mode: color-burn;
+        filter: blur(50px);
+      }
+
+          img{
+            max-width: 14.37rem;
+    min-width: 14.37rem;
+    max-height: 14.37rem;
+    min-height: 14.37rem;
+          }
+        }
       &__list {
         flex-direction: row;
       }
       &__body0 {
         order: 2;
+       
       }
       &__body1 {
         order: 1;
@@ -631,10 +688,11 @@ export default {
      
       }
       &__member-socials {
-        gap: 3rem;
+        gap: 1rem;
         li {
           a {
             span:last-child {
+              font-size: 1.125rem;
             }
           }
         }

@@ -33,14 +33,14 @@
           class="fd-agenda-body__row"
           v-for="el in agenda"
           :key="el.startTime"
-          v-cloak
+
         >
           <div class="fd-agenda-body__time-box">
             <div
               class="fd-agenda-body__dotted-line-top"
               aria-hidden="true"
             ></div>
-            <time class="fd-agenda-body__time"> {{el.startTime }}</time>
+            <time class="fd-agenda-body__time"> {{el.startTime | hoursMin }}</time>
             <div
               class="fd-agenda-body__dotted-line-bottom"
               aria-hidden="true"
@@ -175,7 +175,8 @@ export default {
   },
   filters: {
   
-    hoursMin: function(value) {
+    hoursMin: function(value) { 
+      console.log(value);
       let time = value.substring(value.indexOf('T') + 1);
       return time.split(':')[0].replace(/^0+/, '') + ':' + time.split(':')[1];
     },
@@ -185,6 +186,7 @@ export default {
       return timeSplit[0] + ':' + timeSplit[1];
     },
     convertTime: function(value, eventTime) {
+      
       if(eventTime === 'local') {
        return DateTime.fromISO(value).toLocal().toISO({ suppressMilliseconds:true });
       }

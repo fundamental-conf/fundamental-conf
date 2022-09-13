@@ -451,9 +451,9 @@ export default {
 
     &__box {
       flex-direction: row;
-      width: 52rem;
-    height: 27%;
-      padding: 3rem 3rem 2rem 1rem;
+      width: 69rem;
+    height: 41%;
+      padding: 3rem 3rem 2rem 3rem;
     }
 
     &__body {
@@ -468,18 +468,42 @@ export default {
         
       }
     }
+
+    &__speaker-title {
+      font-size: 1.5rem;
+    }
 &__speaker-box{
-  width: 12rem;
+  width: 11rem;
+    justify-content: left;
+    align-items: self-start;
+    align-content: flex-end;
+    text-align: left;
+}
+
+&__picture {
+
+  img{
+    border-radius: 22.9rem;
+
+max-width: 22.9rem;
+min-width: 22.9rem;
+max-height:22.9rem;
+min-height: 22.9rem;
+
+  }
 }
     &__paragraph {
 
       padding:0;
+      font-size: 1.25rem;
     }
 
     &__role {
 
-   text-align: center;
+   text-align: left;
    margin: 0;
+   font-size: 1.75rem;
+   
     }
     &__member-socials{
 
@@ -490,9 +514,11 @@ export default {
   text-align: left;
   width: 100%;
     justify-content: left;
+    font-size: 1.75rem;
 }
 &__country {
   padding-top: 0%;
+  font-size: 1.5rem;
 }
     
   }

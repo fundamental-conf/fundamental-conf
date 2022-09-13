@@ -1,5 +1,22 @@
 <template>
-  <section class="fd_agenda" id="agenda">
+
+  <section class="fd-agenda" id="agenda">
+
+  
+
+      <fieldset class = "fd-agenda__toggle"> 
+        <legend>Time zone</legend>
+        <!---'UTC -4 but for test purpose keep it +4'-->
+        <div class="fd-agenda__toggle-element" v-if="'UTC '+getLocalTimeZone() !== 'UTC +4'" >
+          <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)" checked>
+            <label for="timezone1">Event time<time datetime="2022-09-29T00:00">(UTC -4)</time></label>
+        </div>
+        <div class="fd-agenda__toggle-element">
+          <input type="radio" id="timezone2" name="event-time" value="local" @change="onTimeChange($event)">
+            <label for="timezone2">Your time<time datetime="2022-09-29T00:00">(UTC {{getLocalTimeZone()}})</time></label>
+        </div>
+      </fieldset>
+
     <!--Agenda Header and Line-->
     <div class="fd-agenda__container">
       <div class="fd-agenda__header">
@@ -16,13 +33,14 @@
           class="fd-agenda-body__row"
           v-for="el in agenda"
           :key="el.startTime"
+          v-cloak
         >
           <div class="fd-agenda-body__time-box">
             <div
               class="fd-agenda-body__dotted-line-top"
               aria-hidden="true"
             ></div>
-            <time class="fd-agenda-body__time">{{ el.startTime }}</time>
+            <time class="fd-agenda-body__time"> {{el.startTime }}</time>
             <div
               class="fd-agenda-body__dotted-line-bottom"
               aria-hidden="true"
@@ -128,25 +146,57 @@
       :modalActive="modalActive"
     />
   </section>
+  <FDFooter />
 </template>
 
 <script>
 import agenda from "@/assets/agenda.json";
 import svgs from "@/assets/svg/svgs.js";
 import FilterButtons from "../components/FilterButtons.vue";
-import FDPopUp from "@/components/FDPopUp.vue";
+import FDFooter from "@/components/FDFooter.vue";
+import FDPopUp from "../components/FDPopUp.vue";
+import { DateTime } from "luxon";
 
 export default {
   name: "FDAgenda",
+  components: { FDPopUp, FilterButtons, FDFooter },
   data() {
     return {
-      agenda,
+      agenda:agenda,
       svgs,
       current: {},
       modalActive: false,
+      eventTime: 'event',
+      lineup: [],
+      formattedLineup: [],
+      localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
+    
     };
   },
-  components: { FDPopUp },
+  filters: {
+  
+    hoursMin: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      return time.split(':')[0].replace(/^0+/, '') + ':' + time.split(':')[1];
+    },
+    trimTime: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      let timeSplit = time.split(':');
+      return timeSplit[0] + ':' + timeSplit[1];
+    },
+    convertTime: function(value, eventTime) {
+      if(eventTime === 'local') {
+       return DateTime.fromISO(value).toLocal().toISO({ suppressMilliseconds:true });
+      }
+      return value;
+    },
+    
+  },
+
+  mounted() {
+    this.lineup = agenda;
+    this.formattedLineup = this.formatLineup();
+  },
 
   //filters the posts/presentations of agenda
   methods: {
@@ -162,7 +212,7 @@ export default {
     resetPosts() {
       this.agenda = agenda;
     },
-
+//popup
     toggleModal(member) {
       this.current = member;
       console.log(this.current);
@@ -187,8 +237,46 @@ export default {
       document.getElementsByTagName("*").style.overflow = "auto";
       document.body.scroll = "yes";
     },
+    //time functions 
+
+    isActive (tab) {
+      return this.activeTab === tab;
+    },
+    setActive (tab) {
+      this.activeTab = tab;
+    },
+
+    onTimeChange($event) {
+      this.eventTime = $event.target.value;
+    },
+
+    getLocalTimeZone() {
+      return DateTime.now().toFormat('Z');
+    },
+    filerSortLineup() {
+      const sortedSchedule = filteredSchedule.sort((a, b) => (DateTime.fromISO(a.startTime) > DateTime.fromISO(b.startTime)) ? 1 : -1)
+      return sortedSchedule;
+    },
+    formatLineup() {
+      return this.lineup.map(session => {  
+        let start = session.startTime;
+        let end = session.endTime;
+
+        let newStartTime = "2022-09-29T" + start + ":00.000-04:00";
+          let newEndTime = "2022-09-29T" + end + ":00.000-04:00";
+
+          return {
+            startTime: newStartTime,
+            endTime: newEndTime,
+          }
+      });
+    },
+
   },
-  components: { FilterButtons },
+
+  
+
+  components: { FilterButtons, FDFooter, FDPopUp },
 };
 </script>
 
@@ -199,6 +287,68 @@ export default {
   padding: 5rem 10vw;
   margin: 0 auto;
   align-items: center;
+
+  &__toggle {
+    margin: auto;
+  padding: 0;
+  border: none;
+  display: flex;
+  position: relative;
+  width: fit-content;
+  background-color:#E2EEFF;
+  border: 1.32264px solid #2865BE;
+border-radius: 38.7106px;
+
+  legend {
+  top: -1.75rem;
+  left: 0.5rem;
+  position: absolute;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  display:none;
+}
+&-element {
+  
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+  cursor: pointer;
+  font-size: 0.875rem;
+  align-items: center;
+  border-radius: 2.5rem;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  border: 0.0625rem solid transparent;
+  transition: border 0.5s ease;
+  color: #2865be;
+  }
+
+   input {
+	&:checked {
+			background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+				border-radius: 38.7106px;
+				color: white;
+			}
+  }
+
+
+label {
+		time {
+			font-size: 0.75rem;
+			font-weight: normal;
+			text-transform: capitalize;
+			color:#2865be ;
+		}
+	}
+}
+
+  }
+
 
   &__container {
     padding: 4rem 0.75rem 3rem;
@@ -238,6 +388,7 @@ export default {
     order: 2;
   }
 }
+
 .fd-agenda-body {
   display: flex;
   flex-direction: column;
@@ -261,7 +412,7 @@ export default {
     font-weight: 700;
     font-size: 48px;
     line-height: 97.9%;
-    display: flex;
+    display: inline-block;
     align-items: center;
     text-align: center;
 
@@ -454,7 +605,8 @@ export default {
     flex-direction: row;
     padding-top: 5%;
     gap: 2%;
-  }
+  
+  }  
   &__button {
     box-sizing: border-box;
 
@@ -485,6 +637,8 @@ export default {
     outline-offset: 1.25rem;
     transition: all 0.3s ease-in-out;
 
+  
+
     .button_text {
       font-family: "Ubuntu";
       font-style: normal;
@@ -499,11 +653,25 @@ export default {
 
       /* Blue/500 Regular */
       color: #2865be;
+      &:active {
+        color: white;
+      }
     }
 
     .button_icon {
       color: #2865be;
+      &:active {
+        color: white;
+      }
     }
+  }
+
+  &__button:active {
+
+      background: linear-gradient(73.81deg, #7843d5 0.22%, #1dc4ff 99.78%);
+      border-radius: 38.7106px;
+      color: white;
+    
   }
 }
 
@@ -520,6 +688,67 @@ export default {
         font-size: 1rem;
       }
     }
+    &__toggle {
+    margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  position: absolute;
+  right:12vw;
+  width: fit-content;
+  background-color:#E2EEFF;
+  border: 1.32264px solid #2865BE;
+border-radius: 38.7106px;
+
+  legend {
+  top: -1.75rem;
+  left: 0.5rem;
+  position: absolute;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  display:none;
+}
+&-element {
+  
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+  cursor: pointer;
+  font-size: 0.875rem;
+  align-items: center;
+  border-radius: 2.5rem;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  border: 0.0625rem solid transparent;
+  transition: border 0.5s ease;
+  color: #2865be;
+  }
+
+  input[type="radio"] {
+	&:checked {
+			background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+				border-radius: 38.7106px;
+				color: white;
+			}
+		
+
+}
+label {
+		time {
+			font-size: 0.75rem;
+			font-weight: normal;
+			text-transform: capitalize;
+			color:#2865be ;
+		}
+	}
+}
+
+  }
   }
 
   .fd-agenda-body {

@@ -147,24 +147,24 @@
   }]
 },
 {
-  "id": 4,
-  "title": "Drawing parallels between Architecture and UX design",
-  "type": "Design",
-  "description": "Thousands of years ago a famous Roman architect defined three key attributes, which architectural objects should have: strength, usability and beauty. Probably back then he didn't expect that these three words would also describe the features of a good UX product. Let's dive into the parallel worlds of architecture and UX design and explore the similarities they share in common. ",
-  "startTime": "08:55",
-  "endTime": "09:25",
+  "id": 5,
+  "title": "Fundamentally Changing Enterprise Web IDEs",
+  "type": "Development",
+  "description": "Throughout the years, software development has changed and the way we use and expect our Web IDEs to behave has also changed. We decided that it's time to rethink and modernize the UI and UX of Eclipse Dirigible using SAP Fundamental Styles. We will talk about why we made that decision, what we changed, the current status of the effort and what our future plans are.",
+  "startTime": "09:30",
+  "endTime": "09:50",
   "live":false,
   "calendars":[],
   "speakers": [{
-    "firstName": "Anna-Mariya ",
-  "lastName": "Hristova",
-  "role":"UX Design Specialist",
-  "company": "SAP",
-  "country":"Bulgaria",
-  "bio": "Anna-Mariya Hristova is a UX Design Specialist аt SAP. She is a former architect and has а few years of professional experience in construction and interior design. Exploring the parallels between architecture and UX design is her passion. She has shared her thoughts in Medium articles and several events.",
-  "linkedIn": "https://www.linkedin.com/in/anna-mariya-hristova-796737147/",
-  "medium":"https://medium.com/@am.e.hristova",
-  "photo": "AnnaMariyaHristova.png"
+  
+"firstName": "Stan",
+"lastName": "Genchev",
+"role":"Software Developer",
+"linkedIn":"https://www.linkedin.com/in/stan-genchev/",
+"company": "Quanterall",
+"country":"Bulgaria",
+"bio": "Stan is a UI designer, software developer and system administrator at Quanterall, making use of various languages and UI toolkits. He has designed and developed software solutions for workstations, Kiosk systems, Internet of Things, Web and mobile. He has been a part of many open and closed source projects since the early 2010s. Personal interests include reading, music, vintage electronics, retro cars and restoration projects.",
+"photo": "StanGenchev.png"
   }],
   "presentationLinks": [{
       "_id": "",

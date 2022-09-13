@@ -87,11 +87,32 @@ font-family: "Ubuntu";
       color: #2865be;
 
       /* Inside auto layout */
-      }
+     
+    &:active {
+      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+border-radius: 38.7106px;
+color:white;
+
+    }
+  &:hover{
+
+      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+border-radius: 38.7106px;
+color:white;
+
+    
+  }
+  }
 
 &__icon{
     width: 2rem;
 color: #2865be;
+&:active {
+  color: white;
+}
+&:hover{
+  color:white;
+}
 }}
 
 @media (min-width: 750px) {

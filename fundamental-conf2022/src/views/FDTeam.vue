@@ -68,6 +68,7 @@
         </li>
       </ul>
     </div>
+   
   </section>
   <FDFooter />
 </template>
@@ -76,11 +77,13 @@
 import svgs from "@/assets/svg/svgs.js";
 import FDFooter from "../components/FDFooter.vue";
 
+
 export default {
   el: "#team",
   components: {
-    FDFooter
-  },
+    FDFooter,
+
+},
   data() {
     return {
       svgs,
@@ -180,6 +183,8 @@ export default {
     align-items: flex-end;
     gap: 2%;
     padding-bottom: 8%;
+    margin-top: 20%;
+
     
     .fd_tittle {
       font-weight: 500;
@@ -429,6 +434,7 @@ export default {
       align-items: flex-end;
       gap: 2%;
       padding-bottom: 8%;
+      margin-top:0;
       
       .fd_tittle {
         font-size: 2rem;

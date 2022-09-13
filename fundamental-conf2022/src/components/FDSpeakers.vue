@@ -7,36 +7,36 @@
       </div>
 
       <ul class="fd-keyspeaker">
-        <li class="fd-keyspeaker__list" :key="agenda[0].id">
+        <li class="fd-keyspeaker__list" :key="speakers[0].id">
           <div class="fd-keyspeaker__body0">
             <figure class="fd-keyspeaker__picture">
               <img
-              :src="require(`@/assets/images/speakers/${agenda[0].photo}`)"
-                :alt="`Portrait of ${agenda[0].firstName} ${agenda[0].lastName}`"
+                :src="require(`@/assets/images/speakers/${speakers[0].photo}`)"
+                :alt="`Portrait of ${speakers[0].firstName} ${speakers[0].lastName}`"
               />
             </figure>
           </div>
           <div class="fd-keyspeaker__body1">
             <h3 class="fd-keyspeaker__keynote">KEYNOTE SPEAKER</h3>
             <div class="fd-keyspeaker__line1"></div>
-            <p class="fd-keyspeaker__role">{{ agenda[0].role }}</p>
+            <p class="fd-keyspeaker__role">{{ speakers[0].role }}</p>
           </div>
 
           <div class="fd-keyspeaker__body2">
             <h3 class="fd-keyspeaker__name">
-              {{ agenda[0].firstName }} <br />{{ agenda[0].lastName }}
+              {{ speakers[0].firstName }} <br />{{ speakers[0].lastName }}
             </h3>
-            <p class="fd-keyspeaker__country">{{ agenda[0].country }}</p>
+            <p class="fd-keyspeaker__country">{{ speakers[0].country }}</p>
           </div>
 
           <div class="fd-keyspeaker__body3">
-            <p class="fd-keyspeaker__bio">{{ agenda[0].bio }}</p>
+            <p class="fd-keyspeaker__bio">{{ speakers[0].bio }}</p>
             <div class="fd-keyspeaker__line"></div>
             <ul class="fd-keyspeaker__member-socials">
-              <li v-if="agenda[0].twitter">
+              <li v-if="speakers[0].twitter">
                 <a
-                  :href="agenda[0].twitter"
-                  :aria-label="`Twitter Profile of ${agenda[0].firstName}`"
+                  :href="speakers[0].twitter"
+                  :aria-label="`Twitter Profile of ${speakers[0].firstName}`"
                   rel="nofollow"
                   target="_blank"
                   class="fd-keyspeaker__social-item"
@@ -45,10 +45,10 @@
                   <span>Twitter</span>
                 </a>
               </li>
-              <li v-if="agenda[0].github">
+              <li v-if="speakers[0].github">
                 <a
-                  :href="agenda[0].github"
-                  :aria-label="`Github Profile of ${agenda[0].firstName}`"
+                  :href="speakers[0].github"
+                  :aria-label="`Github Profile of ${speakers[0].firstName}`"
                   rel="nofollow"
                   target="_blank"
                   class="fd-keyspeaker__social-item"
@@ -57,10 +57,10 @@
                   <span>Github</span>
                 </a>
               </li>
-              <li v-if="agenda[0].linkedIn">
+              <li v-if="speakers[0].linkedIn">
                 <a
-                  :href="agenda[0].linkedIn"
-                  :aria-label="`LinkedIn Profile of ${agenda[0].firstName}`"
+                  :href="speakers[0].linkedIn"
+                  :aria-label="`LinkedIn Profile of ${speakers[0].firstName}`"
                   rel="nofollow"
                   target="_blank"
                   class="fd-keyspeaker__social-item"
@@ -76,127 +76,113 @@
       <ul class="fd-speakers__unsortedlist">
         <li
           class="fd-speakers__list"
-          v-for="member in agenda.slice(1)"
-         
-          :class="{ selected: member === currentMember}"
+          v-for="member in speakers.slice(1)"
+          :class="{ selected: member === currentMember }"
           :key="member.id"
-          v-bind:value="{ member:currentMember}"
+          v-bind:value="{ member: currentMember }"
         >
-       
-  
-    
-          <div class="fd-speakers__body1 ">
-            <figure class="fd-speakers__picture" >
+          <div class="fd-speakers__body1">
+            <figure class="fd-speakers__picture">
               <button @click="toggleModal(member)" type="button">
                 <img
-                :src="require(`@/assets/images/speakers/${member.photo}`)"
+                  :src="require(`@/assets/images/speakers/${member.photo}`)"
                   :alt="`Portrait of ${member.firstName} ${member.lastName}`"
                 />
               </button>
-          
             </figure>
           </div>
-          
+
           <div class="fd-speakers__body2">
             <h3 class="fd-speakers__name">
               {{ member.firstName }} <br />{{ member.lastName }}
             </h3>
-          
+
             <p class="fd-speakers__role">{{ member.role }}</p>
             <p class="fd-speakers__country">{{ member.country }}</p>
           </div>
-         
-         
-
-
         </li>
-       
       </ul>
-      <span class="fd-speakers__comingsoon" v-html="svgs.comingsoon"  aria-hidden="true"></span>
+      <span
+        class="fd-speakers__comingsoon"
+        v-html="svgs.comingsoon"
+        aria-hidden="true"
+      ></span>
     </div>
- 
 
     <FDPopUp
-              
       :member="current"
       class="fd-popup"
       @close="closeModal()"
       :modalActive="modalActive"
-   
-
     />
-   
-
   </section>
 </template>
 
 <script>
 import { defineExpose, ref } from "vue";
-import agenda from "@/assets/agenda.json";
+import speakers from "@/assets/speakers.json";
 import svgs from "@/assets/svg/svgs.js";
 import FDPopUp from "./FDPopUp.vue";
 import { memberExpression } from "@babel/types";
 
 export default {
-
   name: "FDSpeakers",
 
   data() {
- 
     return {
       svgs,
-      agenda,
-      current:{},
-      modalActive:false,
-     
+      speakers,
+      current: {},
+      modalActive: false,
     };
   },
   components: { FDPopUp },
 
-
   methods: {
-
     //opens the popup
-    toggleModal (member) {
-      this.current=member;
-      console.log(this.current)
+    toggleModal(member) {
+      this.current = member;
+      console.log(this.current);
       this.modalActive = !this.modalActive;
-      
 
       //hides the scrolling in the background
-      if (modalActive) {
-          
+      if (this.current) {
         document.documentElement.style.overflow = "hidden";
-        resetModalData(CurrentData)
-
-      } else document.documentElement.style.overflow = "auto";
-    },
-//erase all the data from the current popup
-    closeModal (){
-      this.current={};
-      this.modalActive=false;
-
-    },
-
-     resetModalData: function(){
-        let stringDefault="";
-        let numberDefault=0;
-        let booleanDefault=false;
-      
-        Object.keys(this.modalData).forEach(key => {  
-        if(typeof(this.modalData[key])==="number"){
-            this.modalData[key]=numberDefault;
-          }else if(typeof(this.modalData[key])==="boolean")            {
-           this.modalData[key]=booleanDefault;
-          }else{
-            // default type string
-            this.modalData[key]=stringDefault;
-          }
+        document.getElementsByTagName("*").style.overflow = "hidden";
+        document.body.scroll = "no";
         
-        });
+      } else {
+        document.documentElement.style.overflow = "auto";
+        document.getElementsByTagName("*").style.overflow = "auto";
+        document.body.scroll = "yes";
+      }
+    },
+    //erase all the data from the current popup
+    closeModal() {
+      this.current = {};
+      this.modalActive = false;
+      document.documentElement.style.overflow = "auto";
+      document.getElementsByTagName("*").style.overflow = "auto";
+        document.body.scroll = "yes";
+    },
 
-     }
-   },
+    resetModalData: function () {
+      let stringDefault = "";
+      let numberDefault = 0;
+      let booleanDefault = false;
+
+      Object.keys(this.modalData).forEach((key) => {
+        if (typeof this.modalData[key] === "number") {
+          this.modalData[key] = numberDefault;
+        } else if (typeof this.modalData[key] === "boolean") {
+          this.modalData[key] = booleanDefault;
+        } else {
+          // default type string
+          this.modalData[key] = stringDefault;
+        }
+      });
+    },
+  },
 };
 </script>
 
@@ -292,8 +278,6 @@ export default {
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: 10rem;
-
-        
       }
     }
 
@@ -492,6 +476,7 @@ export default {
     padding: 1rem;
     gap: 1rem;
     height: 18rem;
+    width: 6rem;
   }
   &__body1 {
     display: flex;
@@ -517,7 +502,6 @@ export default {
       min-width: 6.5rem;
       max-height: 6.5rem;
       min-height: 6.5rem;
-     
     }
     button {
       background: transparent;
@@ -577,19 +561,21 @@ export default {
     color: #2865be;
   }
 
-  &__comingsoon{
+  &__comingsoon {
     text-align: center;
-    
   }
 }
 @media (min-width: 892px) {
   .fd-speakers {
+    &__title
+    {
+      font-size: 2rem;
+    }
     &__body1 {
-      img {
-        border-radius: 10rem;
-        width: 10rem;
-        height: 10rem;
-      }
+ 
+    }
+    &__body2 {
+      gap: 2rem;
     }
     &__unsortedlist {
       column-count: 3;
@@ -597,23 +583,86 @@ export default {
       -webkit-columns: 3;
       -moz-columns: 3;
     }
-
+    &__picture {
+      img {
+        max-width: 14.37rem;
+    min-width: 14.37rem;
+    max-height: 14.37rem;
+    min-height: 14.37rem;
+      }
+    }
     &__list {
       display: inline-flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
       gap: 3rem;
+      width: 15.37rem;
+    height: 34.37rem;
     }
 
-    .fd-keyspeaker {
-      flex-direction: row;
+    &__name {
+      font-size: 1.75rem;
+    }
 
+    &__role {
+      font-size: 1.25rem;
+    }
+    &__country {
+      font-size: 1.25rem;
+    }
+
+
+    .fd-keyspeaker {
+&__name {
+  font-size: 3rem;
+}
+&__country {
+  font-size: 1.5rem;
+}
+
+
+      &__keynote {
+        font-size: 1.5rem;
+      }
+      &__role {
+        font-size:1.75rem;
+      }
+
+      &__bio {
+        font-size:1.25rem;
+      }
+      flex-direction: row;
+      &__picture{
+
+        &::after {
+        content: "";
+        position: absolute;
+        left: 146px;
+top: -27px;
+
+        max-width: 6rem;
+        min-width: 6rem;
+        max-height: 6rem;
+        min-height: 6rem;
+        background: linear-gradient(45deg, #2865be 0%, #82deff 100%);
+        mix-blend-mode: color-burn;
+        filter: blur(50px);
+      }
+
+          img{
+            max-width: 14.37rem;
+    min-width: 14.37rem;
+    max-height: 14.37rem;
+    min-height: 14.37rem;
+          }
+        }
       &__list {
         flex-direction: row;
       }
       &__body0 {
         order: 2;
+       
       }
       &__body1 {
         order: 1;
@@ -627,20 +676,23 @@ export default {
 
       &__body2 {
         order: 3;
+        justify-content: center;
+        padding-top: 0;
       }
       &__body3 {
         order: 3;
-        flex-direction: column-reverse;
+        flex-direction: column;
+        padding-top: 0;
       }
       &__line {
-        visibility: hidden;
+     
       }
       &__member-socials {
-        gap: 0;
+        gap: 1rem;
         li {
           a {
             span:last-child {
-              display: none;
+              font-size: 1.125rem;
             }
           }
         }

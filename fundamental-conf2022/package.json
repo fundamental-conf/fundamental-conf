@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "dist": "^0.1.2",
     "gsap": "^3.10.4",
+    "luxon": "^3.0.3",
     "vue": "^3.2.13",
     "vue-a11y-dialog": "^1.1.2",
     "vue-router": "^4.0.13"
@@ -28,7 +29,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "fibers": "^5.0.1",
     "gh-pages": "^4.0.0",
-    "node-sass": "^7.0.1",
+    "node-sass": "^7.0.3",
     "prettier": "^2.4.1",
     "sass": "^1.53.0",
     "sass-loader": "^10.3.0",

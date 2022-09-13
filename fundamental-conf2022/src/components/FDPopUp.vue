@@ -106,7 +106,7 @@
 
 <script>
 import svgs from "@/assets/svg/svgs.js";
-import agenda from "@/assets/agenda.json";
+
 
 export default {
   props: {
@@ -125,14 +125,7 @@ export default {
       return iconName ? require("@/assets/images/speakers/" + iconName) : ''
     },
 
-  hideSocial (member){
-
-    if(member.linkedIn===" " || member.github===" " || member.twitter===" " || member.medium===" " || member.intagram===" " ){
-this.showItem===false;
-    }
-    else
-    this.showItem===true;
-  }  
+  
   
   
   },
@@ -152,16 +145,17 @@ this.showItem===false;
 <style lang="scss" scoped>
 .fd-popup {
   position: fixed;
-  z-index: 9998;
+  z-index: 10000;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh + 20px);
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
 
   &__box {
     display: flex;
@@ -182,6 +176,7 @@ this.showItem===false;
     background: #e2eeff;
     box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
+    overflow-y: auto;
   }
 
  
@@ -258,6 +253,7 @@ this.showItem===false;
     flex: none;
     order: 2;
     flex-grow: 0;
+    margin: 0 60px 0;
   }
 
   &__picture {
@@ -455,9 +451,9 @@ this.showItem===false;
 
     &__box {
       flex-direction: row;
-      width: 70%;
-      height: 35%;
-      padding: 3%;
+      width: 69rem;
+    height: 41%;
+      padding: 3rem 3rem 2rem 3rem;
     }
 
     &__body {
@@ -472,17 +468,42 @@ this.showItem===false;
         
       }
     }
+
+    &__speaker-title {
+      font-size: 1.5rem;
+    }
 &__speaker-box{
-  width: 17%;
+  width: 11rem;
+    justify-content: left;
+    align-items: self-start;
+    align-content: flex-end;
+    text-align: left;
+}
+
+&__picture {
+
+  img{
+    border-radius: 22.9rem;
+
+max-width: 22.9rem;
+min-width: 22.9rem;
+max-height:22.9rem;
+min-height: 22.9rem;
+
+  }
 }
     &__paragraph {
 
       padding:0;
+      font-size: 1.25rem;
     }
 
     &__role {
 
-   text-align: center;
+   text-align: left;
+   margin: 0;
+   font-size: 1.75rem;
+   
     }
     &__member-socials{
 
@@ -491,9 +512,13 @@ this.showItem===false;
     }
 &__name {
   text-align: left;
+  width: 100%;
+    justify-content: left;
+    font-size: 1.75rem;
 }
 &__country {
   padding-top: 0%;
+  font-size: 1.5rem;
 }
     
   }

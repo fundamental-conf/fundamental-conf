@@ -40,7 +40,7 @@
               class="fd-agenda-body__dotted-line-top"
               aria-hidden="true"
             ></div>
-            <time class="fd-agenda-body__time"> {{el.startTime | hoursMin }}</time>
+            <time class="fd-agenda-body__time"> {{convertTime(el.startTime, eventTime)}}</time>
             <div
               class="fd-agenda-body__dotted-line-bottom"
               aria-hidden="true"
@@ -159,6 +159,7 @@ import { DateTime } from "luxon";
 
 export default {
   name: "FDAgenda",
+
   components: { FDPopUp, FilterButtons, FDFooter },
   data() {
     return {
@@ -173,31 +174,14 @@ export default {
     
     };
   },
-  filters: {
-  
-    hoursMin: function(value) { 
-      console.log(value);
-      let time = value.substring(value.indexOf('T') + 1);
-      return time.split(':')[0].replace(/^0+/, '') + ':' + time.split(':')[1];
-    },
-    trimTime: function(value) {
-      let time = value.substring(value.indexOf('T') + 1);
-      let timeSplit = time.split(':');
-      return timeSplit[0] + ':' + timeSplit[1];
-    },
-    convertTime: function(value, eventTime) {
-      
-      if(eventTime === 'local') {
-       return DateTime.fromISO(value).toLocal().toISO({ suppressMilliseconds:true });
-      }
-      return value;
-    },
-    
-  },
 
   mounted() {
     this.lineup = agenda;
     this.formattedLineup = this.formatLineup();
+  },
+
+  computed() {
+
   },
 
   //filters the posts/presentations of agenda
@@ -272,6 +256,24 @@ export default {
             endTime: newEndTime,
           }
       });
+    },
+  
+  
+    convertTime: function(value, eventTime) {
+      if(eventTime === 'local') { 
+        let date =  DateTime.fromISO(value).toLocal().toUTC().toISO({ suppressMilliseconds:true });
+        console.log(date)
+        let time = date.substring(date.indexOf('T') + 1);
+        
+        console.log(date.toString())
+       
+      return time.split(':')[0].replace(/^0+/, '0') + ':' + time.split(':')[1];
+      
+      }
+      else {
+        console.log(value)
+      return value;
+      }
     },
 
   },

@@ -173,7 +173,7 @@ gsap.fromTo(
   color: $text-color;
   background-size: cover;
   justify-content: center;
-  height: calc(100vh - 3.75rem);
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   font-family: "Ubuntu", Arial, Helvetica, sans-serif;

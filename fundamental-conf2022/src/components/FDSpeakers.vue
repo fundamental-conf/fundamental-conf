@@ -114,11 +114,6 @@
           </div>
         </li>
       </ul>
-      <span
-        class="fd-speakers__comingsoon"
-        v-html="svgs.comingsoon"
-        aria-hidden="true"
-      ></span>
     </div>
 
     <FDPopUp

@@ -4,16 +4,17 @@
 
   
 
-      <fieldset class = "fd-agenda__toggle"> 
+      <fieldset class = "fd-agenda__toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'" > 
         <legend>Time zone</legend>
         <!---'UTC -4 but for test purpose keep it +4'-->
-        <div class="fd-agenda__toggle-element" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'" >
-          <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)" checked>
+        <div class="fd-agenda__toggle-element"  >
+          <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)"/>
             <label for="timezone1">Event time<time datetime="2022-09-29T00:00">(UTC -4)</time></label>
+    
         </div>
         <div class="fd-agenda__toggle-element">
-          <input type="radio" id="timezone2" name="event-time" value="local" @change="onTimeChange($event)">
-            <label for="timezone2">Your time<time datetime="2022-09-29T00:00">(UTC {{getLocalTimeZone()}})</time></label>
+          <input type="radio" id="timezone2" name="event-time" value="local" @change="onTimeChange($event)"/>
+            <label for="timezone2">Your time<time datetime="2022-09-29T07:00">(UTC {{getLocalTimeZone()}})</time></label>
         </div>
       </fieldset>
 
@@ -350,6 +351,9 @@ export default {
   border: 1.32264px solid #2865BE;
 border-radius: 38.7106px;
 
+font-family: 'Ubuntu';
+font-style: normal;
+
   legend {
   top: -1.75rem;
   left: 0.5rem;
@@ -358,6 +362,9 @@ border-radius: 38.7106px;
   font-weight: normal;
   text-transform: uppercase;
   display:none;
+}
+&-empty {
+  visibility: hidden;
 }
 &-element {
   
@@ -727,18 +734,23 @@ label {
 }
 
 @media (min-width: 750px) {
+
   .fd-agenda {
+    &__title {
+
+      font-size: 2rem
+    }
     &__header {
       padding-bottom: 4%;
     }
     &__container {
-      padding: 6rem 3rem;
+      padding: 6rem 0 0;
     }
-    &__button {
-      .button_text {
-        font-size: 1rem;
-      }
-    }
+   &__button {
+
+      font-size: 1.125rem;
+    
+   }
     &__toggle {
     margin: 0;
   padding: 0;
@@ -781,6 +793,7 @@ border-radius: 38.7106px;
   }
 
   input[type="radio"] {
+    background-color: red;
   &:checked {
       background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
         border-radius: 38.7106px;
@@ -809,9 +822,23 @@ label {
     &__row {
       flex-direction: row;
       padding-bottom: 0;
-      gap: 3%;
+      gap: 1%;
     }
-
+&__icon {
+  width: 2rem;
+}
+&__name {
+  line-height: 2rem;
+  font-size:1.75rem;
+}
+&__role{
+  font-size: 1.5rem;
+  line-height: 2.125;
+}
+&__country {
+  font-size: 1.5rem;
+  line-height: 2.125;
+}
     &__topic-box {
       order: 1;
       width: 45%;
@@ -824,14 +851,15 @@ label {
     }
     &__element-box {
       margin-top: 10rem;
-      width: 40%;
-      order: 3;
+    width: 40%;
+    order: 4;
+    gap: 3rem;
     }
     &__dotted-line-top {
       display: none;
     }
     &__dotted-line-bottom {
-      height: 35rem;
+      height: 47rem;
     }
 
     &__time {
@@ -840,16 +868,31 @@ label {
 
     &__title-box {
       flex-direction: row-reverse;
+      gap: 0.5rem
     }
     &__title {
       width: 90%;
+      font-size: 3rem;
+      line-height: 3.5rem;
     }
     &__paragraph {
       margin-left: 11%;
+      font-size: 1.125rem;
+      line-height: 165%;
+    }
+    &__picture {
+      img {
+        width: 7rem;
+    height: 7rem;
+    border-radius: 7rem;
+      }
     }
   }
 
   .fd-agenda-calendar-box {
+    &__addToCal {
+      font-size: 1rem;
+    }
     &__line {
       width: 88%;
       margin-bottom: 2%;
@@ -863,4 +906,3 @@ label {
   }
 }
 </style>
-

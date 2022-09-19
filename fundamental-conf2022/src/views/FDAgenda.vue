@@ -98,47 +98,56 @@
                 <h4 class="fd-agenda-body__country">{{ member.country }}</h4>
               </div>
             </li>
-
-            <div class="fd-agenda-calendar-box">
-              <div
+           <!-- <div class="fd-agenda-calendar-box">
+            <div
                 class="fd-agenda-calendar-box__line"
                 aria-hidden="true"
               ></div>
               <h5 class="fd-agenda-calendar-box__addToCal">ADD TO CALENDAR</h5>
-              <div class="fd-agenda-calendar-box__buttons">
-                <button type="button" class="fd-agenda-calendar-box__button">
+         <FDSaveTheDate class="fd-agenda-calendar-box__button"/> -->
+
+              
+        <div class="fd-agenda-calendar-box">
+            <div
+                class="fd-agenda-calendar-box__line"
+                aria-hidden="true"
+              ></div>
+              <h5 class="fd-agenda-calendar-box__addToCal">ADD TO CALENDAR</h5>
+              <ul class="fd-agenda-calendar-box__buttons" v-for="cal in el.calendars">
+                <li class="fd-agenda-calendar-box__button">
                   <span
                     v-html="svgs.calOutlook"
                     aria-hidden="true"
                     class="button_icon"
                   >
                   </span>
-                  <p class="button_text">Outlook</p>
-                </button>
-                <button type="button" class="fd-agenda-calendar-box__button">
+                  <a class="button_text" :href="'data:text/calendar;charset=utf8,' + encodeURIComponent(cal.ics)"  :download="el.title">Outlook</a>
+                </li>
+                <li class="fd-agenda-calendar-box__button">
                   <span
                     v-html="svgs.calGoogle"
                     aria-hidden="true"
                     class="button_icon"
                   >
                   </span>
-                  <p class="button_text">Google</p>
-                </button>
-                <button type="button" class="fd-agenda-calendar-box__button">
+                  <a class="button_text" target="_blank" rel="noreferrer" :href="cal.google">Google</a>
+                </li>
+                <li class="fd-agenda-calendar-box__button">
                   <span
                     v-html="svgs.calICal"
                     aria-hidden="true"
                     class="button_icon"
                   >
                   </span>
-                  <p class="button_text">iCal</p>
-                </button>
-              </div>
-            </div>
+                  <a class="button_text" :href="'data:text/calendar;charset=utf8,' + encodeURIComponent(cal.ics)"  :download="el.title">iCal</a>
+                </li>
+              </ul>
+            </div>  
           </ul>
         </li>
       </ul>
     </div>
+
     <FDPopUp
       :member="current"
       class="fd-popup"
@@ -156,11 +165,12 @@ import FilterButtons from "../components/FilterButtons.vue";
 import FDFooter from "@/components/FDFooter.vue";
 import FDPopUp from "../components/FDPopUp.vue";
 import { DateTime } from "luxon";
+import FDSaveTheDate from "../components/FDSaveTheDate.vue";
 
 export default {
   name: "FDAgenda",
 
-  components: { FDPopUp, FilterButtons, FDFooter },
+  components: { FDPopUp, FilterButtons, FDFooter, FDSaveTheDate },
   data() {
     return {
       agenda:agenda,
@@ -276,11 +286,48 @@ export default {
       }
     },
 
+    //add to calendar function
+    generateCalendars() {
+      const cal = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'BEGIN:VEVENT',
+        'DTSTART:2022-09-29',
+        'DTEND:2022-09-29',
+        'SUMMARY:Fundamental Conference 2022',
+        'LOCATION:Worldwide Virtual Event',
+        'DESCRIPTION:Join Fundamental Conference on September 29th 2022 to meet designers and developers who come together to share ideas and innovative practices that drive the future of front-end at SAP',
+        'UID:iCal',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\n');
+      
+      return {
+        cals: 
+          {
+            google: encodeURI([
+              'https://www.google.com/calendar/render',
+              '?action=TEMPLATE',
+              '&text=Fundamental Conference 2022',
+              '&dates=20220929/20220929' ,
+              '&dateTime"= "2022-09-29T07:05:00-04:00',
+              '&location=Worldwide Virtual Event',
+              '&details=Join Fundamental Conference on September 29th 2022 to meet designers and developers who come together to share ideas and innovative practices that drive the future of front-end at SAP',
+              '&sprop=&sprop=name:'
+            ].join('')),
+            ics: encodeURI('data:text/calendar;charset=utf8,' + cal),
+            
+          }
+        
+      }
+    }
+
+
   },
 
   
 
-  components: { FilterButtons, FDFooter, FDPopUp },
+  components: { FilterButtons, FDFooter, FDPopUp, FDSaveTheDate },
 };
 </script>
 
@@ -333,22 +380,22 @@ border-radius: 38.7106px;
   }
 
    input {
-	&:checked {
-			background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
-				border-radius: 38.7106px;
-				color: white;
-			}
+  &:checked {
+      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+        border-radius: 38.7106px;
+        color: white;
+      }
   }
 
 
 label {
-		time {
-			font-size: 0.75rem;
-			font-weight: normal;
-			text-transform: capitalize;
-			color:#2865be ;
-		}
-	}
+    time {
+      font-size: 0.75rem;
+      font-weight: normal;
+      text-transform: capitalize;
+      color:#2865be ;
+    }
+  }
 }
 
   }
@@ -734,22 +781,22 @@ border-radius: 38.7106px;
   }
 
   input[type="radio"] {
-	&:checked {
-			background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
-				border-radius: 38.7106px;
-				color: white;
-			}
-		
+  &:checked {
+      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+        border-radius: 38.7106px;
+        color: white;
+      }
+    
 
 }
 label {
-		time {
-			font-size: 0.75rem;
-			font-weight: normal;
-			text-transform: capitalize;
-			color:#2865be ;
-		}
-	}
+    time {
+      font-size: 0.75rem;
+      font-weight: normal;
+      text-transform: capitalize;
+      color:#2865be ;
+    }
+  }
 }
 
   }
@@ -816,3 +863,4 @@ label {
   }
 }
 </style>
+

@@ -1,16 +1,12 @@
 <template>
-
   <section class="fd-agenda" id="agenda">
-
-  
-
-      <fieldset class = "fd-agenda__toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'" > 
+    <fieldset class = "fd-agenda__toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'" > 
         <legend>Time zone</legend>
         <!---'UTC -4 but for test purpose keep it +4'-->
         <div class="fd-agenda__toggle-element"  >
-          <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)"/>
+          <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)" checked/>
             <label for="timezone1">Event time<time datetime="2022-09-29T00:00">(UTC -4)</time></label>
-    
+
         </div>
         <div class="fd-agenda__toggle-element">
           <input type="radio" id="timezone2" name="event-time" value="local" @change="onTimeChange($event)"/>
@@ -21,12 +17,12 @@
     <!--Agenda Header and Line-->
     <div class="fd-agenda__container">
       <div class="fd-agenda__header">
-        <h2 class="fd-agenda__title">agenda</h2>
+        <h2 class="fd-agenda__title">conference agenda</h2>
         <div class="fd-agenda__line" aria-hidden="true"></div>
       </div>
       <!--Agenda Filtering Buttons-->
 
-      <FilterButtons :filterPosts="filterPosts" />
+      <FilterButtons :filterPosts="filterPosts" :filteredValue="this.filteredValue" />
 
       <!--Agenda Schedule Body-->
       <ul class="fd-agenda-body">
@@ -34,117 +30,118 @@
           class="fd-agenda-body__row"
           v-for="el in agenda"
           :key="el.startTime"
-
         >
-          <div class="fd-agenda-body__time-box">
-            <div
-              class="fd-agenda-body__dotted-line-top"
-              aria-hidden="true"
-            ></div>
-            <time class="fd-agenda-body__time"> {{convertTime(el.startTime, eventTime)}}</time>
-            <div
-              class="fd-agenda-body__dotted-line-bottom"
-              aria-hidden="true"
-            ></div>
+          <div class="fd-agenda-body__time-container">
+            <div>
+              <time class="fd-agenda-body__time">
+                {{ convertTime(el.startTime, eventTime) }}</time
+              >
+            </div>
           </div>
 
-          <div class="fd-agenda-body__topic-box">
-            <div class="fd-agenda-body__title-box">
-              <h2 class="fd-agenda-body__title">{{ el.title }}</h2>
-              <span
-                class="fd-agenda-body__icon"
-                v-if="el.type === 'Design'"
-                v-html="svgs.paintbrush"
-                aria-hidden="true"
-              ></span>
-              <span
-                class="fd-agenda-body__icon"
-                v-else-if="el.type === 'Development'"
-                v-html="svgs.frontend"
-                aria-hidden="true"
-              ></span>
-              <span
-                class="fd-agenda-body__icon"
-                v-else-if="el.type === 'Accessibility'"
-                v-html="svgs.accessibility"
-                aria-hidden="true"
-              ></span>
+          <div class="fd-agenda-body__container">
+            <div class="fd-agenda-body__topic-box">
+              <div class="fd-agenda-body__title-box">
+                <div class="fd-agenda-body__icon-container" aria-hidden="true">
+                  <span
+                    class="fd-agenda-body__icon"
+                    v-if="el.type === 'Design'"
+                    v-html="svgs.paintbrush"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="fd-agenda-body__icon"
+                    v-else-if="el.type === 'Development'"
+                    v-html="svgs.frontend"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="fd-agenda-body__icon"
+                    v-else-if="el.type === 'Accessibility'"
+                    v-html="svgs.accessibility"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+                <h3 class="fd-agenda-body__title">{{ el.title }}</h3>
+              </div>
+
+              <p class="fd-agenda-body__paragraph">{{ el.description }}</p>
             </div>
 
-            <p class="fd-agenda-body__paragraph">{{ el.description }}</p>
-          </div>
-
-          <ul class="fd-agenda-body__element-box">
-            <li
-              class="fd-agenda-body__speaker"
-              v-for="member in el.speakers"
-              :class="{ selected: member === currentMember }"
-              :key="member.firstName"
-              v-bind:value="{ member: currentMember }"
-            >
-              <figure class="fd-agenda-body__picture">
-                <button @click="toggleModal(member)" type="button">
+            <ul class="fd-agenda-body__element-box">
+              <li
+                class="fd-agenda-body__speaker"
+                v-for="member in el.speakers"
+                :class="{ selected: member === currentMember }"
+                :key="member.firstName"
+                v-bind:value="{ member: currentMember }"
+              >
+                <figure
+                  class="fd-agenda-body__picture"
+                  @click="toggleModal(member)"
+                  v-on:keypress.enter="toggleModal(member)"
+                  role="button"
+                  tabindex="0"
+                  :id="`${member.firstName}-${member.lastName}`"
+                >
                   <img
                     :src="require(`@/assets/images/speakers/${member.photo}`)"
-                    :alt="``"
+                    :alt="`Image of ${member.firstName} ${member.lastName}`"
                   />
-                </button>
-              </figure>
-              <div class="fd-agenda-body__speaker-details">
-                <h4 class="fd-agenda-body__name">
-                  {{ member.firstName }} {{ member.lastName }}
-                </h4>
-                <h4 class="fd-agenda-body__role">{{ member.role }}</h4>
-                <div class="fd-agenda-body__line" aria-hidden="true"></div>
-                <h4 class="fd-agenda-body__country">{{ member.country }}</h4>
-              </div>
-            </li>
-           <!-- <div class="fd-agenda-calendar-box">
-            <div
-                class="fd-agenda-calendar-box__line"
-                aria-hidden="true"
-              ></div>
-              <h5 class="fd-agenda-calendar-box__addToCal">ADD TO CALENDAR</h5>
-         <FDSaveTheDate class="fd-agenda-calendar-box__button"/> -->
+                </figure>
 
-              
-        <div class="fd-agenda-calendar-box">
-            <div
-                class="fd-agenda-calendar-box__line"
-                aria-hidden="true"
-              ></div>
-              <h5 class="fd-agenda-calendar-box__addToCal">ADD TO CALENDAR</h5>
-              <ul class="fd-agenda-calendar-box__buttons" v-for="cal in el.calendars">
-                <li class="fd-agenda-calendar-box__button">
-                  <span
-                    v-html="svgs.calOutlook"
-                    aria-hidden="true"
-                    class="button_icon"
-                  >
-                  </span>
-                  <a class="button_text" :href="'data:text/calendar;charset=utf8,' + encodeURIComponent(cal.ics)"  :download="el.title">Outlook</a>
-                </li>
-                <li class="fd-agenda-calendar-box__button">
-                  <span
-                    v-html="svgs.calGoogle"
-                    aria-hidden="true"
-                    class="button_icon"
-                  >
-                  </span>
-                  <a class="button_text" target="_blank" rel="noreferrer" :href="cal.google">Google</a>
-                </li>
-                <li class="fd-agenda-calendar-box__button">
-                  <span
-                    v-html="svgs.calICal"
-                    aria-hidden="true"
-                    class="button_icon"
-                  >
-                  </span>
-                  <a class="button_text" :href="'data:text/calendar;charset=utf8,' + encodeURIComponent(cal.ics)"  :download="el.title">iCal</a>
-                </li>
-              </ul>
-            </div>  
-          </ul>
+                <div class="fd-agenda-body__speaker-details">
+                  <p class="fd-agenda-body__name">
+                    {{ member.firstName }} {{ member.lastName }}
+                  </p>
+                  <p class="fd-agenda-body__role">{{ member.role }}</p>
+                  <div class="fd-agenda-body__line" aria-hidden="true"></div>
+                  <p class="fd-agenda-body__country">{{ member.country }}</p>
+                </div>
+              </li>
+
+              <div class="fd-agenda-calendar-box">
+                <div
+                  class="fd-agenda-calendar-box__line"
+                  aria-hidden="true"
+                ></div>
+                <p class="fd-agenda-calendar-box__addToCal">ADD TO CALENDAR</p>
+                <ul
+                  class="fd-agenda-calendar-box__buttons"
+                  v-for="cal in el.calendars"
+                >
+                  <li class="fd-agenda-calendar-box__button">
+                    <a
+                      :href="
+                        'data:text/calendar;charset=utf8,' +
+                        encodeURIComponent(cal.ics)
+                      "
+                      :download="el.title"
+                      ><span v-html="svgs.calOutlook" aria-hidden="true"> </span
+                      >Outlook</a
+                    >
+                  </li>
+                  <li class="fd-agenda-calendar-box__button">
+                    <a target="_blank" rel="noreferrer" :href="cal.google"
+                      ><span v-html="svgs.calGoogle" aria-hidden="true"> </span
+                      >Google</a
+                    >
+                  </li>
+                  <li class="fd-agenda-calendar-box__button">
+                    <a
+                      :href="
+                        'data:text/calendar;charset=utf8,' +
+                        encodeURIComponent(cal.ics)
+                      "
+                      :download="el.title"
+                      ><span v-html="svgs.calICal" aria-hidden="true"> </span
+                      >iCal</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>
@@ -174,15 +171,16 @@ export default {
   components: { FDPopUp, FilterButtons, FDFooter, FDSaveTheDate },
   data() {
     return {
-      agenda:agenda,
+      agenda: agenda,
       svgs,
       current: {},
       modalActive: false,
-      eventTime: 'event',
+      eventTime: "event",
       lineup: [],
       formattedLineup: [],
       localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
-    
+      filteredValue: "All",
+      lastFocussedElementID: null,
     };
   },
 
@@ -191,15 +189,14 @@ export default {
     this.formattedLineup = this.formatLineup();
   },
 
-  computed() {
-
-  },
+  computed() {},
 
   //filters the posts/presentations of agenda
   methods: {
     filterPosts(catName) {
       this.resetPosts();
       if (catName !== "All") {
+        this.filteredValue = catName;
         this.agenda = this.agenda.filter((post) => {
           return post.type === catName;
         });
@@ -208,38 +205,40 @@ export default {
     //reset agenda to all buttons
     resetPosts() {
       this.agenda = agenda;
+      this.filteredValue = "All"
     },
-//popup
+    //popup
     toggleModal(member) {
       this.current = member;
       console.log(this.current);
       this.modalActive = !this.modalActive;
+      this.lastFocussedElementID = `${member.firstName}-${member.lastName}`;
 
       //hides the scrolling in the background
       if (this.current) {
         document.documentElement.style.overflow = "hidden";
-        document.getElementsByTagName("*").style.overflow = "hidden";
         document.body.scroll = "no";
       } else {
         document.documentElement.style.overflow = "auto";
-        document.getElementsByTagName("*").style.overflow = "auto";
         document.body.scroll = "yes";
       }
+
+      this.$nextTick(() => document.getElementById("close-btn").focus());
     },
     //erase all the data from the current popup
     closeModal() {
       this.current = {};
       this.modalActive = false;
+      document.getElementById(this.lastFocussedElementID).focus();
       document.documentElement.style.overflow = "auto";
-      document.getElementsByTagName("*").style.overflow = "auto";
       document.body.scroll = "yes";
     },
-    //time functions 
+    //time functions
 
-    isActive (tab) {
+    isActive(tab) {
       return this.activeTab === tab;
     },
-    setActive (tab) {
+    setActive(tab) {
       this.activeTab = tab;
     },
 
@@ -248,85 +247,84 @@ export default {
     },
 
     getLocalTimeZone() {
-      return DateTime.now().toFormat('Z');
+      return DateTime.now().toFormat("Z");
     },
     filerSortLineup() {
-      const sortedSchedule = filteredSchedule.sort((a, b) => (DateTime.fromISO(a.startTime) > DateTime.fromISO(b.startTime)) ? 1 : -1)
+      const sortedSchedule = filteredSchedule.sort((a, b) =>
+        DateTime.fromISO(a.startTime) > DateTime.fromISO(b.startTime) ? 1 : -1
+      );
       return sortedSchedule;
     },
     formatLineup() {
-      return this.lineup.map(session => {  
+      return this.lineup.map((session) => {
         let start = session.startTime;
         let end = session.endTime;
 
         let newStartTime = "2022-09-29T" + start + ":00.000-04:00";
-          let newEndTime = "2022-09-29T" + end + ":00.000-04:00";
+        let newEndTime = "2022-09-29T" + end + ":00.000-04:00";
 
-          return {
-            startTime: newStartTime,
-            endTime: newEndTime,
-          }
+        return {
+          startTime: newStartTime,
+          endTime: newEndTime,
+        };
       });
     },
-  
-  
-    convertTime: function(value, eventTime) {
-      if(eventTime === 'local') { 
-        let date =  DateTime.fromISO(value).toLocal().toUTC().toISO({ suppressMilliseconds:true });
-        console.log(date)
-        let time = date.substring(date.indexOf('T') + 1);
-        
-        console.log(date.toString())
-       
-      return time.split(':')[0].replace(/^0+/, '0') + ':' + time.split(':')[1];
-      
-      }
-      else {
-        console.log(value)
-      return value;
+
+    convertTime: function (value, eventTime) {
+      if (eventTime === "local") {
+        let date = DateTime.fromISO(value)
+          .toLocal()
+          .toUTC()
+          .toISO({ suppressMilliseconds: true });
+        console.log(date);
+        let time = date.substring(date.indexOf("T") + 1);
+
+        console.log(date.toString());
+
+        return (
+          time.split(":")[0].replace(/^0+/, "0") + ":" + time.split(":")[1]
+        );
+      } else {
+        console.log(value);
+        return value;
       }
     },
 
     //add to calendar function
     generateCalendars() {
       const cal = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'BEGIN:VEVENT',
-        'DTSTART:2022-09-29',
-        'DTEND:2022-09-29',
-        'SUMMARY:Fundamental Conference 2022',
-        'LOCATION:Worldwide Virtual Event',
-        'DESCRIPTION:Join Fundamental Conference on September 29th 2022 to meet designers and developers who come together to share ideas and innovative practices that drive the future of front-end at SAP',
-        'UID:iCal',
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\n');
-      
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "BEGIN:VEVENT",
+        "DTSTART:2022-09-29",
+        "DTEND:2022-09-29",
+        "SUMMARY:Fundamental Conference 2022",
+        "LOCATION:Worldwide Virtual Event",
+        "DESCRIPTION:Join Fundamental Conference on September 29th 2022 to meet designers and developers who come together to share ideas and innovative practices that drive the future of front-end at SAP",
+        "UID:iCal",
+        "END:VEVENT",
+        "END:VCALENDAR",
+      ].join("\n");
+
       return {
-        cals: 
-          {
-            google: encodeURI([
-              'https://www.google.com/calendar/render',
-              '?action=TEMPLATE',
-              '&text=Fundamental Conference 2022',
-              '&dates=20220929/20220929' ,
+        cals: {
+          google: encodeURI(
+            [
+              "https://www.google.com/calendar/render",
+              "?action=TEMPLATE",
+              "&text=Fundamental Conference 2022",
+              "&dates=20220929/20220929",
               '&dateTime"= "2022-09-29T07:05:00-04:00',
-              '&location=Worldwide Virtual Event',
-              '&details=Join Fundamental Conference on September 29th 2022 to meet designers and developers who come together to share ideas and innovative practices that drive the future of front-end at SAP',
-              '&sprop=&sprop=name:'
-            ].join('')),
-            ics: encodeURI('data:text/calendar;charset=utf8,' + cal),
-            
-          }
-        
-      }
-    }
-
-
+              "&location=Worldwide Virtual Event",
+              "&details=Join Fundamental Conference on September 29th 2022 to meet designers and developers who come together to share ideas and innovative practices that drive the future of front-end at SAP",
+              "&sprop=&sprop=name:",
+            ].join("")
+          ),
+          ics: encodeURI("data:text/calendar;charset=utf8," + cal),
+        },
+      };
+    },
   },
-
-  
 
   components: { FilterButtons, FDFooter, FDPopUp, FDSaveTheDate },
 };
@@ -336,80 +334,79 @@ export default {
 .fd-agenda {
   flex-direction: row;
   max-width: 1200px;
-  padding: 5rem 10vw;
+  padding: 5rem 2.25rem;
   margin: 0 auto;
   align-items: center;
 
   &__toggle {
     margin: auto;
-  padding: 0;
-  border: none;
-  display: flex;
-  position: relative;
-  width: fit-content;
-  background-color:#E2EEFF;
-  border: 1.32264px solid #2865BE;
-border-radius: 38.7106px;
-
-font-family: 'Ubuntu';
-font-style: normal;
-
-  legend {
-  top: -1.75rem;
-  left: 0.5rem;
-  position: absolute;
-  font-size: 0.875rem;
-  font-weight: normal;
-  text-transform: uppercase;
-  display:none;
-}
-&-empty {
-  visibility: hidden;
-}
-&-element {
-  
-  input {
-    display: none;
-  }
-
-  label {
+    padding: 0;
+    border: none;
     display: flex;
-  cursor: pointer;
-  font-size: 0.875rem;
-  align-items: center;
-  border-radius: 2.5rem;
-  flex-direction: column;
-  padding: 0.5rem 1.5rem;
-  text-transform: uppercase;
-  border: 0.0625rem solid transparent;
-  transition: border 0.5s ease;
-  color: #2865be;
-  }
+    position: relative;
+    width: fit-content;
+    background-color: #e2eeff;
+    border: 0.125rem solid #3E86EF;
+    border-radius: 2.5rem;
 
-   input {
-  &:checked {
-      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
-        border-radius: 38.7106px;
-        color: white;
-      }
-  }
-
-
-label {
-    time {
-      font-size: 0.75rem;
+    legend {
+      top: -1.75rem;
+      left: 0.5rem;   
+      position: absolute;
+      font-size: 0.875rem;
       font-weight: normal;
-      text-transform: capitalize;
-      color:#2865be ;
+      text-transform: uppercase;
+      display: none;
+    }
+    
+    &-element {
+      input {
+        display: none;
+      }
+
+      label {
+        display: flex;
+        cursor: pointer;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.3125rem;
+        align-items: center;
+        border-radius: 2.5rem;
+        flex-direction: column;
+        padding: 0.5rem 1.5rem;
+        text-transform: uppercase;
+        transition: border 0.5s ease;
+        color: #2865be;
+      }
+
+      input:checked{
+        & + label {
+          background: linear-gradient(73.81deg, #7843d5 0.22%, #1dc4ff 99.78%);
+          border-radius: 2.5rem;
+          color: white;
+          box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
+
+          time {
+            color: white;
+          }
+        }
+      }
+
+      label {
+        time {
+          font-size: 0.75rem;
+          font-weight: normal;
+          text-transform: capitalize;
+          color: #2865be;
+        }
+      }
     }
   }
-}
-
-  }
-
 
   &__container {
-    padding: 4rem 0.75rem 3rem;
+    padding: 4rem 0 3rem;
     gap: 0.5rem;
     display: flex;
     -webkit-flex-direction: column;
@@ -451,6 +448,26 @@ label {
   display: flex;
   flex-direction: column;
 
+  &__wrapper {
+    gap: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  &__icon,
+  &__icon-container {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-top: 0.25rem;
+    color: #2865be;
+  }
+
   &__row {
     padding-bottom: 5%;
     flex-direction: column;
@@ -464,117 +481,100 @@ label {
     flex-direction: column;
     height: 14rem;
   }
+
+  &__time-container {
+    height: 8rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    background-image: linear-gradient(#2865be 25%, rgba(255, 255, 255, 0) 0%);
+    background-position: center;
+    background-size: 0.125rem 1.35rem;
+    background-repeat: repeat-y;
+
+    div {
+      padding: 0.5rem;
+      background: #e2eeff;
+    }
+  }
+
   &__time {
     font-family: "Ubuntu";
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 97.9%;
+    font-size: 3rem;
     display: inline-block;
-    align-items: center;
-    text-align: center;
-
-    /* Gradient 3 (Test) */
-    background: linear-gradient(73.81deg, #7843d5 0.22%, #1dc4ff 99.78%);
+    background: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff);
+    background-size: 300%;
+    font-weight: bold;
+    line-height: 1;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
-
-  &__dotted-line-top {
-    background-image: linear-gradient(
-      to bottom,
-      #3e86ef,
-      10%,
-      rgba(240, 255, 255, 0) 2%
-    );
-    background-position: right;
-    background-size: 3px 30px;
-    background-repeat: repeat-y;
-    padding: 45px 3px;
-    height: 3rem;
-  }
-  &__dotted-line-bottom {
-    background-image: linear-gradient(
-      to bottom,
-      #3e86ef,
-      10%,
-      rgba(240, 255, 255, 0) 2%
-    );
-    background-position: right;
-    background-size: 3px 30px;
-    background-repeat: repeat-y;
-    height: 3rem;
-    padding: 45px 3px;
+    animation: animated_text-17d1a7e2 5s ease-in-out infinite;
+    -moz-animation: animated_text-17d1a7e2 5s ease-in-out infinite;
+    -webkit-animation: animated_text-17d1a7e2 5s ease-in-out infinite;
   }
 
   &__title-box {
+    gap: 1.5rem;
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
+    flex-direction: row-reverse;
   }
 
   &__title {
-    font-family: "Ubuntu";
-    font-style: normal;
+    flex: 1;
     font-weight: 500;
-    font-size: 36px;
-    line-height: 41px;
-    display: flex;
-    align-items: center;
-    padding-bottom: 2rem;
-    width: 70%;
-    /* Blue/500 Regular */
     color: #2865be;
-  }
-
-  &__icon {
-    width: 22.88px;
-    color: #2865be;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   &__paragraph {
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.01em;
-
-    /* Blue/600 Dark */
+    font-size: 1rem;
     color: #052e69;
+    margin-bottom: 1.5rem;
+    line-height: 1.4375rem;
+    letter-spacing: 0.01em;
+    font-family: sans-serif;
   }
 
   &__element-box {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding-top: 1rem;
     gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   &__speaker {
+    gap: 1rem;
     display: flex;
     flex-direction: row;
-    gap: 3rem;
   }
 
   &__picture {
-    align-items: center;
-
+    width: 4rem;
+    height: 4rem;
     display: flex;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.25s linear;
+
     img {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 5rem;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
     }
+
     button {
       background: transparent;
       border: transparent;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.25rem #7352ad;
     }
   }
 
@@ -585,33 +585,21 @@ label {
 
   &__name {
     font-family: "Ubuntu";
-    font-style: normal;
     font-weight: 500;
     font-size: 1.125rem;
-    line-height: 1.313rem;
-
-    display: flex;
-    align-items: center;
-    text-align: justify;
-
-    /* Blue/500 Regular */
+    line-height: 1.3125rem;
     color: #2865be;
   }
 
   &__role {
-    padding-top: 0.5rem;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.438rem;
-    /* identical to box height */
-    display: flex;
-    align-items: center;
-
-    /* Blue/500 Regular */
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
     color: #2865be;
   }
+
   &__line {
     width: 50%;
     height: 0.0625rem;
@@ -619,28 +607,23 @@ label {
     background-size: 400% 400%;
     -webkit-animation: gradient-17d1a7e2 3s ease infinite;
     animation: gradient-17d1a7e2 3s ease infinite;
-
     margin-top: 0.25rem;
   }
+
   &__country {
     padding-top: 0.25rem;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 0.75rem;
-    line-height: 1.438rem;
-    /* identical to box height */
-    display: flex;
-    align-items: center;
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
     text-transform: uppercase;
-
-    /* Blue/500 Regular */
     color: #2865be;
   }
 }
 
 .fd-agenda-calendar-box {
-  padding-top: 2.5rem;
+  padding-top: 1rem;
   gap: 8px;
 
   &____line {
@@ -648,171 +631,132 @@ label {
   }
 
   &__addToCal {
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    text-transform: uppercase;
     color: #052e69;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: sans-serif;
+    text-transform: uppercase;
   }
+
   &__buttons {
-    box-sizing: border-box;
-
-    /* Auto layout */
+    gap: 1rem;
     display: flex;
-    flex-direction: row;
-    padding-top: 5%;
-    gap: 2%;
-  
-  }  
-  &__button {
-    box-sizing: border-box;
-
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 6px 12px;
-    gap: 6px;
-
-    width: 105px;
-    height: 35px;
-
-    /* Blue/400 Mid */
-    border: 2px solid #3e86ef;
-    border-radius: 6px;
-
-    /* Inside auto layout */
-    background-color: $brand-color-silver;
-    order: 0;
-    flex-grow: 0;
-    width: fit-content;
-    align-items: center;
-    padding: 0.1rem 0.5rem;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    outline-offset: 1.25rem;
-    transition: all 0.3s ease-in-out;
-
-  
-
-    .button_text {
-      font-family: "Ubuntu";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 16px;
-      /* identical to box height */
-      display: flex;
-      align-items: center;
-      text-align: center;
-      letter-spacing: 0.05em;
-
-      /* Blue/500 Regular */
-      color: #2865be;
-      &:active {
-        color: white;
-      }
-    }
-
-    .button_icon {
-      color: #2865be;
-      &:active {
-        color: white;
-      }
-    }
+    margin-top: 1rem;
+    flex-wrap: wrap;
   }
 
-  &__button:active {
+  &__button {
+    a {
+      gap: 0.25rem;
+      display: flex;
+      color: #2865be;
+      font-size: 1.125rem;
+      align-items: center;
+      padding: 0.35rem 0.7rem;
+      text-decoration: none;
+      line-height: 1.3125rem;
+      justify-content: center;
+      border-radius: 0.375rem;
+      transition: all 0.25s linear;
+      border: 0.125rem solid #3e86ef;
 
-      background: linear-gradient(73.81deg, #7843d5 0.22%, #1dc4ff 99.78%);
-      border-radius: 38.7106px;
-      color: white;
-    
+      span {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: #2865be;
+      }
+
+      &:hover {
+        border-color: #2865be;
+        box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
+      }
+
+      &:focus {
+        border-color: #3e86ef;
+        outline-offset: 0.125rem;
+        outline: 0.125rem solid #7352ad;
+      }
+    }
   }
 }
 
-@media (min-width: 750px) {
-
+@media (min-width: 1000px) {
   .fd-agenda {
-    &__title {
-
-      font-size: 2rem
-    }
     &__header {
       padding-bottom: 4%;
     }
     &__container {
-      padding: 6rem 0 0;
+      padding: 6rem 3rem;
     }
-   &__button {
-
-      font-size: 1.125rem;
-    
-   }
-    &__toggle {
-    margin: 0;
-  padding: 0;
-  border: none;
-  display: flex;
-  position: absolute;
-  right:12vw;
-  width: fit-content;
-  background-color:#E2EEFF;
-  border: 1.32264px solid #2865BE;
-border-radius: 38.7106px;
-
-  legend {
-  top: -1.75rem;
-  left: 0.5rem;
-  position: absolute;
-  font-size: 0.875rem;
-  font-weight: normal;
-  text-transform: uppercase;
-  display:none;
-}
-&-element {
-  
-  input {
-    display: none;
-  }
-
-  label {
-    display: flex;
-  cursor: pointer;
-  font-size: 0.875rem;
-  align-items: center;
-  border-radius: 2.5rem;
-  flex-direction: column;
-  padding: 0.5rem 1.5rem;
-  text-transform: uppercase;
-  border: 0.0625rem solid transparent;
-  transition: border 0.5s ease;
-  color: #2865be;
-  }
-
-  input[type="radio"] {
-    background-color: red;
-  &:checked {
-      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
-        border-radius: 38.7106px;
-        color: white;
+    &__button {
+      .button_text {
+        font-size: 1rem;
       }
-    
-
-}
-label {
-    time {
-      font-size: 0.75rem;
-      font-weight: normal;
-      text-transform: capitalize;
-      color:#2865be ;
     }
-  }
-}
+    &__toggle {
+      margin: 0;
+      padding: 0;
+      border: none;
+      display: flex;
+      position: absolute;
+      right: 12vw;
+      width: fit-content;
+      background-color: #e2eeff;
+      border: 0.125rem solid #2865be;
+      border-radius: 2.5rem
 
-  }
+      legend {
+        top: -1.75rem;
+        left: 0.5rem;
+        position: absolute;
+        font-size: 0.875rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        display: none;
+      }
+
+      &-element {
+        input {
+          display: none;
+        }
+
+        label {
+          display: flex;
+          cursor: pointer;
+          font-size: 0.875rem;
+          align-items: center;
+          border-radius: 2.5rem;
+          flex-direction: column;
+          padding: 0.5rem 1.5rem;
+          text-transform: uppercase;
+          transition: border 0.5s ease;
+          color: #2865be;
+        }
+
+        input:checked{
+        & + label {
+          background: linear-gradient(73.81deg, #7843d5 0.22%, #1dc4ff 99.78%);
+          border-radius: 2.5rem;
+          color: white;
+          box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
+
+          time {
+            color: white;
+          }
+        }
+      } 
+        label {
+          time {
+            font-size: 0.75rem;
+            font-weight: normal;
+            text-transform: capitalize;
+            color: #2865be;
+          }
+        }
+      }
+    }
   }
 
   .fd-agenda-body {
@@ -820,79 +764,152 @@ label {
     padding-top: 5rem;
 
     &__row {
-      flex-direction: row;
-      padding-bottom: 0;
-      gap: 1%;
+      padding-bottom: 7rem;
     }
-&__icon {
-  width: 2rem;
-}
-&__name {
-  line-height: 2rem;
-  font-size:1.75rem;
-}
-&__role{
-  font-size: 1.5rem;
-  line-height: 2.125;
-}
-&__country {
-  font-size: 1.5rem;
-  line-height: 2.125;
-}
+
+    &__container {
+      width: 100%;
+      display: flex;
+      margin-top: 1rem;
+    }
+
+    &__icon-container {
+      display: flex;
+      width: 2.625rem;
+      height: 2.625rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__icon {
+      display: flex;
+      width: 2.625rem;
+      height: 2.625rem;
+      margin-top: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+
     &__topic-box {
-      order: 1;
-      width: 45%;
-      margin-top: 10rem;
+      padding-right: 5%;
+      width: 60%;
+      min-width: 60%;
+      max-width: 60%;
+      position: relative;
+      background-image: linear-gradient(#2865be 25%, rgba(255, 255, 255, 0) 0%);
+      background-position: right;
+      background-size: 0.125rem 1.5rem;
+      background-repeat: repeat-y;
     }
-    &__time-box {
-      order: 2;
-      height: fit-content;
-      gap: 3%;
-    }
+
     &__element-box {
-      margin-top: 10rem;
-    width: 40%;
-    order: 4;
-    gap: 3rem;
+      max-width: 40%;
+      padding-left: 5%;
+      justify-content: space-between;
     }
-    &__dotted-line-top {
-      display: none;
-    }
-    &__dotted-line-bottom {
-      height: 47rem;
+
+    &__time-container {
+      width: 65%;
+      height: auto;
+      min-width: 65%;
+      max-width: 65%;
+      height: 5.125rem;
+      padding-top: 2rem;
+      text-align: right;
+      position: relative;
+      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      background-image: none;
+
+      div {
+        padding: 0;
+        background: #e2eeff;
+      }
     }
 
     &__time {
       font-size: 5.25rem;
+      transform: translate(50%, 0);
     }
 
     &__title-box {
-      flex-direction: row-reverse;
-      gap: 0.5rem
+      gap: 1.5rem;
+      flex-direction: row;
     }
+
     &__title {
-      width: 90%;
       font-size: 3rem;
-      line-height: 3.5rem;
+      line-height: 3.4375rem;
     }
-    &__paragraph {
-      margin-left: 11%;
-      font-size: 1.125rem;
-      line-height: 165%;
+
+    &__speaker {
+      align-items: flex-start;
     }
+
     &__picture {
+      width: 5rem;
+      height: 5rem;
+
       img {
-        width: 7rem;
-    height: 7rem;
-    border-radius: 7rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 5rem;
       }
+    }
+
+    &__paragraph {
+      padding-left: 4.125rem;
+      font-size: 1.25rem;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+      color: #052e69;
+    }
+
+    &__name {
+      font-family: "Ubuntu";
+      font-weight: 500;
+      font-size: 1.75rem;
+      line-height: 2rem;
+      color: #2865be;
+    }
+
+    &__role {
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 2.125rem;
+      color: #2865be;
+    }
+
+    &__line {
+      width: 50%;
+      height: 0.0625rem;
+      background: linear-gradient(63.69deg, #2865be 16.54%, #82deff 83.46%);
+      background-size: 400% 400%;
+      -webkit-animation: gradient-17d1a7e2 3s ease infinite;
+      animation: gradient-17d1a7e2 3s ease infinite;
+      margin-top: 0.25rem;
+    }
+
+    &__country {
+      padding-top: 0.25rem;
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 2.125rem;
+      text-transform: uppercase;
+      color: #2865be;
     }
   }
 
   .fd-agenda-calendar-box {
-    &__addToCal {
-      font-size: 1rem;
+    &__buttons {
+      gap: 0.75rem;
+      flex-wrap: wrap;
     }
+
     &__line {
       width: 88%;
       margin-bottom: 2%;
@@ -902,6 +919,11 @@ label {
       -webkit-animation: gradient-17d1a7e2 3s ease infinite;
       animation: gradient-17d1a7e2 3s ease infinite;
       visibility: show;
+    }
+
+    &__addToCal {
+      font-size: 1rem;
+      line-height: 1.5rem;
     }
   }
 }

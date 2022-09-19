@@ -1,28 +1,28 @@
 <template>
-   <div class="fd-agenda__wrap">
-  <div class="fd-agenda__buttons" v-for="filter in filters" :key="filter">
-    <button class="fd-agenda__button" @click="() => filterPosts(filter.name)">
-      <span
-        class="fd-agenda__icon"
-        v-html="filter.icon"
-        aria-hidden="true"
-      ></span>
-      {{ filter.name }}
-    </button>
+  <div class="fd-agenda__wrap">
+    <div class="fd-agenda__buttons" v-for="filter in filters" :key="filter">
+      <button class="fd-agenda__button" :class="{active: filteredValue==filter.name}" @click="() => filterPosts(filter.name)">
+        <span
+          class="fd-agenda__icon"
+          v-html="filter.icon"
+          aria-hidden="true"
+        ></span>
+        {{ filter.name }}
+      </button>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import svgs from "@/assets/svg/svgs.js";
 const filters = [
   { name: "All", icon: svgs.all },
-  { name: "Design", icon: svgs.design },
-  { name: "Development", icon: svgs.frontend },
+  { name: "Design", icon: svgs.paintbrush },
+  { name: "Development", icon: svgs.development },
   { name: "Accessibility", icon: svgs.accessibility },
 ];
 export default {
-  props: ["filterPosts"],
+  props: ["filterPosts", "filteredValue"],
   data() {
     return {
       svgs,
@@ -34,15 +34,15 @@ export default {
 
 <style lang="scss" scoped>
 .fd-agenda {
-
-    &__wrap{
-        justify-content: center;
+  &__wrap {
+    justify-content: center;
     gap: 5%;
     display: flex;
     flex-direction: row;
     flex: wrap;
     flex-wrap: wrap;
-    }
+  }
+
   &__buttons {
     display: flex;
     margin: 1%;
@@ -54,76 +54,66 @@ export default {
   }
 
   &__button {
-    box-sizing: border-box;
-padding:1rem;
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0.23rem 0.72rem;
-gap: 0.23rem;
-    height: 2.5rem;
-background: #E3EEFF;
-border: 1.38751px solid #2865BE;
-border-radius: 23.1252px;
+    gap: 0.5rem;
+    display: flex;
+    height: 3.375rem;
+    font-weight: 500;
+    color: #2865BE;
+    padding: 0 1.25rem;
+    font-size: 1.125rem;
+    border-radius: 3rem;
+    align-items: center;
+    background: #E3EEFF;
+    line-height: 1.375rem;
+    transition: all 0.25s linear;
+    border: 0.125rem solid #3E86EF;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
-font-family: "Ubuntu";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 0.69rem;
-      line-height: 0.813rem;
-      /* identical to box height */
-      display: flex;
-      align-items: center;
-      text-align: center;
-      letter-spacing: 0.05em;
-
-      /* Blue/500 Regular */
-      color: #2865be;
-
-      /* Inside auto layout */
-     
-    &:active {
-      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
-border-radius: 38.7106px;
-color:white;
-
+    &:hover {
+      background: #E3EEFF;
+      border-color: #2865BE;
+      box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
     }
-  &:hover{
 
+    &:active {
+      color: white;
       background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
-border-radius: 38.7106px;
-color:white;
 
-    
-  }
+      svg {
+        color: white;
+      }
+    }
+
+    &:focus {
+      border-color: #2865BE;
+      outline-offset: 0.125rem;
+      outline: 0.125rem solid #7352AD;
+    }
+
+    &.active {
+      color: white;
+      background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+
+      svg {
+        color: white;
+      }
+    }
+
   }
 
-&__icon{
-    width: 2rem;
-color: #2865be;
-&:active {
-  color: white;
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.625rem;
+    height: 2.625rem;
+  }
 }
-&:hover{
-  color:white;
-}
-}}
 
 @media (min-width: 750px) {
-    .fd-agenda {
-
-&__wrap{
-    gap:0
-
+  .fd-agenda {
+    &__wrap {
+      gap: 0;
+    }
+  }
 }
-
-}
-}
-
 </style>

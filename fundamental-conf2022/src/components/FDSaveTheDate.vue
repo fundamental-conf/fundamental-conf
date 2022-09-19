@@ -2,17 +2,17 @@
 <div class="fd-calendars">
   
   <a target="_blank" rel="noreferrer" href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:2022-09-29%0ADTEND:2022-09-29%0ASUMMARY:Fundamental%20Conference%202022%0ALOCATION:Worldwide%20Virtual%20Event%0ADESCRIPTION:Join%20Fundamental%20Conference%20on%20September%2029th%202022%20to%20meet%20designers%20and%20developers%20who%20come%20together%20to%20share%20ideas%20and%20innovative%20practices%20that%20drive%20the%20future%20of%20front-end%20at%20SAP%0AUID:iCal%0AEND:VEVENT%0AEND:VCALENDAR" download="Fundamental-Conf-2022.ics">
-    <span v-html="svgs.calOutlook" aria-hidden="true"></span>
+    <span class="fd-calendars__icon" v-html="svgs.calOutlook" aria-hidden="true"></span>
     <span class="fd-calendars__text">Outlook</span>
   </a>
 
   <a target="_blank" rel="noreferrer" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Fundamental%20Conference%202022&dates=20220929/20220929&location=Worldwide%20Virtual%20Event&details=Join%20Fundamental%20Conference%20on%20September%2029th%202022%20to%20meet%20designers%20and%20developers%20who%20come%20together%20to%20share%20ideas%20and%20innovative%20practices%20that%20drive%20the%20future%20of%20front-end%20at%20SAP&sprop=&sprop=name:">
-    <span v-html="svgs.calGoogle" aria-hidden="true"></span>
+    <span class="fd-calendars__icon" v-html="svgs.calGoogle" aria-hidden="true"></span>
     <span class="fd-calendars__text">Google</span>
   </a>
 
   <a target="_blank" rel="noreferrer" href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:2022-09-29%0ADTEND:2022-09-29%0ASUMMARY:Fundamental%20Conference%202022%0ALOCATION:Worldwide%20Virtual%20Event%0ADESCRIPTION:Join%20Fundamental%20Conference%20on%20September%2029th%202022%20to%20meet%20designers%20and%20developers%20who%20come%20together%20to%20share%20ideas%20and%20innovative%20practices%20that%20drive%20the%20future%20of%20front-end%20at%20SAP%0AUID:iCal%0AEND:VEVENT%0AEND:VCALENDAR" download="Fundamental-Conf-2022.ics">
-    <span v-html="svgs.calICal" aria-hidden="true"></span>
+    <span class="fd-calendars__icon" v-html="svgs.calICal" aria-hidden="true"></span>
     <span class="fd-calendars__text">iCal</span>
   </a>
 
@@ -92,6 +92,10 @@ export default {
       outline-offset: 1.25rem;
       transition: all 0.3s ease-in-out;
       border: 0.125rem solid transparent;
+
+      .fd-calendars__icon {
+        width: 2rem;
+      }
 
       .fd-calendars__text {
         position: relative;

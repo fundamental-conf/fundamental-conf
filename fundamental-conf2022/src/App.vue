@@ -10,13 +10,13 @@
 
       <ul v-show="!mobile" class="fd-nav__right">
         <li>
-          <router-link to="/team" class="fd-nav__link" aria-label="Our Team"
-            >Our Team</router-link
+          <router-link to="/agenda" class="fd-nav__link" aria-label="Agenda"
+            >Agenda</router-link
           >
         </li>
         <li>
-          <router-link to="/agenda" class="fd-nav__link" aria-label="Agenda"
-            >Agenda</router-link
+          <router-link to="/team" class="fd-nav__link" aria-label="Our Team"
+            >Our Team</router-link
           >
         </li>
         <li>
@@ -95,20 +95,20 @@
       <ul v-show="mobileNav" class="fd-nav__dropdown">
         <li>
           <router-link
-            to="/team"
-            @click="close"
-            class="fd-nav__link"
-            aria-label="Our Team"
-            >Our Team</router-link
-          >
-        </li>
-        <li>
-          <router-link
             to="/agenda"
             @click="close"
             class="fd-nav__link"
             aria-label="Agenda"
             >Agenda</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/team"
+            @click="close"
+            class="fd-nav__link"
+            aria-label="Our Team"
+            >Our Team</router-link
           >
         </li>
         <li>

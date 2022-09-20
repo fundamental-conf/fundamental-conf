@@ -65,7 +65,23 @@
                 <h3 class="fd-agenda-body__title">{{ el.title }}</h3>
               </div>
 
-              <p class="fd-agenda-body__paragraph">{{ el.description }}</p>
+              <p 
+                class="fd-agenda-body__paragraph"
+                v-if="el.description.length < 300"
+              >{{ el.description }}</p>
+              
+              <p 
+                class="fd-agenda-body__paragraph"
+                v-else
+              >{{ el.more ? el.description : `${el.description.slice(0, 300)}... ` }}
+              
+                <button 
+                  class="fd-agenda-body__more" 
+                  :aria-expanded="el.more ? 'true' : 'false'"
+                  @click="el.more = !el.more">
+                  {{ el.more ? 'Read Less' : 'Read More' }}
+                </button>
+              </p>
             </div>
 
             <ul class="fd-agenda-body__element-box">
@@ -100,7 +116,7 @@
                 </div>
               </li>
 
-              <div class="fd-agenda-calendar-box">
+              <li class="fd-agenda-calendar-box">
                 <div
                   class="fd-agenda-calendar-box__line"
                   aria-hidden="true"
@@ -139,7 +155,7 @@
                     >
                   </li>
                 </ul>
-              </div>
+              </li>
             </ul>
           </div>
         </li>
@@ -545,6 +561,36 @@ export default {
     line-height: 1.4375rem;
     letter-spacing: 0.01em;
     font-family: sans-serif;
+    /* position: relative; */
+  }
+
+  &__more {
+    display: flex;
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 500;
+    color: #2865BE;
+    margin: 1rem auto 3rem;
+    align-self: center;
+    font-size: 1.125rem;
+    border-radius: 0.375rem;
+    background: #E3EEFF;
+    padding: 0.35rem 0.7rem;
+    transition: all 0.2s linear;
+    border: 0.125rem solid #3E86EF;
+
+    &:hover {
+      background: #E3EEFF;
+      border-color:#2865BE;
+      box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
+    }
+
+    &:focus {
+      outline: 0.125rem solid #7352AD;
+      outline-offset: 0.0625rem;
+      background: #E3EEFF;
+      border-color:#2865BE;
+    }
   }
 
   &__element-box {
@@ -632,6 +678,10 @@ export default {
 .fd-agenda-calendar-box {
   padding-top: 1rem;
   gap: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
   &____line {
     visibility: hidden;
@@ -650,7 +700,6 @@ export default {
   &__buttons {
     gap: 1rem;
     display: flex;
-    margin-top: 1rem;
     flex-wrap: wrap;
   }
 
@@ -691,12 +740,16 @@ export default {
 
 @media (min-width: 1000px) {
   .fd-agenda {
+    padding: 5rem 0;
+    
     &__header {
       padding-bottom: 4%;
     }
+    
     &__container {
-      padding: 6rem 3rem;
+      padding: 6rem 0;
     }
+    
     &__button {
       .button_text {
         font-size: 1rem;
@@ -799,9 +852,9 @@ export default {
 
     &__topic-box {
       padding-right: 5%;
-      width: 60%;
-      min-width: 60%;
-      max-width: 60%;
+      width: 55%;
+      min-width: 55%;
+      max-width: 55%;
       position: relative;
       background-image: url("../assets/images/dot.svg");
       background-position: right;
@@ -810,16 +863,15 @@ export default {
     }
 
     &__element-box {
-      max-width: 40%;
+      max-width: 45%;
       padding-left: 5%;
-      justify-content: space-between;
     }
 
     &__time-container {
-      width: 65%;
+      width: 60%;
       height: auto;
-      min-width: 65%;
-      max-width: 65%;
+      min-width: 60%;
+      max-width: 60%;
       height: 5.125rem;
       padding-top: 2rem;
       text-align: right;
@@ -871,6 +923,12 @@ export default {
       line-height: 1.65;
       letter-spacing: 0.01em;
       color: #052e69;
+    }
+
+    &__more {
+      line-height: 1;
+      bottom: 0.3rem;
+      font-size: 1rem;
     }
 
     &__name {

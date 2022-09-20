@@ -1,6 +1,6 @@
 <template>
   <section class="fd-agenda" id="agenda">
-    <fieldset class = "fd-agenda__toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'" > 
+    <fieldset class = "fd-agenda__toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'"> 
         <legend>Time zone</legend>
         <!---'UTC -4 but for test purpose keep it +4'-->
         <div class="fd-agenda__toggle-element"  >
@@ -377,6 +377,7 @@ export default {
       left: 0.5rem;   
       position: absolute;
       font-size: 0.875rem;
+      line-height: 1rem;
       font-weight: normal;
       text-transform: uppercase;
       display: none;
@@ -393,12 +394,12 @@ export default {
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 500;
-        font-size: 1.125rem;
-        line-height: 1.3125rem;
+        font-size: 0.875rem;
+        line-height: 1rem;
         align-items: center;
         border-radius: 2.5rem;
         flex-direction: column;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
         text-transform: uppercase;
         transition: border 0.5s ease;
         color: #2865be;
@@ -756,66 +757,8 @@ export default {
       }
     }
     &__toggle {
-      margin: 0;
-      padding: 0;
-      border: none;
-      display: flex;
       position: absolute;
       right: 12vw;
-      width: fit-content;
-      background-color: #e2eeff;
-      border: 0.125rem solid #2865be;
-      border-radius: 2.5rem
-
-      legend {
-        top: -1.75rem;
-        left: 0.5rem;
-        position: absolute;
-        font-size: 0.875rem;
-        font-weight: normal;
-        text-transform: uppercase;
-        display: none;
-      }
-
-      &-element {
-        input {
-          display: none;
-        }
-
-        label {
-          display: flex;
-          cursor: pointer;
-          font-size: 0.875rem;
-          align-items: center;
-          border-radius: 2.5rem;
-          flex-direction: column;
-          padding: 0.5rem 1.5rem;
-          text-transform: uppercase;
-          transition: border 0.5s ease;
-          color: #2865be;
-        }
-
-        input:checked{
-        & + label {
-          background: linear-gradient(73.81deg, #7843d5 0.22%, #1dc4ff 99.78%);
-          border-radius: 2.5rem;
-          color: white;
-          box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
-
-          time {
-            color: white;
-          }
-        }
-      } 
-        label {
-          time {
-            font-size: 0.75rem;
-            font-weight: normal;
-            text-transform: capitalize;
-            color: #2865be;
-          }
-        }
-      }
     }
   }
 

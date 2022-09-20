@@ -485,7 +485,7 @@ nav#navbar.fd-nav.hidden-navbar {
   }
 
   .fd_menu_icon {
-    display: block;
+    display: flex;
   }
 
   .fd-conf-logo-mobile {

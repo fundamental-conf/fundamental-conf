@@ -13,9 +13,9 @@
               role="button"
               tabindex="0"
               class="fd-keyspeaker__picture"
-              @click="toggleModal(speakers[0])"
-              v-on:keypress.enter="toggleModal(speakers[0])"
-              :id="`${speakers[0].firstName}-${speakers[0].lastName}`"
+              @click="toggleModal(speakers[0], speakers[0].id)"
+              v-on:keypress.enter="toggleModal(speakers[0], speakers[0].id)"
+              :id="`${speakers[0].firstName}-${speakers[0].lastName}-${speakers[0].id}`"
             >
               <img
                 :src="require(`@/assets/images/speakers/${speakers[0].photo}`)"
@@ -91,9 +91,9 @@
               role="button"
               tabindex="0"
               class="fd-speakers__picture"
-              @click="toggleModal(member)"
-              v-on:keypress.enter="toggleModal(member)"
-              :id="`${member.firstName}-${member.lastName}`"
+              @click="toggleModal(member, member.id)"
+              v-on:keypress.enter="toggleModal(member, member.id)"
+              :id="`${member.firstName}-${member.lastName}-${member.id}`"
             >
               <img
                 :src="require(`@/assets/images/speakers/${member.photo}`)"
@@ -147,10 +147,10 @@ export default {
 
   methods: {
     //opens the popup
-    toggleModal(member) {
+    toggleModal(member, id) {
       this.current = member;
       this.modalActive = !this.modalActive;
-      this.lastFocussedElementID = `${member.firstName}-${member.lastName}`;
+      this.lastFocussedElementID = `${member.firstName}-${member.lastName}-${id}`;
 
       //hides the scrolling in the background
       if (this.current) {

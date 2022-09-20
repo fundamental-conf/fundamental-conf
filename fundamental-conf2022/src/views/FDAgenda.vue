@@ -78,11 +78,11 @@
               >
                 <figure
                   class="fd-agenda-body__picture"
-                  @click="toggleModal(member)"
-                  v-on:keypress.enter="toggleModal(member)"
+                  @click="toggleModal(member, el.id)"
+                  v-on:keypress.enter="toggleModal(member, el.id)"
                   role="button"
                   tabindex="0"
-                  :id="`${member.firstName}-${member.lastName}`"
+                  :id="`${member.firstName}-${member.lastName}-${el.id}`"
                 >
                   <img
                     :src="require(`@/assets/images/speakers/${member.photo}`)"
@@ -208,11 +208,11 @@ export default {
       this.filteredValue = "All"
     },
     //popup
-    toggleModal(member) {
+    toggleModal(member, id) {
       this.current = member;
       console.log(this.current);
       this.modalActive = !this.modalActive;
-      this.lastFocussedElementID = `${member.firstName}-${member.lastName}`;
+      this.lastFocussedElementID = `${member.firstName}-${member.lastName}-${id}`;
 
       //hides the scrolling in the background
       if (this.current) {
@@ -495,9 +495,9 @@ export default {
     position: relative;
     margin-bottom: 1rem;
     padding-top: 2rem;
-    background-image: linear-gradient(#2865be 25%, rgba(255, 255, 255, 0) 0%);
+    background-image: url("../assets/images/dot.svg");
     background-position: center;
-    background-size: 0.125rem 1.35rem;
+    background-size: 0.2rem 1.15rem;
     background-repeat: repeat-y;
 
     div {
@@ -682,7 +682,7 @@ export default {
 
       &:focus {
         border-color: #3e86ef;
-        outline-offset: 0.125rem;
+        outline-offset: 0.0625rem;
         outline: 0.125rem solid #7352ad;
       }
     }
@@ -803,9 +803,9 @@ export default {
       min-width: 60%;
       max-width: 60%;
       position: relative;
-      background-image: linear-gradient(#2865be 25%, rgba(255, 255, 255, 0) 0%);
+      background-image: url("../assets/images/dot.svg");
       background-position: right;
-      background-size: 0.125rem 1.5rem;
+      background-size: 0.25rem 1.75rem;
       background-repeat: repeat-y;
     }
 
@@ -835,6 +835,7 @@ export default {
     }
 
     &__time {
+      width: 13rem;
       font-size: 5.25rem;
       transform: translate(50%, 0);
     }

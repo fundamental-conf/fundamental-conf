@@ -1,15 +1,19 @@
 <template>
-  <div class="fd-agenda__wrap">
-    <div class="fd-agenda__buttons" v-for="filter in filters" :key="filter">
-      <button class="fd-agenda__button" :class="{active: filteredValue==filter.name}" @click="() => filterPosts(filter.name)">
-        <span
-          class="fd-agenda__icon"
-          v-html="filter.icon"
-          aria-hidden="true"
-        ></span>
-        {{ filter.name }}
-      </button>
-    </div>
+  <div class="fd-agenda__buttons">
+    <button 
+      v-for="filter in filters" 
+      :key="filter" 
+      class="fd-agenda__button" 
+      :class="{active: filteredValue==filter.name}" 
+      @click="() => filterPosts(filter.name)"
+    >
+      <span
+        class="fd-agenda__icon"
+        v-html="filter.icon"
+        aria-hidden="true"
+      ></span>
+      {{ filter.name }}
+    </button>
   </div>
 </template>
 
@@ -34,38 +38,28 @@ export default {
 
 <style lang="scss" scoped>
 .fd-agenda {
-  &__wrap {
-    justify-content: center;
-    gap: 5%;
-    display: flex;
-    flex-direction: row;
-    flex: wrap;
-    flex-wrap: wrap;
-  }
-
   &__buttons {
+    gap: 1rem;
     display: flex;
-    margin: 1%;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
     align-items: flex-start;
     justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    flex-direction: column;
   }
 
   &__button {
     gap: 0.5rem;
     display: flex;
-    height: 3.375rem;
+    height: 2.25rem;
     font-weight: 500;
     color: #2865BE;
-    padding: 0 1.25rem;
-    font-size: 1.125rem;
+    padding: 0 0.75rem;
+    line-height: 1rem;
+    font-size: 0.875rem;
     border-radius: 3rem;
     align-items: center;
     background: #E3EEFF;
-    line-height: 1.375rem;
-    transition: all 0.25s linear;
+    transition: all 0.15s ease;
     border: 0.125rem solid #3E86EF;
 
     &:hover {
@@ -85,7 +79,7 @@ export default {
 
     &:focus {
       border-color: #2865BE;
-      outline-offset: 0.125rem;
+      outline-offset: 0.0625rem;
       outline: 0.125rem solid #7352AD;
     }
 
@@ -104,15 +98,28 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.625rem;
-    height: 2.625rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1000px) {
   .fd-agenda {
-    &__wrap {
-      gap: 0;
+    &__buttons {
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    &__button {
+      height: 3.375rem;
+      padding: 0 1.25rem;
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+    }
+
+    &__icon {
+      width: 2.625rem;
+      height: 2.625rem;
     }
   }
 }

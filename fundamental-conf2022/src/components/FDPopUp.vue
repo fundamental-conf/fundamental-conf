@@ -22,7 +22,10 @@
           Detailed information about speaker {{ member.firstName }}
           {{ member.lastName }}, {{ member.role }}
         </h2>
-        <p id="dialog-description" class="sr-only">{{ member.bio }}</p>
+        <div id="dialog-description" class="sr-only">
+          <p>{{ member.bio }}</p>
+          <p v-if="member.fun">Fun fact about the speaker: {{ member.fun }}</p>
+        </div>
 
         <button
           @click="close"
@@ -138,6 +141,10 @@
 
           <p class="fd-popup__paragraph">
             {{ member.bio }}
+          </p>
+          <p v-if="member.fun" class="fd-popup__fun">
+            <span>FUN FACT</span>
+            "{{ member.fun }}"
           </p>
         </div>
       </div>
@@ -427,7 +434,8 @@ export default {
     margin: 0.5rem 0;
   }
 
-  &__paragraph {
+  &__paragraph,
+  &__fun {
     font-family: sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -435,6 +443,21 @@ export default {
     letter-spacing: 0.01em;
     text-align: left;
     color: #2865be;
+    letter-spacing: 0.01em;
+  }
+
+  &__fun {
+    font-style: italic;
+
+    span {
+      display: flex;
+      color: #7352AD;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      margin: 1.25rem 0 0.5rem 0;
+    }
   }
 
   .modal-animation-enter-active,
@@ -540,9 +563,20 @@ export default {
       line-height: 2rem;
     }
 
-    &__paragraph {
+    &__paragraph,
+    &__fun {
       font-size: 1.25rem;
       line-height: 2rem;
+    }
+
+    &__fun {
+      font-style: italic;
+
+      span {
+        font-size: 1.125rem;
+        line-height: 1.625rem;
+        margin: 1.625rem 0 0.5rem 0;
+      }
     }
   }
 }

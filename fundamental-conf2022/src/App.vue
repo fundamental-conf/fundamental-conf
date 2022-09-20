@@ -348,13 +348,14 @@ nav#navbar.fd-nav.hidden-navbar {
     transform: scale(0.8);
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 1000px) {
     padding: 0 3rem;
   }
 
   &__right {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+    min-width: 23rem;
   }
 
   &__left {
@@ -412,7 +413,7 @@ nav#navbar.fd-nav.hidden-navbar {
     color: $text-color;
     outline: none;
     position: relative;
-    width: fit-content;
+    min-width: 10rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 0.25rem;

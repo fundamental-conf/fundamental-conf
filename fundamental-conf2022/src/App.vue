@@ -8,7 +8,7 @@
         </router-link>
       </div>
 
-      <ul v-show="!mobile" class="fd-nav__right">
+      <ul v-if="!mobile" class="fd-nav__right">
         <li>
           <router-link to="/agenda" class="fd-nav__link" aria-label="Agenda"
             >Agenda</router-link
@@ -34,7 +34,7 @@
       <div
         class="fd_menu_icon"
         @click="toggleMobileNav"
-        v-show="mobile"
+        v-if="mobile"
         :class="{ 'icon-active': mobileNav }"
       >
         <!-- menu -->
@@ -92,7 +92,7 @@
     </nav>
 
     <transition name="fd-nav__mobile">
-      <ul v-show="mobileNav" class="fd-nav__dropdown">
+      <ul v-if="mobileNav" class="fd-nav__dropdown">
         <li>
           <router-link
             to="/agenda"
@@ -240,7 +240,8 @@ export default {
     },
     close(e) {
       if (!this.$el.contains(e.target)) {
-        this.mobileNav = false;
+        this.mobileNav = !this.mobileNav;
+        document.documentElement.style.overflow = "auto"
       }
     },
 

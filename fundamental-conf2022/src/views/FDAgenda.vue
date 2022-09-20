@@ -271,15 +271,22 @@ export default {
     },
 
     convertTime: function (value, eventTime) {
-      if (eventTime === "local") {
-        let date = DateTime.fromISO(value)
+     
+      let newStartTime = "2022-09-29T" + value + ":00.000-04:00";
+      //will return the time to UTC time (central time) because mtl time is -4h to UTC one
+      let date = DateTime.fromISO(newStartTime)
           .toLocal()
-          .toUTC()
+          .toISO({ suppressMilliseconds: true });
+  
+      if (eventTime === "local") {
+        //will add or substrac the difference between UTC and localtime
+      let newdate = DateTime.fromISO(date)
+          .toLocal()
           .toISO({ suppressMilliseconds: true });
         console.log(date);
         let time = date.substring(date.indexOf("T") + 1);
 
-        console.log(date.toString());
+        console.log(time);
 
         return (
           time.split(":")[0].replace(/^0+/, "0") + ":" + time.split(":")[1]

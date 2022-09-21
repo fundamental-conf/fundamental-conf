@@ -214,7 +214,7 @@ export default {
   &__header {
     gap: 2rem;
     display: flex;
-    padding-bottom: 8%;
+    padding-bottom: 3rem;
     justify-content: center;
     align-items: flex-end;
   }
@@ -261,30 +261,14 @@ export default {
 
   &__picture {
     padding: 0;
-    z-index: 4;
     display: flex;
-    position: relative;
+    cursor: pointer;
     flex-direction: row;
     border-radius: 100%;
     justify-content: center;
     align-items: flex-end;
     transition: all 0.2s linear;
 
-    &::after {
-      left: 30%;
-      top: -1rem;
-      content: "";
-      max-width: 4.5rem;
-      min-width: 4.5rem;
-      max-height: 4.5rem;
-      min-height: 4.5rem;
-      position: absolute;
-      background: linear-gradient(45deg, #2865be 0%, #82deff 100%);
-      mix-blend-mode: color-burn;
-      filter: blur(2.5rem);
-      z-index: 3;
-      transform: rotate(180deg);
-    }
 
     img {
       z-index: 5;
@@ -304,6 +288,17 @@ export default {
     &:focus {
       outline: none;
       box-shadow: 0 0 0 0.25rem #7352ad;
+
+      &:hover {
+        border-radius: 100%;
+        box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 24px rgba(123, 92, 178, 0.75);
+      }
+    }
+
+    &:hover {
+      border-radius: 100%;
+      
+      box-shadow: -6px 8px 24px rgba(123, 92, 178, 0.75);
     }
   }
 
@@ -387,30 +382,11 @@ export default {
   }
 
   &__picture {
-    z-index: 4;
     cursor: pointer;
-    position: relative;
     border-radius: 100%;
     transition: all 0.2s linear;
 
-    &::after {
-      left: 30%;
-      top: -1rem;
-      z-index: 3;
-      content: "";
-      max-width: 4.5rem;
-      min-width: 4.5rem;
-      max-height: 4.5rem;
-      min-height: 4.5rem;
-      position: absolute;
-      filter: blur(2.5rem);
-      background: linear-gradient(45deg, #2865be 0%, #82deff 100%);
-      mix-blend-mode: color-burn;
-      transform: rotate(180deg);
-    }
-
     img {
-      z-index: 5;
       display: flex;
       max-width: 10rem;
       min-width: 10rem;
@@ -418,12 +394,23 @@ export default {
       min-height: 10rem;
       object-fit: cover;
       position: relative;
-      border-radius: 10rem;
+      border-radius: 100%;
     }
 
     &:focus {
       outline: none;
       box-shadow: 0 0 0 0.25rem #7352ad;
+
+      &:hover {
+        border-radius: 100%;
+        box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 24px rgba(123, 92, 178, 0.75);
+      }
+    }
+
+    &:hover {
+      border-radius: 100%;
+      
+      box-shadow: -6px 8px 24px rgba(123, 92, 178, 0.75);
     }
   }
 
@@ -604,39 +591,36 @@ export default {
 
 @media (min-width: 820px) {
   .fd-speakers {
-    padding: 10rem 10vw;
+    padding: 5rem 10vw;
 
     &__title {
       font-size: 2rem;
     }
 
     &__picture {
-      z-index: 4;
-      &::after {
-        content: "";
-        position: absolute;
-        left: 45%;
-        top: -1.25rem;
-
-        z-index: 2;
-        max-width: 8rem;
-        min-width: 8rem;
-        max-height: 8rem;
-        min-height: 8rem;
-        background: linear-gradient(45deg, #2865be 0%, #82deff 100%);
-        mix-blend-mode: color-burn;
-        filter: blur(3.125rem);
-      }
-
       img {
-        z-index: 3;
         width: 20vw;
         height: 20vw;
-        position: relative;
         min-width: 14rem;
         min-height: 14rem;
         max-width: 18.75rem;
         max-height: 18.75rem;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.25rem #7352ad;
+
+        &:hover {
+          border-radius: 100%;
+          box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 32px rgba(123, 92, 178, 0.75);
+        }
+      }
+
+      &:hover {
+        border-radius: 100%;
+        
+        box-shadow: -6px 8px 32px rgba(123, 92, 178, 0.75);
       }
     }
 
@@ -688,32 +672,30 @@ export default {
     flex-direction: row;
 
     &__picture {
-      z-index: 4;
 
       img {
-        z-index: 3;
         width: 20vw;
         height: 20vw;
         max-width: 18.75rem;
         min-width: 14rem;
         max-height: 18.75rem;
         min-height: 14rem;
-        position: relative;
       }
 
-      &::after {
-        left: 45%;
-        top: -20px;
-        z-index: 2;
-        content: "";
-        max-width: 8rem;
-        min-width: 8rem;
-        max-height: 8rem;
-        min-height: 8rem;
-        position: absolute;
-        background: linear-gradient(45deg, #2865be 0%, #82deff 100%);
-        mix-blend-mode: color-burn;
-        filter: blur(3.125rem);
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.25rem #7352ad;
+
+        &:hover {
+          border-radius: 100%;
+          box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 32px rgba(123, 92, 178, 0.75);
+        }
+      }
+
+      &:hover {
+        border-radius: 100%;
+        
+        box-shadow: -6px 8px 32px rgba(123, 92, 178, 0.75);
       }
     }
 

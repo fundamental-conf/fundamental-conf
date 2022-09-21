@@ -104,7 +104,7 @@ export default {
 
   @media only screen and (min-width: 600px) {
     .fd-socials-container {
-      padding: 10rem 10vw;
+      padding: 5rem 10vw;
       margin: 0 auto;
       max-width: 1200px;
       

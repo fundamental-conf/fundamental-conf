@@ -107,7 +107,6 @@ export default {
   .fd-agenda {
     &__buttons {
       gap: 2rem;
-      margin: 2rem 0;
     }
 
     &__button {

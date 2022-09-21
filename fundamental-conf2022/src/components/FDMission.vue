@@ -196,7 +196,7 @@ export default {
   }
 }
 
-@media (min-width: 892px) {
+@media (min-width: 821px) {
   .fd-mission {
     max-width: 1200px;
     padding: 5rem 10vw;
@@ -255,4 +255,5 @@ export default {
     }
   }
 }
+
 </style>

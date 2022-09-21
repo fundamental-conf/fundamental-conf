@@ -355,14 +355,15 @@ export default {
 
 <style lang="scss" scoped>
 .fd-agenda {
+  position: relative;
   flex-direction: row;
   max-width: 1200px;
-  padding: 5rem 2.25rem;
+  padding: 5rem 1.5rem;
   margin: 0 auto;
   align-items: center;
 
   &__toggle {
-    margin: auto;
+    margin: 2.125rem auto 0;
     padding: 0;
     border: none;
     display: flex;
@@ -441,7 +442,7 @@ export default {
     justify-content: center;
     align-items: flex-end;
     gap: 2rem;
-    padding-bottom: 8%;
+    padding-bottom: 2.25rem;
   }
 
   &__title {
@@ -611,6 +612,7 @@ export default {
     width: 4rem;
     height: 4rem;
     display: flex;
+    cursor: pointer;
     align-items: center;
     border-radius: 50%;
     transition: all 0.25s linear;
@@ -629,6 +631,17 @@ export default {
     &:focus {
       outline: none;
       box-shadow: 0 0 0 0.25rem #7352ad;
+
+      &:hover {
+        border-radius: 100%;
+        box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 24px rgba(123, 92, 178, 0.75);
+      }
+    }
+
+    &:hover {
+      border-radius: 100%;
+      
+      box-shadow: -6px 8px 24px rgba(123, 92, 178, 0.75);
     }
   }
 
@@ -649,8 +662,8 @@ export default {
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 1.3125rem;
+    font-size: 1rem;
+    line-height: 1.4375rem;
     color: #2865be;
   }
 
@@ -669,8 +682,8 @@ export default {
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 1.3125rem;
+    font-size: 1rem;
+    line-height: 1.4375rem;
     text-transform: uppercase;
     color: #2865be;
   }
@@ -741,14 +754,19 @@ export default {
 
 @media (min-width: 1000px) {
   .fd-agenda {
-    padding: 5rem 0;
+    position: relative;
+    padding: 5rem 2.25rem;
+
+    &__title {
+      font-size: 2rem;
+    }
     
     &__header {
-      padding-bottom: 4%;
+      padding-bottom: 2.25rem;
     }
     
     &__container {
-      padding: 6rem 0;
+      padding: 11.75rem 0;
     }
     
     &__button {
@@ -756,9 +774,10 @@ export default {
         font-size: 1rem;
       }
     }
+    
     &__toggle {
       position: absolute;
-      right: 12vw;
+      right: 0;
     }
   }
 
@@ -807,6 +826,7 @@ export default {
 
     &__element-box {
       max-width: 45%;
+      width: 45%;
       padding-left: 5%;
     }
 
@@ -850,13 +870,13 @@ export default {
     }
 
     &__picture {
-      width: 5rem;
-      height: 5rem;
+      width: 6.25rem;
+      height: 6.25rem;
 
       img {
-        width: 5rem;
-        height: 5rem;
-        border-radius: 5rem;
+        width: 6.25rem;
+        height: 6.25rem;
+        border-radius: 6.25rem;
       }
     }
 
@@ -894,6 +914,8 @@ export default {
     &__line {
       width: 50%;
       height: 0.0625rem;
+      min-height: 0.0625rem;
+      max-height: 0.0625rem;
       background: linear-gradient(63.69deg, #2865be 16.54%, #82deff 83.46%);
       background-size: 400% 400%;
       -webkit-animation: gradient-17d1a7e2 3s ease infinite;
@@ -920,9 +942,11 @@ export default {
     }
 
     &__line {
-      width: 88%;
+      width: 75%;
       margin-bottom: 2%;
       height: 0.0625rem;
+      min-height: 0.0625rem;
+      max-height: 0.0625rem;
       background: linear-gradient(63.69deg, #2865be 16.54%, #82deff 83.46%);
       background-size: 400% 400%;
       -webkit-animation: gradient-17d1a7e2 3s ease infinite;

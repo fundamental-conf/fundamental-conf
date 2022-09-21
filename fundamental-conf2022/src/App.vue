@@ -127,9 +127,9 @@
   </header>
 
   <main id="main" class="fd-main">
-    <router-view />
+    <router-view/>
   </main>
-  <button @click="toTop" class="fd-main__backToTop">
+  <button @click="toTop" class="fd-main__backToTop" v-if="scrollValue > 500">
     <svg
       height="25"
       viewBox="0 0 47 62"
@@ -140,13 +140,13 @@
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M23.6667 61.6666C21.5496 61.6666 19.8334 59.9504 19.8334 57.8333L19.8334 4.16663C19.8334 2.04953 21.5496 0.333293 23.6667 0.333293C25.7838 0.333293 27.5 2.04953 27.5 4.16663L27.5 57.8333C27.5 59.9504 25.7838 61.6666 23.6667 61.6666Z"
-        fill="#2865BE"
+        fill="currentColor"
       />
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M1.78944 26.0439C0.292433 24.5469 0.292433 22.1197 1.78944 20.6227L20.9561 1.45605C22.4531 -0.0409591 24.8803 -0.0409592 26.3773 1.45605L45.5439 20.6227C47.0409 22.1197 47.0409 24.5469 45.5439 26.0439C44.0469 27.5409 41.6198 27.5409 40.1228 26.0439L23.6667 9.58778L7.21059 26.0439C5.71359 27.5409 3.28645 27.5409 1.78944 26.0439Z"
-        fill="#2865BE"
+        fill="currentColor"
       />
     </svg>
   </button>
@@ -197,6 +197,7 @@ export default {
   },
 
   created() {
+    window.addEventListener("scroll", this.onScroll);
     window.addEventListener("resize", this.checkScreen);
     this.checkScreen();
   },
@@ -209,6 +210,7 @@ export default {
       if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 60) {
         return;
       }
+      this.scrollValue = window.scrollY;
       this.showNavbar = window.pageYOffset < this.lastScrollPosition;
       this.lastScrollPosition = window.pageYOffset;
     },
@@ -224,6 +226,7 @@ export default {
         document.documentElement.style.overflow = "hidden";
       } else document.documentElement.style.overflow = "auto";
     },
+    
     toTop: function () {
       window.scrollTo({
         top: 0,
@@ -260,6 +263,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .fd-main {
   background-size: cover;
   background-position: center;
@@ -278,15 +282,12 @@ export default {
     background: transparent;
     border-radius: 2.375rem;
     transition: all 0.2s linear;
-    border: 0.0625rem solid #3e86ef;
-    box-shadow: 1.54842px 3.09685px 9.29055px rgb(123 92 178 / 35%);
+    border: 1px solid transparent;
+    
 
     &:active,
     &:hover {
-      color: #2865be;
-      border-color: #2865be;
-      box-shadow: 1.54842px 3.09685px 9.29055px rgb(123 92 178 / 35%),
-        0 0 0 0.0625rem #2865be;
+      color: #7352ad;
     }
 
     &:focus {
@@ -452,6 +453,12 @@ nav#navbar.fd-nav.hidden-navbar {
     &:focus:hover {
       &::after {
         transform: scale(0);
+      }
+    }
+
+    &.router-link-active {
+      &::after {
+        transform: scale(1);
       }
     }
   }

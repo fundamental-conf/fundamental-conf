@@ -269,7 +269,7 @@ export default {
 
 
     img {
-      z-index: 5;
+      z-index: 0;
       max-width: 6.5rem;
       min-width: 6.5rem;
       max-height: 6.5rem;

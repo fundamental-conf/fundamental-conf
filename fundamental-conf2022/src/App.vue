@@ -95,6 +95,15 @@
       <ul v-if="mobileNav" class="fd-nav__dropdown">
         <li>
           <router-link
+            to="/"
+            @click="close"
+            class="fd-nav__link"
+            aria-label="Agenda"
+            >Home</router-link
+          >
+        </li>
+        <li>
+          <router-link
             to="/agenda"
             @click="close"
             class="fd-nav__link"

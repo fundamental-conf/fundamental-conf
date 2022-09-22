@@ -1,5 +1,7 @@
 <template>
   <section class="fd-agenda" id="agenda">
+
+
     <fieldset class = "fd-agenda__toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'"> 
         <legend>Time zone</legend>
         <!---'UTC -4 but for test purpose keep it +4'-->
@@ -13,6 +15,12 @@
             <label for="timezone2">Your time<time datetime="2022-09-29T07:00">(UTC {{getLocalTimeZone()}})</time></label>
         </div>
       </fieldset>
+
+      <router-link to="/" aria-label="Home" class="fd-agenda__homeButton">
+        <span class="fd-agenda__backSpan" v-html="svgs.back" ></span>
+    Home
+      </router-link>
+
 
     <!--Agenda Header and Line-->
     <div class="fd-agenda__container">
@@ -362,6 +370,13 @@ export default {
   padding: 5rem 1.5rem;
   margin: 0 auto;
   align-items: center;
+  
+  &__homeButton{
+  
+display:none;
+  }
+
+
 
   &__toggle {
     margin: 2.125rem auto 0;
@@ -769,6 +784,122 @@ export default {
   .fd-agenda {
     position: relative;
     padding: 5rem 2.25rem;
+
+    &__homeButton{
+    width: auto;
+height: 21px;
+text-decoration: none;
+margin: 2.5rem 0 0;
+
+
+/* Desktop / Link */
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.05em;
+
+/* Blue/500 Regular */
+color: #2865BE;
+
+&::after {
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+      content: "";
+      width: 100%;
+      height: 0.1em;
+      position: absolute;
+      transform: scale(0);
+      transform-origin: center;
+      background-color: #c5a4fa;
+      transition: opacity 300ms, transform 300ms;
+    }
+
+    &:hover {
+      color: #c5a4fa;
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+    &:focus {
+      color: #fff;
+      border-color: #82deff;
+    }
+
+    &:focus:hover {
+      &::after {
+        transform: scale(0);
+      }
+    }
+
+    &.router-link-active {
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+  }
+  
+
+  &__backSpan {
+   
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0.5rem 0 0; */
+    margin-right: 0.5rem;
+     svg {
+      color: #2865be;
+      height:1.5rem;
+     }
+
+     &::after {
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+      content: "";
+      width: 100%;
+      height: 0.1em;
+      position: absolute;
+      transform: scale(0);
+      transform-origin: center;
+      background-color: #c5a4fa;
+      transition: opacity 300ms, transform 300ms;
+    }
+
+    &:hover {
+      color: #c5a4fa;
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+    &:focus {
+      color: #fff;
+      border-color: #82deff;
+    }
+
+    &:focus:hover {
+      &::after {
+        transform: scale(0);
+      }
+    }
+
+    &.router-link-active {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
 
     &__title {
       font-size: 2rem;

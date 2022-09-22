@@ -3,7 +3,6 @@
   <FDAbout /> 
   <FDSpeakers />
 
-  <FDCallForContent />
   <FDMission/>
 
   <SocialsContainer />  
@@ -13,7 +12,6 @@
 
 import MainComponent from "../components/MainComponent.vue";
 import FDAbout from "../components/FDAbout.vue";
-import FDCallForContent from "../components/FDCallForContent.vue";
 import FDFooter from "../components/FDFooter.vue";
 import NavBar from "../components/NavBar.vue";
 import SocialsContainer from "../components/SocialsContainer.vue";
@@ -31,7 +29,6 @@ export default {
     NavBar,
     FDAbout,
     FDSpeakers,
-    // FDCallForContent,
     FDFooter,
     SocialsContainer,
     FDMission,

@@ -1,6 +1,10 @@
 <template>
   <section class="fd_background_silver">
     <div class="fd_wrapper">
+      <router-link to="/" aria-label="Home" class="fd_homeButton">
+        <span class="fd_backSpan" v-html="svgs.back"></span>
+        Home
+      </router-link>
       <div class="fd_header">
         <h2 class="fd_tittle">meet the organizing team</h2>
         <div class="fd_line" aria-hidden="true"></div>
@@ -161,6 +165,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fd_homeButton {
+  display: none;
+}
+
 .fd_wrapper {
   background-size: cover;
   background-position: center;
@@ -393,7 +401,7 @@ export default {
 @media (min-width: 700px) {
   .fd_wrapper{
     .fd_header {
-      margin-top: 10rem;
+      margin-top: 7rem;
       margin-bottom: 2rem;
       
       .fd_tittle {
@@ -521,6 +529,61 @@ export default {
     }
   }
   
+}
+
+@media (min-width: 750px) {
+  .fd {
+    &_homeButton {
+      width: auto;
+      height: 1.3125rem;
+      text-decoration: none;
+      margin: 2.5rem 0 0;
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 1.3125rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: #3E86EF;
+      position: absolute;
+      top: 5rem;
+      border: 0.125rem solid transparent;
+      border-radius: 0.25rem;
+      width: fit-content;
+      padding: 0.15rem;
+      transition: all 0.25s ease-in;
+
+      &:hover {
+        color: #2865BE;
+      }
+
+      &:active {
+        color: #052E69;
+      }
+
+      &:focus {
+        outline: none;
+        color: #3E86EF;
+        border-color: #7352AD;
+      }
+    }
+
+    &_backSpan {
+      display: flex;
+      width: 1.5rem;
+      height: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0.5rem;
+      
+      svg {
+        height: 1.5rem;
+      }
+    }
+  } 
 }
 
 @media (min-width: 1200px) {

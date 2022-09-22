@@ -1,26 +1,44 @@
 <template>
   <section class="fd-agenda" id="agenda">
+    <fieldset
+      class="fd-agenda__toggle"
+      v-if="'UTC ' + getLocalTimeZone() !== 'UTC -4'"
+    >
+      <legend>Time zone</legend>
+      <!---'UTC -4 but for test purpose keep it +4'-->
+      <div class="fd-agenda__toggle-element">
+        <input
+          type="radio"
+          id="timezone1"
+          name="event-time"
+          value="event"
+          @change="onTimeChange($event)"
+          checked
+        />
+        <label for="timezone1"
+          >Event time<time datetime="2022-09-29T00:00">(UTC -4)</time></label
+        >
+      </div>
+      <div class="fd-agenda__toggle-element">
+        <input
+          type="radio"
+          id="timezone2"
+          name="event-time"
+          value="local"
+          @change="onTimeChange($event)"
+        />
+        <label for="timezone2"
+          >Your time<time datetime="2022-09-29T07:00"
+            >(UTC {{ getLocalTimeZone() }})</time
+          ></label
+        >
+      </div>
+    </fieldset>
 
-
-    <fieldset class = "fd-agenda__toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC -4'"> 
-        <legend>Time zone</legend>
-        <!---'UTC -4 but for test purpose keep it +4'-->
-        <div class="fd-agenda__toggle-element"  >
-          <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)" checked/>
-            <label for="timezone1">Event time<time datetime="2022-09-29T00:00">(UTC -4)</time></label>
-
-        </div>
-        <div class="fd-agenda__toggle-element">
-          <input type="radio" id="timezone2" name="event-time" value="local" @change="onTimeChange($event)"/>
-            <label for="timezone2">Your time<time datetime="2022-09-29T07:00">(UTC {{getLocalTimeZone()}})</time></label>
-        </div>
-      </fieldset>
-
-      <router-link to="/" aria-label="Home" class="fd-agenda__homeButton">
-        <span class="fd-agenda__backSpan" v-html="svgs.back" ></span>
-    Home
-      </router-link>
-
+    <router-link to="/" aria-label="Home" class="fd-agenda__homeButton">
+      <span class="fd-agenda__backSpan" v-html="svgs.back"></span>
+      Home
+    </router-link>
 
     <!--Agenda Header and Line-->
     <div class="fd-agenda__container">
@@ -31,7 +49,10 @@
       </div>
       <!--Agenda Filtering Buttons-->
 
-      <FilterButtons :filterPosts="filterPosts" :filteredValue="this.filteredValue" />
+      <FilterButtons
+        :filterPosts="filterPosts"
+        :filteredValue="this.filteredValue"
+      />
 
       <!--Agenda Schedule Body-->
       <ul class="fd-agenda-body">
@@ -74,21 +95,26 @@
                 <h3 class="fd-agenda-body__title">{{ el.title }}</h3>
               </div>
 
-              <p 
+              <p
                 class="fd-agenda-body__paragraph"
                 v-if="el.description.length < 300"
-              >{{ el.description }}</p>
-              
-              <p 
-                class="fd-agenda-body__paragraph"
-                v-else
-              >{{ el.more ? el.description : `${el.description.slice(0, 300)}... ` }}
-              
-                <button 
-                  class="fd-agenda-body__more" 
+              >
+                {{ el.description }}
+              </p>
+
+              <p class="fd-agenda-body__paragraph" v-else>
+                {{
+                  el.more
+                    ? el.description
+                    : `${el.description.slice(0, 300)}... `
+                }}
+
+                <button
+                  class="fd-agenda-body__more"
                   :aria-expanded="el.more ? 'true' : 'false'"
-                  @click="el.more = !el.more">
-                  {{ el.more ? 'Read Less' : 'Read More' }}
+                  @click="el.more = !el.more"
+                >
+                  {{ el.more ? "Read Less" : "Read More" }}
                 </button>
               </p>
             </div>
@@ -97,9 +123,7 @@
               <li
                 class="fd-agenda-body__speaker"
                 v-for="member in el.speakers"
-                :class="{ selected: member === currentMember }"
                 :key="member.firstName"
-                v-bind:value="{ member: currentMember }"
               >
                 <figure
                   class="fd-agenda-body__picture"
@@ -230,12 +254,11 @@ export default {
     //reset agenda to all buttons
     resetPosts() {
       this.agenda = agenda;
-      this.filteredValue = "All"
+      this.filteredValue = "All";
     },
     //popup
     toggleModal(member, id) {
       this.current = member;
-      console.log(this.current);
       this.modalActive = !this.modalActive;
       this.lastFocussedElementID = `${member.firstName}-${member.lastName}-${id}`;
 
@@ -296,28 +319,24 @@ export default {
     },
 
     convertTime: function (value, eventTime) {
-     
       let newStartTime = "2022-09-29T" + value + ":00.000-04:00";
       //will return the time to UTC time (central time) because mtl time is -4h to UTC one
       let date = DateTime.fromISO(newStartTime)
-          .toLocal()
-          .toISO({ suppressMilliseconds: true });
-  
+        .toLocal()
+        .toISO({ suppressMilliseconds: true });
+
       if (eventTime === "local") {
         //will add or substrac the difference between UTC and localtime
-      let newdate = DateTime.fromISO(date)
+        let newdate = DateTime.fromISO(date)
           .toLocal()
           .toISO({ suppressMilliseconds: true });
-        console.log(date);
         let time = date.substring(date.indexOf("T") + 1);
 
-        console.log(time);
 
         return (
           time.split(":")[0].replace(/^0+/, "0") + ":" + time.split(":")[1]
         );
       } else {
-        console.log(value);
         return value;
       }
     },
@@ -370,13 +389,10 @@ export default {
   padding: 5rem 1.5rem;
   margin: 0 auto;
   align-items: center;
-  
-  &__homeButton{
-  
-display:none;
+
+  &__homeButton {
+    display: none;
   }
-
-
 
   &__toggle {
     margin: 2.125rem auto 0;
@@ -386,12 +402,12 @@ display:none;
     position: relative;
     width: fit-content;
     background-color: #e2eeff;
-    border: 0.125rem solid #3E86EF;
+    border: 0.125rem solid #3e86ef;
     border-radius: 2.5rem;
 
     legend {
       top: -1.75rem;
-      left: 0.5rem;   
+      left: 0.5rem;
       position: absolute;
       font-size: 0.875rem;
       line-height: 1rem;
@@ -399,7 +415,7 @@ display:none;
       text-transform: uppercase;
       display: none;
     }
-    
+
     &-element {
       input {
         display: none;
@@ -408,7 +424,7 @@ display:none;
       label {
         display: flex;
         cursor: pointer;
-        font-family: 'Ubuntu';
+        font-family: "Ubuntu";
         font-style: normal;
         font-weight: 500;
         font-size: 0.875rem;
@@ -422,7 +438,7 @@ display:none;
         color: #2865be;
       }
 
-      input:checked{
+      input:checked {
         & + label {
           background: linear-gradient(73.81deg, #7843d5 0.22%, #1dc4ff 99.78%);
           border-radius: 2.5rem;
@@ -447,7 +463,7 @@ display:none;
   }
 
   &__container {
-    padding: 4rem 0 3rem;
+    padding: 5rem 0 3rem;
     gap: 0.5rem;
     display: flex;
     -webkit-flex-direction: column;
@@ -493,7 +509,7 @@ display:none;
     color: #2865be;
     order: 1;
     white-space: nowrap;
-    order:2;
+    order: 2;
   }
 }
 
@@ -599,27 +615,27 @@ display:none;
     line-height: 1;
     cursor: pointer;
     font-weight: 500;
-    color: #2865BE;
+    color: #2865be;
     margin: 1rem auto 3rem;
     align-self: center;
     font-size: 1.125rem;
     border-radius: 0.375rem;
-    background: #E3EEFF;
+    background: #e3eeff;
     padding: 0.35rem 0.7rem;
     transition: all 0.2s linear;
-    border: 0.125rem solid #3E86EF;
+    border: 0.125rem solid #3e86ef;
 
     &:hover {
-      background: #E3EEFF;
-      border-color:#2865BE;
+      background: #e3eeff;
+      border-color: #2865be;
       box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
     }
 
     &:focus {
-      outline: 0.125rem solid #7352AD;
+      outline: 0.125rem solid #7352ad;
       outline-offset: 0.0625rem;
-      background: #E3EEFF;
-      border-color:#2865BE;
+      background: #e3eeff;
+      border-color: #2865be;
     }
   }
 
@@ -662,13 +678,14 @@ display:none;
 
       &:hover {
         border-radius: 100%;
-        box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 24px rgba(123, 92, 178, 0.75);
+        box-shadow: 0 0 0 0.25rem #7352ad,
+          -6px 8px 24px rgba(123, 92, 178, 0.75);
       }
     }
 
     &:hover {
       border-radius: 100%;
-      
+
       box-shadow: -6px 8px 24px rgba(123, 92, 178, 0.75);
     }
   }
@@ -780,139 +797,79 @@ display:none;
   }
 }
 
+@media (min-width: 750px) {
+  .fd-agenda {
+    &__homeButton {
+      width: auto;
+      height: 1.3125rem;
+      text-decoration: none;
+      margin: 2.5rem 0 0;
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 1.3125rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: #3E86EF;
+      position: relative;
+      border: 0.125rem solid transparent;
+      border-radius: 0.25rem;
+      width: fit-content;
+      padding: 0.15rem;
+      transition: all 0.25s ease-in;
+
+      &:hover {
+        color: #2865BE;
+      }
+
+      &:active {
+        color: #052E69;
+      }
+
+      &:focus {
+        outline: none;
+        color: #3E86EF;
+        border-color: #7352AD;
+      }
+    }
+
+    &__backSpan {
+      display: flex;
+      width: 1.5rem;
+      height: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0.5rem;
+      
+      svg {
+        height: 1.5rem;
+      }
+    }
+  }
+
+    
+}
+
 @media (min-width: 1000px) {
   .fd-agenda {
     position: relative;
     padding: 5rem 2.25rem;
 
-    &__homeButton{
-    width: auto;
-height: 21px;
-text-decoration: none;
-margin: 2.5rem 0 0;
-
-
-/* Desktop / Link */
-font-family: 'Ubuntu';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.05em;
-
-/* Blue/500 Regular */
-color: #2865BE;
-
-&::after {
-      left: 0;
-      bottom: 0;
-      opacity: 1;
-      content: "";
-      width: 100%;
-      height: 0.1em;
-      position: absolute;
-      transform: scale(0);
-      transform-origin: center;
-      background-color: #c5a4fa;
-      transition: opacity 300ms, transform 300ms;
-    }
-
-    &:hover {
-      color: #c5a4fa;
-      &::after {
-        transform: scale(1);
-      }
-    }
-
-    &:focus {
-      color: #fff;
-      border-color: #82deff;
-    }
-
-    &:focus:hover {
-      &::after {
-        transform: scale(0);
-      }
-    }
-
-    &.router-link-active {
-      &::after {
-        transform: scale(1);
-      }
-    }
-
-  }
-  
-
-  &__backSpan {
-   
-    display: flex;
-    width: 1.5rem;
-    height: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    /* margin: 0.5rem 0 0; */
-    margin-right: 0.5rem;
-     svg {
-      color: #2865be;
-      height:1.5rem;
-     }
-
-     &::after {
-      left: 0;
-      bottom: 0;
-      opacity: 1;
-      content: "";
-      width: 100%;
-      height: 0.1em;
-      position: absolute;
-      transform: scale(0);
-      transform-origin: center;
-      background-color: #c5a4fa;
-      transition: opacity 300ms, transform 300ms;
-    }
-
-    &:hover {
-      color: #c5a4fa;
-      &::after {
-        transform: scale(1);
-      }
-    }
-
-    &:focus {
-      color: #fff;
-      border-color: #82deff;
-    }
-
-    &:focus:hover {
-      &::after {
-        transform: scale(0);
-      }
-    }
-
-    &.router-link-active {
-      &::after {
-        transform: scale(1);
-      }
-    }
-  }
-
     &__title {
       font-size: 2rem;
     }
-    
+
     &__header {
       padding-bottom: 2.25rem;
     }
-    
+
     &__container {
-      padding: 11.75rem 0;
+      padding: 7.75rem 0;
     }
-    
+
     &__button {
       .button_text {
         font-size: 1rem;

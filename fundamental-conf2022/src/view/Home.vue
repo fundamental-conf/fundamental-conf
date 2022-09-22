@@ -5,7 +5,6 @@
 <div class="container">
   <MainComponent class="panel" />
   <FDAbout class="panel"/> 
-  <FDCallForContent class="panel"/>
   <SocialsContainer class="panel"/>
   <FDFooter class="normal" />
 
@@ -17,7 +16,6 @@
 
 import MainComponent from "@/components/MainComponent.vue";
 import FDAbout from "@/components/FDAbout.vue";
-import FDCallForContent from "@/components/FDCallForContent.vue";
 import FDFooter from "@/components/FDFooter.vue";
 import FDTeam from "@/components/FDTeam.vue";
 import SocialsContainer from "@/components/SocialsContainer.vue";
@@ -28,7 +26,6 @@ export default {
   components: {
     MainComponent,
     FDAbout,
-    FDCallForContent,
     FDFooter,
     SocialsContainer,
     FDTeam,

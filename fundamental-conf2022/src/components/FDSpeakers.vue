@@ -82,9 +82,7 @@
         <li
           class="fd-speakers__list"
           v-for="member in speakers.slice(1)"
-          :class="{ selected: member === currentMember }"
           :key="member.id"
-          v-bind:value="{ member: currentMember }"
         >
           <div class="fd-speakers__body1">
             <figure

@@ -89,11 +89,11 @@ export default {
   }
 
   &__icons {
-    gap: 1.25rem;
+    gap: 5vw;
     display: flex;
     margin-top: 5rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
   }
 
@@ -196,7 +196,64 @@ export default {
   }
 }
 
-@media (min-width: 821px) {
+@media (min-width: 600px) {
+  .fd-mission {
+    padding: 5rem 10vw;
+    margin: 0 auto;
+    flex-direction: column;
+
+    &__container {
+      flex-direction: column;
+    }
+    
+    &__title {
+      display: flex;
+      flex-direction: column;
+      font-size: 5rem;
+      text-align: left;
+    }
+  
+    &__icons {
+      flex-direction: column;
+    }
+
+    &__icon {
+      span {
+        width: 6.25rem;
+        height: 6.25rem;
+      }
+
+      &.plus {
+        span {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+        max-width: none;
+      }
+    }
+      
+    &__text {
+      gap: 8px;
+      padding: 0;
+    }
+   
+   &__italic {
+      font-size:1.25rem;
+      line-height: 1.65;
+    }
+   
+   &__paragraph {
+      font-size:1.25rem;
+      line-height: 1.65;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
   .fd-mission {
     max-width: 1200px;
     padding: 5rem 10vw;
@@ -206,9 +263,10 @@ export default {
 
     &__container {
       display: flex;
-     gap: 5rem;
+      gap: 5rem;
       flex-direction: row;
     }
+    
     &__title {
       display: flex;
       flex-direction: column;

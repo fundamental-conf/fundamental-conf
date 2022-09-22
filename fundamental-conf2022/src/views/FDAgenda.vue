@@ -17,8 +17,9 @@
     <!--Agenda Header and Line-->
     <div class="fd-agenda__container">
       <div class="fd-agenda__header">
-        <h2 class="fd-agenda__title">conference agenda</h2>
+        <h2 class="fd-agenda__title">agenda</h2>
         <div class="fd-agenda__line" aria-hidden="true"></div>
+        <h2 class="fd-agenda__date">29.09.2022</h2>
       </div>
       <!--Agenda Filtering Buttons-->
 
@@ -467,6 +468,18 @@ export default {
     margin-bottom: 0.25rem;
     order: 2;
   }
+  &__date {
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-family: "Ubuntu";
+    font-style: normal;
+    letter-spacing: 0.02em;
+    color: #2865be;
+    order: 1;
+    white-space: nowrap;
+    order:2;
+  }
 }
 
 .fd-agenda-body {
@@ -774,7 +787,9 @@ export default {
         font-size: 1rem;
       }
     }
-    
+    &__date {
+      font-size: 2rem;
+    }
     &__toggle {
       position: absolute;
       right: 0;

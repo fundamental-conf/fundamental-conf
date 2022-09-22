@@ -390,7 +390,140 @@ export default {
   }
 }
 
-@media (min-width: 892px) {
+@media (min-width: 700px) {
+  .fd_wrapper{
+    .fd_header {
+      margin-top: 10rem;
+      margin-bottom: 2rem;
+      
+      .fd_tittle {
+        font-size: 2rem;
+      }
+    }
+
+    .fd_body {
+      .fd_list {
+        gap: 1rem 3rem;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        .fd_body__1 {
+          max-width: 15rem;
+          
+          .fd_role {
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.75rem;
+            line-height: 2.1rem;
+            padding-top: 1.5rem;
+          }
+
+          .fd_picture {
+            position: relative;
+            animation: wave infinite;
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+
+            img {
+              max-width: 14.35rem;
+              min-width: 14.35rem;
+              max-height: 14.35rem;
+              min-height: 14.35rem;
+              -o-object-fit: cover;
+              object-fit: cover;
+              border-radius: 14.35rem;
+            }
+          }
+        }
+
+        .fd_body__2 {
+          padding-top: 4.5rem;
+
+          .fd_name {
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 3.5rem;
+            color: #2865be;
+            animation: wave infinite;
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            position: relative;
+          }
+
+          .fd_city {
+            font-family: source-sans-3, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 2.15rem;
+            width: 50vw;
+            text-transform: uppercase;
+            color: #2865be;
+            padding-top: 0.5rem;
+            animation: wave infinite;
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            position: relative;
+          }
+        }
+
+        .fd_body__3 {
+          padding-top: 1rem;
+
+          .fd_bio {
+            padding-top: 0;
+            font-size: 1.25rem;
+            line-height: 2rem;
+            animation: wave infinite;
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            position: relative;
+
+            .fd_line {
+              height: 2rem;
+              width: 19rem;
+              border-bottom: 1px solid #2865be;
+              visibility: visible;
+              animation: wave infinite;
+              animation-name: slide;
+              animation-duration: 5s;
+              animation-iteration-count: 1;
+              position: relative;
+            }
+          }
+
+          .fd-member-socials {
+            gap: 3rem;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            margin: 2rem 0;
+            list-style: none;
+            justify-content: left;
+            animation: wave infinite;
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            position: relative;
+
+            li a span:last-child {
+              font-size: 1.125rem;
+            }
+          }
+        }
+      }
+
+      
+    }
+  }
+  
+}
+
+@media (min-width: 1200px) {
   .fd_wrapper {
     padding: 15%;
 
@@ -413,6 +546,7 @@ export default {
       .fd_list {
         gap: 10% 4%;
         display: flex;
+        flex-wrap: nowrap;
         flex-direction: row;
         margin-top: 4.875rem;
 
@@ -497,6 +631,7 @@ export default {
         }
 
         .fd_body__3 {
+          max-width: auto;
           padding-top: 5.6rem;
 
           .fd_bio {

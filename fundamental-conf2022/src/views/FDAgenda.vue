@@ -55,12 +55,13 @@
       />
 
       <!--Agenda Schedule Body-->
-      <ul class="fd-agenda-body">
+      <ul class="fd-agenda-body" >
         <li
           class="fd-agenda-body__row"
           v-for="el in agenda"
           :key="el.startTime"
-        >
+          :class="{ live: el.live }"
+        > 
           <div class="fd-agenda-body__time-container">
             <div>
               <time class="fd-agenda-body__time">
@@ -190,8 +191,8 @@
                 </ul>
               </li>
             </ul>
-          </div>
-        </li>
+  
+        </div></li>
       </ul>
     </div>
 
@@ -230,15 +231,53 @@ export default {
       localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
       filteredValue: "All",
       lastFocussedElementID: null,
+      date: '2022-09-29 07:05:00 -04:00',
+      now: Math.trunc((new Date()).getTime() / 1000)
     };
   },
 
   mounted() {
     this.lineup = agenda;
     this.formattedLineup = this.formatLineup();
+
+
+        let interval;
+        let timeNow = new Date().toISOString();
+        const startCounterTime = new Date("2022-09-29T07:05:00.000-04:00").toISOString();
+        const endCounterTime = new Date("2022-09-29T16:00:00.000-04:00").toISOString();
+
+        if((timeNow > startCounterTime) && (timeNow <= endCounterTime)) {
+          interval = setInterval(() => {
+            timeNow = new Date().toISOString();
+            if(timeNow > endCounterTime) {
+              clearInterval(interval);
+              return;
+            }
+            this.updateLiveSession();
+          }, 30000)
+        }
+
+  
   },
 
-  computed() {},
+  computed: {
+    dateInMilliseconds() {
+      let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
+      return Math.trunc(Date.parse(germanyDate) / 1000)
+    },
+    seconds() {
+      return (this.dateInMilliseconds - this.now) % 60;
+    },
+    minutes() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
+    },
+    hours() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
+    },
+    days() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
+    }
+  },
 
   //filters the posts/presentations of agenda
   methods: {
@@ -339,6 +378,19 @@ export default {
       } else {
         return value;
       }
+    },
+    updateLiveSession() {
+      return this.formattedLineup.map(session => {
+        let timeNow = new Date().toISOString();
+        let sessionTimeStart = new Date(session.startTime).toISOString();
+        let sessionTimeEnd = new Date(session.endTime).toISOString();
+
+        if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
+          session.live = true;
+        } else {
+          session.live = false;
+        }
+      })
     },
 
     //add to calendar function
@@ -513,6 +565,34 @@ export default {
   }
 }
 
+.fd-agenda-body__row.live {
+
+  box-sizing: border-box;
+/* Auto layout */
+display: flex;
+flex-direction: column;
+padding:1rem;
+gap: 24px;
+height:auto;
+width:auto;
+
+
+background: rgba(255, 255, 255, 0.3);
+/* Nav Background Blur */
+backdrop-filter: blur(4px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 16px;
+align-items: center;
+align-content: center;
+/* Inside auto layout */
+
+border: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+border-image-source: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff);
+
+}
+
 .fd-agenda-body {
   display: flex;
   flex-direction: column;
@@ -564,7 +644,7 @@ export default {
 
     div {
       padding: 0.5rem;
-      background: #e2eeff;
+
     }
   }
 
@@ -948,7 +1028,7 @@ export default {
 
       div {
         padding: 0;
-        background: #e2eeff;
+     
       }
     }
 

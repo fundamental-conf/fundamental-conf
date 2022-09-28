@@ -63,10 +63,11 @@
           :class="{ live: el.live }"
         > 
           <div class="fd-agenda-body__time-container">
-            <div>
-              <time class="fd-agenda-body__time">
+            <div :class="{ timeFocus: el.live }">
+              <time class="fd-agenda-body__time"  >
                 {{ convertTime(el.startTime, eventTime) }}</time
               >
+              <div class="fd-agenda-body__live" v-if=el.live> LIVE NOW</div>
             </div>
           </div>
 
@@ -155,12 +156,12 @@
                   class="fd-agenda-calendar-box__line"
                   aria-hidden="true"
                 ></div>
-                <p class="fd-agenda-calendar-box__addToCal">ADD TO CALENDAR</p>
+                <p class="fd-agenda-calendar-box__addToCal" v-if="el.live===false">ADD TO CALENDAR</p>
                 <ul
                   class="fd-agenda-calendar-box__buttons"
                   v-for="cal in el.calendars"
                 >
-                  <li class="fd-agenda-calendar-box__button">
+                  <li class="fd-agenda-calendar-box__button" v-if="el.live===false">
                     <a
                       :href="
                         'data:text/calendar;charset=utf8,' +
@@ -171,13 +172,13 @@
                       >Outlook</a
                     >
                   </li>
-                  <li class="fd-agenda-calendar-box__button">
+                  <li class="fd-agenda-calendar-box__button" v-if="el.live===false">
                     <a target="_blank" rel="noreferrer" :href="cal.google"
                       ><span v-html="svgs.calGoogle" aria-hidden="true"> </span
                       >Google</a
                     >
                   </li>
-                  <li class="fd-agenda-calendar-box__button">
+                  <li class="fd-agenda-calendar-box__button" v-if="el.live===false">
                     <a
                       :href="
                         'data:text/calendar;charset=utf8,' +
@@ -186,6 +187,14 @@
                       :download="el.title"
                       ><span v-html="svgs.calICal" aria-hidden="true"> </span
                       >iCal</a
+                    >
+                  </li>
+                  <li class="fd-agenda-calendar-box__button" v-if="el.live===true">
+                    <a
+                    href="https://sap-se.zoom.us/j/93979836058"
+                    
+                      ><span v-html="svgs.live" aria-hidden="true"> </span
+                      >Watch LIVE Now</a
                     >
                   </li>
                 </ul>
@@ -380,15 +389,15 @@ export default {
       }
     },
     updateLiveSession() {
-      return this.formattedLineup.map(session => {
+      return this.formattedLineup.map(agenda => {
         let timeNow = new Date().toISOString();
-        let sessionTimeStart = new Date(session.startTime).toISOString();
-        let sessionTimeEnd = new Date(session.endTime).toISOString();
+        let sessionTimeStart = new Date(agenda.startTime).toISOString();
+        let sessionTimeEnd = new Date(agenda.endTime).toISOString();
 
         if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
-          session.live = true;
+          agenda.live = true;
         } else {
-          session.live = false;
+          agenda.live = false;
         }
       })
     },
@@ -592,6 +601,13 @@ border: 1px solid;
 border-image-source: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff);
 
 }
+div.timeFocus {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  
+    
+  }
 
 .fd-agenda-body {
   display: flex;
@@ -812,6 +828,36 @@ border-image-source: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff)
     text-transform: uppercase;
     color: #2865be;
   }
+
+  &__live {
+    border-radius: 6px;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.05em;
+
+/* Gradient 3 (Test) */
+background: linear-gradient(73.81deg, #7843D5 0.22%, #1DC4FF 99.78%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+  }
 }
 
 .fd-agenda-calendar-box {
@@ -929,6 +975,41 @@ border-image-source: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff)
       }
     }
   }
+ div.timeFocus {
+  align-items: center;
+  gap:1rem;
+ }
+ .fd-agenda-body__row.live{
+  gap: 60px;
+ }
+  .fd-agenda-body {
+      &__live {
+        transform: translate(55%, 0);
+    border-radius: 6px;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 36px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15em;
+
+/* Gradient 3 (Test) */
+  }
+  }
+  
 
     
 }
@@ -963,7 +1044,9 @@ border-image-source: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff)
       right: 0;
     }
   }
-
+ div.timeFocus {
+    text-align: center;
+  }
   .fd-agenda-body {
     flex-direction: column;
     padding-top: 5rem;

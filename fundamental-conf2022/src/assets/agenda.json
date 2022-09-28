@@ -6,7 +6,7 @@
   "description": "Join us and stay up to speed on everything happening at the Fundamental Library! Discover new ways to use the Fundamental Library to your advantage.",
   "startTime": "07:05",
   "endTime": "07:25",
-  "live": true,
+  "live": false,
   "more": false,
   "calendars": [{
     "google": "https://calendar.google.com/event?action=TEMPLATE&tmeid=NGlrY3EwY2U5ZTVtNTZwdHNmN2c4bG5zMnYgZmlvcmlmdW5kYW1lbnRhbHNAbQ&tmsrc=fiorifundamentals%40gmail.com",

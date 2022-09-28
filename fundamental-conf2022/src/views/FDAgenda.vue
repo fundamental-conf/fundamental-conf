@@ -189,8 +189,8 @@
                       >iCal</a
                     >
                   </li>
-                  <li class="fd-agenda-calendar-box__button" v-if="el.live===true">
-                    <a
+                  <li  class="fd-agenda-calendar-box__button" v-if="el.live===true">
+                    <a target="_blank" rel="noreferrer" 
                     href="https://sap-se.zoom.us/j/93979836058"
                     
                       ><span v-html="svgs.live" aria-hidden="true"> </span

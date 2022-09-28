@@ -50,7 +50,7 @@
   "description": "The corporate and creative worlds come with limiting factors that might hold back ideas. In this environment, you will find a mage-like species of designers, eager to overcome obstacles. Always hungry for innovation and pushing boundaries, they devoured rules, claiming the right to bend them. Our speakers Jasmin and Alex invite you to their creative lab. You will learn about different approaches and recipes for brewing magic potions to develop joyful designs and sparks of innovation. In the end, both worlds (corporate and creative) gain and thrive.",
   "startTime": "07:30",
   "endTime": "08:00",
-  "live": true,
+  "live": false,
   "more": false,
   "calendars": [{
     "google": "https://calendar.google.com/event?action=TEMPLATE&tmeid=NHQxMWE0ZWJzOGducm5rY2c3M2QxNmIzcG8gZmlvcmlmdW5kYW1lbnRhbHNAbQ&tmsrc=fiorifundamentals%40gmail.com",

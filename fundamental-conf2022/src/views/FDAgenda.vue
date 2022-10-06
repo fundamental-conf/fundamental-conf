@@ -162,7 +162,7 @@
                   class="fd-agenda-calendar-box__addToCal"
                   v-if="el.live === false"
                 >
-                  ADD TO CALENDAR
+                  MATERIALS
                 </p>
                 <ul
                   class="fd-agenda-calendar-box__buttons"
@@ -178,8 +178,8 @@
                         encodeURIComponent(cal.ics)
                       "
                       :download="el.title"
-                      ><span v-html="svgs.calOutlook" aria-hidden="true"> </span
-                      >Outlook</a
+                      ><span v-html="svgs.video" aria-hidden="true"> </span
+                      >Recording</a
                     >
                   </li>
                   <li
@@ -187,8 +187,8 @@
                     v-if="el.live === false"
                   >
                     <a target="_blank" rel="noreferrer" :href="cal.google"
-                      ><span v-html="svgs.calGoogle" aria-hidden="true"> </span
-                      >Google</a
+                      ><span v-html="svgs.slides" aria-hidden="true"> </span
+                      >Slides</a
                     >
                   </li>
                   <li
@@ -201,8 +201,8 @@
                         encodeURIComponent(cal.ics)
                       "
                       :download="el.title"
-                      ><span v-html="svgs.calICal" aria-hidden="true"> </span
-                      >iCal</a
+                      ><span v-html="svgs.github" aria-hidden="true"> </span
+                      >Demo</a
                     >
                   </li>
                   <li

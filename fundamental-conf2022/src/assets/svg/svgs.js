@@ -223,9 +223,14 @@ live: `<svg preserveAspectRatio="none" style="width:100%" viewBox="0 0 20 20" fi
 </svg>
 `,
 
-video: `<svg svg preserveAspectRatio="none" style="width:100%" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+video: `<svg  preserveAspectRatio="none" style="width:100%" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M14 28C14 20.268 20.268 14 28 14H84C91.732 14 98 20.268 98 28V84C98 91.732 91.732 98 84 98H28C20.268 98 14 91.732 14 84V28ZM28 23.3333C25.4227 23.3333 23.3333 25.4227 23.3333 28V84C23.3333 86.5773 25.4227 88.6667 28 88.6667H84C86.5773 88.6667 88.6667 86.5773 88.6667 84V28C88.6667 25.4227 86.5773 23.3333 84 23.3333H28Z"  fill="currentColor"/>
 <path d="M47.1981 40.7101L69.4298 51.826C72.8693 53.5457 72.8694 58.4542 69.4298 60.1739L47.1981 71.2898C44.0952 72.8412 40.4444 70.5849 40.4444 67.1158V44.8841C40.4444 41.415 44.0952 39.1587 47.1981 40.7101Z"  fill="currentColor"/>
+</svg>
+`,
+slides: `<svg preserveAspectRatio="none" style="width:100%" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 4.94165C9 3.83708 9.89543 2.94165 11 2.94165H19C20.1046 2.94165 21 3.83708 21 4.94165V12.9417C21 14.0462 20.1046 14.9417 19 14.9417H11C9.89543 14.9417 9 14.0462 9 12.9417V4.94165Z" fill="currentColor" fill-opacity="0.6"/>
+<path d="M3 11.6082C3 10.5036 3.89543 9.60815 5 9.60815H13C14.1046 9.60815 15 10.5036 15 11.6082V19.6082C15 20.7127 14.1046 21.6082 13 21.6082H5C3.89543 21.6082 3 20.7127 3 19.6082V11.6082Z" fill="currentColor"/>
 </svg>
 `
 };

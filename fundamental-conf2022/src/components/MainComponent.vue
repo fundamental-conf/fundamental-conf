@@ -239,7 +239,7 @@ gsap.fromTo(
 
   &__bottom-container {
     cursor: pointer;
-    bottom: 20vh; 
+    bottom: 10vh; 
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -285,7 +285,7 @@ gsap.fromTo(
       
       &__title sup,
       &__subheader {
-        margin-top: 5.125rem;
+        margin-top:4rem;
         font-size: 3rem;
       }
       &__subtitle {

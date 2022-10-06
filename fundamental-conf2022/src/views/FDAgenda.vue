@@ -716,6 +716,11 @@ div.timeFocus {
     font-size: 2.25rem;
     line-height: 2.5rem;
     margin-bottom: 1rem;
+    transition: 0.25s;
+  transition-timing-function: ease-out;
+  
+  transform: translateY(0);
+
   }
 
   &__paragraph {
@@ -1237,10 +1242,26 @@ div.timeFocus {
 
       /* Gradient 3 (Test) */
     }
-
+&__title {
+  animation: 1s ease-out 0s 1 slideUpDown;
+}
+&__paragraph {
+  animation: 1s ease-out 0s 1 slideUpDown;
+}
+&__speaker {
+  animation: 1s ease-out 0s 1 slideUpDown;
+}
     &__live-wrap {
       margin-top: 0;
     }
+    @keyframes slideUpDown {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
   }
   }
 
@@ -1248,6 +1269,7 @@ div.timeFocus {
     &__buttons {
       gap: 0.75rem;
       flex-wrap: wrap;
+      animation: 1s ease-out 0s 1 slideUpDown;
     }
 
     &__line {
@@ -1267,6 +1289,14 @@ div.timeFocus {
       font-size: 1rem;
       line-height: 1.5rem;
     }
+    @keyframes slideUpDown {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
   }
 }
 </style>

@@ -19,6 +19,8 @@ const routes = [
     name: "Agenda",
     component: Agenda
   },
+
+ 
   
 ];
 

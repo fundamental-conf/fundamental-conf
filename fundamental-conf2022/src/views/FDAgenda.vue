@@ -166,41 +166,40 @@
                 </p>
                 <ul
                   class="fd-agenda-calendar-box__buttons"
-                  v-for="cal in el.calendars"
+                  v-for="links in el.presentationLinks"
+                
                 >
                   <li
                     class="fd-agenda-calendar-box__button"
-                    v-if="el.live === false"
+                    v-if="!!links.recording"
                   >
                     <a
-                      :href="
-                        'data:text/calendar;charset=utf8,' +
-                        encodeURIComponent(cal.ics)
-                      "
-                      :download="el.title"
+                      :href="links.recording"
+                      target="_blank"
+                      rel="noreferrer"
                       ><span v-html="svgs.video" aria-hidden="true"> </span
                       >Recording</a
                     >
                   </li>
                   <li
                     class="fd-agenda-calendar-box__button"
-                    v-if="el.live === false"
+                    v-if="!!links.slides"
                   >
-                    <a target="_blank" rel="noreferrer" :href="cal.google"
-                      ><span v-html="svgs.slides" aria-hidden="true"> </span
-                      >Slides</a
-                    >
+                  <a :href="links.slides" target="_blank"
+                      rel="noreferrer">
+                  
+
+                      <span v-html="svgs.slides" aria-hidden="true"> </span
+                      >Slides</a>
+                    
                   </li>
                   <li
                     class="fd-agenda-calendar-box__button"
-                    v-if="el.live === false"
+                    v-if="!!links.github"
                   >
                     <a
-                      :href="
-                        'data:text/calendar;charset=utf8,' +
-                        encodeURIComponent(cal.ics)
-                      "
-                      :download="el.title"
+                      :href="`@/assets/slides/${links.github}`"
+                     
                       ><span v-html="svgs.github" aria-hidden="true"> </span
                       >Demo</a
                     >
@@ -243,11 +242,12 @@ import FDFooter from "@/components/FDFooter.vue";
 import FDPopUp from "../components/FDPopUp.vue";
 import { DateTime } from "luxon";
 import FDSaveTheDate from "../components/FDSaveTheDate.vue";
+import pdf from 'vue-pdf'
 
 export default {
   name: "FDAgenda",
 
-  components: { FDPopUp, FilterButtons, FDFooter, FDSaveTheDate },
+  components: { FDPopUp, FilterButtons, FDFooter, FDSaveTheDate, pdf },
   data() {
     return {
       agenda: agenda,
@@ -262,6 +262,7 @@ export default {
       lastFocussedElementID: null,
       date: "2022-09-29 07:05:00 -04:00",
       now: Math.trunc(new Date().getTime() / 1000),
+      publicPath: process.env.BASE_URL
     };
   },
 
@@ -313,6 +314,7 @@ export default {
 
   //filters the posts/presentations of agenda
   methods: {
+
     filterPosts(catName) {
       this.resetPosts();
       if (catName !== "All") {
@@ -717,10 +719,9 @@ div.timeFocus {
     line-height: 2.5rem;
     margin-bottom: 1rem;
     transition: 0.25s;
-  transition-timing-function: ease-out;
-  
-  transform: translateY(0);
+    transition-timing-function: ease-out;
 
+    transform: translateY(0);
   }
 
   &__paragraph {
@@ -894,7 +895,7 @@ div.timeFocus {
 
   &__live-wrap {
     margin-top: 1rem;
-    background: #ECF3FE;
+    background: #ecf3fe;
     width: fit-content;
     height: fit-content;
     padding: 0;
@@ -930,7 +931,7 @@ div.timeFocus {
   }
 
   &__button {
-    a {
+    a, pdf {
       gap: 0.25rem;
       display: flex;
       color: #2865be;
@@ -1211,58 +1212,58 @@ div.timeFocus {
     }
 
     .fd-agenda-body {
-    &__live {
-      transform: translate(55%, 0);
-      border-radius: 6px;
-      border: 2px solid;
-      border-image-slice: 1;
-      border-width: 3px;
-      border-image-source: linear-gradient(
-        -33deg,
-        #7b5cb2,
-        #7b5cb2,
-        #69adf8,
-        #82deff
-      );
+      &__live {
+        transform: translate(55%, 0);
+        border-radius: 6px;
+        border: 2px solid;
+        border-image-slice: 1;
+        border-width: 3px;
+        border-image-source: linear-gradient(
+          -33deg,
+          #7b5cb2,
+          #7b5cb2,
+          #69adf8,
+          #82deff
+        );
 
-      /* Inside auto layout */
-      flex: none;
-      order: 1;
-      flex-grow: 0;
+        /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
 
-      font-family: "Ubuntu";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 30px;
-      line-height: 36px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      letter-spacing: 0.15em;
+        font-family: "Ubuntu";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.15em;
 
-      /* Gradient 3 (Test) */
+        /* Gradient 3 (Test) */
+      }
+      &__title {
+        animation: 1s ease-out 0s 1 slideUpDown;
+      }
+      &__paragraph {
+        animation: 1s ease-out 0s 1 slideUpDown;
+      }
+      &__speaker {
+        animation: 1s ease-out 0s 1 slideUpDown;
+      }
+      &__live-wrap {
+        margin-top: 0;
+      }
+      @keyframes slideUpDown {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     }
-&__title {
-  animation: 1s ease-out 0s 1 slideUpDown;
-}
-&__paragraph {
-  animation: 1s ease-out 0s 1 slideUpDown;
-}
-&__speaker {
-  animation: 1s ease-out 0s 1 slideUpDown;
-}
-    &__live-wrap {
-      margin-top: 0;
-    }
-    @keyframes slideUpDown {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-  }
   }
 
   .fd-agenda-calendar-box {
@@ -1290,13 +1291,13 @@ div.timeFocus {
       line-height: 1.5rem;
     }
     @keyframes slideUpDown {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
   }
 }
 </style>

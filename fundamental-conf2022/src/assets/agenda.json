@@ -27,19 +27,9 @@
     "photo": "Circle_Deno.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/pqplAQfwqLw",
+   "slides":  "FundamentalConfKeynote2022.pdf"
+
     }
   ]
 },
@@ -81,20 +71,12 @@
       "photo": "AlexanderKirichev.png"
     }
   ],
+ 
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/bNQe4-4V_fk",
+   "slides":  "Alex&Jasmin_Fostering the creative breed.pdf",
+   "github":""
+
     }
   ]
 },
@@ -123,19 +105,10 @@
     "photo": "AndreasHauser.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/j47S3Gqa7o4",
+   "slides":  "Andreas-From UX design to Business Design - Fundamentals Sept 2022.pdf",
+   "github":""
+
     }
   ]
 },
@@ -165,19 +138,10 @@
     "photo": "AnnaMariyaHristova.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/FvGJKWLqlYU",
+   "slides":  "AnnaMariya-Drawing Parallels between Architetcure and UX Design - FundamentalConf.pdf",
+   "github":""
+
     }
   ]
 },
@@ -206,19 +170,10 @@
     "photo": "StanGenchev.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/ZnXSchQhWT4",
+   "slides":  "Stan-Fundamentally Changing Enterprise Web IDEs.pdf",
+   "github":""
+
     }
   ]
 },
@@ -280,19 +235,10 @@
     }
   ],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/R6CGE1d0RTc",
+   "slides":  "New_Horizon_Visual_Theme-Fundamental_Conf_2022.pdf",
+   "github":""
+
     }
   ]
 },
@@ -324,19 +270,10 @@
     "photo": "RamonaBiscoveanu.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/U4eQAzaDOow",
+   "slides":  "",
+   "github":""
+
     }
   ]
 },
@@ -366,19 +303,10 @@
     "photo": "PhilipMiseldine.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/Ax18zTwdzag",
+   "slides":  "Philip_FDPresentation.pdf",
+   "github":""
+
     }
   ]
 },
@@ -431,19 +359,10 @@
     }
   ],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/AP-rKiKozVM",
+   "slides":  "Irla&Stefan_LibrariesSupportInclusionThroughEfficientDesignDevelopmentCycles_Irla-Stefan.pdf",
+   "github":""
+
     }
   ]
 },
@@ -488,19 +407,10 @@
     }
   ],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/nkXHSGqYmTs",
+   "slides":  "FrameworkAgnosticWebDev.pdf",
+   "github":"https://github.com/petermuessig/solidjs-todoapp"
+
     }
   ]
 },
@@ -534,19 +444,10 @@
     "photo": "DmitriyStepanenko.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/bK8QTmO5lK8",
+   "slides":  "Dmitriy-Fundamentalconf_2022.pdf",
+   "github":""
+
     }
   ]
 },
@@ -579,19 +480,10 @@
     "photo": "DenisSeverin.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/ZeRCYcm3_oY",
+   "slides":  "DenisSeverin_Presentation.pdf",
+   "github":"https://github.com/N1XUS/fundamental-webcomponents-demo"
+
     }
   ]
 },
@@ -624,19 +516,10 @@
     "photo": "GiorgiCheishvili.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/xiGn8LKUqf4",
+   "slides":  "Giorgi-Presentation.pdf",
+   "github":"https://github.com/g-cheishvili/fundamental-mitosis"
+
     }
   ]
 },
@@ -669,19 +552,10 @@
     "photo": "KristianPoslek.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "https://youtu.be/egFKc5EaeIk",
+   "slides":  "",
+   "github":""
+
     }
   ]
 },
@@ -712,19 +586,10 @@
     "photo": "Circle_Deno.png"
   }],
   "presentationLinks": [{
-      "_id": "",
-      "linkType": "slides",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "youtube",
-      "url": ""
-    },
-    {
-      "_id": "",
-      "linkType": "github",
-      "url": ""
+    "recording": "",
+   "slides":  "",
+   "github":""
+
     }
   ]
 }

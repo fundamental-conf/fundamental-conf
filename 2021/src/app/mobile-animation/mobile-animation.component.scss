@@ -1,0 +1,138 @@
+@use '../theme/theme.scss' as *;
+
+$block-animation-duration: 1s;
+$total-animation-duration: 4.2s;
+
+.container {
+    background-color: $primary-dark-color;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: close-animation 1.2s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+.animation-container {
+    height: 150px;
+    width: 150px;
+    margin-top: 40vh;
+    position: relative;
+    animation: fade-out 1s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+.logo-block {
+    width: 70px;
+    height: 70px;
+}
+.logo-block4 {
+    width: 71px;
+    height: 71px;
+}
+.logo-block1 {
+    animation: block1 $block-animation-duration ease-in-out forwards;
+    margin: 10px -15px -13px 15px;
+}
+.logo-block2 {
+    transform: rotate(180deg);
+    margin-bottom: -26px;
+    animation: block2 $block-animation-duration forwards;
+}
+.logo-block3 {
+    transform: rotate(-90deg);
+    animation: block3 $block-animation-duration forwards;
+    margin-left: 8px;
+    margin-right: -13px;
+}
+.logo-block4 {
+    transform: rotate(0deg);
+    animation: block4 $block-animation-duration forwards;
+    margin-bottom: -7px;
+}
+
+.message-container {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 100vw;
+    position: relative;
+    margin-top: 40px;
+}
+.message {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: $primary-light-color;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+.message1 {
+    animation: message-fade 1s ease-in forwards; 
+}
+.message2 {
+    animation: message-fade 1s 1s ease-in forwards; 
+}
+.message3 {
+    animation: message-fade 1s 2s ease-in forwards; 
+}
+
+@keyframes close-animation {
+    to {
+        height: 0vh;
+    }
+}
+
+@keyframes message-fade {
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes block1 {
+    from {
+        transform: scale(0.5) rotate(45deg);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes block2 {
+    from {
+        transform: scale(0.5) rotate(90deg);
+    }
+    to {
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+@keyframes block3 {
+    from {
+        transform: scale(0.5) rotate(-180deg);
+    }
+    to {
+        transform: scale(1) rotate(-90deg);
+    }
+}
+
+@keyframes block4 {
+    from {
+        transform: scale(0.5) rotate(90deg);
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes fade-out {
+    to {
+      opacity: 0;
+      transform: translateY(-40vh);  
+    }
+}

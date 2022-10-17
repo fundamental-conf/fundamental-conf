@@ -1,0 +1,40 @@
+@use '../../theme/theme.scss' as *;
+
+.footer {
+    height: 270px;
+    background-color: $primary-dark-color;
+    padding: 74px 77px 74px 77px;
+    display: flex;
+    justify-content: space-between;
+    .find-us {
+        display: flex;
+        flex-direction: column;
+        .label {
+            color: $border-color;
+            @include overpass-mono-font(14px);
+            margin-bottom: 13px;
+        }
+        a {
+            text-decoration: none;
+            color: $primary-light-color;
+            @include inter-font(20px, 500);
+            margin-bottom: 4px;
+        }
+    }
+    .copyright {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        color: $primary-light-color;
+        font-family: '72', sans-serif;
+        font-weight: 100;
+        font-size: 16px;
+        align-items: flex-end;
+        a {
+            text-decoration: none;
+            color: $primary-light-color;
+            @include inter-font(20px, 500);
+            margin-bottom: 4px;
+        }
+    }
+}

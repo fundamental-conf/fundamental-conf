@@ -1,0 +1,22 @@
+$primary-dark-color: #161616;
+$primary-light-color: #F9F9F9;
+$border-color: #A6A6A8;
+$desktop-header-height: 77px;
+
+$side-menu-transition-time: 0.5s;
+
+@mixin inter-font($font-size, $font-weight: 400) {
+    font-family: 'Inter', sans-serif;
+    font-size: $font-size;
+    @if $font-weight != 400 {
+        font-weight: $font-weight;
+    }
+}
+
+@mixin overpass-mono-font($font-size, $font-weight: 400) {
+    font-family: 'Overpass Mono', sans-serif;
+    font-size: $font-size;
+    @if $font-weight != 400 {
+        font-weight: $font-weight;
+    }
+}

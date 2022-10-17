@@ -1,0 +1,71 @@
+<app-desktop-navbar>
+    <div class="links">
+        <a routerLink="/">
+            <span class="top-label">Home</span>
+        </a>
+    </div>
+</app-desktop-navbar>
+<div class="agenda-container">
+    <div class="agenda-date-info">
+        <div class="agenda-date-info-blank"></div>
+        <div class="agenda-date-info-block">{{ dayLabel }}</div>
+        <div class="agenda-date-info-block">2021</div>
+        <div class="agenda-date-info-block">August</div>
+        <div class="agenda-date-info-block">{{ altDateLabel }}</div>
+    </div>
+    <div class="agenda-content">
+        <div class="time-zone">
+            {{ timezoneLabel }}
+        </div>
+        <div class="agenda-content-topics">
+            <div class="session" *ngFor="let session of sessions; let i = index;">
+                <div class="session-info" [ngClass]="{'minor-session': session.minorSession}">
+                    <div class="session-time" [ngClass]="{'minor-session': session.minorSession}">{{ getTimeLabel(i) }}</div>
+                    <div class="session-speaker">{{ session.name }}</div>
+                    <div class="session-detail">
+                        <div class="session-title" [ngClass]="{'minor-session': session.minorSession, 'hangout-session': session.hangout}" (click)="toggleSession(i)">{{ session.topic }}</div>
+                        <div class="control-button" (click)="toggleSession(i)">
+                            <img src="../../../assets/arrow.png" alt="control button arrow icon">
+                        </div>
+                        <div class="session-preview">
+                            <div class="text-preview">{{ session.description }}</div>
+                            <div class="session-materials" *ngIf="session.recording || session.slides">
+                                <a class="material-icon recording-icon" *ngIf="session.recording" [href]="session.recording" target="_blank">
+                                    <img src="../../../assets/recording.png" alt="recording button icon">
+                                    RECORDING
+                                </a>
+                                <a class="material-icon slides-icon" *ngIf="session.slides" [href]="getSlidesLink(session.name)" target="_blank">
+                                    <img src="../../../assets/slides.png" alt="slides button icon">
+                                    SLIDES
+                                </a>
+                            </div>
+                        </div>
+                        <div class="speaker-info">
+                            <div class="avatar">
+                                <img *ngIf="session.name" [src]="getImgSrc(session.name)" alt="speaker avatar">
+                            </div>
+                            <div class="bio">
+                                <div class="profile">
+                                    <div class="background">
+                                        <div class="title">{{ session.title }}</div>
+                                        <div class="company" *ngIf="session.company">{{ session.company }}</div>
+                                    </div>
+                                    <div class="social-media" *ngIf="session.twitter || session.linkedin">
+                                        <a *ngIf="session.twitter" [href]="session.twitter" target="_blank">
+                                            <img src="../../../assets/twitter_icon_black.png" alt="speaker twitter" height="23px" width="23px">
+                                        </a>
+                                        <a *ngIf="session.linkedin" [href]="session.linkedin" target="_blank">
+                                            <img src="../../../assets/linkedin_icon_black.png" alt="speaker linkedin" height="23px" width="23px">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-bio">{{ session.bio }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-desktop-footer></app-desktop-footer>

@@ -1,0 +1,253 @@
+@use '../../theme/theme.scss' as *;
+
+$agenda-header-title-height: 140px;
+$agenda-date-info-height: 40px;
+
+::ng-deep .links {
+    width: 100px;
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        color: $primary-light-color;
+        text-decoration: none;
+    }
+    .top-label {
+        @include inter-font(16px);
+    }
+    .bottom-label {
+        @include inter-font(12px);
+        opacity: 0.6;
+    }
+    .hidden-bottom-label {
+        opacity: 0;
+    }
+}
+
+.agenda-container {
+    margin-top: $desktop-header-height;
+    margin-bottom: 114px;
+}
+
+.agenda-date-info {
+    height: $agenda-date-info-height;
+    background-color: $primary-light-color;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    display: flex;
+    position: sticky;
+    top: $desktop-header-height;
+    z-index: 10;
+    .agenda-date-info-blank {
+        width: 40%;
+    }
+    .agenda-date-info-block {
+        color: $primary-dark-color;
+        @include inter-font(22px, 500);
+        padding: 0 34px 0 34px;
+        letter-spacing: -1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px solid #000000;
+        &:last-child {
+            border-right: 2px solid #000000;
+        }
+    }
+}
+
+.agenda-content {
+    background-color: $primary-light-color;
+}
+
+.time-zone {
+    height: 56px;
+    color: #A6A6A8;
+    @include inter-font(18px);
+    border-bottom: 0.75px solid rgba(0, 0, 0, 0.5);
+    padding-left: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.session {
+    position: relative;
+    cursor: default;
+    transition: border 0.1s 0.5s linear;
+    &.session-highlighted {
+        border-top: 3px solid $primary-dark-color;
+        border-bottom: 3px solid $primary-dark-color;
+    }
+    .session-info {
+        padding-left: 160px;
+        min-height: 50px;
+        border-bottom: 0.75px solid rgba(0, 0, 0, 0.5);
+        display: flex;
+        &.minor-session {
+            align-items: center;
+        }
+        .session-time {
+            @include inter-font(18px, 600);
+            margin-top: 16px;
+            min-width: 50px;
+            &.minor-session {
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+            }
+        }
+        .session-speaker {
+            @include inter-font(18px, 400);
+            white-space: nowrap;
+            margin-top: 16px;
+            margin-left: 90px;
+            min-width: 180px;
+            opacity: 0.6;
+        }    
+    }
+    
+    .session-detail {
+        .session-title {
+            @include inter-font(36px);
+            margin: 10px 100px 12px 150px;
+            letter-spacing: -1px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            &.minor-session {
+                @include inter-font(18px, 400);
+                margin-top: 0;
+                margin-bottom: 0;
+                cursor: default;
+            }
+            &.hangout-session {
+                @include inter-font(18px, 400);
+                margin-top: 15px;
+            }
+        }
+        .session-preview {            
+            max-height: 0;
+            max-width: 764px;
+            overflow: hidden;
+            margin-left: 150px;
+            margin-right: 130px;
+            transition: all 1s 0.3s ease-in-out;
+            .text-preview {
+                @include inter-font(16px);
+                line-height: 20px;
+                color: $primary-dark-color;
+                opacity: 0.6;
+            }
+            &.preview-revealed, &.fully-expanded {
+                max-height: 500px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-bottom: 5px;
+            }
+            .session-materials {
+                margin-top: 25px;
+                display: flex;
+                .material-icon {
+                    height: 32px;
+                    padding: 0 8px 0 8px;
+                    border: 2px solid #161616;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    @include inter-font(14px);
+                    text-decoration: none;
+                    color: $primary-dark-color;
+                    letter-spacing: 0.07em;
+                    &:first-child {
+                        margin-right: 14px;
+                    }
+                    &:active {
+                        background-color: #DB6861;
+                    }
+                }
+                .recording-icon {
+                    width: 134px;
+                }
+                .slides-icon {
+                    width: 100px;
+                }
+            }
+        }
+        .speaker-info {
+            display: flex;
+            margin-left: 150px;
+            margin-right: 130px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s 0.1s ease-in-out;
+            &.info-expanded {
+                max-height: 1000px;
+                padding-bottom: 5px;
+                padding-top: 18px;
+                margin-bottom: 22px;
+                border-top: 0.5px solid rgba(0, 0, 0, 0.25);
+            }
+            .avatar {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+                margin-right: 20px;
+            }
+            .bio {
+                .profile {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 18px;
+                }
+                .social-media {
+                    & a + a {
+                        margin-left: 10px;
+                    }
+                    white-space: nowrap;
+                }
+                .background {
+                    display: flex;
+                    .title {
+                        @include inter-font(18px, 600);
+                        letter-spacing: -1px;
+                    }
+                    .company {
+                        @include inter-font(18px, 400);
+                        opacity: 0.4;
+                        margin-left: 16px;
+                        padding-left: 16px;
+                        letter-spacing: -1px;
+                        border-left: 2px solid grey;
+                    }
+                }
+                .text-bio {
+                    color: $primary-dark-color;
+                    @include inter-font(16px);
+                    opacity: 0.6;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    .control-button {
+        position: absolute;
+        top: 25px;
+        right: 50px;
+        opacity: 0;
+        cursor: pointer;
+        transition: all 0.3s 0.2s ease-in-out;
+        &.button-revealed {
+            opacity: 1;
+        }
+        &.close-button {
+            transform: rotate(180deg);
+        }
+    }
+}

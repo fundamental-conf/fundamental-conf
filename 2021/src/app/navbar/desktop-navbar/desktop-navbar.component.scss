@@ -1,0 +1,38 @@
+@use '../../theme/theme.scss' as *;
+
+.header {
+    width: 100%;
+    height: $desktop-header-height;
+    background-color: #161616;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    .logo-title {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    img {
+        margin-left: 52px;
+    }
+    .title {
+        color: $primary-light-color;
+        @include inter-font(22px, 600);
+        margin-left: 13px;
+    }
+    .call-to-action {
+        a {
+            text-decoration: none;
+            @include inter-font(18px, 600);
+            color: $primary-light-color;
+        }
+        background-color: #DB6861;
+        height: 100%;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;   
+    }
+}

@@ -1,0 +1,371 @@
+@use '../../theme/theme.scss' as *;
+
+@mixin page-animation($delay) {
+    &.active {
+        animation: show-up 0.5s ease-in forwards;
+        animation-delay: $delay;
+    }
+}
+@keyframes show-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+::ng-deep .links {
+    width: 100px;
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        color: $primary-light-color;
+        text-decoration: none;
+    }
+    .top-label {
+        @include inter-font(16px);
+    }
+    .bottom-label {
+        @include inter-font(12px);
+        opacity: 0.6;
+    }
+    .hidden-bottom-label {
+        opacity: 0;
+    }
+}
+
+.content {
+    .block {
+        height: $desktop-header-height;
+    }
+    .footer-block {
+        height: 100px;
+    }
+    .block2 {
+        @media screen and (max-width: 1250px) {
+            height: 77px;
+        }
+        @media screen and (min-width: 1700px) {
+            height: 114px;
+        }
+    }
+}
+
+.date {
+    height: calc(100vh - #{$desktop-header-height});
+    min-height: 863px;
+    display: flex;
+    opacity: 0;
+    transform: translateY(10vh);
+    @include page-animation(0s);
+    .animation {
+        width: 60%;
+        position: relative;
+        img {
+            position: absolute;
+        }
+        .block1 {
+            height: 45w; width: 4vw; left: 11vw; top: 7.5vw;
+        }
+        .block2 {
+            height: 5vw; width: 5vw; left: 34vw; top: 4vw;
+        }
+        .block-c {
+            height: 35vw; width: 35vw; top: 10vw; left: 30vw; z-index: 5;
+        }
+        .block-f {
+            height: 30vw; width: 30vw; top: 3vw; left: 3vw;
+        }
+        .block-name {
+            height: 6vw; width: 25vw; top: 40vw; left: 5vw;
+        }
+    }
+    .schedule {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .date-time-box {
+            width: 31vw;
+            margin-bottom: 36px;
+        }
+        .box {
+            width: 100%;
+            height: 18vh;
+            min-height: 152px;
+            border: 1px solid $border-color;
+            &:first-child {
+                margin-bottom: 36px;
+            }
+        }
+        .about-box {
+            width: 31vw;
+            border: 1px solid $border-color;
+        }
+        .label {
+            height: 52px;
+            padding-left: 27px;
+            @include overpass-mono-font(14px, 400);
+            border-bottom: 1px solid $border-color;
+            display: flex;
+            align-items: center;
+        }
+        .time-box-label {
+            height: 52px;
+            padding: 0 20px 0 27px;
+            border-bottom: 1px solid $border-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .time-label {
+            @include overpass-mono-font(14px, 400);
+        }
+        .timezone-label {
+            @include inter-font(14px, 500);
+            color: $primary-dark-color;
+            opacity: 0.6;
+        }
+        .date-row {
+            height: calc(100% - 52px);
+            display: flex;
+            align-items: center;
+            margin-left: 27px;
+        }
+        .date-display {
+            @include inter-font(3.5vw, 500);
+        }
+        .time-display {
+            @include inter-font(3vw, 500);
+        }
+        .superscript {
+            @include inter-font(1.5vw);
+            margin-left: 16px;
+            margin-bottom: 2vw;
+        }
+        .intro {
+            @include inter-font(22px, 500);
+            letter-spacing: -1px;
+            line-height: 27px;
+            margin: 24px 20px 24px 20px;
+        }
+    }
+    @media screen and (max-width: 1250px) {
+        margin-bottom: 100px;
+        flex-direction: column;
+        align-items: center;
+        .animation {
+            width: 90%;
+            height: 60%;
+            min-height: 500px;
+            .block1 {
+                height: 5vw; width: 5vw; left: 20%; top: 8%;
+            }
+            .block2 {
+                height: 6vw; width: 6vw; left: 50%; top: 5%;
+            }
+            .block-c {
+                height: 40vw; width: 40vw; top: 5vw; left: 50%; z-index: 5;
+                min-height: 350px; min-width: 250px;
+            }
+            .block-f {
+                height: 35vw; width: 35vw; top: 0%; left: 10%;
+                min-height: 345px; min-width: 330px;
+            }
+            .block-name {
+                height: 6vw; width: 25vw; top: 90%; left: 5vw;
+                min-height: 90px; min-width: 355px;
+            }
+        }
+        .schedule {
+            width: 90%;
+            height: 40%;
+            min-height: 420px;
+            margin-top: 100px;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+            .date-time-box {
+                height: 30vh;
+                margin-bottom: 0;
+            }
+            .box {
+                height: 14vh;
+                min-width: 300px;
+                &:first-child {
+                    margin-bottom: 36px;
+                }
+            }
+            .about-box {
+                height: 30vh;
+                min-height: 340px;
+                min-width: 300px;
+            }
+            .intro {
+                letter-spacing: 0;
+                font-size: 22px;
+                line-height: 20px;
+                margin: 24px 10px 24px 10px;
+            }
+        }
+    }
+}
+
+.info {
+    .cards {
+        display: flex;
+    }
+    .card {
+        height: 33.3vw;
+        width: 33.3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(10vh);
+        opacity: 0;
+    }
+    .card1 {
+        background-color: #DB6861;
+        @include page-animation(0s);
+    }
+    .card2 {
+        background-color: #CF476D;
+        @include page-animation(1s);
+    }
+    .card3 {
+        background-color: #654276;
+        @include page-animation(2s);
+    }
+    .card-header {
+        color: $primary-light-color;
+        @include inter-font(1.5vw, 900);
+        letter-spacing: -1px;
+        margin-top: 25px;
+    }
+    .card-image {
+        height: 25vw;
+        width: 25vw;
+    }
+    .dash-separator {
+        width: 20px;
+        border: 1px solid $primary-light-color
+    }
+    .image-label {
+        @include inter-font(16px);
+        color: $primary-light-color;
+        margin-top: 10px;
+    }
+    .separator {
+        height: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 30px;
+            width: 30px;
+            animation: rotating 2s linear infinite;
+            z-index: -1;
+        }
+    }
+}
+
+.speakers {
+    opacity: 0;
+    transform: translateY(10vh);
+    @include page-animation(0s);    
+    .separator {
+        width: 100%;
+        padding: 8px 0 8px 0;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+    .label {
+        color: $primary-dark-color;
+        margin-left: 22px;
+        @include overpass-mono-font(20px);
+    }
+    .main {
+        height: 50vw;
+        max-height: calc(100vh - #{$desktop-header-height} - 36px);
+        width: 100%;
+        display: flex;
+        border-bottom: 1px solid $border-color;
+    }
+    .wheel {
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+    }
+    .card {
+        flex-shrink: 0;
+        max-height: calc(100vh - #{$desktop-header-height} - 36px);
+        width: 40vw;
+        background-color: #F3F3F3;
+        border-left: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        padding: 15px;
+        z-index: 1;
+        transition: all 1s ease;
+        &:not(:first-child) {
+            margin-left: -34.5vw;
+        }
+        &:not(:last-child):hover ~ .card {
+            transform: translateX(34.5vw);
+        }
+        .photo {
+            width: 50vh;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .intro-card {
+            height: fit-content;
+            width: 22vw;
+            padding: 8px 0 10px 12px;
+            border: 1px solid #000000;
+            background-color: $primary-light-color;
+            border-radius: 10px;
+            position: relative;
+            left: 40%; 
+            bottom: 15vh;
+            z-index: 0;
+            .card-label {
+                display: flex;
+                align-items: flex-end;
+            }
+            .id-label {
+                @include inter-font(12px);
+                opacity: 0.6;
+            }
+            .count-label {
+                @include inter-font(10px);
+                margin-left: 4px;
+                opacity: 0.6;
+            }
+            .name {
+                @include inter-font(22px, 500);
+                margin-top: 7px;
+            }
+            .speaker-title {
+                @include inter-font(16px);
+                letter-spacing: -1px;
+                margin-top: 2px;
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

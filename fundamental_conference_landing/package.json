@@ -1,5 +1,5 @@
 {
-  "name": "fundamental_conference_landing",
+  "name": "fundamental-conference",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,12 +12,15 @@
   "dependencies": {
     "@sap-theming/theming-base-content": "^11.1.46",
     "core-js": "^3.8.3",
+    "dist": "^0.1.2",
     "eslint": "^8.28.0",
+    "gh-pages": "^4.0.0",
     "sas": "^3.0.4",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "scss": "^0.2.4",
     "vue": "^3.2.13",
+    "vue-a11y-dialog": "^1.1.2",
     "vue-parallaxy": "^1.1.1",
     "vue3-parallax": "^0.1.4"
   },

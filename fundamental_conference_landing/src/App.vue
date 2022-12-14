@@ -40,7 +40,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: "72";
-  src: local("72"), url(./assets/fonts/72-Black.woff) format("woff");
+  src: local("72"), url(./assets/fonts/72-Regular.woff) format("woff");
 }
 @font-face {
   font-family: "72-Bold";
@@ -49,6 +49,10 @@ export default {
 @font-face {
   font-family: "72-Light";
   src: local("72-Light"), url(./assets/fonts/72-Light.woff) format("woff");
+}
+@font-face {
+  font-family: "72-Black";
+  src: local("72-Light"), url(./assets/fonts/72-Black.woff) format("woff");
 }
 @media (min-width: 650px) {
 }

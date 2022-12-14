@@ -52,6 +52,7 @@ export default {
   gap: 3.5rem;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 
   &__wrap {
     display: flex;

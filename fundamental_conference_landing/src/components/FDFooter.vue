@@ -128,7 +128,7 @@ export default {};
     outline-offset: 1.25rem;
     transition: all 0.3s ease-in-out;
     border: 0.125rem solid transparent;
-    font-family: "72";
+    font-family: "72-Light";
 
     &::after {
       left: 0;

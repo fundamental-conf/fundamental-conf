@@ -54,6 +54,7 @@ export default {
   flex-direction: column;
   z-index: 1;
 
+
   &__wrap {
     display: flex;
     flex-direction: column;
@@ -142,7 +143,7 @@ export default {
     align-items: center;
     text-align: center;
     letter-spacing: 0.05em;
-
+z-index: 2;
     /* Blue/500 Regular */
     color: #007ea3;
 

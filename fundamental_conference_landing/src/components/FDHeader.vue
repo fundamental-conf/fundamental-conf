@@ -53,6 +53,7 @@ export default {
     visibility: hidden;
     position: absolute;
     clear: left;
+  
   }
 }
 
@@ -62,6 +63,7 @@ export default {
       position: absolute;
       width: 100%;
       visibility: visible;
+      z-index: 1;
     }
     &__mobile {
       visibility: hidden;

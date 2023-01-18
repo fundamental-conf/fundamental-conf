@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style scoped>
+
 @font-face {
   font-family: "72";
   src: local("72"), url(./assets/fonts/72-Regular.woff) format("woff");

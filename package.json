@@ -1,0 +1,65 @@
+{
+  "name": "fundamental-conf",
+  "version": "0.0.2",
+  "description": "Fundamental Library Conference Website",
+  "main": "index.html",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "deploy": "gh-pages -d dist/fundamental-conf",
+    "predeploy": "ng build --prod && cp CNAME dist/fundamental-conf/CNAME"
+  },
+  "dependencies": {
+    "@angular/animations": "~12.2.8",
+    "@angular/common": "~12.0.3",
+    "@angular/compiler": "~12.0.3",
+    "@angular/core": "~12.2.8",
+    "@angular/forms": "~12.0.3",
+    "@angular/platform-browser": "~12.0.3",
+    "@angular/platform-browser-dynamic": "~12.0.3",
+    "@angular/router": "~12.0.3",
+    "rxjs": "~6.6.0",
+    "smoothscroll-polyfill": "^0.4.4",
+    "tslib": "^2.1.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.0.3",
+    "@angular/cli": "~12.2.4",
+    "@angular/compiler-cli": "~12.0.3",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "@types/smoothscroll-polyfill": "^0.3.1",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
+    "codelyzer": "^0.0.28",
+    "fundamental-styles": "0.19.0-rc.9",
+    "jasmine-core": "~3.7.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "protractor": "^7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/droshev/fundamental-conf.git"
+  },
+  "keywords": [
+    "fundamental library",
+    "conference"
+  ],
+  "author": "droshev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/droshev/fundamental-conf/issues"
+  },
+  "homepage": "https://github.com/droshev/fundamental-conf#readme"
+}

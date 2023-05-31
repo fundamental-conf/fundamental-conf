@@ -2,7 +2,11 @@
   <section class="fd-main" role="main">
     <div class="fd-container">
       <span v-html="svgs.fundamental_logo" aria-hidden="true"> </span>
-      <img src="@/assets/images/Logo-2.png" class="fd-container__picture" />
+      <img
+        src="@/assets/images/Logo-2.png"
+        class="fd-container__picture"
+        alt="Picture of fundamental conference logo. Represented by a blue arrow pointing left, made out of 4 triangles."
+      />
       <h1 class="fd-container__title">Fundamental Conference</h1>
       <p class="fd-container__paragraph">
         Fundamental Conference is a global, virtual conference organized by the
@@ -94,8 +98,6 @@ export default {
 }
 
 @media only screen and (min-width: 734px) {
- 
-
   .fd-container {
     padding-left: 10rem;
     padding-right: 10rem;
@@ -107,7 +109,7 @@ export default {
     }
 
     &__picture {
-      width: 96px;
+      width: 96cpx;
       height: 96px;
     }
     &__title {

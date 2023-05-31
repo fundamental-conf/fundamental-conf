@@ -29,7 +29,13 @@
         hreflang="en"
         >LinkedIn</a
       >
-      <a href="https://twitter.com/fundamental_lib" rel="noopener noreferrer" target="_blank" hreflang="en">Twitter</a>
+      <a
+        href="https://twitter.com/fundamental_lib"
+        rel="noopener noreferrer"
+        target="_blank"
+        hreflang="en"
+        >Twitter</a
+      >
 
       <!-- <a href="https://community.sap.com/topics/fundamental-library" rel="noopener noreferrer" target="_blank" hreflang="en">SAP Community</a> -->
     </div>

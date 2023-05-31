@@ -53,7 +53,6 @@ export default {
     visibility: hidden;
     position: absolute;
     clear: left;
-  
   }
 }
 

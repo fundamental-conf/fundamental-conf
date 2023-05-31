@@ -1,15 +1,15 @@
 <template>
-  <scroll-parallax >
+  <scroll-parallax>
     <FDHeader />
   </scroll-parallax>
 
   <FDMain />
-
+  <div></div>
   <div v-for="el in conferences.slice().reverse()" :key="el.id">
     <FDConference :conference="el" />
   </div>
 
-  <scroll-parallax > <FDFooter /></scroll-parallax>
+  <scroll-parallax> <FDFooter /></scroll-parallax>
 </template>
 
 <script>
@@ -38,7 +38,6 @@ export default {
 </script>
 
 <style scoped>
-
 @font-face {
   font-family: "72";
   src: local("72"), url(./assets/fonts/72-Regular.woff) format("woff");

@@ -4,7 +4,7 @@
   </scroll-parallax>
 
   <FDMain />
-  <div></div>
+
   <div v-for="el in conferences.slice().reverse()" :key="el.id">
     <FDConference :conference="el" />
   </div>

@@ -98,6 +98,7 @@
       line-height: 1;
       font-size: 6.25rem;
       text-align: right;
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: animated_text 5s ease-in-out infinite;

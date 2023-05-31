@@ -9,31 +9,34 @@
       </h2>
 
       <div class="fd-cfc__cfa">
-        <a aria-label="open submit your topic form" class="fd-cfc__button" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSefCY1yFAYFDuFzW6wB0xENR8mgc0oCbC2FWPcr0_qStDTSlg/viewform">
+        <a
+          aria-label="open submit your topic form"
+          class="fd-cfc__button"
+          target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSefCY1yFAYFDuFzW6wB0xENR8mgc0oCbC2FWPcr0_qStDTSlg/viewform"
+        >
           <svg
             viewBox="0 0 295 291"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            class = "fd-cfc__svg"
+            class="fd-cfc__svg"
           >
-              <g
-                id="arrow"
-              >
-                <path
-                  class="st3"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M117.333 146C117.333 143.883 119.05 142.167 121.167 142.167H174.833C176.951 142.167 178.667 143.883 178.667 146C178.667 148.117 176.951 149.833 174.833 149.833H121.167C119.05 149.833 117.333 148.117 117.333 146Z"
-                  fill="currentColor"
-                />
-                <path
-                  class="st3"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M152.956 124.123C154.453 122.626 156.88 122.626 158.377 124.123L177.544 143.289C179.041 144.786 179.041 147.214 177.544 148.711L158.377 167.877C156.88 169.374 154.453 169.374 152.956 167.877C151.459 166.38 151.459 163.953 152.956 162.456L169.412 146L152.956 129.544C151.459 128.047 151.459 125.62 152.956 124.123Z"
-                  fill="currentColor"
-                />
-              </g>
+            <g id="arrow">
+              <path
+                class="st3"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M117.333 146C117.333 143.883 119.05 142.167 121.167 142.167H174.833C176.951 142.167 178.667 143.883 178.667 146C178.667 148.117 176.951 149.833 174.833 149.833H121.167C119.05 149.833 117.333 148.117 117.333 146Z"
+                fill="currentColor"
+              />
+              <path
+                class="st3"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M152.956 124.123C154.453 122.626 156.88 122.626 158.377 124.123L177.544 143.289C179.041 144.786 179.041 147.214 177.544 148.711L158.377 167.877C156.88 169.374 154.453 169.374 152.956 167.877C151.459 166.38 151.459 163.953 152.956 162.456L169.412 146L152.956 129.544C151.459 128.047 151.459 125.62 152.956 124.123Z"
+                fill="currentColor"
+              />
+            </g>
             <g id="text">
               <path
                 d="M262.332 85.642C262.86 86.555 263.369 87.1584 263.859 87.4522C264.359 87.7619 264.874 87.7642 265.403 87.4591C265.948 87.1446 266.256 86.6787 266.327 86.0613C266.397 85.4438 266.346 84.5229 266.173 83.2986C266.088 82.7071 266.012 82.1316 265.945 81.5722C265.903 81.0195 265.926 80.5043 266.014 80.0267C266.101 79.5492 266.282 79.1033 266.556 78.6891C266.829 78.275 267.247 77.9061 267.808 77.5824C268.915 76.9443 270.025 76.8487 271.138 77.2957C272.268 77.7335 273.24 78.6571 274.055 80.0667C274.258 80.4191 274.438 80.7853 274.594 81.1655C274.765 81.5364 274.907 81.8925 275.019 82.2338C275.146 82.5659 275.243 82.8626 275.309 83.1238C275.383 83.4011 275.434 83.6176 275.46 83.7735L273.299 84.4748C273.289 84.1606 273.199 83.7102 273.031 83.1236C272.879 82.5278 272.595 81.8695 272.179 81.1487C271.818 80.524 271.374 80.0534 270.849 79.7368C270.34 79.411 269.821 79.4007 269.292 79.7059C269.02 79.8631 268.807 80.0499 268.654 80.2662C268.51 80.4986 268.41 80.7697 268.354 81.0797C268.324 81.3964 268.329 81.7566 268.369 82.1602C268.41 82.5637 268.48 83.036 268.579 83.577C268.697 84.2991 268.778 84.9572 268.822 85.5512C268.882 86.1359 268.86 86.6717 268.757 87.1585C268.663 87.6614 268.458 88.1211 268.143 88.5377C267.844 88.9451 267.398 89.3199 266.804 89.6621C265.65 90.3279 264.526 90.3995 263.433 89.8767C262.349 89.3699 261.348 88.3236 260.432 86.7379C259.793 85.6326 259.389 84.7122 259.221 83.9765C259.036 83.2501 258.927 82.747 258.894 82.4673L261.054 81.766C261.106 82.0778 261.198 82.5694 261.329 83.241C261.461 83.9126 261.795 84.713 262.332 85.642Z"
@@ -169,23 +172,22 @@
         <p class="fd-cfc__paragraph">
           Join us as a speaker to share your innovative ideas and progress with
           the Fundamental community and beyond. This is a great opportunity to
-          transcend your public speaking skills and inspire likeminded designers,
-          developers, and other creative thinkers-alike by sharing what you love
-          doing most. Doesn't this sound like a stellar opportunity to you? We
-          can't wait to see your topic proposal soon!
+          transcend your public speaking skills and inspire likeminded
+          designers, developers, and other creative thinkers-alike by sharing
+          what you love doing most. Doesn't this sound like a stellar
+          opportunity to you? We can't wait to see your topic proposal soon!
         </p>
       </div>
-    </div> 
-      
+    </div>
+
     <p class="fd-cfc__paragraph mobile">
-      Join us as a speaker to share your innovative ideas and progress with
-      the Fundamental community and beyond. This is a great opportunity to
-      transcend your public speaking skills and inspire likeminded designers,
-      developers, and other creative thinkers-alike by sharing what you love
-      doing most. Doesn't this sound like a stellar opportunity to you? We
-      can't wait to see your topic proposal soon!
+      Join us as a speaker to share your innovative ideas and progress with the
+      Fundamental community and beyond. This is a great opportunity to transcend
+      your public speaking skills and inspire likeminded designers, developers,
+      and other creative thinkers-alike by sharing what you love doing most.
+      Doesn't this sound like a stellar opportunity to you? We can't wait to see
+      your topic proposal soon!
     </p>
-    
   </section>
 </template>
 
@@ -195,12 +197,11 @@ export default {};
 
 <style lang="scss" scoped>
 .fd-cfc {
- display: flex;
-    padding: 5rem 1rem;
-    flex-direction: column;
-    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
-    overflow: hidden;
-
+  display: flex;
+  padding: 5rem 1rem;
+  flex-direction: column;
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+  overflow: hidden;
 
   &__container {
     gap: 2rem;
@@ -211,12 +212,13 @@ export default {};
   &__title {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(-33deg, #82deff, #69ADF8, #7b5cb2, #7b5cb2);
+    background: linear-gradient(-33deg, #82deff, #69adf8, #7b5cb2, #7b5cb2);
     background-size: 300%;
     font-weight: bold;
     line-height: 1;
     font-size: 4rem;
     text-align: right;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animated_text 5s ease-in-out infinite;
@@ -234,7 +236,7 @@ export default {};
     width: fit-content;
     background: transparent;
     cursor: pointer;
-    color: #3E86EF;
+    color: #3e86ef;
     padding: 0.5rem;
     border: 0.125rem solid transparent;
     border-radius: 50%;
@@ -245,17 +247,17 @@ export default {};
     }
 
     &:hover {
-      color: #2865BE;
+      color: #2865be;
     }
 
     &:active {
-      color: #052E69;
+      color: #052e69;
     }
 
     &:focus {
       outline: none;
-      color: #3E86EF;
-      border-color: #9747FF;
+      color: #3e86ef;
+      border-color: #9747ff;
     }
   }
 
@@ -273,9 +275,15 @@ export default {};
   }
 
   @keyframes animated_text {
-    0% { background-position: 0px 50%; }
-    50% { background-position: 50% 50%; }
-    100% { background-position: 0px 50%; }
+    0% {
+      background-position: 0px 50%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    100% {
+      background-position: 0px 50%;
+    }
   }
 }
 
@@ -324,5 +332,4 @@ export default {};
     gap: 10rem;
   }
 }
-
 </style>

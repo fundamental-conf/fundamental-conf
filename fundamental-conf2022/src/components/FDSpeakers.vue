@@ -192,7 +192,6 @@ export default {
 
 <style lang="scss" scoped>
 .fd-speakers {
-  
   button {
     cursor: pointer;
   }
@@ -267,7 +266,6 @@ export default {
     align-items: flex-end;
     transition: all 0.2s linear;
 
-
     img {
       z-index: 0;
       max-width: 6.5rem;
@@ -289,13 +287,14 @@ export default {
 
       &:hover {
         border-radius: 100%;
-        box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 24px rgba(123, 92, 178, 0.75);
+        box-shadow: 0 0 0 0.25rem #7352ad,
+          -6px 8px 24px rgba(123, 92, 178, 0.75);
       }
     }
 
     &:hover {
       border-radius: 100%;
-      
+
       box-shadow: -6px 8px 24px rgba(123, 92, 178, 0.75);
     }
   }
@@ -353,7 +352,6 @@ export default {
 }
 
 .fd-keyspeaker {
-  
   button {
     cursor: pointer;
   }
@@ -401,13 +399,14 @@ export default {
 
       &:hover {
         border-radius: 100%;
-        box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 24px rgba(123, 92, 178, 0.75);
+        box-shadow: 0 0 0 0.25rem #7352ad,
+          -6px 8px 24px rgba(123, 92, 178, 0.75);
       }
     }
 
     &:hover {
       border-radius: 100%;
-      
+
       box-shadow: -6px 8px 24px rgba(123, 92, 178, 0.75);
     }
   }
@@ -463,6 +462,7 @@ export default {
     color: #2865be;
     background: linear-gradient(-33deg, #82deff, #69adf8, #2865be);
     background-size: 300%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animated_text 5s ease-in-out infinite;
@@ -611,13 +611,14 @@ export default {
 
         &:hover {
           border-radius: 100%;
-          box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 32px rgba(123, 92, 178, 0.75);
+          box-shadow: 0 0 0 0.25rem #7352ad,
+            -6px 8px 32px rgba(123, 92, 178, 0.75);
         }
       }
 
       &:hover {
         border-radius: 100%;
-        
+
         box-shadow: -6px 8px 32px rgba(123, 92, 178, 0.75);
       }
     }
@@ -670,7 +671,6 @@ export default {
     flex-direction: row;
 
     &__picture {
-
       img {
         width: 20vw;
         height: 20vw;
@@ -686,13 +686,14 @@ export default {
 
         &:hover {
           border-radius: 100%;
-          box-shadow: 0 0 0 0.25rem #7352ad, -6px 8px 32px rgba(123, 92, 178, 0.75);
+          box-shadow: 0 0 0 0.25rem #7352ad,
+            -6px 8px 32px rgba(123, 92, 178, 0.75);
         }
       }
 
       &:hover {
         border-radius: 100%;
-        
+
         box-shadow: -6px 8px 32px rgba(123, 92, 178, 0.75);
       }
     }

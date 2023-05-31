@@ -44,19 +44,18 @@
 
 <script>
 import IconFig from "./IconFig.vue";
-import svgs from '@/assets/svg/svgs.js';
-
+import svgs from "@/assets/svg/svgs.js";
 
 export default {
   components: {
-    IconFig
+    IconFig,
   },
   name: "FDMission",
   data() {
     return {
       svgs,
-    }
-  }
+    };
+  },
 };
 </script>
 
@@ -76,11 +75,12 @@ export default {
     display: flex;
     flex-direction: column;
     font-size: 4.5rem;
-    background: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69ADF8, #82deff);
+    background: linear-gradient(-33deg, #7b5cb2, #7b5cb2, #69adf8, #82deff);
     background-size: 300%;
     font-weight: bold;
     line-height: 1;
     text-align: left;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animated_text-6c3e9a48 5s ease-in-out infinite;
@@ -110,7 +110,7 @@ export default {
       justify-content: center;
       width: 4.25rem;
       height: 4.25rem;
-      color: #3E86EF;
+      color: #3e86ef;
     }
 
     &.plus {
@@ -125,19 +125,19 @@ export default {
 
     h3 {
       font-size: 1.125rem;
-      color: #2865BE;
+      color: #2865be;
       font-weight: 400;
       max-width: 8rem;
       text-align: center;
       font-family: "Ubuntu", Arial, Helvetica, sans-serif;
     }
   }
-  
+
   &__text {
     gap: 8px;
     padding: 2%;
   }
-  
+
   &__italic {
     font-family: sans-serif;
     font-style: italic;
@@ -157,7 +157,7 @@ export default {
   &__line {
     width: 50%;
     height: 0.0625rem;
-    background: linear-gradient(63.69deg, #2865BE 16.54%, #82DEFF 83.46%);;
+    background: linear-gradient(63.69deg, #2865be 16.54%, #82deff 83.46%);
     background-size: 400% 400%;
     animation: gradient 3s ease infinite;
     margin: 2.25rem 0;
@@ -205,14 +205,14 @@ export default {
     &__container {
       flex-direction: column;
     }
-    
+
     &__title {
       display: flex;
       flex-direction: column;
       font-size: 5rem;
       text-align: left;
     }
-  
+
     &__icons {
       flex-direction: column;
     }
@@ -235,19 +235,19 @@ export default {
         max-width: none;
       }
     }
-      
+
     &__text {
       gap: 8px;
       padding: 0;
     }
-   
-   &__italic {
-      font-size:1.25rem;
+
+    &__italic {
+      font-size: 1.25rem;
       line-height: 1.65;
     }
-   
-   &__paragraph {
-      font-size:1.25rem;
+
+    &__paragraph {
+      font-size: 1.25rem;
       line-height: 1.65;
     }
   }
@@ -266,14 +266,14 @@ export default {
       gap: 5rem;
       flex-direction: row;
     }
-    
+
     &__title {
       display: flex;
       flex-direction: column;
       font-size: 8rem;
       text-align: right;
     }
-  
+
     &__icons {
       flex-direction: row;
     }
@@ -296,22 +296,21 @@ export default {
         max-width: none;
       }
     }
-      
+
     &__text {
       gap: 8px;
-     padding-top: 3%;
+      padding-top: 3%;
     }
-   
-   &__italic {
-      font-size:1.25rem;
+
+    &__italic {
+      font-size: 1.25rem;
       line-height: 1.65;
     }
-   
-   &__paragraph {
-      font-size:1.25rem;
+
+    &__paragraph {
+      font-size: 1.25rem;
       line-height: 1.65;
     }
   }
 }
-
 </style>

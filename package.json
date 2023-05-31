@@ -13,14 +13,14 @@
     "predeploy": "ng build --prod && cp CNAME dist/fundamental-conf/CNAME"
   },
   "dependencies": {
-    "@angular/animations": "~12.2.8",
-    "@angular/common": "~12.0.3",
-    "@angular/compiler": "~12.0.3",
-    "@angular/core": "~12.2.8",
-    "@angular/forms": "~12.0.3",
-    "@angular/platform-browser": "~12.0.3",
-    "@angular/platform-browser-dynamic": "~12.0.3",
-    "@angular/router": "~12.0.3",
+    "@angular/animations": "~13.4.0",
+    "@angular/common": "~13.4.0",
+    "@angular/compiler": "~13.4.0",
+    "@angular/core": "~13.4.0",
+    "@angular/forms": "~13.4.0",
+    "@angular/platform-browser": "~13.4.0",
+    "@angular/platform-browser-dynamic": "~13.4.0",
+    "@angular/router": "~13.4.0",
     "rxjs": "~6.6.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tslib": "^2.1.0",
@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.3",
-    "@angular/cli": "~12.2.4",
-    "@angular/compiler-cli": "~12.0.3",
+    "@angular/cli": "~13.3.11",
+    "@angular/compiler-cli": "~13.4.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "@types/smoothscroll-polyfill": "^0.3.1",
@@ -46,7 +46,7 @@
     "protractor": "^7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.2.3"
+    "typescript": "~4.6.4"
   },
   "repository": {
     "type": "git",

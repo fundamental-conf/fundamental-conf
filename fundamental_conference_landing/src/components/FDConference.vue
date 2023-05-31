@@ -1,17 +1,28 @@
 <template>
   <section class="fd-conference" role="region">
     <div class="fd-conference__header" aria-hidden="true">
-      <h2 class="fd-conference__year" aria-label="` {{conference.year}} `">{{ conference.year }}</h2>
-      <h3 class="fd-conference__month"  aria-label="` {{conference.year}} `">{{ conference.month }}</h3>
+      <h2 class="fd-conference__year" aria-label="` {{conference.year}} `">
+        {{ conference.year }}
+      </h2>
+      <h3 class="fd-conference__month" aria-label="` {{conference.year}} `">
+        {{ conference.month }}
+      </h3>
     </div>
     <div class="fd-conference__wrap">
       <img
         :src="require(`@/assets/images/${conference.image}`)"
         class="fd-conference__image"
+        loading="lazy"
+        alt="Graphics of the Fundamental Conference {{conference.year}}"
         aria-label="`Graphics of the Fundamental Conference {{conference.year}} `"
       />
       <div class="fd-conference__pwrap">
-        <p class="fd-conference__paragraph" aria-label="`Paragraph description of the Fundamental Conference {{conference.year}} `">{{ conference.description }}</p>
+        <p
+          class="fd-conference__paragraph"
+          aria-label="`Paragraph description of the Fundamental Conference {{conference.year}} `"
+        >
+          {{ conference.description }}
+        </p>
 
         <a
           :href="conference.url"
@@ -19,7 +30,7 @@
           target="_blank"
           rel="noreferrer"
           hreflang="en"
-          ><span v-html="svgs.arrow" > </span>Get Inspired</a
+          ><span v-html="svgs.arrow"> </span>Get Inspired</a
         >
       </div>
     </div>
@@ -53,7 +64,6 @@ export default {
   display: flex;
   flex-direction: column;
   z-index: 1;
-
 
   &__wrap {
     display: flex;
@@ -143,7 +153,7 @@ export default {
     align-items: center;
     text-align: center;
     letter-spacing: 0.05em;
-z-index: 2;
+    z-index: 2;
     /* Blue/500 Regular */
     color: #007ea3;
 
@@ -217,7 +227,7 @@ z-index: 2;
     }
     &__image {
       width: 50%;
-      height:50%;
+      height: 50%;
     }
 
     &__paragraph {

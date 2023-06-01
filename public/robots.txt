@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /src/assets/
+Disallow: /scss/
+Disallow: /js/
+Disallow: /vue/
+Disallow: /api/

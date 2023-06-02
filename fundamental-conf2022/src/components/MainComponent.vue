@@ -51,7 +51,7 @@
 
     <!-- </transition> -->
 
-    <a   class="fd-main-section__bottom-container" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=hU_lCVbGIXU&list=PLChUxte5emJatZ4s96DLhPE3LlVjbl2Au">
+    <a   class="fd-main-section__bottom-container" target="_blank" rel="noreferrer"  aria-label="Link to Fundamental Library's agenda youtube link" href="https://www.youtube.com/watch?v=hU_lCVbGIXU&list=PLChUxte5emJatZ4s96DLhPE3LlVjbl2Au">
 
       
 

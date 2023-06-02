@@ -81,6 +81,7 @@ export default {
     font-weight: bold;
     line-height: 1;
     text-align: left;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animated_text-6c3e9a48 5s ease-in-out infinite;

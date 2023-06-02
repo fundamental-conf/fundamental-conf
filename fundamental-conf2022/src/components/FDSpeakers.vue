@@ -463,6 +463,7 @@ export default {
     color: #2865be;
     background: linear-gradient(-33deg, #82deff, #69adf8, #2865be);
     background-size: 300%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animated_text 5s ease-in-out infinite;
